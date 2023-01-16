@@ -7,7 +7,7 @@ FROM ubuntu:22.04
 RUN apt-get update -y && \
     apt-get install -y curl && \
     cd /tmp && \
-    curl -LO https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-nold_1_arm64.deb && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-nold_1_$(dpkg --print-architecture).deb" && \
     apt install -y ./r-*.deb && \
     apt-get clean
 
