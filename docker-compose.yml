@@ -1,0 +1,25 @@
+services:
+  debian-unstable-devel:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.debian-unstable-devel
+    image: rhub:debian-unstable-devel
+    volumes:
+      - ./integration/tmp:/tmp/output
+  ubuntu-2204-nold:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-nold
+      - XCONFIGURE_OPTIONS=--disable-long-double
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.ubuntu-2204-nold
+    image: rhub:ubuntu-2204-nold
+    volumes:
+      - ./integration/tmp:/tmp/output
