@@ -10,6 +10,17 @@ services:
     image: rhub:debian-unstable-devel
     volumes:
       - ./integration/tmp:/tmp/output
+  ubuntu-2204:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.ubuntu-2204
+    image: rhub:ubuntu-2204
+    volumes:
+      - ./integration/tmp:/tmp/output
   ubuntu-2204-nold:
     command: ./build.sh
     environment:
