@@ -38,7 +38,7 @@ RUN /opt/R/devel-nold/bin/R -q -e \
 # Locale
 
 RUN apt-get update -y && \
-    apt-get install locales && \
+    apt-get install -y locales && \
     apt-get clean && \
     locale-gen en_US.UTF-8 && \
     update-locale
