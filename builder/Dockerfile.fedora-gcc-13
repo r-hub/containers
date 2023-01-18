@@ -1,7 +1,7 @@
 
-FROM fedora:36
+FROM fedora:38
 
-ENV OS_IDENTIFIER fedora-36
+ENV OS_IDENTIFIER fedora-38
 
 RUN dnf -y upgrade \
     && dnf -y install dnf-plugins-core \
@@ -10,6 +10,9 @@ RUN dnf -y upgrade \
     automake \
     bzip2-devel \
     cairo-devel \
+    gcc \
+    g++ \
+    gfortran \
     java-11-openjdk-devel \
     libICE-devel \
     libSM-devel \
@@ -41,9 +44,6 @@ RUN dnf -y upgrade \
     xz-devel \
     zlib-devel \
     && dnf clean all
-
-RUN dnf install fedora-repos-rawhide -y && \
-    dnf --disablerepo=* --enablerepo=rawhide  --releasever=38 install -y gcc g++ gfortran
 
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
 
