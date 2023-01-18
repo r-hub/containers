@@ -94,9 +94,16 @@ compile_r() {
     --enable-memory-profiling \
     --with-x \
     --with-blas \
-    --with-lapack $XCONFIGURE_OPTIONS"
+    --with-lapack"
 
-  CONFIGURE_OPTIONS=${CONFIGURE_OPTIONS:-$default_configure_options}
+  CONFIGURE_OPTIONS=${CONFIGURE_OPTIONS:-$default_configure_options} \
+                    ${XCONFIGURE_OPTIONS}
+
+  if [[ -e "/config.site.$(uname -p)" ]]; then
+      cp "/config.site.$(uname -p)" ./config.site
+  elif [[ -e /config.site ]]; then
+      cp /config.site .
+  fi
 
   # set some common environment variables for the configure step
   AWK=/usr/bin/awk \
