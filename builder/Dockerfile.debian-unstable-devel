@@ -24,6 +24,6 @@ ENV PAGER /usr/bin/pager
 # R 3.x requires PCRE2 for Pango support on Debian 11
 ENV INCLUDE_PCRE2_IN_R_3 yes
 
-COPY dockerfiles/package.debian-unstable-devel /package.sh
+COPY builder/package.debian-unstable-devel /package.sh
 COPY build.sh .
 ENTRYPOINT ./build.sh

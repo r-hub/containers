@@ -7,8 +7,7 @@ RUN set -x \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install -y curl libcurl4-openssl-dev libicu-dev libopenblas-base libpcre2-dev wget python3-pip \
-  && apt-get build-dep -y r-base \
-  && apt-get install -y gcc-12 g++-12 gfortran-12
+  && apt-get build-dep -y r-base
 
 RUN pip3 install awscli
 
@@ -24,6 +23,6 @@ ENV PAGER /usr/bin/pager
 # R 3.x requires PCRE2 for Pango support on Ubuntu 22
 ENV INCLUDE_PCRE2_IN_R_3 yes
 
-COPY dockerfiles/package.ubuntu-2204-gcc12 /package.sh
+COPY builder/package.ubuntu-2204 /package.sh
 COPY build.sh .
 ENTRYPOINT ./build.sh

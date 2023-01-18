@@ -1,4 +1,5 @@
 services:
+
   debian-unstable-devel:
     command: ./build.sh
     environment:
@@ -6,10 +7,11 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: dockerfiles/Dockerfile.debian-unstable-devel
+      dockerfile: builder/Dockerfile.debian-unstable-devel
     image: rhub/debian-unstable-devel:latest
     volumes:
       - ./integration/tmp:/tmp/output
+
   ubuntu-2204:
     command: ./build.sh
     environment:
@@ -17,10 +19,11 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: dockerfiles/Dockerfile.ubuntu-2204
+      dockerfile: builder/Dockerfile.ubuntu-2204
     image: rhub/ubuntu-2204:latest
     volumes:
       - ./integration/tmp:/tmp/output
+
   ubuntu-2204-nold:
     command: ./build.sh
     environment:
@@ -30,10 +33,11 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: dockerfiles/Dockerfile.ubuntu-2204-nold
+      dockerfile: builder/Dockerfile.ubuntu-2204-nold
     image: rhub/ubuntu-2204-nold:latest
     volumes:
       - ./integration/tmp:/tmp/output
+
   ubuntu-2204-gcc12:
     command: ./build.sh
     environment:
@@ -43,7 +47,7 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: dockerfiles/Dockerfile.ubuntu-2204-gcc12
+      dockerfile: builder/Dockerfile.ubuntu-2204-gcc12
     image: rhub/ubuntu-2204-gcc12:latest
     volumes:
       - ./integration/tmp:/tmp/output
