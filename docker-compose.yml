@@ -64,3 +64,16 @@ services:
     image: rhub/fedora-gcc:latest
     volumes:
       - ./integration/tmp:/tmp/output
+
+  fedora-gcc-13:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-gcc-13
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.fedora-gcc-13
+    image: rhub/fedora-gcc-13:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
