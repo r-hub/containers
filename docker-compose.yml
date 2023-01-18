@@ -38,20 +38,6 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
-  ubuntu-2204-gcc12:
-    command: ./build.sh
-    environment:
-      - R_VERSION=devel
-      - R_TYPE=-gcc12
-      - XCONFIGURE_OPTIONS=CC=gcc-12 CXX=g++-12 FC=gfortran-12
-      - LOCAL_STORE=/tmp/output
-    build:
-      context: .
-      dockerfile: builder/Dockerfile.ubuntu-2204-gcc12
-    image: rhub/ubuntu-2204-gcc12:latest
-    volumes:
-      - ./integration/tmp:/tmp/output
-
   fedora-gcc:
     command: ./build.sh
     environment:
