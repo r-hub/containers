@@ -99,8 +99,8 @@ compile_r() {
   CONFIGURE_OPTIONS=${CONFIGURE_OPTIONS:-$default_configure_options} \
                     ${XCONFIGURE_OPTIONS}
 
-  if [[ -e "/config.site.$(uname -p)" ]]; then
-      cp "/config.site.$(uname -p)" ./config.site
+  if [[ -e "/config.site.$(uname -m)" ]]; then
+      cp "/config.site.$(uname -m)" ./config.site
   elif [[ -e /config.site ]]; then
       cp /config.site .
   fi
