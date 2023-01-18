@@ -1,58 +1,47 @@
 
-FROM ubuntu:22.04
+FROM fedora:36
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
 
-RUN apt-get update -y && \
-    apt-get install -y curl && \
-    cd /tmp && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-gcc12_1_$(dpkg --print-architecture).deb" && \
-    apt install -y ./r-*.deb && \
-    apt-get clean
+RUN dnf -y upgrade && \
+    dnf -y install dnf-plugins-core && \
+    dnf -y install curl && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-fedora-36-devel-gcc-1-1.$(arch).rpm" && \
+    yum install -y R-*.rpm && \
+    rm R-*.rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
 # AUto-install system requirements
 
-ENV PATH="/opt/R/devel-gcc12/bin:${PATH}"
-ENV PKG_SYSREQS=true
+ENV PATH="/opt/R/devel-gcc/bin:${PATH}"
+# ENV PKG_SYSREQS=true
 
 # ------------------------------------------------------------------------------------
-# Set CRAN repo, use P3M on x86_64
+# Set CRAN repo, no P3M for Fedora
 
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
-    >> /opt/R/devel-gcc12/lib/R/library/base/R/Rprofile
-RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/jammy/latest", getOption("repos")))' \
-            >> /opt/R/devel-gcc12/lib/R/library/base/R/Rprofile; \
-        curl -s https://api.r-hub.io/rversions/r-release | \
-            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
-            >> /opt/R/devel-gcc12/lib/R/library/base/R/Rprofile; \
-    fi
+    >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile
 
 # ------------------------------------------------------------------------------------
 # Install pak
 
-RUN /opt/R/devel-gcc12/bin/R -q -e \
+RUN /opt/R/devel-gcc/bin/R -q -e \
     'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
 # Locale
 
-RUN apt-get update -y && \
-    apt-get install -y locales && \
-    apt-get clean && \
-    locale-gen en_US.UTF-8 && \
-    update-locale
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
+RUN dnf install -y glibc-langpack-en
+
+ENV LC_ALL en_GB.UTF-8
+ENV LANG en_GB.UTF-8
 
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
 
-RUN /opt/R/devel-gcc12/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
+RUN /opt/R/devel-gcc/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
 
 # ------------------------------------------------------------------------------------
 # Copy check script
@@ -68,17 +57,11 @@ ENV _R_CHECK_BASHISMS_=false
 # ------------------------------------------------------------------------------------
 # ATLAS
 
-RUN apt-get update -y && \
-    apt-get install -y libatlas-base-dev && \
-    apt-get clean
+RUN dnf install -y atlas
 
-# we cannot hardcode this, because the names of the alternatives are architecture
-# dependent
-
-RUN for alt in \
-    `update-alternatives --get-selections | awk '{ print $1; }' | grep 'libblas\|liblapack'`; do \
-    ours=$(update-alternatives --list $alt | grep atlas); \
-    update-alternatives --set $alt $ours; \
-    done
+RUN blas=$(R -s -q -e 'cat(La_library())') && \
+    mv $blas $blas.bak && \
+    ln -s /usr/lib64/atlas/libsatlas.so.*.* $blas
 
 RUN R -q -e 'extSoftVersion()["BLAS"]'
+RUN R -q -e 'La_library()'
