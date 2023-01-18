@@ -51,3 +51,16 @@ services:
     image: rhub/ubuntu-2204-gcc12:latest
     volumes:
       - ./integration/tmp:/tmp/output
+
+  fedora-gcc:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-gcc
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.fedora-gcc
+    image: rhub/fedora-gcc:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
