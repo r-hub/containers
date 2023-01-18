@@ -19,14 +19,18 @@ ENV PATH="/opt/R/devel/bin:${PATH}"
 ENV PKG_SYSREQS=true
 
 # ------------------------------------------------------------------------------------
-# Use P3M, set CRAN repo
+# Set CRAN repo, use P3M on x86_64
 
-RUN echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/jammy/latest", CRAN="https://cran.rstudio.com", getOption("repos")))' \
+RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel/lib/R/library/base/R/Rprofile
-RUN curl -s https://api.r-hub.io/rversions/r-release | sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver && \
-    echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
-    >> /opt/R/devel/lib/R/library/base/R/Rprofile
-
+RUN if [ "$(uname -p)" = "x86_64" ]; then \
+        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/jammy/latest", getOption("repos")))' \
+            >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
+        curl -s https://api.r-hub.io/rversions/r-release | \
+            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
+        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
+            >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
+    fi
 
 # ------------------------------------------------------------------------------------
 # Install pak
