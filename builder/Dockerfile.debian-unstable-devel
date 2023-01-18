@@ -10,8 +10,6 @@ RUN set -x \
      libopenblas-dev libpcre2-dev make python3-pip wget \
   && apt-get build-dep -y r-base
 
-# RUN pip3 install awscli
-
 RUN chmod 0777 /opt
 
 RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(dpkg --print-architecture).deb" && \

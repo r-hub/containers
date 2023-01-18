@@ -9,8 +9,6 @@ RUN set -x \
   && apt-get install -y curl libcurl4-openssl-dev libicu-dev libopenblas-base libpcre2-dev wget python3-pip \
   && apt-get build-dep -y r-base
 
-RUN pip3 install awscli
-
 RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(dpkg --print-architecture).deb" && \
     apt install -y "./nfpm_$(dpkg --print-architecture).deb" && \
     rm "nfpm_$(dpkg --print-architecture).deb"
