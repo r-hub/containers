@@ -53,6 +53,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         platforms: linux/amd64
+        context: containers/${{ matrix.container }}
         push: true
         tags: |
           rhub/${{ matrix.container }}:latest
