@@ -28,7 +28,7 @@ jobs:
       matrix:
         platform: ${{ fromJson(needs.setup-matrix.outputs.platforms) }}
     runs-on: ubuntu-latest
-    name: Docker image (${{ matrix.platform }})
+    name: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
 
