@@ -1,0 +1,36 @@
+
+name: R builds
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      platforms: ${{ steps.setup-matrix.outputs.platforms }}
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up matrix of platforms and R versions
+      id: setup-matrix
+      run: |
+        platforms=$(python tests/get-platforms.py)
+        echo "platforms=$platforms" >> $GITHUB_OUTPUT
+
+  package-files:
+    needs: setup-matrix
+    strategy:
+      matrix:
+        platform: ${{ fromJson(needs.setup-matrix.outputs.platforms) }}    
+    runs-on: ubuntu-latest
+    name: Docker image (${{ matrix.platform }})
+    steps:
+      - uses: actions/checkout@v3
