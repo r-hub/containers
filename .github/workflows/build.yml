@@ -34,3 +34,14 @@ jobs:
     name: Docker image (${{ matrix.platform }})
     steps:
       - uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        with:
+          install: true
+
+      - name: Build base image
+        run: docker-compose build ${{ matrix.platform }}
+
+      - name: Build R
+        run: docker-compose up ${{ matrix.platform }}
