@@ -1,0 +1,32 @@
+
+name: Containers
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      containers: ${{ steps.setup-matrix.outputs.containers }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up matrix of containers
+      id: setup-matrix
+      run: |
+        (echo -n 'containers=['; ls containers | sed 's|/$||' |
+        awk '{ printf("\"%s\",", $1) }' | sed 's/,$//'; echo -n ']') >> $GITHUB_OUTPUT
+
+  containers:
+    needs: setup-matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        container: ${{ fromJson(needs.setup-matrix.outputs.containers) }}
+    runs-on: ubuntu-latest
+    name: ${{ matrix.container }}
+    steps:
+      - uses: actions/checkout@v3

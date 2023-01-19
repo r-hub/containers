@@ -14,8 +14,7 @@ jobs:
       platforms: ${{ steps.setup-matrix.outputs.platforms }}
     steps:
     - uses: actions/checkout@v3
-
-    - name: Set up matrix of platforms and R versions
+    - name: Set up matrix of R builds
       id: setup-matrix
       run: |
         platforms=$(python tests/get-platforms.py)
