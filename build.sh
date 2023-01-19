@@ -96,8 +96,7 @@ compile_r() {
     --with-blas \
     --with-lapack"
 
-  CONFIGURE_OPTIONS=${CONFIGURE_OPTIONS:-$default_configure_options} \
-                    ${XCONFIGURE_OPTIONS}
+  CONFIGURE_OPTIONS="${CONFIGURE_OPTIONS:-$default_configure_options} ${XCONFIGURE_OPTIONS}"
 
   if [[ -e "/config.site.$(uname -m)" ]]; then
       cp "/config.site.$(uname -m)" ./config.site
