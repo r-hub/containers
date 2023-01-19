@@ -49,7 +49,56 @@ RUN /opt/R/devel-gcc-13/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showW
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
-# Check config
+# CRAN's config from https://www.stats.ox.ac.uk/pub/bdr/gcc13/README.txt
+#
+# > Tests as for fedora-gcc but with GCC trunk aka pre-13.0.0 -- the
+# > logs record the snapshot used..
+# >
+# > Further details as
+# >
+# > https://www.stats.ox.ac.uk/pub/bdr/Rconfig/r-devel-linux-x86_64-fedora-gcc
+
+ENV _R_CHECK_INSTALL_DEPENDS_ true
+## the next is the default, but --as-cran has true
+ENV _R_CHECK_SUGGESTS_ONLY_ false
+ENV _R_CHECK_NO_RECOMMENDED_ true
+ENV _R_CHECK_DOC_SIZES2_ true
+ENV _R_CHECK_DEPRECATED_DEFUNCT_ true
+ENV _R_CHECK_SCREEN_DEVICE_ warn
+ENV _R_CHECK_REPLACING_IMPORTS_ true
+ENV _R_CHECK_TOPLEVEL_FILES_ true
+ENV _R_CHECK_DOT_FIRSTLIB_ true
+ENV _R_CHECK_RD_LINE_WIDTHS_ true
+ENV _R_CHECK_S3_METHODS_NOT_REGISTERED_ true
+ENV _R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_ true
+ENV _R_CHECK_CODE_USAGE_WITH_ONLY_BASE_ATTACHED_ TRUE
+ENV _R_CHECK_NATIVE_ROUTINE_REGISTRATION_ true
+ENV _R_CHECK_FF_CALLS_ registration
+ENV _R_CHECK_PRAGMAS_ true
+ENV _R_CHECK_COMPILATION_FLAGS_ true
+ENV _R_CHECK_R_DEPENDS_ true
+ENV _R_CHECK_PACKAGES_USED_IN_TESTS_USE_SUBDIRS_ true
+ENV _R_CHECK_PKG_SIZES_ false
+ENV _R_CHECK_SHLIB_OPENMP_FLAGS_ true
+
+ENV _R_CHECK_LIMIT_CORES_ true
+ENV _R_CHECK_LENGTH_1_CONDITION_ package:_R_CHECK_PACKAGE_NAME_,verbose
+#ENV _R_CHECK_LENGTH_1_LOGIC2_ "package:_R_CHECK_PACKAGE_NAME_,verbose"
+ENV _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_ true
+ENV _R_CHECK_COMPILATION_FLAGS_KNOWN_ "-Wno-deprecated-declarations -Wno-ignored-attributes -Wno-parentheses-Werror=format-security -Wp,-D_FORTIFY_SOURCE=2i -Werror=implicit-function-declaration"
+ENV _R_CHECK_AUTOCONF_ true
+ENV _R_CHECK_THINGS_IN_CHECK_DIR_ true
+ENV _R_CHECK_THINGS_IN_TEMP_DIR_ true
+ENV _R_CHECK_THINGS_IN_TEMP_DIR_EXCLUDE_ "^ompi"
+ENV _R_CHECK_BASHISMS_ true
+ENV _R_CHECK_DEPENDS_ONLY_DATA_ true
+ENV _R_CHECK_MATRIX_DATA_ TRUE
+ENV _R_CHECK_RD_VALIDATE_RD2HTML_ true
+ENV _R_CHECK_RD_MATH_RENDERING_ true
+
+# ------------------------------------------------------------------------------------
+# Check config, no need to check the PDF manual and vignettes here.
+# We also avoid that bashism checks, as it needs external tools.
 
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
