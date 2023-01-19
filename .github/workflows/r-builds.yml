@@ -3,6 +3,8 @@ name: R builds
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron:  '55 2 * * *'
 
 permissions:
   contents: write
