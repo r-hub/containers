@@ -42,10 +42,13 @@ jobs:
         run: |
           pkg=$(find integration -name "*.deb" -or -name "*.rpm")
           cp "$pkg" .
+          ls -l "$pkg"
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: "*-rstudio-*.{deb,rpm}"
+          files: |
+            *-rstudio-*.deb
+            *-rstudio-*.rpm
           name: "Latest builds"
           tag_name: latest
