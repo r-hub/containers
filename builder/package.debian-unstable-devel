@@ -67,4 +67,7 @@ nfpm package \
   -p deb \
   -t "/tmp/output/${OS_IDENTIFIER}"
 
-export PKG_FILE=$(ls /tmp/output/${OS_IDENTIFIER}/r-${R_VERSION}${R_TYPE}*.deb | head -1)
+TMP=$(ls /tmp/output/${OS_IDENTIFIER}/r-${R_VERSION}${R_TYPE}*.deb | head -1)
+mv "$TMP" $(echo $TMP | sed "s|/r-|/r-rstudio-${OS_IDENTIFIER}-|")
+
+export PKG_FILE=$(ls /tmp/output/${OS_IDENTIFIER}/r-*.deb | head -1)
