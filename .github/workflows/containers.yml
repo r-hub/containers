@@ -54,5 +54,6 @@ jobs:
       with:
         platforms: linux/amd64
         push: true
-        load: true
-        tags: rhub/${{ matrix.container }}:latest
+        tags: |
+          rhub/${{ matrix.container }}:latest
+          ghcr.io/r-hub/containers/${{ matrix.container }}:latest
