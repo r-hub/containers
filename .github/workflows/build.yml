@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   setup-matrix:
@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: ${{ fromJson(needs.setup-matrix.outputs.platforms) }}    
+        platform: ${{ fromJson(needs.setup-matrix.outputs.platforms) }}
     runs-on: ubuntu-latest
     name: Docker image (${{ matrix.platform }})
     steps:
@@ -37,3 +37,15 @@ jobs:
 
       - name: Build R
         run: docker-compose up ${{ matrix.platform }}
+
+      - name: Copy package
+        run: |
+          pkg=$(find integration -name "*.deb" -or -name "*.rpm")
+          cp "$pkg" .
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "*-rstudio-*.{deb,rpm}"
+          name: "Latest builds"
+          tag_name: latest
