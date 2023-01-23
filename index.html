@@ -1,0 +1,3362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>R-hub Docker images</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">R-hub Docker images</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#atlas" id="toc-atlas" class="nav-link active" data-scroll-target="#atlas"><code>atlas</code></a></li>
+  <li><a href="#gcc-13" id="toc-gcc-13" class="nav-link" data-scroll-target="#gcc-13"><code>gcc-13</code></a></li>
+  <li><a href="#nold" id="toc-nold" class="nav-link" data-scroll-target="#nold"><code>nold</code></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">R-hub Docker images</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="atlas" class="level2">
+<h2 class="anchored" data-anchor-id="atlas"><code>atlas</code></h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">6349c65</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">7b3b306</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><strong>id:</strong> sha256:6349c65b826aa42c104591abab37177a7db0e2e04a6c462f7c64e3cb3a424d8e <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-01-23T12:04:22.948036128Z <br> <strong>size:</strong> 1.44 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux c42b62156924 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="36 (Container Image)"
+ID=fedora
+VERSION_ID=36
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f36"
+PRETTY_NAME="Fedora Linux 36 (Container Image)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:36"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f36/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=36
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=36
+PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+SUPPORT_END=2023-05-16
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-01-17 r83630)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Fedora Linux 36 (Container Image)
+
+Matrix products: default
+BLAS/LAPACK: /usr/lib64/atlas/libsatlas.so.3.10;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                zlib                                bzlib 
+                            "1.2.11"                 "1.0.8, 13-Jul-2019" 
+                                  xz                                 PCRE 
+                             "5.2.5"                   "10.40 2022-04-14" 
+                                 ICU                                  TRE 
+                              "69.1"            "TRE 0.8.0 R_fixes (BSD)" 
+                               iconv                             readline 
+                        "glibc 2.35"                                "8.2" 
+                                BLAS 
+"/usr/lib64/atlas/libsatlas.so.3.10" 
+
+
+&gt; libcurlVersion()
+[1] "7.82.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.5"
+attr(,"libssh_version")
+[1] "libssh/0.9.6/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.10.0"
+
+
+&gt; La_library()
+[1] "/usr/lib64/atlas/libsatlas.so.3.10"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.6"                       ""                 "1.50.9" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CXX = g++ -std=gnu++14
+CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2 -mtune=native -Wall -pedantic
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2 -mtune=native -Wall -pedantic
+SAFE_FFLAGS = -g -O2 -mtune=native -Wall -pedantic -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++14
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRblas
+LAPACK_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRlapack
+MAKE = make
+LIBnn = lib
+AR = gcc-ar
+NM = /usr/bin/nm -B
+RANLIB = gcc-ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>libgcc-12.2.1-4.fc36.x86_64
+crypto-policies-20220428-1.gitdfb10ea.fc36.noarch
+python-setuptools-wheel-59.6.0-3.fc36.noarch
+pcre2-syntax-10.40-1.fc36.noarch
+libreport-filesystem-2.17.4-1.fc36.noarch
+dnf-data-4.14.0-1.fc36.noarch
+fedora-gpg-keys-36-4.noarch
+fedora-repos-36-4.noarch
+setup-2.14.1-1.fc36.noarch
+filesystem-3.18-2.fc36.x86_64
+basesystem-11-13.fc36.noarch
+publicsuffix-list-dafsa-20210518-4.fc36.noarch
+ncurses-base-6.2-9.20210508.fc36.noarch
+ncurses-libs-6.2-9.20210508.fc36.x86_64
+glibc-common-2.35-20.fc36.x86_64
+glibc-minimal-langpack-2.35-20.fc36.x86_64
+glibc-2.35-20.fc36.x86_64
+zlib-1.2.11-33.fc36.x86_64
+bzip2-libs-1.0.8-11.fc36.x86_64
+xz-libs-5.2.5-9.fc36.x86_64
+libzstd-1.5.2-2.fc36.x86_64
+sqlite-libs-3.36.0-5.fc36.x86_64
+libcap-2.48-4.fc36.x86_64
+popt-1.18-7.fc36.x86_64
+gmp-6.2.1-2.fc36.x86_64
+libgpg-error-1.45-1.fc36.x86_64
+libxml2-2.10.3-2.fc36.x86_64
+libstdc++-12.2.1-4.fc36.x86_64
+libuuid-2.38-1.fc36.x86_64
+file-libs-5.41-4.fc36.x86_64
+libattr-2.5.1-4.fc36.x86_64
+libacl-2.3.1-3.fc36.x86_64
+libcom_err-1.46.5-2.fc36.x86_64
+libffi-3.4.2-8.fc36.x86_64
+p11-kit-0.24.1-2.fc36.x86_64
+libunistring-1.0-1.fc36.x86_64
+libidn2-2.3.4-1.fc36.x86_64
+libsmartcols-2.38-1.fc36.x86_64
+readline-8.2-2.fc36.x86_64
+libassuan-2.5.5-4.fc36.x86_64
+libgcrypt-1.10.1-3.fc36.x86_64
+gdbm-libs-1.22-2.fc36.x86_64
+json-c-0.15-3.fc36.x86_64
+keyutils-libs-1.6.1-4.fc36.x86_64
+libeconf-0.4.0-3.fc36.x86_64
+libsepol-3.3-3.fc36.x86_64
+lz4-libs-1.9.3-4.fc36.x86_64
+pcre-8.45-1.fc36.1.x86_64
+expat-2.5.0-1.fc36.x86_64
+libcomps-0.1.18-2.fc36.x86_64
+grep-3.7-2.fc36.x86_64
+libpsl-0.21.1-5.fc36.x86_64
+mpdecimal-2.5.1-3.fc36.x86_64
+mpfr-4.1.0-9.fc36.x86_64
+nettle-3.8-1.fc36.x86_64
+libbrotli-1.0.9-7.fc36.x86_64
+libdb-5.3.28-51.fc36.x86_64
+libsigsegv-2.14-2.fc36.x86_64
+gawk-5.1.1-2.fc36.x86_64
+libverto-0.3.2-3.fc36.x86_64
+libyaml-0.2.5-7.fc36.x86_64
+npth-1.6-8.fc36.x86_64
+alternatives-1.21-1.fc36.x86_64
+p11-kit-trust-0.24.1-2.fc36.x86_64
+gnutls-3.7.8-3.fc36.x86_64
+libcap-ng-0.8.3-1.fc36.x86_64
+audit-libs-3.0.9-1.fc36.x86_64
+pam-libs-1.5.2-13.fc36.x86_64
+libgomp-12.2.1-4.fc36.x86_64
+libnghttp2-1.51.0-1.fc36.x86_64
+pcre2-10.40-1.fc36.x86_64
+libselinux-3.3-4.fc36.x86_64
+sed-4.8-10.fc36.x86_64
+openssl-libs-3.0.5-2.fc36.x86_64
+ca-certificates-2022.2.54-1.2.fc36.noarch
+krb5-libs-1.19.2-12.fc36.x86_64
+libtirpc-1.3.3-0.fc36.x86_64
+libnsl2-2.0.0-3.fc36.x86_64
+libblkid-2.38-1.fc36.x86_64
+libmount-2.38-1.fc36.x86_64
+glib2-2.72.3-1.fc36.x86_64
+libfsverity-1.4-7.fc36.x86_64
+zchunk-libs-1.2.3-1.fc36.x86_64
+cyrus-sasl-lib-2.1.27-18.fc36.x86_64
+python-pip-wheel-21.3.1-4.fc36.noarch
+python3-libcomps-0.1.18-2.fc36.x86_64
+gzip-1.11-3.fc36.x86_64
+cracklib-2.9.6-28.fc36.x86_64
+authselect-libs-1.4.0-1.fc36.x86_64
+authselect-1.4.0-1.fc36.x86_64
+libpwquality-1.4.4-7.fc36.x86_64
+pam-1.5.2-13.fc36.x86_64
+libevent-2.1.12-6.fc36.x86_64
+openldap-2.6.3-1.fc36.x86_64
+gnupg2-2.3.7-3.fc36.x86_64
+gpgme-1.17.0-4.fc36.x86_64
+python3-gpg-1.17.0-4.fc36.x86_64
+openldap-compat-2.6.3-1.fc36.x86_64
+libarchive-3.5.3-3.fc36.x86_64
+findutils-4.9.0-1.fc36.x86_64
+libsemanage-3.3-3.fc36.x86_64
+shadow-utils-4.11.1-5.fc36.x86_64
+libssh-config-0.9.6-4.fc36.noarch
+libssh-0.9.6-4.fc36.x86_64
+rpm-4.17.1-3.fc36.x86_64
+rpm-libs-4.17.1-3.fc36.x86_64
+libmodulemd-2.14.0-2.fc36.x86_64
+libsolv-0.7.22-1.fc36.x86_64
+rpm-build-libs-4.17.1-3.fc36.x86_64
+libdnf-0.68.0-1.fc36.x86_64
+python3-libdnf-0.68.0-1.fc36.x86_64
+python3-hawkey-0.68.0-1.fc36.x86_64
+ima-evm-utils-1.4-5.fc36.x86_64
+rpm-sign-libs-4.17.1-3.fc36.x86_64
+python3-rpm-4.17.1-3.fc36.x86_64
+python3-dnf-4.14.0-1.fc36.noarch
+dnf-4.14.0-1.fc36.noarch
+yum-4.14.0-1.fc36.noarch
+sudo-1.9.8-5.p2.fc36.x86_64
+util-linux-core-2.38-1.fc36.x86_64
+tar-1.34-3.fc36.x86_64
+fedora-repos-modular-36-4.noarch
+rootfiles-8.1-31.fc36.noarch
+gpg-pubkey-38ab71f4-60242b08
+bash-5.2.15-1.fc36.x86_64
+libcurl-7.82.0-12.fc36.x86_64
+fedora-release-identity-container-36-21.noarch
+fedora-release-container-36-21.noarch
+fedora-release-common-36-21.noarch
+elfutils-default-yama-scope-0.188-3.fc36.noarch
+vim-data-9.0.1182-1.fc36.noarch
+tzdata-2022g-1.fc36.noarch
+libxcrypt-4.4.33-4.fc36.x86_64
+python3-3.10.9-1.fc36.x86_64
+python3-libs-3.10.9-1.fc36.x86_64
+elfutils-libelf-0.188-3.fc36.x86_64
+coreutils-common-9.0-9.fc36.x86_64
+coreutils-9.0-9.fc36.x86_64
+elfutils-libs-0.188-3.fc36.x86_64
+vim-minimal-9.0.1182-1.fc36.x86_64
+curl-7.82.0-12.fc36.x86_64
+librepo-1.15.1-1.fc36.x86_64
+tpm2-tss-3.2.1-1.fc36.x86_64
+systemd-libs-250.9-1.fc36.x86_64
+lua-libs-5.4.4-7.fc36.x86_64
+libtasn1-4.19.0-1.fc36.x86_64
+libksba-1.6.3-1.fc36.x86_64
+dbus-libs-1.14.4-1.fc36.x86_64
+python3-dbus-1.2.18-3.fc36.x86_64
+python3-six-1.16.0-5.fc36.noarch
+python3-dateutil-2.8.1-8.fc36.noarch
+python3-distro-1.6.0-2.fc36.noarch
+python3-dnf-plugins-core-4.3.1-1.fc36.noarch
+dnf-plugins-core-4.3.1-1.fc36.noarch
+openblas-0.3.19-3.fc36.x86_64
+libmpc-1.2.1-4.fc36.x86_64
+libquadmath-12.2.1-4.fc36.x86_64
+libgfortran-12.2.1-4.fc36.x86_64
+unzip-6.0-57.fc36.x86_64
+tcl-8.6.12-2.fc36.x86_64
+libpng-1.6.37-12.fc36.x86_64
+libICE-1.0.10-8.fc36.x86_64
+libSM-1.2.3-10.fc36.x86_64
+fonts-filesystem-2.0.5-7.fc36.noarch
+zip-3.0-32.fc36.x86_64
+openblas-openmp-0.3.19-3.fc36.x86_64
+openblas-openmp64-0.3.19-3.fc36.x86_64
+openblas-openmp64_-0.3.19-3.fc36.x86_64
+openblas-serial-0.3.19-3.fc36.x86_64
+openblas-serial64-0.3.19-3.fc36.x86_64
+openblas-serial64_-0.3.19-3.fc36.x86_64
+openblas-threads-0.3.19-3.fc36.x86_64
+openblas-threads64-0.3.19-3.fc36.x86_64
+openblas-threads64_-0.3.19-3.fc36.x86_64
+cpp-12.2.1-4.fc36.x86_64
+pcre2-utf32-10.40-1.fc36.x86_64
+pcre2-utf16-10.40-1.fc36.x86_64
+libwebp-1.2.4-2.fc36.x86_64
+libtool-ltdl-2.4.7-1.fc36.x86_64
+libstdc++-devel-12.2.1-4.fc36.x86_64
+libicu-69.1-6.fc36.x86_64
+kernel-headers-6.1.5-100.fc36.x86_64
+google-noto-fonts-common-20201206-10.fc36.noarch
+google-noto-sans-vf-fonts-20201206-10.fc36.noarch
+langpacks-core-font-en-3.0-25.fc36.noarch
+glibc-headers-x86-2.35-20.fc36.noarch
+gc-8.0.6-3.fc36.x86_64
+guile22-2.2.7-5.fc36.x86_64
+make-4.3-7.fc36.x86_64
+fribidi-1.0.11-3.fc36.x86_64
+elfutils-debuginfod-client-0.188-3.fc36.x86_64
+binutils-gold-2.37-37.fc36.x86_64
+binutils-2.37-37.fc36.x86_64
+xml-common-0.6.3-58.fc36.noarch
+which-2.21-32.fc36.x86_64
+pkgconf-m4-1.8.0-2.fc36.noarch
+pixman-0.40.0-5.fc36.x86_64
+openblas-srpm-macros-2-11.fc36.noarch
+openblas-devel-0.3.19-3.fc36.x86_64
+libpkgconf-1.8.0-2.fc36.x86_64
+pkgconf-1.8.0-2.fc36.x86_64
+pkgconf-pkg-config-1.8.0-2.fc36.x86_64
+bzip2-devel-1.0.8-11.fc36.x86_64
+xz-devel-5.2.5-9.fc36.x86_64
+libcurl-devel-7.82.0-12.fc36.x86_64
+libicu-devel-69.1-6.fc36.x86_64
+glibc-devel-2.35-20.fc36.x86_64
+libxcrypt-devel-4.4.33-4.fc36.x86_64
+gcc-12.2.1-4.fc36.x86_64
+gcc-c++-12.2.1-4.fc36.x86_64
+libquadmath-devel-12.2.1-4.fc36.x86_64
+gcc-gfortran-12.2.1-4.fc36.x86_64
+pcre2-devel-10.40-1.fc36.x86_64
+zlib-devel-1.2.11-33.fc36.x86_64
+libjpeg-turbo-2.1.2-2.fc36.x86_64
+libdatrie-0.2.13-3.fc36.x86_64
+libthai-0.1.29-2.fc36.x86_64
+libXau-1.0.9-8.fc36.x86_64
+libxcb-1.13.1-9.fc36.x86_64
+libX11-common-1.7.3.1-2.fc36.noarch
+libX11-1.7.3.1-2.fc36.x86_64
+libXrender-0.9.10-16.fc36.x86_64
+libXext-1.3.4-8.fc36.x86_64
+libXt-1.2.1-2.fc36.x86_64
+libXmu-1.1.3-8.fc36.x86_64
+jbigkit-libs-2.1-23.fc36.x86_64
+libtiff-4.4.0-4.fc36.x86_64
+graphite2-1.3.14-9.fc36.x86_64
+freetype-2.12.1-2.fc36.x86_64
+harfbuzz-4.0.0-2.fc36.x86_64
+fontconfig-2.14.1-2.fc36.x86_64
+libXft-2.3.4-2.fc36.x86_64
+tk-8.6.12-2.fc36.x86_64
+cairo-1.17.6-1.fc36.x86_64
+pango-1.50.9-1.fc36.x86_64
+R-devel-gcc-1-1.x86_64
+glibc-langpack-en-2.35-20.fc36.x86_64
+atlas-3.10.3-19.fc36.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><strong>id:</strong> sha256:7b3b3068f8bc27f80de61622fac448d0046010e2e13c8e3f746c654d3b69f216 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-01-23T06:11:34.246363008Z <br> <strong>size:</strong> 1.44 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux db9769b5fcec 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="36 (Container Image)"
+ID=fedora
+VERSION_ID=36
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f36"
+PRETTY_NAME="Fedora Linux 36 (Container Image)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:36"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f36/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=36
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=36
+PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+SUPPORT_END=2023-05-16
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-01-17 r83630)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Fedora Linux 36 (Container Image)
+
+Matrix products: default
+BLAS/LAPACK: /usr/lib64/atlas/libsatlas.so.3.10;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                zlib                                bzlib 
+                            "1.2.11"                 "1.0.8, 13-Jul-2019" 
+                                  xz                                 PCRE 
+                             "5.2.5"                   "10.40 2022-04-14" 
+                                 ICU                                  TRE 
+                              "69.1"            "TRE 0.8.0 R_fixes (BSD)" 
+                               iconv                             readline 
+                        "glibc 2.35"                                "8.2" 
+                                BLAS 
+"/usr/lib64/atlas/libsatlas.so.3.10" 
+
+
+&gt; libcurlVersion()
+[1] "7.82.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.5"
+attr(,"libssh_version")
+[1] "libssh/0.9.6/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.10.0"
+
+
+&gt; La_library()
+[1] "/usr/lib64/atlas/libsatlas.so.3.10"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.6"                       ""                 "1.50.9" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CXX = g++ -std=gnu++14
+CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2 -mtune=native -Wall -pedantic
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2 -mtune=native -Wall -pedantic
+SAFE_FFLAGS = -g -O2 -mtune=native -Wall -pedantic -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++14
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRblas
+LAPACK_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRlapack
+MAKE = make
+LIBnn = lib
+AR = gcc-ar
+NM = /usr/bin/nm -B
+RANLIB = gcc-ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>libgcc-12.2.1-4.fc36.x86_64
+crypto-policies-20220428-1.gitdfb10ea.fc36.noarch
+python-setuptools-wheel-59.6.0-3.fc36.noarch
+pcre2-syntax-10.40-1.fc36.noarch
+libreport-filesystem-2.17.4-1.fc36.noarch
+dnf-data-4.14.0-1.fc36.noarch
+fedora-gpg-keys-36-4.noarch
+fedora-repos-36-4.noarch
+setup-2.14.1-1.fc36.noarch
+filesystem-3.18-2.fc36.x86_64
+basesystem-11-13.fc36.noarch
+publicsuffix-list-dafsa-20210518-4.fc36.noarch
+ncurses-base-6.2-9.20210508.fc36.noarch
+ncurses-libs-6.2-9.20210508.fc36.x86_64
+glibc-common-2.35-20.fc36.x86_64
+glibc-minimal-langpack-2.35-20.fc36.x86_64
+glibc-2.35-20.fc36.x86_64
+zlib-1.2.11-33.fc36.x86_64
+bzip2-libs-1.0.8-11.fc36.x86_64
+xz-libs-5.2.5-9.fc36.x86_64
+libzstd-1.5.2-2.fc36.x86_64
+sqlite-libs-3.36.0-5.fc36.x86_64
+libcap-2.48-4.fc36.x86_64
+popt-1.18-7.fc36.x86_64
+gmp-6.2.1-2.fc36.x86_64
+libgpg-error-1.45-1.fc36.x86_64
+libxml2-2.10.3-2.fc36.x86_64
+libstdc++-12.2.1-4.fc36.x86_64
+libuuid-2.38-1.fc36.x86_64
+file-libs-5.41-4.fc36.x86_64
+libattr-2.5.1-4.fc36.x86_64
+libacl-2.3.1-3.fc36.x86_64
+libcom_err-1.46.5-2.fc36.x86_64
+libffi-3.4.2-8.fc36.x86_64
+p11-kit-0.24.1-2.fc36.x86_64
+libunistring-1.0-1.fc36.x86_64
+libidn2-2.3.4-1.fc36.x86_64
+libsmartcols-2.38-1.fc36.x86_64
+readline-8.2-2.fc36.x86_64
+libassuan-2.5.5-4.fc36.x86_64
+libgcrypt-1.10.1-3.fc36.x86_64
+gdbm-libs-1.22-2.fc36.x86_64
+json-c-0.15-3.fc36.x86_64
+keyutils-libs-1.6.1-4.fc36.x86_64
+libeconf-0.4.0-3.fc36.x86_64
+libsepol-3.3-3.fc36.x86_64
+lz4-libs-1.9.3-4.fc36.x86_64
+pcre-8.45-1.fc36.1.x86_64
+expat-2.5.0-1.fc36.x86_64
+libcomps-0.1.18-2.fc36.x86_64
+grep-3.7-2.fc36.x86_64
+libpsl-0.21.1-5.fc36.x86_64
+mpdecimal-2.5.1-3.fc36.x86_64
+mpfr-4.1.0-9.fc36.x86_64
+nettle-3.8-1.fc36.x86_64
+libbrotli-1.0.9-7.fc36.x86_64
+libdb-5.3.28-51.fc36.x86_64
+libsigsegv-2.14-2.fc36.x86_64
+gawk-5.1.1-2.fc36.x86_64
+libverto-0.3.2-3.fc36.x86_64
+libyaml-0.2.5-7.fc36.x86_64
+npth-1.6-8.fc36.x86_64
+alternatives-1.21-1.fc36.x86_64
+p11-kit-trust-0.24.1-2.fc36.x86_64
+gnutls-3.7.8-3.fc36.x86_64
+libcap-ng-0.8.3-1.fc36.x86_64
+audit-libs-3.0.9-1.fc36.x86_64
+pam-libs-1.5.2-13.fc36.x86_64
+libgomp-12.2.1-4.fc36.x86_64
+libnghttp2-1.51.0-1.fc36.x86_64
+pcre2-10.40-1.fc36.x86_64
+libselinux-3.3-4.fc36.x86_64
+sed-4.8-10.fc36.x86_64
+openssl-libs-3.0.5-2.fc36.x86_64
+ca-certificates-2022.2.54-1.2.fc36.noarch
+krb5-libs-1.19.2-12.fc36.x86_64
+libtirpc-1.3.3-0.fc36.x86_64
+libnsl2-2.0.0-3.fc36.x86_64
+libblkid-2.38-1.fc36.x86_64
+libmount-2.38-1.fc36.x86_64
+glib2-2.72.3-1.fc36.x86_64
+libfsverity-1.4-7.fc36.x86_64
+zchunk-libs-1.2.3-1.fc36.x86_64
+cyrus-sasl-lib-2.1.27-18.fc36.x86_64
+python-pip-wheel-21.3.1-4.fc36.noarch
+python3-libcomps-0.1.18-2.fc36.x86_64
+gzip-1.11-3.fc36.x86_64
+cracklib-2.9.6-28.fc36.x86_64
+authselect-libs-1.4.0-1.fc36.x86_64
+authselect-1.4.0-1.fc36.x86_64
+libpwquality-1.4.4-7.fc36.x86_64
+pam-1.5.2-13.fc36.x86_64
+libevent-2.1.12-6.fc36.x86_64
+openldap-2.6.3-1.fc36.x86_64
+gnupg2-2.3.7-3.fc36.x86_64
+gpgme-1.17.0-4.fc36.x86_64
+python3-gpg-1.17.0-4.fc36.x86_64
+openldap-compat-2.6.3-1.fc36.x86_64
+libarchive-3.5.3-3.fc36.x86_64
+findutils-4.9.0-1.fc36.x86_64
+libsemanage-3.3-3.fc36.x86_64
+shadow-utils-4.11.1-5.fc36.x86_64
+libssh-config-0.9.6-4.fc36.noarch
+libssh-0.9.6-4.fc36.x86_64
+rpm-4.17.1-3.fc36.x86_64
+rpm-libs-4.17.1-3.fc36.x86_64
+libmodulemd-2.14.0-2.fc36.x86_64
+libsolv-0.7.22-1.fc36.x86_64
+rpm-build-libs-4.17.1-3.fc36.x86_64
+libdnf-0.68.0-1.fc36.x86_64
+python3-libdnf-0.68.0-1.fc36.x86_64
+python3-hawkey-0.68.0-1.fc36.x86_64
+ima-evm-utils-1.4-5.fc36.x86_64
+rpm-sign-libs-4.17.1-3.fc36.x86_64
+python3-rpm-4.17.1-3.fc36.x86_64
+python3-dnf-4.14.0-1.fc36.noarch
+dnf-4.14.0-1.fc36.noarch
+yum-4.14.0-1.fc36.noarch
+sudo-1.9.8-5.p2.fc36.x86_64
+util-linux-core-2.38-1.fc36.x86_64
+tar-1.34-3.fc36.x86_64
+fedora-repos-modular-36-4.noarch
+rootfiles-8.1-31.fc36.noarch
+gpg-pubkey-38ab71f4-60242b08
+bash-5.2.15-1.fc36.x86_64
+libcurl-7.82.0-12.fc36.x86_64
+fedora-release-identity-container-36-21.noarch
+fedora-release-container-36-21.noarch
+fedora-release-common-36-21.noarch
+elfutils-default-yama-scope-0.188-3.fc36.noarch
+vim-data-9.0.1182-1.fc36.noarch
+tzdata-2022g-1.fc36.noarch
+libxcrypt-4.4.33-4.fc36.x86_64
+python3-3.10.9-1.fc36.x86_64
+python3-libs-3.10.9-1.fc36.x86_64
+elfutils-libelf-0.188-3.fc36.x86_64
+coreutils-common-9.0-9.fc36.x86_64
+coreutils-9.0-9.fc36.x86_64
+elfutils-libs-0.188-3.fc36.x86_64
+vim-minimal-9.0.1182-1.fc36.x86_64
+curl-7.82.0-12.fc36.x86_64
+librepo-1.15.1-1.fc36.x86_64
+tpm2-tss-3.2.1-1.fc36.x86_64
+systemd-libs-250.9-1.fc36.x86_64
+lua-libs-5.4.4-7.fc36.x86_64
+libtasn1-4.19.0-1.fc36.x86_64
+libksba-1.6.3-1.fc36.x86_64
+dbus-libs-1.14.4-1.fc36.x86_64
+python3-dbus-1.2.18-3.fc36.x86_64
+python3-six-1.16.0-5.fc36.noarch
+python3-dateutil-2.8.1-8.fc36.noarch
+python3-distro-1.6.0-2.fc36.noarch
+python3-dnf-plugins-core-4.3.1-1.fc36.noarch
+dnf-plugins-core-4.3.1-1.fc36.noarch
+openblas-0.3.19-3.fc36.x86_64
+libmpc-1.2.1-4.fc36.x86_64
+libquadmath-12.2.1-4.fc36.x86_64
+libgfortran-12.2.1-4.fc36.x86_64
+unzip-6.0-57.fc36.x86_64
+tcl-8.6.12-2.fc36.x86_64
+libpng-1.6.37-12.fc36.x86_64
+libICE-1.0.10-8.fc36.x86_64
+libSM-1.2.3-10.fc36.x86_64
+fonts-filesystem-2.0.5-7.fc36.noarch
+zip-3.0-32.fc36.x86_64
+openblas-openmp-0.3.19-3.fc36.x86_64
+openblas-openmp64-0.3.19-3.fc36.x86_64
+openblas-openmp64_-0.3.19-3.fc36.x86_64
+openblas-serial-0.3.19-3.fc36.x86_64
+openblas-serial64-0.3.19-3.fc36.x86_64
+openblas-serial64_-0.3.19-3.fc36.x86_64
+openblas-threads-0.3.19-3.fc36.x86_64
+openblas-threads64-0.3.19-3.fc36.x86_64
+openblas-threads64_-0.3.19-3.fc36.x86_64
+cpp-12.2.1-4.fc36.x86_64
+pcre2-utf32-10.40-1.fc36.x86_64
+pcre2-utf16-10.40-1.fc36.x86_64
+libwebp-1.2.4-2.fc36.x86_64
+libtool-ltdl-2.4.7-1.fc36.x86_64
+libstdc++-devel-12.2.1-4.fc36.x86_64
+libicu-69.1-6.fc36.x86_64
+kernel-headers-6.1.5-100.fc36.x86_64
+google-noto-fonts-common-20201206-10.fc36.noarch
+google-noto-sans-vf-fonts-20201206-10.fc36.noarch
+langpacks-core-font-en-3.0-25.fc36.noarch
+glibc-headers-x86-2.35-20.fc36.noarch
+gc-8.0.6-3.fc36.x86_64
+guile22-2.2.7-5.fc36.x86_64
+make-4.3-7.fc36.x86_64
+fribidi-1.0.11-3.fc36.x86_64
+elfutils-debuginfod-client-0.188-3.fc36.x86_64
+binutils-gold-2.37-37.fc36.x86_64
+binutils-2.37-37.fc36.x86_64
+xml-common-0.6.3-58.fc36.noarch
+which-2.21-32.fc36.x86_64
+pkgconf-m4-1.8.0-2.fc36.noarch
+pixman-0.40.0-5.fc36.x86_64
+openblas-srpm-macros-2-11.fc36.noarch
+openblas-devel-0.3.19-3.fc36.x86_64
+libpkgconf-1.8.0-2.fc36.x86_64
+pkgconf-1.8.0-2.fc36.x86_64
+pkgconf-pkg-config-1.8.0-2.fc36.x86_64
+bzip2-devel-1.0.8-11.fc36.x86_64
+xz-devel-5.2.5-9.fc36.x86_64
+libcurl-devel-7.82.0-12.fc36.x86_64
+libicu-devel-69.1-6.fc36.x86_64
+glibc-devel-2.35-20.fc36.x86_64
+libxcrypt-devel-4.4.33-4.fc36.x86_64
+gcc-12.2.1-4.fc36.x86_64
+gcc-c++-12.2.1-4.fc36.x86_64
+libquadmath-devel-12.2.1-4.fc36.x86_64
+gcc-gfortran-12.2.1-4.fc36.x86_64
+pcre2-devel-10.40-1.fc36.x86_64
+zlib-devel-1.2.11-33.fc36.x86_64
+libjpeg-turbo-2.1.2-2.fc36.x86_64
+libdatrie-0.2.13-3.fc36.x86_64
+libthai-0.1.29-2.fc36.x86_64
+libXau-1.0.9-8.fc36.x86_64
+libxcb-1.13.1-9.fc36.x86_64
+libX11-common-1.7.3.1-2.fc36.noarch
+libX11-1.7.3.1-2.fc36.x86_64
+libXrender-0.9.10-16.fc36.x86_64
+libXext-1.3.4-8.fc36.x86_64
+libXt-1.2.1-2.fc36.x86_64
+libXmu-1.1.3-8.fc36.x86_64
+jbigkit-libs-2.1-23.fc36.x86_64
+libtiff-4.4.0-4.fc36.x86_64
+graphite2-1.3.14-9.fc36.x86_64
+freetype-2.12.1-2.fc36.x86_64
+harfbuzz-4.0.0-2.fc36.x86_64
+fontconfig-2.14.1-2.fc36.x86_64
+libXft-2.3.4-2.fc36.x86_64
+tk-8.6.12-2.fc36.x86_64
+cairo-1.17.6-1.fc36.x86_64
+pango-1.50.9-1.fc36.x86_64
+R-devel-gcc-1-1.x86_64
+glibc-langpack-en-2.35-20.fc36.x86_64
+atlas-3.10.3-19.fc36.x86_64
+</code></pre>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="gcc-13" class="level2">
+<h2 class="anchored" data-anchor-id="gcc-13"><code>gcc-13</code></h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">1e1fed6</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">f4034bc</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p><strong>id:</strong> sha256:1e1fed6ed8546051689ebafe09a9c69ebd4ab8db676c6c2542d0dfe554100864 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-13:latest <br> <strong>created:</strong> 2023-01-23T12:03:34.076865319Z <br> <strong>size:</strong> 1.30 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux 3c6f9d485c27 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="38 (Container Image Prerelease)"
+ID=fedora
+VERSION_ID=38
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f38"
+PRETTY_NAME="Fedora Linux 38 (Container Image Prerelease)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:38"
+DEFAULT_HOSTNAME="fedora"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/rawhide/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=rawhide
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=rawhide
+SUPPORT_END=2024-05-14
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-01-17 r83630)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Fedora Linux 38 (Container Image Prerelease)
+
+Matrix products: default
+BLAS/LAPACK: /usr/lib64/libopenblasp-r0.3.21.so;  LAPACK version 3.9.0
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                zlib                                bzlib 
+                            "1.2.13"                 "1.0.8, 13-Jul-2019" 
+                                  xz                                 PCRE 
+                             "5.2.9"                   "10.42 2022-12-11" 
+                                 ICU                                  TRE 
+                              "72.1"            "TRE 0.8.0 R_fixes (BSD)" 
+                               iconv                             readline 
+                   "glibc 2.36.9000"                                "8.2" 
+                                BLAS 
+"/usr/lib64/libopenblasp-r0.3.21.so" 
+
+
+&gt; libcurlVersion()
+[1] "7.87.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.7"
+attr(,"libssh_version")
+[1] "libssh/0.10.4/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.9.0"
+
+
+&gt; La_library()
+[1] "/usr/lib64/libopenblasp-r0.3.21.so"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.6"                       ""                "1.50.12" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CXX = g++ -std=gnu++14
+CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2 -mtune=native -Wall -pedantic
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2 -mtune=native -Wall -pedantic
+SAFE_FFLAGS = -g -O2 -mtune=native -Wall -pedantic -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++14
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -L/opt/R/devel-gcc-13/lib/R/lib -lRblas
+LAPACK_LIBS = -L/opt/R/devel-gcc-13/lib/R/lib -lRlapack
+MAKE = make
+LIBnn = lib
+AR = gcc-ar
+NM = /usr/bin/nm -B
+RANLIB = gcc-ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>python-setuptools-wheel-65.5.1-1.fc38.noarch
+libssh-config-0.10.4-2.fc38.noarch
+libreport-filesystem-2.17.6-1.fc38.noarch
+dnf-data-4.14.0-1.fc38.noarch
+fedora-gpg-keys-38-0.3.noarch
+fedora-repos-rawhide-38-0.3.noarch
+fedora-repos-38-0.3.noarch
+setup-2.14.3-1.fc38.noarch
+filesystem-3.18-2.fc37.x86_64
+basesystem-11-14.fc37.noarch
+bzip2-libs-1.0.8-12.fc37.x86_64
+xz-libs-5.2.9-1.fc38.x86_64
+libzstd-1.5.2-3.fc37.x86_64
+gmp-6.2.1-3.fc37.x86_64
+libcap-2.48-5.fc37.x86_64
+popt-1.19-1.fc38.x86_64
+libgpg-error-1.46-1.fc38.x86_64
+libxml2-2.10.3-2.fc38.x86_64
+elfutils-libelf-0.188-3.fc38.x86_64
+file-libs-5.42-4.fc37.x86_64
+readline-8.2-2.fc38.x86_64
+libattr-2.5.1-5.fc37.x86_64
+libacl-2.3.1-4.fc37.x86_64
+libffi-3.4.4-1.fc38.x86_64
+libunistring-1.0-2.fc37.x86_64
+libidn2-2.3.4-1.fc38.x86_64
+libassuan-2.5.5-5.fc37.x86_64
+nettle-3.8-2.fc37.x86_64
+rpm-sequoia-1.2.0-1.fc38.x86_64
+expat-2.5.0-1.fc38.x86_64
+gdbm-libs-1.23-2.fc37.x86_64
+json-c-0.16-3.fc38.x86_64
+keyutils-libs-1.6.1-5.fc37.x86_64
+libcom_err-1.46.5-3.fc37.x86_64
+libeconf-0.4.0-4.fc37.x86_64
+sed-4.8-11.fc37.x86_64
+libtasn1-4.19.0-1.fc38.x86_64
+findutils-4.9.0-2.fc37.x86_64
+libb2-0.98.1-7.fc37.x86_64
+cyrus-sasl-lib-2.1.28-8.fc38.x86_64
+libcomps-0.1.18-4.fc37.x86_64
+mpdecimal-2.5.1-4.fc37.x86_64
+libgcrypt-1.10.1-6.fc38.x86_64
+mpfr-4.1.1-2.fc38.x86_64
+elfutils-default-yama-scope-0.188-3.fc38.noarch
+elfutils-libs-0.188-3.fc38.x86_64
+alternatives-1.21-1.fc38.x86_64
+gnutls-3.7.8-9.fc38.x86_64
+glib2-2.74.1-2.fc38.x86_64
+libbrotli-1.0.9-9.fc37.x86_64
+shadow-utils-4.13-3.fc38.x86_64
+libdb-5.3.28-54.fc38.x86_64
+libnghttp2-1.51.0-1.fc38.x86_64
+libsigsegv-2.14-3.fc37.x86_64
+gawk-5.1.1-4.fc37.x86_64
+libverto-0.3.2-4.fc37.x86_64
+libyaml-0.2.5-8.fc37.x86_64
+libmodulemd-2.14.0-4.fc37.x86_64
+npth-1.6-10.fc38.x86_64
+fedora-repos-rawhide-modular-38-0.3.noarch
+libtirpc-1.3.3-0.fc37.x86_64
+libnsl2-2.0.0-4.fc37.x86_64
+libfsverity-1.4-8.fc37.x86_64
+zchunk-libs-1.2.3-1.fc38.x86_64
+libsolv-0.7.22-3.fc37.x86_64
+libssh-0.10.4-2.fc38.x86_64
+python-pip-wheel-22.3.1-1.fc38.noarch
+python3-libcomps-0.1.18-4.fc37.x86_64
+authselect-libs-1.4.2-1.fc38.x86_64
+authselect-1.4.2-1.fc38.x86_64
+gzip-1.12-2.fc37.x86_64
+cracklib-2.9.7-30.fc38.x86_64
+libarchive-3.6.1-3.fc38.x86_64
+libevent-2.1.12-7.fc37.x86_64
+openldap-2.6.3-1.fc38.x86_64
+gpgme-1.17.1-3.fc38.x86_64
+librepo-1.15.1-1.fc38.x86_64
+libdnf-0.68.0-1.fc38.x86_64
+python3-libdnf-0.68.0-1.fc38.x86_64
+python3-hawkey-0.68.0-1.fc38.x86_64
+python3-gpg-1.17.1-3.fc38.x86_64
+ima-evm-utils-1.4-6.fc37.x86_64
+python3-dnf-4.14.0-1.fc38.noarch
+dnf-4.14.0-1.fc38.noarch
+yum-4.14.0-1.fc38.noarch
+fedora-repos-modular-38-0.3.noarch
+tar-1.34-5.fc38.x86_64
+rootfiles-8.1-32.fc37.noarch
+gpg-pubkey-eb10b464-6202d9c6
+libgcc-13.0.1-0.1.fc38.x86_64
+tzdata-2022g-1.fc38.noarch
+fedora-release-identity-container-38-0.18.noarch
+crypto-policies-20221215-1.gita4c31a3.fc38.noarch
+fedora-release-container-38-0.18.noarch
+fedora-release-common-38-0.18.noarch
+vim-data-9.0.1221-1.fc38.noarch
+publicsuffix-list-dafsa-20221208-1.fc38.noarch
+pcre2-syntax-10.42-1.fc38.noarch
+ncurses-base-6.4-2.20230114.fc38.noarch
+ncurses-libs-6.4-2.20230114.fc38.x86_64
+glibc-2.36.9000-19.fc38.x86_64
+bash-5.2.15-1.fc38.x86_64
+glibc-common-2.36.9000-19.fc38.x86_64
+glibc-minimal-langpack-2.36.9000-19.fc38.x86_64
+zlib-1.2.13-2.fc38.x86_64
+sqlite-libs-3.40.1-1.fc38.x86_64
+libuuid-2.38.1-3.fc38.x86_64
+lua-libs-5.4.4-7.fc38.x86_64
+libblkid-2.38.1-3.fc38.x86_64
+libsepol-3.5-0.rc1.1.fc38.x86_64
+libxcrypt-4.4.33-5.fc38.x86_64
+p11-kit-0.24.1-5.fc38.x86_64
+pcre2-10.42-1.fc38.x86_64
+libselinux-3.5-0.rc1.1.fc38.1.x86_64
+libmount-2.38.1-3.fc38.x86_64
+grep-3.8-2.fc38.x86_64
+p11-kit-trust-0.24.1-5.fc38.x86_64
+libcap-ng-0.8.3-4.fc38.x86_64
+audit-libs-3.0.9-2.fc38.x86_64
+rpm-libs-4.18.0-9.fc38.x86_64
+pam-libs-1.5.2-15.fc38.x86_64
+libpwquality-1.4.5-1.fc38.x86_64
+libgomp-13.0.1-0.1.fc38.x86_64
+rpm-build-libs-4.18.0-9.fc38.x86_64
+libksba-1.6.3-1.fc38.x86_64
+gnupg2-2.4.0-1.fc38.x86_64
+rpm-sign-libs-4.18.0-9.fc38.x86_64
+libpsl-0.21.2-1.fc38.x86_64
+libsmartcols-2.38.1-3.fc38.x86_64
+lz4-libs-1.9.4-1.fc38.x86_64
+systemd-libs-252.4-598.fc38.x86_64
+coreutils-common-9.1-10.fc38.x86_64
+openssl-libs-3.0.7-3.fc38.x86_64
+coreutils-9.1-10.fc38.x86_64
+ca-certificates-2023.2.60-2.fc38.noarch
+krb5-libs-1.20.1-6.fc38.x86_64
+libcurl-7.87.0-4.fc38.x86_64
+curl-7.87.0-4.fc38.x86_64
+pam-1.5.2-15.fc38.x86_64
+python3-3.11.1-3.fc38.x86_64
+python3-libs-3.11.1-3.fc38.x86_64
+python3-rpm-4.18.0-9.fc38.x86_64
+sudo-1.9.12-1.p2.fc38.x86_64
+rpm-4.18.0-9.fc38.x86_64
+tpm2-tss-4.0.0-1.fc38.x86_64
+util-linux-core-2.38.1-3.fc38.x86_64
+libsemanage-3.5-0.rc1.1.fc38.x86_64
+vim-minimal-9.0.1221-1.fc38.x86_64
+libstdc++-13.0.1-0.1.fc38.x86_64
+python3-six-1.16.0-8.fc37.noarch
+python3-dateutil-2.8.2-4.fc37.noarch
+python3-distro-1.8.0-1.fc38.noarch
+dbus-libs-1.14.4-1.fc38.x86_64
+python3-dbus-1.3.2-1.fc38.x86_64
+python3-dnf-plugins-core-4.3.1-1.fc38.noarch
+dnf-plugins-core-4.3.1-1.fc38.noarch
+openblas-0.3.21-4.fc38.x86_64
+libmpc-1.3.1-1.fc38.x86_64
+libquadmath-13.0.1-0.1.fc38.x86_64
+libgfortran-13.0.1-0.1.fc38.x86_64
+unzip-6.0-58.fc38.x86_64
+tcl-8.6.12-3.fc38.x86_64
+libpng-1.6.37-13.fc37.x86_64
+libICE-1.0.10-9.fc37.x86_64
+libSM-1.2.3-11.fc37.x86_64
+fonts-filesystem-2.0.5-10.fc38.noarch
+zip-3.0-35.fc38.x86_64
+openblas-openmp-0.3.21-4.fc38.x86_64
+openblas-openmp64-0.3.21-4.fc38.x86_64
+openblas-openmp64_-0.3.21-4.fc38.x86_64
+openblas-serial-0.3.21-4.fc38.x86_64
+openblas-serial64-0.3.21-4.fc38.x86_64
+openblas-serial64_-0.3.21-4.fc38.x86_64
+openblas-threads-0.3.21-4.fc38.x86_64
+openblas-threads64-0.3.21-4.fc38.x86_64
+openblas-threads64_-0.3.21-4.fc38.x86_64
+cpp-13.0.1-0.1.fc38.x86_64
+xml-common-0.6.3-59.fc37.noarch
+which-2.21-36.fc38.x86_64
+pkgconf-m4-1.8.0-3.fc37.noarch
+pixman-0.40.0-6.fc37.x86_64
+pcre2-utf32-10.42-1.fc38.x86_64
+pcre2-utf16-10.42-1.fc38.x86_64
+openblas-srpm-macros-2-12.fc37.noarch
+openblas-devel-0.3.21-4.fc38.x86_64
+libwebp-1.3.0-1.fc38.x86_64
+libtool-ltdl-2.4.7-5.fc38.x86_64
+libstdc++-devel-13.0.1-0.1.fc38.x86_64
+libpkgconf-1.8.0-3.fc37.x86_64
+pkgconf-1.8.0-3.fc37.x86_64
+pkgconf-pkg-config-1.8.0-3.fc37.x86_64
+bzip2-devel-1.0.8-12.fc37.x86_64
+libcurl-devel-7.87.0-4.fc38.x86_64
+pcre2-devel-10.42-1.fc38.x86_64
+xz-devel-5.2.9-1.fc38.x86_64
+zlib-devel-1.2.13-2.fc38.x86_64
+libjpeg-turbo-2.1.4-1.fc38.x86_64
+libicu-72.1-1.fc38.x86_64
+libicu-devel-72.1-1.fc38.x86_64
+libdatrie-0.2.13-4.fc37.x86_64
+libthai-0.1.29-3.fc37.x86_64
+libXau-1.0.11-1.fc38.x86_64
+libxcb-1.13.1-10.fc37.x86_64
+libX11-common-1.8.3-2.fc38.noarch
+libX11-1.8.3-2.fc38.x86_64
+libXrender-0.9.11-1.fc38.x86_64
+libXext-1.3.5-1.fc38.x86_64
+libXt-1.2.1-3.fc37.x86_64
+libXmu-1.1.4-1.fc38.x86_64
+kernel-headers-6.2.0-0.rc4.git0.1.fc38.x86_64
+jbigkit-libs-2.1-24.fc37.x86_64
+libtiff-4.4.0-4.fc37.x86_64
+jansson-2.13.1-5.fc37.x86_64
+graphite2-1.3.14-10.fc37.x86_64
+harfbuzz-6.0.0-2.fc38.x86_64
+freetype-2.12.1-3.fc37.x86_64
+google-noto-fonts-common-20201206^1.git0c78c8329-9.fc38.noarch
+google-noto-sans-vf-fonts-20201206^1.git0c78c8329-9.fc38.noarch
+langpacks-core-font-en-3.0-27.fc38.noarch
+fontconfig-2.14.1-2.fc38.x86_64
+libXft-2.3.6-1.fc38.x86_64
+tk-8.6.12-3.fc37.x86_64
+cairo-1.17.6-2.fc37.x86_64
+glibc-headers-x86-2.36.9000-19.fc38.noarch
+libxcrypt-devel-4.4.33-5.fc38.x86_64
+glibc-devel-2.36.9000-19.fc38.x86_64
+gc-8.2.2-1.fc38.x86_64
+guile22-2.2.7-6.fc37.x86_64
+make-4.4-1.fc38.x86_64
+fribidi-1.0.12-2.fc37.x86_64
+pango-1.50.12-2.fc38.x86_64
+elfutils-debuginfod-client-0.188-3.fc38.x86_64
+binutils-gold-2.39-6.fc38.x86_64
+binutils-2.39-6.fc38.x86_64
+gcc-13.0.1-0.1.fc38.x86_64
+gcc-c++-13.0.1-0.1.fc38.x86_64
+libquadmath-devel-13.0.1-0.1.fc38.x86_64
+gcc-gfortran-13.0.1-0.1.fc38.x86_64
+R-devel-gcc-13-1-1.x86_64
+glibc-langpack-en-2.36.9000-19.fc38.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><strong>id:</strong> sha256:f4034bcfb2c86dd718a5c36030769c807cef12d50b351b0b6c5fbda33eb06550 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-13:latest <br> <strong>created:</strong> 2023-01-23T06:11:30.869470249Z <br> <strong>size:</strong> 1.30 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux 5b2affeacaf2 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="38 (Container Image Prerelease)"
+ID=fedora
+VERSION_ID=38
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f38"
+PRETTY_NAME="Fedora Linux 38 (Container Image Prerelease)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:38"
+DEFAULT_HOSTNAME="fedora"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/rawhide/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=rawhide
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=rawhide
+SUPPORT_END=2024-05-14
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-01-17 r83630)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Fedora Linux 38 (Container Image Prerelease)
+
+Matrix products: default
+BLAS/LAPACK: /usr/lib64/libopenblasp-r0.3.21.so;  LAPACK version 3.9.0
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                zlib                                bzlib 
+                            "1.2.13"                 "1.0.8, 13-Jul-2019" 
+                                  xz                                 PCRE 
+                             "5.2.9"                   "10.42 2022-12-11" 
+                                 ICU                                  TRE 
+                              "72.1"            "TRE 0.8.0 R_fixes (BSD)" 
+                               iconv                             readline 
+                   "glibc 2.36.9000"                                "8.2" 
+                                BLAS 
+"/usr/lib64/libopenblasp-r0.3.21.so" 
+
+
+&gt; libcurlVersion()
+[1] "7.87.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.7"
+attr(,"libssh_version")
+[1] "libssh/0.10.4/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.9.0"
+
+
+&gt; La_library()
+[1] "/usr/lib64/libopenblasp-r0.3.21.so"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.6"                       ""                "1.50.12" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CXX = g++ -std=gnu++14
+CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2 -mtune=native -Wall -pedantic
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2 -mtune=native -Wall -pedantic
+SAFE_FFLAGS = -g -O2 -mtune=native -Wall -pedantic -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++14
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -L/opt/R/devel-gcc-13/lib/R/lib -lRblas
+LAPACK_LIBS = -L/opt/R/devel-gcc-13/lib/R/lib -lRlapack
+MAKE = make
+LIBnn = lib
+AR = gcc-ar
+NM = /usr/bin/nm -B
+RANLIB = gcc-ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>python-setuptools-wheel-65.5.1-1.fc38.noarch
+libssh-config-0.10.4-2.fc38.noarch
+libreport-filesystem-2.17.6-1.fc38.noarch
+dnf-data-4.14.0-1.fc38.noarch
+fedora-gpg-keys-38-0.3.noarch
+fedora-repos-rawhide-38-0.3.noarch
+fedora-repos-38-0.3.noarch
+setup-2.14.3-1.fc38.noarch
+filesystem-3.18-2.fc37.x86_64
+basesystem-11-14.fc37.noarch
+bzip2-libs-1.0.8-12.fc37.x86_64
+xz-libs-5.2.9-1.fc38.x86_64
+libzstd-1.5.2-3.fc37.x86_64
+gmp-6.2.1-3.fc37.x86_64
+libcap-2.48-5.fc37.x86_64
+popt-1.19-1.fc38.x86_64
+libgpg-error-1.46-1.fc38.x86_64
+libxml2-2.10.3-2.fc38.x86_64
+elfutils-libelf-0.188-3.fc38.x86_64
+file-libs-5.42-4.fc37.x86_64
+readline-8.2-2.fc38.x86_64
+libattr-2.5.1-5.fc37.x86_64
+libacl-2.3.1-4.fc37.x86_64
+libffi-3.4.4-1.fc38.x86_64
+libunistring-1.0-2.fc37.x86_64
+libidn2-2.3.4-1.fc38.x86_64
+libassuan-2.5.5-5.fc37.x86_64
+nettle-3.8-2.fc37.x86_64
+rpm-sequoia-1.2.0-1.fc38.x86_64
+expat-2.5.0-1.fc38.x86_64
+gdbm-libs-1.23-2.fc37.x86_64
+json-c-0.16-3.fc38.x86_64
+keyutils-libs-1.6.1-5.fc37.x86_64
+libcom_err-1.46.5-3.fc37.x86_64
+libeconf-0.4.0-4.fc37.x86_64
+sed-4.8-11.fc37.x86_64
+libtasn1-4.19.0-1.fc38.x86_64
+findutils-4.9.0-2.fc37.x86_64
+libb2-0.98.1-7.fc37.x86_64
+cyrus-sasl-lib-2.1.28-8.fc38.x86_64
+libcomps-0.1.18-4.fc37.x86_64
+mpdecimal-2.5.1-4.fc37.x86_64
+libgcrypt-1.10.1-6.fc38.x86_64
+mpfr-4.1.1-2.fc38.x86_64
+elfutils-default-yama-scope-0.188-3.fc38.noarch
+elfutils-libs-0.188-3.fc38.x86_64
+alternatives-1.21-1.fc38.x86_64
+gnutls-3.7.8-9.fc38.x86_64
+glib2-2.74.1-2.fc38.x86_64
+libbrotli-1.0.9-9.fc37.x86_64
+shadow-utils-4.13-3.fc38.x86_64
+libdb-5.3.28-54.fc38.x86_64
+libnghttp2-1.51.0-1.fc38.x86_64
+libsigsegv-2.14-3.fc37.x86_64
+gawk-5.1.1-4.fc37.x86_64
+libverto-0.3.2-4.fc37.x86_64
+libyaml-0.2.5-8.fc37.x86_64
+libmodulemd-2.14.0-4.fc37.x86_64
+npth-1.6-10.fc38.x86_64
+fedora-repos-rawhide-modular-38-0.3.noarch
+libtirpc-1.3.3-0.fc37.x86_64
+libnsl2-2.0.0-4.fc37.x86_64
+libfsverity-1.4-8.fc37.x86_64
+zchunk-libs-1.2.3-1.fc38.x86_64
+libsolv-0.7.22-3.fc37.x86_64
+libssh-0.10.4-2.fc38.x86_64
+python-pip-wheel-22.3.1-1.fc38.noarch
+python3-libcomps-0.1.18-4.fc37.x86_64
+authselect-libs-1.4.2-1.fc38.x86_64
+authselect-1.4.2-1.fc38.x86_64
+gzip-1.12-2.fc37.x86_64
+cracklib-2.9.7-30.fc38.x86_64
+libarchive-3.6.1-3.fc38.x86_64
+libevent-2.1.12-7.fc37.x86_64
+openldap-2.6.3-1.fc38.x86_64
+gpgme-1.17.1-3.fc38.x86_64
+librepo-1.15.1-1.fc38.x86_64
+libdnf-0.68.0-1.fc38.x86_64
+python3-libdnf-0.68.0-1.fc38.x86_64
+python3-hawkey-0.68.0-1.fc38.x86_64
+python3-gpg-1.17.1-3.fc38.x86_64
+ima-evm-utils-1.4-6.fc37.x86_64
+python3-dnf-4.14.0-1.fc38.noarch
+dnf-4.14.0-1.fc38.noarch
+yum-4.14.0-1.fc38.noarch
+fedora-repos-modular-38-0.3.noarch
+tar-1.34-5.fc38.x86_64
+rootfiles-8.1-32.fc37.noarch
+gpg-pubkey-eb10b464-6202d9c6
+libgcc-13.0.1-0.1.fc38.x86_64
+tzdata-2022g-1.fc38.noarch
+fedora-release-identity-container-38-0.18.noarch
+crypto-policies-20221215-1.gita4c31a3.fc38.noarch
+fedora-release-container-38-0.18.noarch
+fedora-release-common-38-0.18.noarch
+vim-data-9.0.1221-1.fc38.noarch
+publicsuffix-list-dafsa-20221208-1.fc38.noarch
+pcre2-syntax-10.42-1.fc38.noarch
+ncurses-base-6.4-2.20230114.fc38.noarch
+ncurses-libs-6.4-2.20230114.fc38.x86_64
+glibc-2.36.9000-19.fc38.x86_64
+bash-5.2.15-1.fc38.x86_64
+glibc-common-2.36.9000-19.fc38.x86_64
+glibc-minimal-langpack-2.36.9000-19.fc38.x86_64
+zlib-1.2.13-2.fc38.x86_64
+sqlite-libs-3.40.1-1.fc38.x86_64
+libuuid-2.38.1-3.fc38.x86_64
+lua-libs-5.4.4-7.fc38.x86_64
+libblkid-2.38.1-3.fc38.x86_64
+libsepol-3.5-0.rc1.1.fc38.x86_64
+libxcrypt-4.4.33-5.fc38.x86_64
+p11-kit-0.24.1-5.fc38.x86_64
+pcre2-10.42-1.fc38.x86_64
+libselinux-3.5-0.rc1.1.fc38.1.x86_64
+libmount-2.38.1-3.fc38.x86_64
+grep-3.8-2.fc38.x86_64
+p11-kit-trust-0.24.1-5.fc38.x86_64
+libcap-ng-0.8.3-4.fc38.x86_64
+audit-libs-3.0.9-2.fc38.x86_64
+rpm-libs-4.18.0-9.fc38.x86_64
+pam-libs-1.5.2-15.fc38.x86_64
+libpwquality-1.4.5-1.fc38.x86_64
+libgomp-13.0.1-0.1.fc38.x86_64
+rpm-build-libs-4.18.0-9.fc38.x86_64
+libksba-1.6.3-1.fc38.x86_64
+gnupg2-2.4.0-1.fc38.x86_64
+rpm-sign-libs-4.18.0-9.fc38.x86_64
+libpsl-0.21.2-1.fc38.x86_64
+libsmartcols-2.38.1-3.fc38.x86_64
+lz4-libs-1.9.4-1.fc38.x86_64
+systemd-libs-252.4-598.fc38.x86_64
+coreutils-common-9.1-10.fc38.x86_64
+openssl-libs-3.0.7-3.fc38.x86_64
+coreutils-9.1-10.fc38.x86_64
+ca-certificates-2023.2.60-2.fc38.noarch
+krb5-libs-1.20.1-6.fc38.x86_64
+libcurl-7.87.0-4.fc38.x86_64
+curl-7.87.0-4.fc38.x86_64
+pam-1.5.2-15.fc38.x86_64
+python3-3.11.1-3.fc38.x86_64
+python3-libs-3.11.1-3.fc38.x86_64
+python3-rpm-4.18.0-9.fc38.x86_64
+sudo-1.9.12-1.p2.fc38.x86_64
+rpm-4.18.0-9.fc38.x86_64
+tpm2-tss-4.0.0-1.fc38.x86_64
+util-linux-core-2.38.1-3.fc38.x86_64
+libsemanage-3.5-0.rc1.1.fc38.x86_64
+vim-minimal-9.0.1221-1.fc38.x86_64
+libstdc++-13.0.1-0.1.fc38.x86_64
+python3-six-1.16.0-8.fc37.noarch
+python3-dateutil-2.8.2-4.fc37.noarch
+python3-distro-1.8.0-1.fc38.noarch
+dbus-libs-1.14.4-1.fc38.x86_64
+python3-dbus-1.3.2-1.fc38.x86_64
+python3-dnf-plugins-core-4.3.1-1.fc38.noarch
+dnf-plugins-core-4.3.1-1.fc38.noarch
+openblas-0.3.21-4.fc38.x86_64
+libmpc-1.3.1-1.fc38.x86_64
+libquadmath-13.0.1-0.1.fc38.x86_64
+libgfortran-13.0.1-0.1.fc38.x86_64
+unzip-6.0-58.fc38.x86_64
+tcl-8.6.12-3.fc38.x86_64
+libpng-1.6.37-13.fc37.x86_64
+libICE-1.0.10-9.fc37.x86_64
+libSM-1.2.3-11.fc37.x86_64
+fonts-filesystem-2.0.5-10.fc38.noarch
+zip-3.0-35.fc38.x86_64
+openblas-openmp-0.3.21-4.fc38.x86_64
+openblas-openmp64-0.3.21-4.fc38.x86_64
+openblas-openmp64_-0.3.21-4.fc38.x86_64
+openblas-serial-0.3.21-4.fc38.x86_64
+openblas-serial64-0.3.21-4.fc38.x86_64
+openblas-serial64_-0.3.21-4.fc38.x86_64
+openblas-threads-0.3.21-4.fc38.x86_64
+openblas-threads64-0.3.21-4.fc38.x86_64
+openblas-threads64_-0.3.21-4.fc38.x86_64
+cpp-13.0.1-0.1.fc38.x86_64
+xml-common-0.6.3-59.fc37.noarch
+which-2.21-36.fc38.x86_64
+pkgconf-m4-1.8.0-3.fc37.noarch
+pixman-0.40.0-6.fc37.x86_64
+pcre2-utf32-10.42-1.fc38.x86_64
+pcre2-utf16-10.42-1.fc38.x86_64
+openblas-srpm-macros-2-12.fc37.noarch
+openblas-devel-0.3.21-4.fc38.x86_64
+libwebp-1.3.0-1.fc38.x86_64
+libtool-ltdl-2.4.7-5.fc38.x86_64
+libstdc++-devel-13.0.1-0.1.fc38.x86_64
+libpkgconf-1.8.0-3.fc37.x86_64
+pkgconf-1.8.0-3.fc37.x86_64
+pkgconf-pkg-config-1.8.0-3.fc37.x86_64
+bzip2-devel-1.0.8-12.fc37.x86_64
+libcurl-devel-7.87.0-4.fc38.x86_64
+pcre2-devel-10.42-1.fc38.x86_64
+xz-devel-5.2.9-1.fc38.x86_64
+zlib-devel-1.2.13-2.fc38.x86_64
+libjpeg-turbo-2.1.4-1.fc38.x86_64
+libicu-72.1-1.fc38.x86_64
+libicu-devel-72.1-1.fc38.x86_64
+libdatrie-0.2.13-4.fc37.x86_64
+libthai-0.1.29-3.fc37.x86_64
+libXau-1.0.11-1.fc38.x86_64
+libxcb-1.13.1-10.fc37.x86_64
+libX11-common-1.8.3-2.fc38.noarch
+libX11-1.8.3-2.fc38.x86_64
+libXrender-0.9.11-1.fc38.x86_64
+libXext-1.3.5-1.fc38.x86_64
+libXt-1.2.1-3.fc37.x86_64
+libXmu-1.1.4-1.fc38.x86_64
+kernel-headers-6.2.0-0.rc4.git0.1.fc38.x86_64
+jbigkit-libs-2.1-24.fc37.x86_64
+libtiff-4.4.0-4.fc37.x86_64
+jansson-2.13.1-5.fc37.x86_64
+graphite2-1.3.14-10.fc37.x86_64
+harfbuzz-6.0.0-2.fc38.x86_64
+freetype-2.12.1-3.fc37.x86_64
+google-noto-fonts-common-20201206^1.git0c78c8329-9.fc38.noarch
+google-noto-sans-vf-fonts-20201206^1.git0c78c8329-9.fc38.noarch
+langpacks-core-font-en-3.0-27.fc38.noarch
+fontconfig-2.14.1-2.fc38.x86_64
+libXft-2.3.6-1.fc38.x86_64
+tk-8.6.12-3.fc37.x86_64
+cairo-1.17.6-2.fc37.x86_64
+glibc-headers-x86-2.36.9000-19.fc38.noarch
+libxcrypt-devel-4.4.33-5.fc38.x86_64
+glibc-devel-2.36.9000-19.fc38.x86_64
+gc-8.2.2-1.fc38.x86_64
+guile22-2.2.7-6.fc37.x86_64
+make-4.4-1.fc38.x86_64
+fribidi-1.0.12-2.fc37.x86_64
+pango-1.50.12-2.fc38.x86_64
+elfutils-debuginfod-client-0.188-3.fc38.x86_64
+binutils-gold-2.39-6.fc38.x86_64
+binutils-2.39-6.fc38.x86_64
+gcc-13.0.1-0.1.fc38.x86_64
+gcc-c++-13.0.1-0.1.fc38.x86_64
+libquadmath-devel-13.0.1-0.1.fc38.x86_64
+gcc-gfortran-13.0.1-0.1.fc38.x86_64
+R-devel-gcc-13-1-1.x86_64
+glibc-langpack-en-2.36.9000-19.fc38.x86_64
+</code></pre>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="nold" class="level2">
+<h2 class="anchored" data-anchor-id="nold"><code>nold</code></h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">33eeed4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">693420e</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p><strong>id:</strong> sha256:33eeed4b959ed0b19bc615f78f6ed1eff4a26c0aca4caf8dd7137b304438e184 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/nold:latest <br> <strong>created:</strong> 2023-01-23T12:03:02.751033211Z <br> <strong>size:</strong> 787.51 MB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux f3f6e883f09c 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-01-21 r83656)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.1 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: /UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                                     zlib 
+                                                 "1.2.11" 
+                                                    bzlib 
+                                     "1.0.8, 13-Jul-2019" 
+                                                       xz 
+                                                  "5.2.5" 
+                                                     PCRE 
+                                       "10.39 2021-10-29" 
+                                                      ICU 
+                                                   "70.1" 
+                                                      TRE 
+                                "TRE 0.8.0 R_fixes (BSD)" 
+                                                    iconv 
+                                             "glibc 2.35" 
+                                                 readline 
+                                                    "8.1" 
+                                                     BLAS 
+"/usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3" 
+
+
+&gt; libcurlVersion()
+[1] "7.81.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.2"
+attr(,"libssh_version")
+[1] "libssh/0.9.6/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtmp"    "rtsp"    "scp"     "sftp"    "smb"     "smbs"   
+[22] "smtp"    "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.10.0"
+
+
+&gt; La_library()
+[1] "/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.16.0"                       ""                 "1.50.6" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "8.0" "LIBTIFF, Version 4.3.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2
+CXX = g++ -std=gnu++14
+CXXFLAGS = -g -O2
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/bin/java
+JAVAC = /usr/bin/javac
+JAVAH =
+JAR = /usr/bin/jar
+JAVA_HOME = /usr/lib/jvm/java-11-openjdk-amd64
+JAVA_LIBS = -L/usr/lib/jvm/java-11-openjdk-amd64/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/java-11-openjdk-amd64/include -I/usr/lib/jvm/java-11-openjdk-amd64/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++14
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include/tcl8.6 -I/usr/include/tcl8.6
+TCLTK_LIBS = -L/usr/lib/x86_64-linux-gnu -ltcl8.6 -L/usr/lib/x86_64-linux-gnu -ltk8.6 -lX11 -lXss -lXext
+BLAS_LIBS = -lblas
+LAPACK_LIBS = -llapack
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/bin/nm -B
+RANLIB = ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                          Version                                 Architecture Description
++++-=============================-=======================================-============-===============================================================================
+ii  adduser                       3.118ubuntu5                            all          add and remove users and groups
+ii  apt                           2.4.8                                   amd64        commandline package manager
+ii  base-files                    12ubuntu4.2                             amd64        Debian base system miscellaneous files
+ii  base-passwd                   3.5.52build1                            amd64        Debian base system master password and group files
+ii  bash                          5.1-6ubuntu1                            amd64        GNU Bourne Again SHell
+ii  binutils                      2.38-4ubuntu2.1                         amd64        GNU assembler, linker and binary utilities
+ii  binutils-common:amd64         2.38-4ubuntu2.1                         amd64        Common files for the GNU assembler, linker and binary utilities
+ii  binutils-x86-64-linux-gnu     2.38-4ubuntu2.1                         amd64        GNU binary utilities, for x86-64-linux-gnu target
+ii  bsdutils                      1:2.37.2-4ubuntu3                       amd64        basic utilities from 4.4BSD-Lite
+ii  bzip2-doc                     1.0.8-5build1                           all          high-quality block-sorting file compressor - documentation
+ii  ca-certificates               20211016ubuntu0.22.04.1                 all          Common CA certificates
+ii  coreutils                     8.32-4.1ubuntu1                         amd64        GNU core utilities
+ii  cpp                           4:11.2.0-1ubuntu1                       amd64        GNU C preprocessor (cpp)
+ii  cpp-11                        11.3.0-1ubuntu1~22.04                   amd64        GNU C preprocessor
+ii  curl                          7.81.0-1ubuntu1.7                       amd64        command line tool for transferring data with URL syntax
+ii  dash                          0.5.11+git20210903+057cd650a4ed-3build1 amd64        POSIX-compliant shell
+ii  debconf                       1.5.79ubuntu1                           all          Debian configuration management system
+ii  debianutils                   5.5-1ubuntu2                            amd64        Miscellaneous utilities specific to Debian
+ii  diffutils                     1:3.8-0ubuntu2                          amd64        File comparison utilities
+ii  dpkg                          1.21.1ubuntu2.1                         amd64        Debian package management system
+ii  e2fsprogs                     1.46.5-2ubuntu1.1                       amd64        ext2/ext3/ext4 file system utilities
+ii  findutils                     4.8.0-1ubuntu3                          amd64        utilities for finding files--find, xargs
+ii  fontconfig                    2.13.1-4.2ubuntu5                       amd64        generic font configuration library - support binaries
+ii  fontconfig-config             2.13.1-4.2ubuntu5                       all          generic font configuration library - configuration
+ii  fonts-dejavu-core             2.37-2build1                            all          Vera font family derivate with additional characters
+ii  g++                           4:11.2.0-1ubuntu1                       amd64        GNU C++ compiler
+ii  g++-11                        11.3.0-1ubuntu1~22.04                   amd64        GNU C++ compiler
+ii  gcc                           4:11.2.0-1ubuntu1                       amd64        GNU C compiler
+ii  gcc-11                        11.3.0-1ubuntu1~22.04                   amd64        GNU C compiler
+ii  gcc-11-base:amd64             11.3.0-1ubuntu1~22.04                   amd64        GCC, the GNU Compiler Collection (base package)
+ii  gcc-12-base:amd64             12.1.0-2ubuntu1~22.04                   amd64        GCC, the GNU Compiler Collection (base package)
+ii  gfortran                      4:11.2.0-1ubuntu1                       amd64        GNU Fortran 95 compiler
+ii  gfortran-11                   11.3.0-1ubuntu1~22.04                   amd64        GNU Fortran compiler
+ii  gpgv                          2.2.27-3ubuntu2.1                       amd64        GNU privacy guard - signature verification tool
+ii  grep                          3.7-1build1                             amd64        GNU grep, egrep and fgrep
+ii  gzip                          1.10-4ubuntu4.1                         amd64        GNU compression utilities
+ii  hostname                      3.23ubuntu2                             amd64        utility to set/show the host name or domain name
+ii  icu-devtools                  70.1-2                                  amd64        Development utilities for International Components for Unicode
+ii  init-system-helpers           1.62                                    all          helper tools for all init systems
+ii  libacl1:amd64                 2.3.1-1                                 amd64        access control list - shared library
+ii  libapt-pkg6.0:amd64           2.4.8                                   amd64        package management runtime library
+ii  libasan6:amd64                11.3.0-1ubuntu1~22.04                   amd64        AddressSanitizer -- a fast memory error detector
+ii  libatomic1:amd64              12.1.0-2ubuntu1~22.04                   amd64        support library providing __atomic built-in functions
+ii  libattr1:amd64                1:2.5.1-1build1                         amd64        extended attribute handling - shared library
+ii  libaudit-common               1:3.0.7-1build1                         all          Dynamic library for security auditing - common files
+ii  libaudit1:amd64               1:3.0.7-1build1                         amd64        Dynamic library for security auditing
+ii  libbinutils:amd64             2.38-4ubuntu2.1                         amd64        GNU binary utilities (private shared library)
+ii  libblkid1:amd64               2.37.2-4ubuntu3                         amd64        block device ID library
+ii  libbrotli1:amd64              1.0.9-2build6                           amd64        library implementing brotli encoder and decoder (shared libraries)
+ii  libbsd0:amd64                 0.11.5-1                                amd64        utility functions from BSD systems - shared library
+ii  libbz2-1.0:amd64              1.0.8-5build1                           amd64        high-quality block-sorting file compressor library - runtime
+ii  libbz2-dev:amd64              1.0.8-5build1                           amd64        high-quality block-sorting file compressor library - development
+ii  libc-bin                      2.35-0ubuntu3.1                         amd64        GNU C Library: Binaries
+ii  libc-dev-bin                  2.35-0ubuntu3.1                         amd64        GNU C Library: Development binaries
+ii  libc-devtools                 2.35-0ubuntu3.1                         amd64        GNU C Library: Development tools
+ii  libc6:amd64                   2.35-0ubuntu3.1                         amd64        GNU C Library: Shared libraries
+ii  libc6-dev:amd64               2.35-0ubuntu3.1                         amd64        GNU C Library: Development Libraries and Header Files
+ii  libcairo2:amd64               1.16.0-5ubuntu2                         amd64        Cairo 2D vector graphics library
+ii  libcap-ng0:amd64              0.7.9-2.2build3                         amd64        An alternate POSIX capabilities library
+ii  libcap2:amd64                 1:2.44-1build3                          amd64        POSIX 1003.1e capabilities (library)
+ii  libcc1-0:amd64                12.1.0-2ubuntu1~22.04                   amd64        GCC cc1 plugin for GDB
+ii  libcom-err2:amd64             1.46.5-2ubuntu1.1                       amd64        common error description library
+ii  libcrypt-dev:amd64            1:4.4.27-1                              amd64        libcrypt development files
+ii  libcrypt1:amd64               1:4.4.27-1                              amd64        libcrypt shared library
+ii  libctf-nobfd0:amd64           2.38-4ubuntu2.1                         amd64        Compact C Type Format library (runtime, no BFD dependency)
+ii  libctf0:amd64                 2.38-4ubuntu2.1                         amd64        Compact C Type Format library (runtime, BFD dependency)
+ii  libcurl4:amd64                7.81.0-1ubuntu1.7                       amd64        easy-to-use client-side URL transfer library (OpenSSL flavour)
+ii  libdatrie1:amd64              0.2.13-2                                amd64        Double-array trie library
+ii  libdb5.3:amd64                5.3.28+dfsg1-0.8ubuntu3                 amd64        Berkeley v5.3 Database Libraries [runtime]
+ii  libdebconfclient0:amd64       0.261ubuntu1                            amd64        Debian Configuration Management System (C-implementation library)
+ii  libdeflate0:amd64             1.10-2                                  amd64        fast, whole-buffer DEFLATE-based compression and decompression
+ii  libexpat1:amd64               2.4.7-1ubuntu0.2                        amd64        XML parsing C library - runtime library
+ii  libext2fs2:amd64              1.46.5-2ubuntu1.1                       amd64        ext2/ext3/ext4 file system libraries
+ii  libffi8:amd64                 3.4.2-4                                 amd64        Foreign Function Interface library runtime
+ii  libfontconfig1:amd64          2.13.1-4.2ubuntu5                       amd64        generic font configuration library - runtime
+ii  libfreetype6:amd64            2.11.1+dfsg-1ubuntu0.1                  amd64        FreeType 2 font engine, shared library files
+ii  libfribidi0:amd64             1.0.8-2ubuntu3.1                        amd64        Free Implementation of the Unicode BiDi algorithm
+ii  libgcc-11-dev:amd64           11.3.0-1ubuntu1~22.04                   amd64        GCC support library (development files)
+ii  libgcc-s1:amd64               12.1.0-2ubuntu1~22.04                   amd64        GCC support library
+ii  libgcrypt20:amd64             1.9.4-3ubuntu3                          amd64        LGPL Crypto library - runtime library
+ii  libgd3:amd64                  2.3.0-2ubuntu2                          amd64        GD Graphics Library
+ii  libgfortran-11-dev:amd64      11.3.0-1ubuntu1~22.04                   amd64        Runtime library for GNU Fortran applications (development files)
+ii  libgfortran5:amd64            12.1.0-2ubuntu1~22.04                   amd64        Runtime library for GNU Fortran applications
+ii  libglib2.0-0:amd64            2.72.4-0ubuntu1                         amd64        GLib library of C routines
+ii  libglib2.0-data               2.72.4-0ubuntu1                         all          Common files for GLib library
+ii  libgmp10:amd64                2:6.2.1+dfsg-3ubuntu1                   amd64        Multiprecision arithmetic library
+ii  libgnutls30:amd64             3.7.3-4ubuntu1.1                        amd64        GNU TLS library - main runtime library
+ii  libgomp1:amd64                12.1.0-2ubuntu1~22.04                   amd64        GCC OpenMP (GOMP) support library
+ii  libgpg-error0:amd64           1.43-3                                  amd64        GnuPG development runtime library
+ii  libgraphite2-3:amd64          1.3.14-1build2                          amd64        Font rendering engine for Complex Scripts -- library
+ii  libgssapi-krb5-2:amd64        1.19.2-2                                amd64        MIT Kerberos runtime libraries - krb5 GSS-API Mechanism
+ii  libharfbuzz0b:amd64           2.7.4-1ubuntu3.1                        amd64        OpenType text shaping engine (shared library)
+ii  libhogweed6:amd64             3.7.3-1build2                           amd64        low level cryptographic library (public-key cryptos)
+ii  libice6:amd64                 2:1.0.10-1build2                        amd64        X11 Inter-Client Exchange library
+ii  libicu-dev:amd64              70.1-2                                  amd64        Development files for International Components for Unicode
+ii  libicu70:amd64                70.1-2                                  amd64        International Components for Unicode
+ii  libidn2-0:amd64               2.3.2-2build1                           amd64        Internationalized domain names (IDNA2008/TR46) library
+ii  libisl23:amd64                0.24-2build1                            amd64        manipulating sets and relations of integer points bounded by linear constraints
+ii  libitm1:amd64                 12.1.0-2ubuntu1~22.04                   amd64        GNU Transactional Memory Library
+ii  libjbig0:amd64                2.1-3.1ubuntu0.22.04.1                  amd64        JBIGkit libraries
+ii  libjpeg-turbo8:amd64          2.1.2-0ubuntu1                          amd64        IJG JPEG compliant runtime library.
+ii  libjpeg8:amd64                8c-2ubuntu10                            amd64        Independent JPEG Group's JPEG runtime library (dependency package)
+ii  libk5crypto3:amd64            1.19.2-2                                amd64        MIT Kerberos runtime libraries - Crypto Library
+ii  libkeyutils1:amd64            1.6.1-2ubuntu3                          amd64        Linux Key Management Utilities (library)
+ii  libkrb5-3:amd64               1.19.2-2                                amd64        MIT Kerberos runtime libraries
+ii  libkrb5support0:amd64         1.19.2-2                                amd64        MIT Kerberos runtime libraries - Support library
+ii  libldap-2.5-0:amd64           2.5.13+dfsg-0ubuntu0.22.04.1            amd64        OpenLDAP libraries
+ii  libldap-common                2.5.13+dfsg-0ubuntu0.22.04.1            all          OpenLDAP common files for libraries
+ii  liblsan0:amd64                12.1.0-2ubuntu1~22.04                   amd64        LeakSanitizer -- a memory leak detector (runtime)
+ii  liblz4-1:amd64                1.9.3-2build2                           amd64        Fast LZ compression algorithm library - runtime
+ii  liblzma-dev:amd64             5.2.5-2ubuntu1                          amd64        XZ-format compression library - development files
+ii  liblzma5:amd64                5.2.5-2ubuntu1                          amd64        XZ-format compression library
+ii  libmd0:amd64                  1.0.4-1build1                           amd64        message digest functions from BSD systems - shared library
+ii  libmount1:amd64               2.37.2-4ubuntu3                         amd64        device mounting library
+ii  libmpc3:amd64                 1.2.1-2build1                           amd64        multiple precision complex floating-point library
+ii  libmpfr6:amd64                4.1.0-3build3                           amd64        multiple precision floating-point computation
+ii  libncurses6:amd64             6.3-2                                   amd64        shared libraries for terminal handling
+ii  libncursesw6:amd64            6.3-2                                   amd64        shared libraries for terminal handling (wide character support)
+ii  libnettle8:amd64              3.7.3-1build2                           amd64        low level cryptographic library (symmetric and one-way cryptos)
+ii  libnghttp2-14:amd64           1.43.0-1build3                          amd64        library implementing HTTP/2 protocol (shared library)
+ii  libnsl-dev:amd64              1.3.0-2build2                           amd64        libnsl development files
+ii  libnsl2:amd64                 1.3.0-2build2                           amd64        Public client interface for NIS(YP) and NIS+
+ii  libopenblas-dev:amd64         0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (dev, meta)
+ii  libopenblas-pthread-dev:amd64 0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (dev, pthread)
+ii  libopenblas0:amd64            0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (meta)
+ii  libopenblas0-pthread:amd64    0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (shared lib, pthread)
+ii  libp11-kit0:amd64             0.24.0-6build1                          amd64        library for loading and coordinating access to PKCS#11 modules - runtime
+ii  libpam-modules:amd64          1.4.0-11ubuntu2                         amd64        Pluggable Authentication Modules for PAM
+ii  libpam-modules-bin            1.4.0-11ubuntu2                         amd64        Pluggable Authentication Modules for PAM - helper binaries
+ii  libpam-runtime                1.4.0-11ubuntu2                         all          Runtime support for the PAM library
+ii  libpam0g:amd64                1.4.0-11ubuntu2                         amd64        Pluggable Authentication Modules library
+ii  libpango-1.0-0:amd64          1.50.6+ds-2                             amd64        Layout and rendering of internationalized text
+ii  libpangocairo-1.0-0:amd64     1.50.6+ds-2                             amd64        Layout and rendering of internationalized text
+ii  libpangoft2-1.0-0:amd64       1.50.6+ds-2                             amd64        Layout and rendering of internationalized text
+ii  libpaper-utils                1.1.28build2                            amd64        library for handling paper characteristics (utilities)
+ii  libpaper1:amd64               1.1.28build2                            amd64        library for handling paper characteristics
+ii  libpcre2-16-0:amd64           10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - 16 bit runtime files
+ii  libpcre2-32-0:amd64           10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - 32 bit runtime files
+ii  libpcre2-8-0:amd64            10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library- 8 bit runtime files
+ii  libpcre2-dev:amd64            10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - development files
+ii  libpcre2-posix3:amd64         10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - posix-compatible runtime files
+ii  libpcre3:amd64                2:8.39-13ubuntu0.22.04.1                amd64        Old Perl 5 Compatible Regular Expression Library - runtime files
+ii  libpixman-1-0:amd64           0.40.0-1ubuntu0.22.04.1                 amd64        pixel-manipulation library for X and cairo
+ii  libpng16-16:amd64             1.6.37-3build5                          amd64        PNG library - runtime (version 1.6)
+ii  libprocps8:amd64              2:3.3.17-6ubuntu2                       amd64        library for accessing process information from /proc
+ii  libpsl5:amd64                 0.21.0-1.2build2                        amd64        Library for Public Suffix List (shared libraries)
+ii  libquadmath0:amd64            12.1.0-2ubuntu1~22.04                   amd64        GCC Quad-Precision Math Library
+ii  libreadline8:amd64            8.1.2-1                                 amd64        GNU readline and history libraries, run-time libraries
+ii  librtmp1:amd64                2.4+20151223.gitfa8646d.1-2build4       amd64        toolkit for RTMP streams (shared library)
+ii  libsasl2-2:amd64              2.1.27+dfsg2-3ubuntu1.1                 amd64        Cyrus SASL - authentication abstraction library
+ii  libsasl2-modules:amd64        2.1.27+dfsg2-3ubuntu1.1                 amd64        Cyrus SASL - pluggable authentication modules
+ii  libsasl2-modules-db:amd64     2.1.27+dfsg2-3ubuntu1.1                 amd64        Cyrus SASL - pluggable authentication modules (DB)
+ii  libseccomp2:amd64             2.5.3-2ubuntu2                          amd64        high level interface to Linux seccomp filter
+ii  libselinux1:amd64             3.3-1build2                             amd64        SELinux runtime shared libraries
+ii  libsemanage-common            3.3-1build2                             all          Common files for SELinux policy management libraries
+ii  libsemanage2:amd64            3.3-1build2                             amd64        SELinux policy management library
+ii  libsepol2:amd64               3.3-1build1                             amd64        SELinux library for manipulating binary security policies
+ii  libsm6:amd64                  2:1.2.3-1build2                         amd64        X11 Session Management library
+ii  libsmartcols1:amd64           2.37.2-4ubuntu3                         amd64        smart column output alignment library
+ii  libss2:amd64                  1.46.5-2ubuntu1.1                       amd64        command-line interface parsing library
+ii  libssh-4:amd64                0.9.6-2build1                           amd64        tiny C SSH library (OpenSSL flavor)
+ii  libssl3:amd64                 3.0.2-0ubuntu1.7                        amd64        Secure Sockets Layer toolkit - shared libraries
+ii  libstdc++-11-dev:amd64        11.3.0-1ubuntu1~22.04                   amd64        GNU Standard C++ Library v3 (development files)
+ii  libstdc++6:amd64              12.1.0-2ubuntu1~22.04                   amd64        GNU Standard C++ Library v3
+ii  libsystemd0:amd64             249.11-0ubuntu3.6                       amd64        systemd utility library
+ii  libtasn1-6:amd64              4.18.0-4build1                          amd64        Manage ASN.1 structures (runtime)
+ii  libtcl8.6:amd64               8.6.12+dfsg-1build1                     amd64        Tcl (the Tool Command Language) v8.6 - run-time library files
+ii  libthai-data                  0.1.29-1build1                          all          Data files for Thai language support library
+ii  libthai0:amd64                0.1.29-1build1                          amd64        Thai language support library
+ii  libtiff5:amd64                4.3.0-6ubuntu0.3                        amd64        Tag Image File Format (TIFF) library
+ii  libtinfo6:amd64               6.3-2                                   amd64        shared low-level terminfo library for terminal handling
+ii  libtirpc-common               1.3.2-2ubuntu0.1                        all          transport-independent RPC library - common files
+ii  libtirpc-dev:amd64            1.3.2-2ubuntu0.1                        amd64        transport-independent RPC library - development files
+ii  libtirpc3:amd64               1.3.2-2ubuntu0.1                        amd64        transport-independent RPC library
+ii  libtk8.6:amd64                8.6.12-1build1                          amd64        Tk toolkit for Tcl and X11 v8.6 - run-time files
+ii  libtsan0:amd64                11.3.0-1ubuntu1~22.04                   amd64        ThreadSanitizer -- a Valgrind-based detector of data races (runtime)
+ii  libubsan1:amd64               12.1.0-2ubuntu1~22.04                   amd64        UBSan -- undefined behaviour sanitizer (runtime)
+ii  libudev1:amd64                249.11-0ubuntu3.6                       amd64        libudev shared library
+ii  libunistring2:amd64           1.0-1                                   amd64        Unicode string library for C
+ii  libuuid1:amd64                2.37.2-4ubuntu3                         amd64        Universally Unique ID library
+ii  libwebp7:amd64                1.2.2-2                                 amd64        Lossy compression of digital photographic images
+ii  libx11-6:amd64                2:1.7.5-1                               amd64        X11 client-side library
+ii  libx11-data                   2:1.7.5-1                               all          X11 client-side library
+ii  libxau6:amd64                 1:1.0.9-1build5                         amd64        X11 authorisation library
+ii  libxcb-render0:amd64          1.14-3ubuntu3                           amd64        X C Binding, render extension
+ii  libxcb-shm0:amd64             1.14-3ubuntu3                           amd64        X C Binding, shm extension
+ii  libxcb1:amd64                 1.14-3ubuntu3                           amd64        X C Binding
+ii  libxdmcp6:amd64               1:1.1.3-0ubuntu5                        amd64        X11 Display Manager Control Protocol library
+ii  libxext6:amd64                2:1.3.4-1build1                         amd64        X11 miscellaneous extension library
+ii  libxft2:amd64                 2.3.4-1                                 amd64        FreeType-based font drawing library for X
+ii  libxml2:amd64                 2.9.13+dfsg-1ubuntu0.2                  amd64        GNOME XML library
+ii  libxpm4:amd64                 1:3.5.12-1ubuntu0.22.04.1               amd64        X11 pixmap library
+ii  libxrender1:amd64             1:0.9.10-1build4                        amd64        X Rendering Extension client library
+ii  libxss1:amd64                 1:1.2.3-1build2                         amd64        X11 Screen Saver extension library
+ii  libxt6:amd64                  1:1.2.1-1                               amd64        X11 toolkit intrinsics library
+ii  libxxhash0:amd64              0.8.1-1                                 amd64        shared library for xxhash
+ii  libzstd1:amd64                1.4.8+dfsg-3build1                      amd64        fast lossless compression algorithm
+ii  linux-libc-dev:amd64          5.15.0-58.64                            amd64        Linux Kernel Headers for development
+ii  locales                       2.35-0ubuntu3.1                         all          GNU C Library: National Language (locale) data [support]
+ii  login                         1:4.8.1-2ubuntu2.1                      amd64        system login tools
+ii  logsave                       1.46.5-2ubuntu1.1                       amd64        save the output of a command in a log file
+ii  lsb-base                      11.1.0ubuntu4                           all          Linux Standard Base init script functionality
+ii  make                          4.3-4.1build1                           amd64        utility for directing compilation
+ii  manpages                      5.10-1ubuntu1                           all          Manual pages about using a GNU/Linux system
+ii  manpages-dev                  5.10-1ubuntu1                           all          Manual pages about using GNU/Linux for development
+ii  mawk                          1.3.4.20200120-3                        amd64        Pattern scanning and text processing language
+ii  mount                         2.37.2-4ubuntu3                         amd64        tools for mounting and manipulating filesystems
+ii  ncurses-base                  6.3-2                                   all          basic terminal type definitions
+ii  ncurses-bin                   6.3-2                                   amd64        terminal-related programs and man pages
+ii  openssl                       3.0.2-0ubuntu1.7                        amd64        Secure Sockets Layer toolkit - cryptographic utility
+ii  passwd                        1:4.8.1-2ubuntu2.1                      amd64        change and administer password and group data
+ii  perl-base                     5.34.0-3ubuntu1.1                       amd64        minimal Perl system
+ii  procps                        2:3.3.17-6ubuntu2                       amd64        /proc file system utilities
+ii  publicsuffix                  20211207.1025-1                         all          accurate, machine-readable list of domain name suffixes
+ii  r-devel-nold                  1                                       amd64        GNU R statistical computation and graphics system
+ii  readline-common               8.1.2-1                                 all          GNU readline and history libraries, common files
+ii  rpcsvc-proto                  1.4.2-0ubuntu6                          amd64        RPC protocol compiler and definitions
+ii  sed                           4.8-1ubuntu2                            amd64        GNU stream editor for filtering/transforming text
+ii  sensible-utils                0.0.17                                  all          Utilities for sensible alternative selection
+ii  shared-mime-info              2.1-2                                   amd64        FreeDesktop.org shared MIME database and spec
+ii  sysvinit-utils                3.01-1ubuntu1                           amd64        System-V-like utilities
+ii  tar                           1.34+dfsg-1build3                       amd64        GNU version of the tar archiving utility
+ii  tzdata                        2022g-0ubuntu0.22.04.1                  all          time zone and daylight-saving time data
+ii  ubuntu-keyring                2021.03.26                              all          GnuPG keys of the Ubuntu archive
+ii  ucf                           3.0043                                  all          Update Configuration File(s): preserve user changes to config files
+ii  unzip                         6.0-26ubuntu3.1                         amd64        De-archiver for .zip files
+ii  usrmerge                      25ubuntu2                               all          Convert the system to the merged /usr directories scheme
+ii  util-linux                    2.37.2-4ubuntu3                         amd64        miscellaneous system utilities
+ii  x11-common                    1:7.7+23ubuntu2                         all          X Window System (X.Org) infrastructure
+ii  xdg-user-dirs                 0.17-2ubuntu4                           amd64        tool to manage well known user directories
+ii  zip                           3.0-12build2                            amd64        Archiver for .zip files
+ii  zlib1g:amd64                  1:1.2.11.dfsg-2ubuntu9.2                amd64        compression library - runtime
+ii  zlib1g-dev:amd64              1:1.2.11.dfsg-2ubuntu9.2                amd64        compression library - development
+</code></pre>
+</details>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p><strong>id:</strong> sha256:693420e5b2bfd98fecf98ea64e927745d2fef6fb0e9441ab1d27608e38849cce <br> <strong>tag:</strong> ghcr.io/r-hub/containers/nold:latest <br> <strong>created:</strong> 2023-01-23T06:10:38.405089413Z <br> <strong>size:</strong> 787.51 MB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux b2cb0c8347cc 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-01-21 r83656)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.1 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: /UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                                     zlib 
+                                                 "1.2.11" 
+                                                    bzlib 
+                                     "1.0.8, 13-Jul-2019" 
+                                                       xz 
+                                                  "5.2.5" 
+                                                     PCRE 
+                                       "10.39 2021-10-29" 
+                                                      ICU 
+                                                   "70.1" 
+                                                      TRE 
+                                "TRE 0.8.0 R_fixes (BSD)" 
+                                                    iconv 
+                                             "glibc 2.35" 
+                                                 readline 
+                                                    "8.1" 
+                                                     BLAS 
+"/usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3" 
+
+
+&gt; libcurlVersion()
+[1] "7.81.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.2"
+attr(,"libssh_version")
+[1] "libssh/0.9.6/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtmp"    "rtsp"    "scp"     "sftp"    "smb"     "smbs"   
+[22] "smtp"    "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.10.0"
+
+
+&gt; La_library()
+[1] "/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.16.0"                       ""                 "1.50.6" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "8.0" "LIBTIFF, Version 4.3.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2
+CXX = g++ -std=gnu++14
+CXXFLAGS = -g -O2
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/bin/java
+JAVAC = /usr/bin/javac
+JAVAH =
+JAR = /usr/bin/jar
+JAVA_HOME = /usr/lib/jvm/java-11-openjdk-amd64
+JAVA_LIBS = -L/usr/lib/jvm/java-11-openjdk-amd64/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/java-11-openjdk-amd64/include -I/usr/lib/jvm/java-11-openjdk-amd64/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++14
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include/tcl8.6 -I/usr/include/tcl8.6
+TCLTK_LIBS = -L/usr/lib/x86_64-linux-gnu -ltcl8.6 -L/usr/lib/x86_64-linux-gnu -ltk8.6 -lX11 -lXss -lXext
+BLAS_LIBS = -lblas
+LAPACK_LIBS = -llapack
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/bin/nm -B
+RANLIB = ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                          Version                                 Architecture Description
++++-=============================-=======================================-============-===============================================================================
+ii  adduser                       3.118ubuntu5                            all          add and remove users and groups
+ii  apt                           2.4.8                                   amd64        commandline package manager
+ii  base-files                    12ubuntu4.2                             amd64        Debian base system miscellaneous files
+ii  base-passwd                   3.5.52build1                            amd64        Debian base system master password and group files
+ii  bash                          5.1-6ubuntu1                            amd64        GNU Bourne Again SHell
+ii  binutils                      2.38-4ubuntu2.1                         amd64        GNU assembler, linker and binary utilities
+ii  binutils-common:amd64         2.38-4ubuntu2.1                         amd64        Common files for the GNU assembler, linker and binary utilities
+ii  binutils-x86-64-linux-gnu     2.38-4ubuntu2.1                         amd64        GNU binary utilities, for x86-64-linux-gnu target
+ii  bsdutils                      1:2.37.2-4ubuntu3                       amd64        basic utilities from 4.4BSD-Lite
+ii  bzip2-doc                     1.0.8-5build1                           all          high-quality block-sorting file compressor - documentation
+ii  ca-certificates               20211016ubuntu0.22.04.1                 all          Common CA certificates
+ii  coreutils                     8.32-4.1ubuntu1                         amd64        GNU core utilities
+ii  cpp                           4:11.2.0-1ubuntu1                       amd64        GNU C preprocessor (cpp)
+ii  cpp-11                        11.3.0-1ubuntu1~22.04                   amd64        GNU C preprocessor
+ii  curl                          7.81.0-1ubuntu1.7                       amd64        command line tool for transferring data with URL syntax
+ii  dash                          0.5.11+git20210903+057cd650a4ed-3build1 amd64        POSIX-compliant shell
+ii  debconf                       1.5.79ubuntu1                           all          Debian configuration management system
+ii  debianutils                   5.5-1ubuntu2                            amd64        Miscellaneous utilities specific to Debian
+ii  diffutils                     1:3.8-0ubuntu2                          amd64        File comparison utilities
+ii  dpkg                          1.21.1ubuntu2.1                         amd64        Debian package management system
+ii  e2fsprogs                     1.46.5-2ubuntu1.1                       amd64        ext2/ext3/ext4 file system utilities
+ii  findutils                     4.8.0-1ubuntu3                          amd64        utilities for finding files--find, xargs
+ii  fontconfig                    2.13.1-4.2ubuntu5                       amd64        generic font configuration library - support binaries
+ii  fontconfig-config             2.13.1-4.2ubuntu5                       all          generic font configuration library - configuration
+ii  fonts-dejavu-core             2.37-2build1                            all          Vera font family derivate with additional characters
+ii  g++                           4:11.2.0-1ubuntu1                       amd64        GNU C++ compiler
+ii  g++-11                        11.3.0-1ubuntu1~22.04                   amd64        GNU C++ compiler
+ii  gcc                           4:11.2.0-1ubuntu1                       amd64        GNU C compiler
+ii  gcc-11                        11.3.0-1ubuntu1~22.04                   amd64        GNU C compiler
+ii  gcc-11-base:amd64             11.3.0-1ubuntu1~22.04                   amd64        GCC, the GNU Compiler Collection (base package)
+ii  gcc-12-base:amd64             12.1.0-2ubuntu1~22.04                   amd64        GCC, the GNU Compiler Collection (base package)
+ii  gfortran                      4:11.2.0-1ubuntu1                       amd64        GNU Fortran 95 compiler
+ii  gfortran-11                   11.3.0-1ubuntu1~22.04                   amd64        GNU Fortran compiler
+ii  gpgv                          2.2.27-3ubuntu2.1                       amd64        GNU privacy guard - signature verification tool
+ii  grep                          3.7-1build1                             amd64        GNU grep, egrep and fgrep
+ii  gzip                          1.10-4ubuntu4.1                         amd64        GNU compression utilities
+ii  hostname                      3.23ubuntu2                             amd64        utility to set/show the host name or domain name
+ii  icu-devtools                  70.1-2                                  amd64        Development utilities for International Components for Unicode
+ii  init-system-helpers           1.62                                    all          helper tools for all init systems
+ii  libacl1:amd64                 2.3.1-1                                 amd64        access control list - shared library
+ii  libapt-pkg6.0:amd64           2.4.8                                   amd64        package management runtime library
+ii  libasan6:amd64                11.3.0-1ubuntu1~22.04                   amd64        AddressSanitizer -- a fast memory error detector
+ii  libatomic1:amd64              12.1.0-2ubuntu1~22.04                   amd64        support library providing __atomic built-in functions
+ii  libattr1:amd64                1:2.5.1-1build1                         amd64        extended attribute handling - shared library
+ii  libaudit-common               1:3.0.7-1build1                         all          Dynamic library for security auditing - common files
+ii  libaudit1:amd64               1:3.0.7-1build1                         amd64        Dynamic library for security auditing
+ii  libbinutils:amd64             2.38-4ubuntu2.1                         amd64        GNU binary utilities (private shared library)
+ii  libblkid1:amd64               2.37.2-4ubuntu3                         amd64        block device ID library
+ii  libbrotli1:amd64              1.0.9-2build6                           amd64        library implementing brotli encoder and decoder (shared libraries)
+ii  libbsd0:amd64                 0.11.5-1                                amd64        utility functions from BSD systems - shared library
+ii  libbz2-1.0:amd64              1.0.8-5build1                           amd64        high-quality block-sorting file compressor library - runtime
+ii  libbz2-dev:amd64              1.0.8-5build1                           amd64        high-quality block-sorting file compressor library - development
+ii  libc-bin                      2.35-0ubuntu3.1                         amd64        GNU C Library: Binaries
+ii  libc-dev-bin                  2.35-0ubuntu3.1                         amd64        GNU C Library: Development binaries
+ii  libc-devtools                 2.35-0ubuntu3.1                         amd64        GNU C Library: Development tools
+ii  libc6:amd64                   2.35-0ubuntu3.1                         amd64        GNU C Library: Shared libraries
+ii  libc6-dev:amd64               2.35-0ubuntu3.1                         amd64        GNU C Library: Development Libraries and Header Files
+ii  libcairo2:amd64               1.16.0-5ubuntu2                         amd64        Cairo 2D vector graphics library
+ii  libcap-ng0:amd64              0.7.9-2.2build3                         amd64        An alternate POSIX capabilities library
+ii  libcap2:amd64                 1:2.44-1build3                          amd64        POSIX 1003.1e capabilities (library)
+ii  libcc1-0:amd64                12.1.0-2ubuntu1~22.04                   amd64        GCC cc1 plugin for GDB
+ii  libcom-err2:amd64             1.46.5-2ubuntu1.1                       amd64        common error description library
+ii  libcrypt-dev:amd64            1:4.4.27-1                              amd64        libcrypt development files
+ii  libcrypt1:amd64               1:4.4.27-1                              amd64        libcrypt shared library
+ii  libctf-nobfd0:amd64           2.38-4ubuntu2.1                         amd64        Compact C Type Format library (runtime, no BFD dependency)
+ii  libctf0:amd64                 2.38-4ubuntu2.1                         amd64        Compact C Type Format library (runtime, BFD dependency)
+ii  libcurl4:amd64                7.81.0-1ubuntu1.7                       amd64        easy-to-use client-side URL transfer library (OpenSSL flavour)
+ii  libdatrie1:amd64              0.2.13-2                                amd64        Double-array trie library
+ii  libdb5.3:amd64                5.3.28+dfsg1-0.8ubuntu3                 amd64        Berkeley v5.3 Database Libraries [runtime]
+ii  libdebconfclient0:amd64       0.261ubuntu1                            amd64        Debian Configuration Management System (C-implementation library)
+ii  libdeflate0:amd64             1.10-2                                  amd64        fast, whole-buffer DEFLATE-based compression and decompression
+ii  libexpat1:amd64               2.4.7-1ubuntu0.2                        amd64        XML parsing C library - runtime library
+ii  libext2fs2:amd64              1.46.5-2ubuntu1.1                       amd64        ext2/ext3/ext4 file system libraries
+ii  libffi8:amd64                 3.4.2-4                                 amd64        Foreign Function Interface library runtime
+ii  libfontconfig1:amd64          2.13.1-4.2ubuntu5                       amd64        generic font configuration library - runtime
+ii  libfreetype6:amd64            2.11.1+dfsg-1ubuntu0.1                  amd64        FreeType 2 font engine, shared library files
+ii  libfribidi0:amd64             1.0.8-2ubuntu3.1                        amd64        Free Implementation of the Unicode BiDi algorithm
+ii  libgcc-11-dev:amd64           11.3.0-1ubuntu1~22.04                   amd64        GCC support library (development files)
+ii  libgcc-s1:amd64               12.1.0-2ubuntu1~22.04                   amd64        GCC support library
+ii  libgcrypt20:amd64             1.9.4-3ubuntu3                          amd64        LGPL Crypto library - runtime library
+ii  libgd3:amd64                  2.3.0-2ubuntu2                          amd64        GD Graphics Library
+ii  libgfortran-11-dev:amd64      11.3.0-1ubuntu1~22.04                   amd64        Runtime library for GNU Fortran applications (development files)
+ii  libgfortran5:amd64            12.1.0-2ubuntu1~22.04                   amd64        Runtime library for GNU Fortran applications
+ii  libglib2.0-0:amd64            2.72.4-0ubuntu1                         amd64        GLib library of C routines
+ii  libglib2.0-data               2.72.4-0ubuntu1                         all          Common files for GLib library
+ii  libgmp10:amd64                2:6.2.1+dfsg-3ubuntu1                   amd64        Multiprecision arithmetic library
+ii  libgnutls30:amd64             3.7.3-4ubuntu1.1                        amd64        GNU TLS library - main runtime library
+ii  libgomp1:amd64                12.1.0-2ubuntu1~22.04                   amd64        GCC OpenMP (GOMP) support library
+ii  libgpg-error0:amd64           1.43-3                                  amd64        GnuPG development runtime library
+ii  libgraphite2-3:amd64          1.3.14-1build2                          amd64        Font rendering engine for Complex Scripts -- library
+ii  libgssapi-krb5-2:amd64        1.19.2-2                                amd64        MIT Kerberos runtime libraries - krb5 GSS-API Mechanism
+ii  libharfbuzz0b:amd64           2.7.4-1ubuntu3.1                        amd64        OpenType text shaping engine (shared library)
+ii  libhogweed6:amd64             3.7.3-1build2                           amd64        low level cryptographic library (public-key cryptos)
+ii  libice6:amd64                 2:1.0.10-1build2                        amd64        X11 Inter-Client Exchange library
+ii  libicu-dev:amd64              70.1-2                                  amd64        Development files for International Components for Unicode
+ii  libicu70:amd64                70.1-2                                  amd64        International Components for Unicode
+ii  libidn2-0:amd64               2.3.2-2build1                           amd64        Internationalized domain names (IDNA2008/TR46) library
+ii  libisl23:amd64                0.24-2build1                            amd64        manipulating sets and relations of integer points bounded by linear constraints
+ii  libitm1:amd64                 12.1.0-2ubuntu1~22.04                   amd64        GNU Transactional Memory Library
+ii  libjbig0:amd64                2.1-3.1ubuntu0.22.04.1                  amd64        JBIGkit libraries
+ii  libjpeg-turbo8:amd64          2.1.2-0ubuntu1                          amd64        IJG JPEG compliant runtime library.
+ii  libjpeg8:amd64                8c-2ubuntu10                            amd64        Independent JPEG Group's JPEG runtime library (dependency package)
+ii  libk5crypto3:amd64            1.19.2-2                                amd64        MIT Kerberos runtime libraries - Crypto Library
+ii  libkeyutils1:amd64            1.6.1-2ubuntu3                          amd64        Linux Key Management Utilities (library)
+ii  libkrb5-3:amd64               1.19.2-2                                amd64        MIT Kerberos runtime libraries
+ii  libkrb5support0:amd64         1.19.2-2                                amd64        MIT Kerberos runtime libraries - Support library
+ii  libldap-2.5-0:amd64           2.5.13+dfsg-0ubuntu0.22.04.1            amd64        OpenLDAP libraries
+ii  libldap-common                2.5.13+dfsg-0ubuntu0.22.04.1            all          OpenLDAP common files for libraries
+ii  liblsan0:amd64                12.1.0-2ubuntu1~22.04                   amd64        LeakSanitizer -- a memory leak detector (runtime)
+ii  liblz4-1:amd64                1.9.3-2build2                           amd64        Fast LZ compression algorithm library - runtime
+ii  liblzma-dev:amd64             5.2.5-2ubuntu1                          amd64        XZ-format compression library - development files
+ii  liblzma5:amd64                5.2.5-2ubuntu1                          amd64        XZ-format compression library
+ii  libmd0:amd64                  1.0.4-1build1                           amd64        message digest functions from BSD systems - shared library
+ii  libmount1:amd64               2.37.2-4ubuntu3                         amd64        device mounting library
+ii  libmpc3:amd64                 1.2.1-2build1                           amd64        multiple precision complex floating-point library
+ii  libmpfr6:amd64                4.1.0-3build3                           amd64        multiple precision floating-point computation
+ii  libncurses6:amd64             6.3-2                                   amd64        shared libraries for terminal handling
+ii  libncursesw6:amd64            6.3-2                                   amd64        shared libraries for terminal handling (wide character support)
+ii  libnettle8:amd64              3.7.3-1build2                           amd64        low level cryptographic library (symmetric and one-way cryptos)
+ii  libnghttp2-14:amd64           1.43.0-1build3                          amd64        library implementing HTTP/2 protocol (shared library)
+ii  libnsl-dev:amd64              1.3.0-2build2                           amd64        libnsl development files
+ii  libnsl2:amd64                 1.3.0-2build2                           amd64        Public client interface for NIS(YP) and NIS+
+ii  libopenblas-dev:amd64         0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (dev, meta)
+ii  libopenblas-pthread-dev:amd64 0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (dev, pthread)
+ii  libopenblas0:amd64            0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (meta)
+ii  libopenblas0-pthread:amd64    0.3.20+ds-1                             amd64        Optimized BLAS (linear algebra) library (shared lib, pthread)
+ii  libp11-kit0:amd64             0.24.0-6build1                          amd64        library for loading and coordinating access to PKCS#11 modules - runtime
+ii  libpam-modules:amd64          1.4.0-11ubuntu2                         amd64        Pluggable Authentication Modules for PAM
+ii  libpam-modules-bin            1.4.0-11ubuntu2                         amd64        Pluggable Authentication Modules for PAM - helper binaries
+ii  libpam-runtime                1.4.0-11ubuntu2                         all          Runtime support for the PAM library
+ii  libpam0g:amd64                1.4.0-11ubuntu2                         amd64        Pluggable Authentication Modules library
+ii  libpango-1.0-0:amd64          1.50.6+ds-2                             amd64        Layout and rendering of internationalized text
+ii  libpangocairo-1.0-0:amd64     1.50.6+ds-2                             amd64        Layout and rendering of internationalized text
+ii  libpangoft2-1.0-0:amd64       1.50.6+ds-2                             amd64        Layout and rendering of internationalized text
+ii  libpaper-utils                1.1.28build2                            amd64        library for handling paper characteristics (utilities)
+ii  libpaper1:amd64               1.1.28build2                            amd64        library for handling paper characteristics
+ii  libpcre2-16-0:amd64           10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - 16 bit runtime files
+ii  libpcre2-32-0:amd64           10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - 32 bit runtime files
+ii  libpcre2-8-0:amd64            10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library- 8 bit runtime files
+ii  libpcre2-dev:amd64            10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - development files
+ii  libpcre2-posix3:amd64         10.39-3ubuntu0.1                        amd64        New Perl Compatible Regular Expression Library - posix-compatible runtime files
+ii  libpcre3:amd64                2:8.39-13ubuntu0.22.04.1                amd64        Old Perl 5 Compatible Regular Expression Library - runtime files
+ii  libpixman-1-0:amd64           0.40.0-1ubuntu0.22.04.1                 amd64        pixel-manipulation library for X and cairo
+ii  libpng16-16:amd64             1.6.37-3build5                          amd64        PNG library - runtime (version 1.6)
+ii  libprocps8:amd64              2:3.3.17-6ubuntu2                       amd64        library for accessing process information from /proc
+ii  libpsl5:amd64                 0.21.0-1.2build2                        amd64        Library for Public Suffix List (shared libraries)
+ii  libquadmath0:amd64            12.1.0-2ubuntu1~22.04                   amd64        GCC Quad-Precision Math Library
+ii  libreadline8:amd64            8.1.2-1                                 amd64        GNU readline and history libraries, run-time libraries
+ii  librtmp1:amd64                2.4+20151223.gitfa8646d.1-2build4       amd64        toolkit for RTMP streams (shared library)
+ii  libsasl2-2:amd64              2.1.27+dfsg2-3ubuntu1.1                 amd64        Cyrus SASL - authentication abstraction library
+ii  libsasl2-modules:amd64        2.1.27+dfsg2-3ubuntu1.1                 amd64        Cyrus SASL - pluggable authentication modules
+ii  libsasl2-modules-db:amd64     2.1.27+dfsg2-3ubuntu1.1                 amd64        Cyrus SASL - pluggable authentication modules (DB)
+ii  libseccomp2:amd64             2.5.3-2ubuntu2                          amd64        high level interface to Linux seccomp filter
+ii  libselinux1:amd64             3.3-1build2                             amd64        SELinux runtime shared libraries
+ii  libsemanage-common            3.3-1build2                             all          Common files for SELinux policy management libraries
+ii  libsemanage2:amd64            3.3-1build2                             amd64        SELinux policy management library
+ii  libsepol2:amd64               3.3-1build1                             amd64        SELinux library for manipulating binary security policies
+ii  libsm6:amd64                  2:1.2.3-1build2                         amd64        X11 Session Management library
+ii  libsmartcols1:amd64           2.37.2-4ubuntu3                         amd64        smart column output alignment library
+ii  libss2:amd64                  1.46.5-2ubuntu1.1                       amd64        command-line interface parsing library
+ii  libssh-4:amd64                0.9.6-2build1                           amd64        tiny C SSH library (OpenSSL flavor)
+ii  libssl3:amd64                 3.0.2-0ubuntu1.7                        amd64        Secure Sockets Layer toolkit - shared libraries
+ii  libstdc++-11-dev:amd64        11.3.0-1ubuntu1~22.04                   amd64        GNU Standard C++ Library v3 (development files)
+ii  libstdc++6:amd64              12.1.0-2ubuntu1~22.04                   amd64        GNU Standard C++ Library v3
+ii  libsystemd0:amd64             249.11-0ubuntu3.6                       amd64        systemd utility library
+ii  libtasn1-6:amd64              4.18.0-4build1                          amd64        Manage ASN.1 structures (runtime)
+ii  libtcl8.6:amd64               8.6.12+dfsg-1build1                     amd64        Tcl (the Tool Command Language) v8.6 - run-time library files
+ii  libthai-data                  0.1.29-1build1                          all          Data files for Thai language support library
+ii  libthai0:amd64                0.1.29-1build1                          amd64        Thai language support library
+ii  libtiff5:amd64                4.3.0-6ubuntu0.3                        amd64        Tag Image File Format (TIFF) library
+ii  libtinfo6:amd64               6.3-2                                   amd64        shared low-level terminfo library for terminal handling
+ii  libtirpc-common               1.3.2-2ubuntu0.1                        all          transport-independent RPC library - common files
+ii  libtirpc-dev:amd64            1.3.2-2ubuntu0.1                        amd64        transport-independent RPC library - development files
+ii  libtirpc3:amd64               1.3.2-2ubuntu0.1                        amd64        transport-independent RPC library
+ii  libtk8.6:amd64                8.6.12-1build1                          amd64        Tk toolkit for Tcl and X11 v8.6 - run-time files
+ii  libtsan0:amd64                11.3.0-1ubuntu1~22.04                   amd64        ThreadSanitizer -- a Valgrind-based detector of data races (runtime)
+ii  libubsan1:amd64               12.1.0-2ubuntu1~22.04                   amd64        UBSan -- undefined behaviour sanitizer (runtime)
+ii  libudev1:amd64                249.11-0ubuntu3.6                       amd64        libudev shared library
+ii  libunistring2:amd64           1.0-1                                   amd64        Unicode string library for C
+ii  libuuid1:amd64                2.37.2-4ubuntu3                         amd64        Universally Unique ID library
+ii  libwebp7:amd64                1.2.2-2                                 amd64        Lossy compression of digital photographic images
+ii  libx11-6:amd64                2:1.7.5-1                               amd64        X11 client-side library
+ii  libx11-data                   2:1.7.5-1                               all          X11 client-side library
+ii  libxau6:amd64                 1:1.0.9-1build5                         amd64        X11 authorisation library
+ii  libxcb-render0:amd64          1.14-3ubuntu3                           amd64        X C Binding, render extension
+ii  libxcb-shm0:amd64             1.14-3ubuntu3                           amd64        X C Binding, shm extension
+ii  libxcb1:amd64                 1.14-3ubuntu3                           amd64        X C Binding
+ii  libxdmcp6:amd64               1:1.1.3-0ubuntu5                        amd64        X11 Display Manager Control Protocol library
+ii  libxext6:amd64                2:1.3.4-1build1                         amd64        X11 miscellaneous extension library
+ii  libxft2:amd64                 2.3.4-1                                 amd64        FreeType-based font drawing library for X
+ii  libxml2:amd64                 2.9.13+dfsg-1ubuntu0.2                  amd64        GNOME XML library
+ii  libxpm4:amd64                 1:3.5.12-1ubuntu0.22.04.1               amd64        X11 pixmap library
+ii  libxrender1:amd64             1:0.9.10-1build4                        amd64        X Rendering Extension client library
+ii  libxss1:amd64                 1:1.2.3-1build2                         amd64        X11 Screen Saver extension library
+ii  libxt6:amd64                  1:1.2.1-1                               amd64        X11 toolkit intrinsics library
+ii  libxxhash0:amd64              0.8.1-1                                 amd64        shared library for xxhash
+ii  libzstd1:amd64                1.4.8+dfsg-3build1                      amd64        fast lossless compression algorithm
+ii  linux-libc-dev:amd64          5.15.0-58.64                            amd64        Linux Kernel Headers for development
+ii  locales                       2.35-0ubuntu3.1                         all          GNU C Library: National Language (locale) data [support]
+ii  login                         1:4.8.1-2ubuntu2.1                      amd64        system login tools
+ii  logsave                       1.46.5-2ubuntu1.1                       amd64        save the output of a command in a log file
+ii  lsb-base                      11.1.0ubuntu4                           all          Linux Standard Base init script functionality
+ii  make                          4.3-4.1build1                           amd64        utility for directing compilation
+ii  manpages                      5.10-1ubuntu1                           all          Manual pages about using a GNU/Linux system
+ii  manpages-dev                  5.10-1ubuntu1                           all          Manual pages about using GNU/Linux for development
+ii  mawk                          1.3.4.20200120-3                        amd64        Pattern scanning and text processing language
+ii  mount                         2.37.2-4ubuntu3                         amd64        tools for mounting and manipulating filesystems
+ii  ncurses-base                  6.3-2                                   all          basic terminal type definitions
+ii  ncurses-bin                   6.3-2                                   amd64        terminal-related programs and man pages
+ii  openssl                       3.0.2-0ubuntu1.7                        amd64        Secure Sockets Layer toolkit - cryptographic utility
+ii  passwd                        1:4.8.1-2ubuntu2.1                      amd64        change and administer password and group data
+ii  perl-base                     5.34.0-3ubuntu1.1                       amd64        minimal Perl system
+ii  procps                        2:3.3.17-6ubuntu2                       amd64        /proc file system utilities
+ii  publicsuffix                  20211207.1025-1                         all          accurate, machine-readable list of domain name suffixes
+ii  r-devel-nold                  1                                       amd64        GNU R statistical computation and graphics system
+ii  readline-common               8.1.2-1                                 all          GNU readline and history libraries, common files
+ii  rpcsvc-proto                  1.4.2-0ubuntu6                          amd64        RPC protocol compiler and definitions
+ii  sed                           4.8-1ubuntu2                            amd64        GNU stream editor for filtering/transforming text
+ii  sensible-utils                0.0.17                                  all          Utilities for sensible alternative selection
+ii  shared-mime-info              2.1-2                                   amd64        FreeDesktop.org shared MIME database and spec
+ii  sysvinit-utils                3.01-1ubuntu1                           amd64        System-V-like utilities
+ii  tar                           1.34+dfsg-1build3                       amd64        GNU version of the tar archiving utility
+ii  tzdata                        2022g-0ubuntu0.22.04.1                  all          time zone and daylight-saving time data
+ii  ubuntu-keyring                2021.03.26                              all          GnuPG keys of the Ubuntu archive
+ii  ucf                           3.0043                                  all          Update Configuration File(s): preserve user changes to config files
+ii  unzip                         6.0-26ubuntu3.1                         amd64        De-archiver for .zip files
+ii  usrmerge                      25ubuntu2                               all          Convert the system to the merged /usr directories scheme
+ii  util-linux                    2.37.2-4ubuntu3                         amd64        miscellaneous system utilities
+ii  x11-common                    1:7.7+23ubuntu2                         all          X Window System (X.Org) infrastructure
+ii  xdg-user-dirs                 0.17-2ubuntu4                           amd64        tool to manage well known user directories
+ii  zip                           3.0-12build2                            amd64        Archiver for .zip files
+ii  zlib1g:amd64                  1:1.2.11.dfsg-2ubuntu9.2                amd64        compression library - runtime
+ii  zlib1g-dev:amd64              1:1.2.11.dfsg-2ubuntu9.2                amd64        compression library - development
+</code></pre>
+</details>
+</div>
+</div>
+</div>
+<hr>
+<p>Container data last updated: 2023-01-23 15:01:42. Download <a href="manifest.json"><code>manifest.json</code></a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
