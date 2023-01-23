@@ -8,3 +8,5 @@ Depends:
     prettyunits,
     processx,
     purrr
+Suggests:
+    rmarkdown
