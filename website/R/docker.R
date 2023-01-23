@@ -1,9 +1,15 @@
 
 load_old_manifest <- function() {
   path <- "_site/manifest.json"
-  if (!file.exists(path)) {
+  if (file.exists(path)) {
+    # if input exists, we copy it to output, in case there is nothing to do
+    file.copy(path, "manifest.json")
+  } else {
+    # otherwise we download it, and copy it to output
     cli::cli_alert_warning("Old manifest file does not exist, downloading it.")
-    path <- "https://r-hub.github.io/containers/manifest.json"
+    url <- "https://r-hub.github.io/containers/manifest.json"
+    download.file(url, "manifest.json")
+    path <- "manifest.json"
   }
   jsonlite::fromJSON(path, simplifyVector = FALSE)
 }
@@ -79,7 +85,6 @@ update_manifest <- function() {
 
   json <- jsonlite::toJSON(obj, pretty = TRUE, auto_unbox = TRUE)
   writeLines(json, "manifest.json")
-  writeLines(json, "_site/manifest.json")
   cli::cli_alert_success("Container manifest updated.")
 }
 
