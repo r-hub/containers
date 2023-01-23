@@ -9,16 +9,16 @@ on:
         required: true
         type: choice
         options:
-          - 'yes'
-          - 'no'
+        - 'yes'
+        - 'no'
         default: 'yes'
       inpweb:
         description: 'Update website'
         required: true
         type: choice
         options:
-          - 'yes'
-          - 'no'
+        - 'yes'
+        - 'no'
         default: 'yes'
   schedule:
     - cron:  '55 5 * * *'
@@ -105,12 +105,13 @@ jobs:
     # Rule out parallel updates.
     concurrency:
       group: website
+
     steps:
 
     - uses: actions/checkout@v3
 
     - name: Install quarto
-    - uses: quarto-dev/quarto-actions/setup@v2
+      uses: quarto-dev/quarto-actions/setup@v2
 
     - name: Install R
       uses: r-lib/actions/setup-r@v2
