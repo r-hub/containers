@@ -51,5 +51,6 @@ jobs:
           files: |
             *-rstudio-*.deb
             *-rstudio-*.rpm
+          fail_on_unmatched_files: true
           name: "Latest builds"
           tag_name: latest
