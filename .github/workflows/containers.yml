@@ -28,6 +28,7 @@ jobs:
   # ------------------------------------------------------------------------
 
   setup-matrix:
+    if: ${{ github.event.inputs.inpcont == '' || github.event.inputs.inpcont == 'yes' }}
     runs-on: ubuntu-latest
     outputs:
       containers: ${{ steps.setup-matrix.outputs.containers }}
