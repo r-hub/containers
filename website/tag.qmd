@@ -1,0 +1,109 @@
+
+## `` `r format_tag(tag)` ``
+
+::: {.panel-tabset}
+
+```{r echo = FALSE, output = "asis"}
+builds <- conts$containers[[which(tags == tag)]]$builds
+bout <- character(length(builds))
+for (b in seq_along(builds)) {
+  build <- builds[[b]]
+  bout[b] <- glue::glue(r"(
+# { format_id(build$id) }
+
+**id:**      { build$id } <br>
+**tag:**     { build$tag } <br>
+**created:** { build$created } <br>
+**size:**    { prettyunits::pretty_bytes(build$size) } <br>
+
+<details>
+<summary>OS version</summary>
+````
+> uname -a
+{ build[["uname -a"]] }
+
+> cat /etc/os-release
+{ build[["/etc/os-release"]] }
+````
+</details>
+
+<details>
+<summary>R session information</summary>
+````
+> sessionInfo()
+{ build$`sessionInfo()` }
+````
+</details>
+
+<details>
+<summary>R capabilities</summary>
+````
+> capabilities()
+{ build$`capabilities()` }
+````
+</details>
+
+<details>
+<summary>R external software</summary>
+````
+> extSoftVersion()
+{ build$`extSoftVersion()` }
+
+> libcurlVersion()
+{ build$`libcurlVersion()` }
+
+> La_version()
+{ build$`La_version()` }
+
+> La_library()
+{ build$`La_library()` }
+
+> grSoftVersion()
+{ build$`grSoftVersion()` }
+
+> pcre_config()
+{ build$`pcre_config()` }
+````
+</details>
+
+<details>
+<summary>R localization</summary>
+````
+> l10n_info()
+{ build$`l10n_info()` }
+````
+</details>
+
+<details>
+<summary>R config</summary>
+````
+> R CMD config --all
+{ build$`R CMD config --all` }
+````
+</details>
+
+<details>
+<summary>Compilers</summary>
+````
+> $(CC) --version
+{ build[["$(CC) --version"]] }
+> $(CXX) --version
+{ build[["$(CXX) --version"]] }
+> $(FC) --version
+{ build[["$(FC) --version"]] }
+````
+</details>
+
+<details>
+<summary>OS packages</summary>
+````
+{ build[["OS packages"]] }
+````
+</details>
+
+  )")
+}
+cat(bout, sep = "\n\n")
+```
+
+:::

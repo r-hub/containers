@@ -1,0 +1,17 @@
+project:
+  type: website
+  render:
+    - "index.qmd"
+
+website:
+  title: "R-hub Docker images"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
