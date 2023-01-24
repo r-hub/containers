@@ -1,0 +1,121 @@
+---
+title: R-hub container internals
+---
+
+# Goals
+
+* Have containers for all of the Linux checks at
+  <https://cran.r-project.org/web/checks/check_flavors.html> and at
+  <https://cran.r-project.org/web/checks/check_issue_kinds.html>
+
+* Easily run the checks with open source tools
+  - locally on your computer,
+  - on GitHub Actions, and
+  - on R-hub.
+
+# Components
+
+## R builds
+
+We use R builds created by <https://github.com/rstudio/r-builds/> or
+by ourselves at <https://github.com/r-hub/containers> (see the `builder`
+subdirectory).
+
+These builds are `.deb` or `.rpm` packages that each install into their
+own directory, so multiple builds can be installed on the same system.
+
+`rstudio/r-builds` builds their packages for `devel` and `next` R versions
+daily. `r-hub/containers` builds all packages daily currently, on GitHub
+Actions:
+<https://github.com/r-hub/containers/actions/workflows/r-builds.yml>
+
+Our packages are uploaded at <https://github.com/r-hub/containers/releases>.
+`rstudio/r-builds` uploads their R builds to S3, see the README of their
+repository.
+
+## Containers
+
+The containers are built from `Dockerfile`s at
+<https://github.com/r-hub/containers/tree/main/containers>, daily on GHA:
+<https://github.com/r-hub/containers/actions/workflows/containers.yml>.
+
+The containers are pushed to [Docker Hub](https://hub.docker.com/u/rhub)
+and also to the [GitHub container
+registry](https://github.com/orgs/r-hub/packages?repo_name=containers).
+
+## `r-check` script
+
+This is currently very simple. For each `.tar.gz` file (`$pkg`) in the
+check directory (first argument, defaults to `/check`), it runs
+```
+cd `dirname $pkg`
+R -q -e "pak::pkg_install('deps::$pkg', dependencies = TRUE)"
+R CMD check $CHECK_ARGS	$pkg
+```
+
+We will probably have a better check script in the future. We are not sure
+yet where that script will live, or whether it should be a general tool
+that helps you run `R CMD check`, or it should be part of another tool,
+e.g. <https://github.com/r-lib/rig>.
+
+## pak
+
+The `r-check` script uses [pak](https://github.com/r-lib/pak) to install
+dependent R packages and system requirements. Packages can use the
+custom `Remotes` field to install dependencies from GitHub, URLs, etc:
+https://pak.r-lib.org/reference/pak_package_sources.html
+
+## System requirements
+
+We use <https://github.com/rstudio/r-system-requirements> and pak's built in
+system requirements support to install system requirements.
+
+Occasionally pak might miss system requirements, this is typically because
+* they are missing from database. Please consider opening an issue at
+  <https://github.com/rstudio/r-system-requirements/issues> about this; or
+* the package author did not specify it. Please open an issue in the [pak
+  repository](https://github.com/r-lib/pak/issues), so we can work around
+  this.
+
+In the future we will also provide containers (or tools to build them)
+that have all system requirements of all CRAN packages pre-installed.
+
+## Website
+
+You might be reading it right now, it is at
+<https://r-hub.github.io/containers/>.
+
+It is built in Quarto, and updated daily from the `containers.yml` workflow,
+after the containers are built:
+<https://github.com/r-hub/containers/blob/f8f0775d1354418887adad06135ce087d152cdfc/.github/workflows/containers.yml#L109>.
+
+(The workflow has a manual trigger which also lets you update the website
+without building the containers or updating the manifest.)
+
+The website contains
+* documentation about using the containers, and
+* data about the containers. (For the last five builds of each container.)
+
+It also contains a
+[`manifest.json`](https://r-hub.github.io/containers/manifest.json) file
+with the same container data in a machine readable form.
+
+# Notes for individual containers
+
+## `atlas`
+
+Corresponding issue: <https://github.com/r-hub/containers/issues/1>
+
+We had to use Fedora for this one, ATLAS on Ubuntu does not reproduce
+the CRAN issues.
+
+## `gcc-13`
+
+Corresponding issue: <https://github.com/r-hub/containers/issues/2>
+
+Using Fedora 38 was the easiest way to get a container with GCC 13.x.
+
+# Notes
+
+* The build system works on amd64 and arm64 architectures, but we are
+  focusing on arm64 containers initially.

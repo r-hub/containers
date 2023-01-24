@@ -3,27 +3,30 @@ project:
   type: website
   resources:
     - "manifest.json"
-title: "R-hub Docker images"
 execute:
   cache: false
+title: Docker containers for checking R packages
 ---
 
-```{r include = FALSE, cache = FALSE}
-pkgload::load_all()
-conts <- load_new_manifest()
-```
 
-```{r echo = FALSE, output = "asis", cache = FALSE}
-tags <- purrr::map_chr(conts$containers, "tag")
-out <- character(length(tags))
-for (t in seq_along(tags)) {
-  tag <- tags[t]
-  out1 <- knitr::knit_child("tag.qmd", quiet = TRUE)
-  out[t] <- paste(out1, collapse = "\n")
-}
-cat(out, sep = "\n\n")
-```
+# Available containers
 
----
-Container data last updated: `r conts$updated`.
-Download [`manifest.json`](manifest.json)
+Our ultimate goal is to have containers that match all [primary CRAN Linux
+systems](https://cran.r-project.org/web/checks/check_flavors.html) and all
+[extra CRAN checks](https://cran.r-project.org/web/checks/check_issue_kinds.html).
+
+Currently we have the following containers:
+
+| CRAN name | Description                                        | Details                           |
+|:----------|:---------------------------------------------------|:----------------------------------|
+|ATLAS      | Tests with alternative BLAS/LAPACK implementations | [Details](containers.html#atlas)  |
+|gcc13      | Checks with GCC trunk aka 13.0                     | [Details](containers.html#gcc-13) |
+|noLD       | Tests without long double                          | [Details](containers.html$nold)   |
+
+See the [containers page](containers.html) for more data about the
+containers.
+
+# Usage
+
+You can use these containers [on your machine](local.html), or on
+[GitHub Actions](gha.html).

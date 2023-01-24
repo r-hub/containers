@@ -1,0 +1,23 @@
+---
+title: R-hub containers
+---
+
+```{r include = FALSE, cache = FALSE}
+pkgload::load_all()
+conts <- load_new_manifest()
+```
+
+```{r echo = FALSE, output = "asis", cache = FALSE}
+tags <- purrr::map_chr(conts$containers, "tag")
+out <- character(length(tags))
+for (t in seq_along(tags)) {
+  tag <- tags[t]
+  out1 <- knitr::knit_child("tag.qmd", quiet = TRUE)
+  out[t] <- paste(out1, collapse = "\n")
+}
+cat(out, sep = "\n\n")
+```
+
+---
+Container data last updated: `r conts$updated`.
+Download [`manifest.json`](manifest.json)

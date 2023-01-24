@@ -1,4 +1,5 @@
-
-# Run on GitHub Actions
+---
+title: Run on GitHub Actions
+---
 
 Coming soon!

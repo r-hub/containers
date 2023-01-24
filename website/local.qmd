@@ -1,7 +1,8 @@
+---
+title: Run on your machine
+---
 
-# Run on your machine
-
-## Prerequisites
+# Prerequisites
 
 To run these containers on your machine you need:
 
@@ -22,7 +23,7 @@ To run these containers on your machine you need:
   containers you run at the same time.
 
 
-## Run `R CMD check` on a tarball
+# Run `R CMD check` on a tarball
 
 1. Create a directory, e.g. `check`. E.g. on Unix:
    ```sh
@@ -165,7 +166,7 @@ ls check/tiff.Rcheck/
 ```
 
 
-## Interactive debugging
+# Interactive debugging
 
 This is similar to running `R CMD check`, but start `bash` instead of
 `r-check`, and use `-ti` to create an interactive session:
@@ -179,3 +180,4 @@ of the extracted package call:
 ```sh
 R -q -e "pak::pkg_install('deps::.', dependencies = TRUE)"
 ```
+This installs all dependencies and system requirements of the package.
