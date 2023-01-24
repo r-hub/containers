@@ -5,7 +5,7 @@ project:
     - "manifest.json"
 execute:
   cache: false
-title: Docker containers for checking R packages
+title: Docker containers for R developers
 ---
 
 
@@ -22,6 +22,10 @@ Currently we have the following containers:
 |ATLAS      | Tests with alternative BLAS/LAPACK implementations | [Details](containers.html#atlas)  |
 |gcc13      | Checks with GCC trunk aka 13.0                     | [Details](containers.html#gcc-13) |
 |noLD       | Tests without long double                          | [Details](containers.html$nold)   |
+
+All containers are available from
+[Docker Hub](https://hub.docker.com/u/rhub) and from
+[Github Packages](https://github.com/orgs/r-hub/packages?repo_name=containers).
 
 See the [containers page](containers.html) for more data about the
 containers.
