@@ -21,7 +21,7 @@ Currently we have the following containers:
 |:----------|:---------------------------------------------------|:----------------------------------|
 |ATLAS      | Tests with alternative BLAS/LAPACK implementations | [Details](containers.html#atlas)  |
 |gcc13      | Checks with GCC trunk aka 13.0                     | [Details](containers.html#gcc-13) |
-|noLD       | Tests without long double                          | [Details](containers.html$nold)   |
+|noLD       | Tests without long double                          | [Details](containers.html#nold)   |
 
 All containers are available from
 [Docker Hub](https://hub.docker.com/u/rhub) and from
