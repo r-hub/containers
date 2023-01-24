@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R-hub – local</title>
+<title>R-hub - Run on your machine</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,6 +144,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./containers.html">
  <span class="menu-text">Containers</span></a>
   </li>  
   <li class="nav-item">
@@ -153,6 +157,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li class="nav-item">
     <a class="nav-link" href="./gha.html">
  <span class="menu-text">Run on GitHub Actions</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./internals.html">
+ <span class="menu-text">Internals</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/r-hub/containers">
+ <span class="menu-text">At GitHub</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -169,24 +183,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-on-your-machine" id="toc-run-on-your-machine" class="nav-link active" data-scroll-target="#run-on-your-machine">Run on your machine</a>
-  <ul class="collapse">
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#run-r-cmd-check-on-a-tarball" id="toc-run-r-cmd-check-on-a-tarball" class="nav-link" data-scroll-target="#run-r-cmd-check-on-a-tarball">Run <code>R CMD check</code> on a tarball</a></li>
   <li><a href="#interactive-debugging" id="toc-interactive-debugging" class="nav-link" data-scroll-target="#interactive-debugging">Interactive debugging</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Run on your machine</h1>
+</div>
 
 
-<section id="run-on-your-machine" class="level1">
-<h1>Run on your machine</h1>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="prerequisites" class="level1">
+<h1>Prerequisites</h1>
 <p>To run these containers on your machine you need:</p>
 <ul>
 <li>Docker.
@@ -198,8 +222,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>A couple of gigabytes of disk space, depending on how many and which containers you run at the same time.</li>
 </ul>
 </section>
-<section id="run-r-cmd-check-on-a-tarball" class="level2">
-<h2 class="anchored" data-anchor-id="run-r-cmd-check-on-a-tarball">Run <code>R CMD check</code> on a tarball</h2>
+<section id="run-r-cmd-check-on-a-tarball" class="level1">
+<h1>Run <code>R CMD check</code> on a tarball</h1>
 <ol type="1">
 <li><p>Create a directory, e.g.&nbsp;<code>check</code>. E.g. on Unix:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
@@ -311,15 +335,15 @@ for details.</code></pre>
 <pre><code>00_pkg_src/ 00install.out   tiff-Ex.R   tiff-Ex.pdf
 00check.log tiff/       tiff-Ex.Rout</code></pre>
 </section>
-<section id="interactive-debugging" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-debugging">Interactive debugging</h2>
+<section id="interactive-debugging" class="level1">
+<h1>Interactive debugging</h1>
 <p>This is similar to running <code>R CMD check</code>, but start <code>bash</code> instead of <code>r-check</code>, and use <code>-ti</code> to create an interactive session:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check ghcr.io/r-hub/containers/gcc-13:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You’ll need to install the dependencies of the package. The easiest is to use pak, which is preinstalled in all containers. From the root directory of the extracted package call:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"pak::pkg_install('deps::.', dependencies = TRUE)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This installs all dependencies and system requirements of the package.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R-hub - Docker containers for checking R packages</title>
+<title>R-hub - R-hub container internals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./internals.html">
+    <a class="nav-link active" href="./internals.html" aria-current="page">
  <span class="menu-text">Internals</span></a>
   </li>  
   <li class="nav-item">
@@ -120,8 +120,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#available-containers" id="toc-available-containers" class="nav-link active" data-scroll-target="#available-containers">Available containers</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#components" id="toc-components" class="nav-link" data-scroll-target="#components">Components</a>
+  <ul class="collapse">
+  <li><a href="#r-builds" id="toc-r-builds" class="nav-link" data-scroll-target="#r-builds">R builds</a></li>
+  <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a></li>
+  <li><a href="#r-check-script" id="toc-r-check-script" class="nav-link" data-scroll-target="#r-check-script"><code>r-check</code> script</a></li>
+  <li><a href="#pak" id="toc-pak" class="nav-link" data-scroll-target="#pak">pak</a></li>
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System requirements</a></li>
+  <li><a href="#website" id="toc-website" class="nav-link" data-scroll-target="#website">Website</a></li>
+  </ul></li>
+  <li><a href="#notes-for-individual-containers" id="toc-notes-for-individual-containers" class="nav-link" data-scroll-target="#notes-for-individual-containers">Notes for individual containers</a>
+  <ul class="collapse">
+  <li><a href="#atlas" id="toc-atlas" class="nav-link" data-scroll-target="#atlas"><code>atlas</code></a></li>
+  <li><a href="#gcc-13" id="toc-gcc-13" class="nav-link" data-scroll-target="#gcc-13"><code>gcc-13</code></a></li>
+  </ul></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -130,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Docker containers for checking R packages</h1>
+<h1 class="title">R-hub container internals</h1>
 </div>
 
 
@@ -145,41 +159,77 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="available-containers" class="level1">
-<h1>Available containers</h1>
-<p>Our ultimate goal is to have containers that match all <a href="https://cran.r-project.org/web/checks/check_flavors.html">primary CRAN Linux systems</a> and all <a href="https://cran.r-project.org/web/checks/check_issue_kinds.html">extra CRAN checks</a>.</p>
-<p>Currently we have the following containers:</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">CRAN name</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Details</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">ATLAS</td>
-<td style="text-align: left;">Tests with alternative BLAS/LAPACK implementations</td>
-<td style="text-align: left;"><a href="containers.html#atlas">Details</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">gcc13</td>
-<td style="text-align: left;">Checks with GCC trunk aka 13.0</td>
-<td style="text-align: left;"><a href="containers.html#gcc-13">Details</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">noLD</td>
-<td style="text-align: left;">Tests without long double</td>
-<td style="text-align: left;"><a href="containers.html$nold">Details</a></td>
-</tr>
-</tbody>
-</table>
-<p>See the <a href="containers.html">containers page</a> for more data about the containers.</p>
+<section id="goals" class="level1">
+<h1>Goals</h1>
+<ul>
+<li><p>Have containers for all of the Linux checks at <a href="https://cran.r-project.org/web/checks/check_flavors.html" class="uri">https://cran.r-project.org/web/checks/check_flavors.html</a> and at <a href="https://cran.r-project.org/web/checks/check_issue_kinds.html" class="uri">https://cran.r-project.org/web/checks/check_issue_kinds.html</a></p></li>
+<li><p>Easily run the checks with open source tools</p>
+<ul>
+<li>locally on your computer,</li>
+<li>on GitHub Actions, and</li>
+<li>on R-hub.</li>
+</ul></li>
+</ul>
 </section>
-<section id="usage" class="level1">
-<h1>Usage</h1>
-<p>You can use these containers <a href="local.html">on your machine</a>, or on <a href="gha.html">GitHub Actions</a>.</p>
+<section id="components" class="level1">
+<h1>Components</h1>
+<section id="r-builds" class="level2">
+<h2 class="anchored" data-anchor-id="r-builds">R builds</h2>
+<p>We use R builds created by <a href="https://github.com/rstudio/r-builds/" class="uri">https://github.com/rstudio/r-builds/</a> or by ourselves at <a href="https://github.com/r-hub/containers" class="uri">https://github.com/r-hub/containers</a> (see the <code>builder</code> subdirectory).</p>
+<p>These builds are <code>.deb</code> or <code>.rpm</code> packages that each install into their own directory, so multiple builds can be installed on the same system.</p>
+<p><code>rstudio/r-builds</code> builds their packages for <code>devel</code> and <code>next</code> R versions daily. <code>r-hub/containers</code> builds all packages daily currently, on GitHub Actions: <a href="https://github.com/r-hub/containers/actions/workflows/r-builds.yml" class="uri">https://github.com/r-hub/containers/actions/workflows/r-builds.yml</a></p>
+<p>Our packages are uploaded at <a href="https://github.com/r-hub/containers/releases" class="uri">https://github.com/r-hub/containers/releases</a>. <code>rstudio/r-builds</code> uploads their R builds to S3, see the README of their repository.</p>
+</section>
+<section id="containers" class="level2">
+<h2 class="anchored" data-anchor-id="containers">Containers</h2>
+<p>The containers are built from <code>Dockerfile</code>s at <a href="https://github.com/r-hub/containers/tree/main/containers" class="uri">https://github.com/r-hub/containers/tree/main/containers</a>, daily on GHA: <a href="https://github.com/r-hub/containers/actions/workflows/containers.yml" class="uri">https://github.com/r-hub/containers/actions/workflows/containers.yml</a>.</p>
+<p>The containers are pushed to <a href="https://hub.docker.com/u/rhub">Docker Hub</a> and also to the <a href="https://github.com/orgs/r-hub/packages?repo_name=containers">GitHub container registry</a>.</p>
+</section>
+<section id="r-check-script" class="level2">
+<h2 class="anchored" data-anchor-id="r-check-script"><code>r-check</code> script</h2>
+<p>This is currently very simple. For each <code>.tar.gz</code> file (<code>$pkg</code>) in the check directory (first argument, defaults to <code>/check</code>), it runs</p>
+<pre><code>cd `dirname $pkg`
+R -q -e "pak::pkg_install('deps::$pkg', dependencies = TRUE)"
+R CMD check $CHECK_ARGS $pkg</code></pre>
+<p>We will probably have a better check script in the future. We are not sure yet where that script will live, or whether it should be a general tool that helps you run <code>R CMD check</code>, or it should be part of another tool, e.g.&nbsp;<a href="https://github.com/r-lib/rig" class="uri">https://github.com/r-lib/rig</a>.</p>
+</section>
+<section id="pak" class="level2">
+<h2 class="anchored" data-anchor-id="pak">pak</h2>
+<p>The <code>r-check</code> script uses <a href="https://github.com/r-lib/pak">pak</a> to install dependent R packages and system requirements. Packages can use the custom <code>Remotes</code> field to install dependencies from GitHub, URLs, etc: https://pak.r-lib.org/reference/pak_package_sources.html</p>
+</section>
+<section id="system-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="system-requirements">System requirements</h2>
+<p>We use <a href="https://github.com/rstudio/r-system-requirements" class="uri">https://github.com/rstudio/r-system-requirements</a> and pak’s built in system requirements support to install system requirements.</p>
+<p>Occasionally pak might miss system requirements, this is typically because * they are missing from database. Please consider opening an issue at <a href="https://github.com/rstudio/r-system-requirements/issues" class="uri">https://github.com/rstudio/r-system-requirements/issues</a> about this; or * the package author did not specify it. Please open an issue in the <a href="https://github.com/r-lib/pak/issues">pak repository</a>, so we can work around this.</p>
+<p>In the future we will also provide containers (or tools to build them) that have all system requirements of all CRAN packages pre-installed.</p>
+</section>
+<section id="website" class="level2">
+<h2 class="anchored" data-anchor-id="website">Website</h2>
+<p>You might be reading it right now, it is at <a href="https://r-hub.github.io/containers/" class="uri">https://r-hub.github.io/containers/</a>.</p>
+<p>It is built in Quarto, and updated daily from the <code>containers.yml</code> workflow, after the containers are built: <a href="https://github.com/r-hub/containers/blob/f8f0775d1354418887adad06135ce087d152cdfc/.github/workflows/containers.yml#L109" class="uri">https://github.com/r-hub/containers/blob/f8f0775d1354418887adad06135ce087d152cdfc/.github/workflows/containers.yml#L109</a>.</p>
+<p>(The workflow has a manual trigger which also lets you update the website without building the containers or updating the manifest.)</p>
+<p>The website contains * documentation about using the containers, and * data about the containers. (For the last five builds of each container.)</p>
+<p>It also contains a <a href="https://r-hub.github.io/containers/manifest.json"><code>manifest.json</code></a> file with the same container data in a machine readable form.</p>
+</section>
+</section>
+<section id="notes-for-individual-containers" class="level1">
+<h1>Notes for individual containers</h1>
+<section id="atlas" class="level2">
+<h2 class="anchored" data-anchor-id="atlas"><code>atlas</code></h2>
+<p>Corresponding issue: <a href="https://github.com/r-hub/containers/issues/1" class="uri">https://github.com/r-hub/containers/issues/1</a></p>
+<p>We had to use Fedora for this one, ATLAS on Ubuntu does not reproduce the CRAN issues.</p>
+</section>
+<section id="gcc-13" class="level2">
+<h2 class="anchored" data-anchor-id="gcc-13"><code>gcc-13</code></h2>
+<p>Corresponding issue: <a href="https://github.com/r-hub/containers/issues/2" class="uri">https://github.com/r-hub/containers/issues/2</a></p>
+<p>Using Fedora 38 was the easiest way to get a container with GCC 13.x.</p>
+</section>
+</section>
+<section id="notes" class="level1">
+<h1>Notes</h1>
+<ul>
+<li>The build system works on amd64 and arm64 architectures, but we are focusing on arm64 containers initially.</li>
+</ul>
 
 
 </section>
