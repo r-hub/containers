@@ -39,7 +39,21 @@
     "href": "gha.html",
     "title": "Run on GitHub Actions",
     "section": "",
-    "text": "Coming soon!"
+    "text": "If your package is on GitHub and you want to check it with some of these containers regularly, then you can use a workflow like this:\nname: R CMD check (ATLAS)\n\non:\n  push:\n    branches: [main, master]\n  pull_request:\n    branches: [main, master]\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    container:\n      image: ghcr.io/r-hub/containers/atlas:latest\n\n    steps:\n    - actions/checkout@v3\n\n    - name: Install dependencies\n      run: |\n        R -q -e 'pak::pkg_install(c(\"deps::.\", any::rcmdcheck\"), dependencies = TRUE)'\n\n    - uses: r-lib/actions/check-r-package@v2\n\n\n\nAlternatively, you can create a workflow that you run manually, with the selected container:\nname: R CMD check with and R-hub container\n\non:\n  workflow_dispatch:\n    inputs:\n      inpcont:\n        description: 'Check container'\n        required: true\n        type: choice\n        options:\n        - 'atlas'\n        - 'gcc-13'\n        - 'nold'\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    container:\n      image: ghcr.io/r-hub/containers/${{ github.event.inputs.inpcont }}:latest\n\n    steps:\n    - actions/checkout@v3\n    - name: Install dependencies\n      run: |\n        R -q -e 'pak::pkg_install(c(\"deps::.\", any::rcmdcheck\"), dependencies = TRUE)'\n    - uses: r-lib/actions/check-r-package@v2"
+  },
+  {
+    "objectID": "gha.html#write-your-own-universal-check-workflow",
+    "href": "gha.html#write-your-own-universal-check-workflow",
+    "title": "Run on GitHub Actions",
+    "section": "Write your own universal check workflow",
+    "text": "Write your own universal check workflow\nTo run a check in a container for somebody else’s package, you could use a workflow like this:\nname: Check any R package at an URL\n\non:\n  workflow_dispatch:\n    inputs:\n      inpurl:\n        description: 'URL to a source R package'\n        required: true\n        type: string\n      inpcont:\n        description: 'Check container'\n        required: true\n        type: choice\n        options:\n        - 'atlas'\n        - 'gcc-13'\n        - 'nold'\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    container:\n      image: ghcr.io/r-hub/containers/${{ github.event.inputs.inpcont }}:latest\n\n    steps:\n    - name: Download package\n      run: |\n        mkdir /check\n        curl -LO \"${{ github.event.inputs.inpurl }}\" --output-dir /check\n\n    - name: Install dependencies and check package\n      run: r-check\n\n    - name: Upload check result as artifact\n      uses: actions/upload-artifact@v3\n      with:\n        name: check-results\n        path: /check\nYou can start it manually, specify the URL of the R source package you want to check and select the name of the container."
+  },
+  {
+    "objectID": "gha.html#fork-this-repository-to-get-a-check-workflow",
+    "href": "gha.html#fork-this-repository-to-get-a-check-workflow",
+    "title": "Run on GitHub Actions",
+    "section": "Fork this repository to get a check workflow",
+    "text": "Fork this repository to get a check workflow\nAlternatively, you can also fork the r-hub/containers repository, which already has a workflow like this, and use that to check any package, with any container. Here is what you need to do:\n\nFork the r-hub/containers repository.\nEnable the actions in the fork. Click on the green button that says “I understand my workflows, go ahead and enable them.” in the “Actions” tab.\nSelect the “Check any R package at a URL” workflow on left, in the list of workflows.\nClick on “Run workflow” on the right side.\nKeep the branch unchanged, specify the package URL, select the container.\nClick on “Run workflow”.\n\nThat’s it."
   },
   {
     "objectID": "internals.html",
