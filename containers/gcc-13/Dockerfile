@@ -16,7 +16,8 @@ RUN dnf -y upgrade && \
 # AUto-install system requirements
 
 ENV PATH="/opt/R/devel-gcc-13/bin:${PATH}"
-# ENV PKG_SYSREQS=true
+ENV PKG_SYSREQS=true
+ENV R_PKG_SYSREQS2=true
 
 # ------------------------------------------------------------------------------------
 # Set CRAN repo, no P3M for Fedora
