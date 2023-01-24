@@ -2,13 +2,19 @@ project:
   type: website
   render:
     - "index.qmd"
+    - "local.qmd"
+    - "gha.qmd"
 
 website:
-  title: "R-hub Docker images"
+  title: "R-hub"
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Containers
+      - href: local.qmd
+        text: Run on your machine
+      - href: gha.qmd
+        text: Run on GitHub Actions
 
 format:
   html:

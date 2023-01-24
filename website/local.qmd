@@ -1,0 +1,181 @@
+
+# Run on your machine
+
+## Prerequisites
+
+To run these containers on your machine you need:
+
+* Docker.
+  - On Linux Docker is probably part of your distribution. Install the
+    `docker.io` package on Debian and Ubuntu.
+    See [the Docker docs](https://docs.docker.com/engine/install/) for
+    other distributions.
+  - On macOS, you can use
+    [Docker Desktop](https://docs.docker.com/get-docker/) (free for
+    non-commercial use), or install docker from
+    [Homebrew](https://brew.sh/).
+  - On Windows, you can use
+    [Docker Desktop](https://docs.docker.com/get-docker/) (free for
+    non-commercial use). It is possible to use Docker without Docker
+    Desktop as well, but harder to set up.
+* A couple of gigabytes of disk space, depending on how many and which
+  containers you run at the same time.
+
+
+## Run `R CMD check` on a tarball
+
+1. Create a directory, e.g. `check`. E.g. on Unix:
+   ```sh
+   mkdir check
+   ```
+2. Put the source R package into this directory, e.g.
+   ```sh
+   R -q -e "download.packages('cli', 'check')"
+   ```
+3. Start the container with the `check` directory mounted at `/check` and
+   run the `r-check` command. E.g. for the `gcc-13` image you would run:
+   ```sh
+   docker run -v `pwd`/check:/check ghcr.io/r-hub/containers/gcc-13:latest r-check
+   ```
+   If you are running this on a non-Intel machine (eg. an M1 mac), pass
+   `--platform=linux/amd64` to `docker run`. Note that this will make
+   Docker emulate an `x86_64` processor, which is usually 5-10 times
+   slower than native execution.
+4. The result of the check will be in the `check` directory, in the usual
+   `<pkgname>.Rcheck` directory.
+
+Here is the complete output from a check of a very simple package, that
+has no dependencies, only some system dependencies:
+
+```sh
+mkdir check
+R -q -e "download.packages('tiff', 'check')"
+```
+
+```
+> download.packages('tiff', 'check')
+trying URL 'https://cloud.r-project.org/src/contrib/tiff_0.1-11.tar.gz'
+Content type 'application/x-gzip' length 68157 bytes (66 KB)
+==================================================
+downloaded 66 KB
+
+     [,1]   [,2]
+[1,] "tiff" "check/tiff_0.1-11.tar.gz"
+```
+
+```sh
+docker run --platform=linux/amd64 -v `pwd`/check:/check \
+  ghcr.io/r-hub/containers/gcc-13:latest r-check
+```
+
+```
+Checking /check/tiff_0.1-11.tar.gz
+> pak::pkg_install('deps::/check/tiff_0.1-11.tar.gz', dependencies = TRUE)
+
+→ Will download 1 package with unknown size.
+ℹ No downloads are needed
+ℹ Installing system requirements
+ℹ Executing `sh -c dnf install -y libjpeg-turbo-devel libtiff-devel`
+✔ :  [21.4s]
+
+* using log directory ‘/check/tiff.Rcheck’
+* using R Under development (unstable) (2023-01-23 r83671)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* R was compiled by
+    gcc (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+    GNU Fortran (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)
+* running under: Fedora Linux 38 (Container Image Prerelease)
+* using session charset: UTF-8
+* using options ‘--no-manual --no-build-vignettes’
+* checking for file ‘tiff/DESCRIPTION’ ... OK
+* this is package ‘tiff’ version ‘0.1-11’
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for .dll and .exe files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘tiff’ can be installed ... WARNING
+Found the following significant warnings:
+  common.c:36:13: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+See ‘/check/tiff.Rcheck/00install.out’ for details.
+* used C compiler: ‘gcc (GCC) 13.0.1 20230117 (Red Hat 13.0.1-0)’
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in shell scripts ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... NOTE
+Compilation used the following non-portable flag(s):
+  ‘-Werror=format-security’ ‘-Wp,-D_FORTIFY_SOURCE=2’
+* checking compiled code ... OK
+* checking examples ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+
+Status: 1 WARNING, 1 NOTE
+See
+  ‘/check/tiff.Rcheck/00check.log’
+for details.
+```
+
+```sh
+ls check/tiff.Rcheck/
+```
+
+```
+00_pkg_src/	00install.out	tiff-Ex.R	tiff-Ex.pdf
+00check.log	tiff/		tiff-Ex.Rout
+```
+
+
+## Interactive debugging
+
+This is similar to running `R CMD check`, but start `bash` instead of
+`r-check`, and use `-ti` to create an interactive session:
+```sh
+docker run -v `pwd`/check:/check ghcr.io/r-hub/containers/gcc-13:latest bash
+```
+
+You'll need to install the dependencies of the package. The easiest is to
+use pak, which is preinstalled in all containers. From the root directory
+of the extracted package call:
+```sh
+R -q -e "pak::pkg_install('deps::.', dependencies = TRUE)"
+```
