@@ -46,8 +46,12 @@ update_manifest <- function() {
   old <- unlist(purrr::map(old$containers, "builds"), recursive = FALSE)
 
   # get data from latest container versions
-  conts <- list_containers()
-  new <- purrr::map(conts, get_container_data)
+  if (! tolower(Sys.getenv("UPDATE_MANIFEST", "yes")) %in%
+      c("no", "false", "off", "0")) {
+    new <- purrr::map(list_containers(), get_container_data)
+  } else {
+    new <- list()
+  }
 
   # filter out the ones that we have already seen
   oldids <- purrr::map_chr(old, "id")

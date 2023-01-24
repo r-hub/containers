@@ -12,6 +12,14 @@ on:
         - 'yes'
         - 'no'
         default: 'yes'
+      inpmani:
+        description: 'Update manifest'
+        required: true
+        type: choice
+        options:
+        - 'yes'
+        - 'no'
+        default: 'yes'
       inpweb:
         description: 'Update website'
         required: true
@@ -127,6 +135,8 @@ jobs:
 
     - name: Build manifest
       run: cd website && Rscript update-manifest.R
+      env:
+        UPDATE_MANIFEST: ${{ github.event.inputs.inpmani }}
 
     - uses: quarto-dev/quarto-actions/publish@v2
       with:
