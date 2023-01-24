@@ -17,6 +17,7 @@ RUN apt-get update -y && \
 
 ENV PATH="/opt/R/devel-nold/bin:${PATH}"
 ENV PKG_SYSREQS=true
+ENV R_PKG_SYSREQS2=true
 
 # ------------------------------------------------------------------------------------
 # Set CRAN repo, use P3M on x86_64
