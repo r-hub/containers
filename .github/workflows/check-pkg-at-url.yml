@@ -31,3 +31,9 @@ jobs:
 
     - name: Install dependencies and check package
       run: r-check
+
+    - name: Upload check result as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: check-results
+        path: /check
