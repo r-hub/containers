@@ -3,14 +3,15 @@ FROM ubuntu:22.04
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
-# rig also sets up the CRAN mirror and installs pak.
+# rig also sets up the CRAN mirror, we don't install pak, because rig
+# installs it into the user lib, and we want it in the system lib.
 
 RUN ARCH="$(arch)"; \
     if [ "$ARCH" = "aarch64" ]; then ARM64="-arm64"; else ARM64=""; fi; \
     apt-get update -y && \
     apt-get install -y curl && \
     curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux${ARM64}-latest.tar.gz | tar xz -C /usr/local && \
-    rig add devel --pak-version devel && \
+    rig add devel --without-pak && \
     rm -rf /tmp/rig && \
     apt-get clean
 
@@ -31,6 +32,12 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
         echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
             >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
     fi
+
+# ------------------------------------------------------------------------------------
+# Install pak
+
+RUN /opt/R/devel/bin/R -q -e \
+    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
 # Locale
