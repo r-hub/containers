@@ -112,7 +112,7 @@ get_container_data <- function(cont) {
 
   id <- docker_inspect(name, "Id")
   created <- docker_inspect(name, "Created")
-  size <- as.integer(docker_inspect(name, "Size"))
+  size <- as.numeric(docker_inspect(name, "Size"))
 
   os_release <- docker_run(name, c("cat", "/etc/os-release"))
   uname <- trimws(docker_run(name, c("uname", "-a")))
