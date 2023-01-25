@@ -37,7 +37,7 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
 # Install pak
 
 RUN /opt/R/devel/bin/R -q -e \
-    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+    'install.packages("pak", lib = .Library, repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
 # Locale
