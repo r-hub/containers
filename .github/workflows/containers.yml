@@ -12,6 +12,11 @@ on:
         - 'yes'
         - 'no'
         default: 'yes'
+      inpwhichcont:
+        description: 'Which containers to build, defaults to "all"'.
+        required: false
+        default: 'all'
+        type: string
       inpmani:
         description: 'Update manifest'
         required: true
@@ -46,8 +51,8 @@ jobs:
     - name: Set up matrix of containers
       id: setup-matrix
       run: |
-        (echo -n 'containers=['; ls containers | sed 's|/$||' |
-        awk '{ printf("\"%s\",", $1) }' | sed 's/,$//'; echo -n ']') >> $GITHUB_OUTPUT
+        containers=$(python tests/get-containers.py ${{ github.event.inputs.platforms }})
+        echo "containers=$containers" >> $GITHUB_OUTPUT
 
   # ------------------------------------------------------------------------
 
