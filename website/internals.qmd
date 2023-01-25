@@ -109,6 +109,10 @@ Corresponding issue: <https://github.com/r-hub/containers/issues/1>
 We had to use Fedora for this one, ATLAS on Ubuntu does not reproduce
 the CRAN issues.
 
+## `clang-16`
+
+Corresponding issue: <https://github.com/r-hub/containers/issues/6>
+
 ## `gcc-13`
 
 Corresponding issue: <https://github.com/r-hub/containers/issues/2>

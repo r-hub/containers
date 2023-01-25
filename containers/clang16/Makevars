@@ -1,0 +1,13 @@
+
+CC=clang-16
+CXX=clang++-16 -stdlib=libc++
+CXX11=clang++-16 -stdlib=libc++
+CXX14=clang++-16 -stdlib=libc++
+CXX17=clang++-16 -stdlib=libc++
+CXX20=clang++-16 -stdlib=libc++
+CXX23=clang++-16 -stdlib=libc++
+
+CFLAGS=-O3 -Wall -pedantic
+CFLAGS=-O3 -Wall -pedantic
+FFLAGS=-O2 -mtune=native -Wall -pedantic
+CXXFLAGS=-O3 -Wall -pedantic -frtti
