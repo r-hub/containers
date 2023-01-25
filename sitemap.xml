@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/r-hub/containers/index.html</loc>
-    <lastmod>2023-01-25T11:50:21.327Z</lastmod>
+    <loc>https://r-hub.github.io/containers/index.html</loc>
+    <lastmod>2023-01-25T13:07:23.308Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/r-hub/containers/containers.html</loc>
-    <lastmod>2023-01-25T11:50:26.227Z</lastmod>
+    <loc>https://r-hub.github.io/containers/containers.html</loc>
+    <lastmod>2023-01-25T13:07:25.463Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/r-hub/containers/local.html</loc>
-    <lastmod>2023-01-25T11:50:26.831Z</lastmod>
+    <loc>https://r-hub.github.io/containers/local.html</loc>
+    <lastmod>2023-01-25T13:07:25.971Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/r-hub/containers/gha.html</loc>
-    <lastmod>2023-01-25T11:50:27.163Z</lastmod>
+    <loc>https://r-hub.github.io/containers/gha.html</loc>
+    <lastmod>2023-01-25T13:07:26.297Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/r-hub/containers/internals.html</loc>
-    <lastmod>2023-01-25T11:50:27.479Z</lastmod>
+    <loc>https://r-hub.github.io/containers/internals.html</loc>
+    <lastmod>2023-01-25T13:07:26.611Z</lastmod>
   </url>
 </urlset>
