@@ -30,6 +30,15 @@ jobs:
         mkdir /check
         curl -LO "${{ github.event.inputs.inpurl }}" --output-dir /check
 
+    - name: Debug
+      run: R -q -e '.libPaths()'
+
+    - run: R -q -e 'find.package("pak")'
+      
+    - run: ls -l `R -q -s -e 'cat(.libPaths()[1])'`
+
+    - run: whoami
+      
     - name: Install dependencies and check package
       run: r-check
 
