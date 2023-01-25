@@ -21,6 +21,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    name: Check with ${{ github.event.inputs.inpcont }}
     container:
       image: ghcr.io/r-hub/containers/${{ github.event.inputs.inpcont }}:latest
 
@@ -30,13 +31,6 @@ jobs:
         mkdir /check
         curl -LO "${{ github.event.inputs.inpurl }}" --output-dir /check
 
-    - name: Debug
-      run: R -q -e '.libPaths()'
-
-    - run: ls -l `R -q -s -e 'cat(.libPaths()[1])'`
-
-    - run: whoami
-      
     - name: Install dependencies and check package
       run: r-check
 
