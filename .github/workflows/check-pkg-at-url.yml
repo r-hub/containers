@@ -15,7 +15,7 @@ on:
         options:
         - 'atlas'
         - 'clang16'
-        - 'gcc-13'
+        - 'gcc13'
         - 'nold'
 
 jobs:

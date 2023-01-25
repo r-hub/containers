@@ -34,9 +34,9 @@ To run these containers on your machine you need:
    R -q -e "download.packages('cli', 'check')"
    ```
 3. Start the container with the `check` directory mounted at `/check` and
-   run the `r-check` command. E.g. for the `gcc-13` image you would run:
+   run the `r-check` command. E.g. for the `gcc13` image you would run:
    ```sh
-   docker run -v `pwd`/check:/check ghcr.io/r-hub/containers/gcc-13:latest r-check
+   docker run -v `pwd`/check:/check ghcr.io/r-hub/containers/gcc13:latest r-check
    ```
    If you are running this on a non-Intel machine (eg. an M1 mac), pass
    `--platform=linux/amd64` to `docker run`. Note that this will make
@@ -66,7 +66,7 @@ downloaded 66 KB
 
 ```sh
 docker run --platform=linux/amd64 -v `pwd`/check:/check \
-  ghcr.io/r-hub/containers/gcc-13:latest r-check
+  ghcr.io/r-hub/containers/gcc13:latest r-check
 ```
 
 ```
@@ -171,7 +171,7 @@ ls check/tiff.Rcheck/
 This is similar to running `R CMD check`, but start `bash` instead of
 `r-check`, and use `-ti` to create an interactive session:
 ```sh
-docker run -v `pwd`/check:/check ghcr.io/r-hub/containers/gcc-13:latest bash
+docker run -v `pwd`/check:/check ghcr.io/r-hub/containers/gcc13:latest bash
 ```
 
 You'll need to install the dependencies of the package. The easiest is to

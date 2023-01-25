@@ -113,7 +113,7 @@ the CRAN issues.
 
 Corresponding issue: <https://github.com/r-hub/containers/issues/6>
 
-## `gcc-13`
+## `gcc13`
 
 Corresponding issue: <https://github.com/r-hub/containers/issues/2>
 

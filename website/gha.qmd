@@ -51,7 +51,7 @@ on:
         type: choice
         options:
         - 'atlas'
-        - 'gcc-13'
+        - 'gcc13'
         - 'nold'
 
 jobs:
@@ -91,7 +91,7 @@ on:
         type: choice
         options:
         - 'atlas'
-        - 'gcc-13'
+        - 'gcc13'
         - 'nold'
 
 jobs:
