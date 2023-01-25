@@ -66,6 +66,7 @@ RUN apt-get update -y && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
     apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev && \
+    apt-get install -y gfortran-12 && \
     apt-get clean
 
 RUN mkdir -p /root/.R
