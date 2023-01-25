@@ -33,8 +33,6 @@ jobs:
     - name: Debug
       run: R -q -e '.libPaths()'
 
-    - run: R -q -e 'find.package("pak")'
-      
     - run: ls -l `R -q -s -e 'cat(.libPaths()[1])'`
 
     - run: whoami
