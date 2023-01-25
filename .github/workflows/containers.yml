@@ -51,7 +51,7 @@ jobs:
     - name: Set up matrix of containers
       id: setup-matrix
       run: |
-        containers=$(python tests/get-containers.py ${{ github.event.inputs.platforms }})
+        containers=$(python tests/get-containers.py ${{ github.event.inputs.inpwhichcont }})
         echo "containers=$containers" >> $GITHUB_OUTPUT
 
   # ------------------------------------------------------------------------
