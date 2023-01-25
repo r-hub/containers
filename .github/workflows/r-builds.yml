@@ -3,6 +3,13 @@ name: R builds
 
 on:
   workflow_dispatch:
+    inputs:
+      platforms:
+        description: |
+          Comma-separated list of platforms. Default is "all" to use all platforms.
+        required: false
+        default: 'all'
+        type: string
   schedule:
     - cron:  '55 2 * * *'
 
@@ -19,7 +26,7 @@ jobs:
     - name: Set up matrix of R builds
       id: setup-matrix
       run: |
-        platforms=$(python tests/get-platforms.py)
+        platforms=$(python tests/get-platforms.py ${{ github.event.inputs.platforms }})
         echo "platforms=$platforms" >> $GITHUB_OUTPUT
 
   package-files:
