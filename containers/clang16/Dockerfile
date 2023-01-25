@@ -78,6 +78,9 @@ RUN apt-get update -y && \
 
 RUN mkdir -p /root/.R
 COPY Makevars /root/.R
+# we need to set this, because GHA changes $HOME:
+# https://github.com/actions/runner/issues/863
+ENV R_MAKEVARS_USER=/root/.R/Makevars
 
 # ------------------------------------------------------------------------------------
 # Check config
