@@ -1,5 +1,5 @@
 
-CC=clang-16
+CC=clang-16 -std=gnu2x
 CXX=clang++-16 -stdlib=libc++
 CXX11=clang++-16 -stdlib=libc++
 CXX14=clang++-16 -stdlib=libc++
