@@ -28,6 +28,7 @@ services:
     command: ./build.sh
     environment:
       - R_VERSION=devel
+      - R_TARBALL_URL=https://github.com/r-hub/containers/releases/download/latest/R-devel_2023-01-26_r83691.tar.gz
       - R_TYPE=-nold
       - XCONFIGURE_OPTIONS=--disable-long-double
       - LOCAL_STORE=/tmp/output
