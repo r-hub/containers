@@ -1,0 +1,65 @@
+FROM ubuntu:jammy
+
+ENV OS_IDENTIFIER ubuntu-2204
+
+# -------------------------------------------------------------------------
+# Packages needed for compiling R
+
+RUN sed -i "s|# deb-src|deb-src|g" /etc/apt/sources.list
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y curl libcurl4-openssl-dev libicu-dev \
+            libopenblas-base libpcre2-dev wget python3-pip
+
+# Locales are needed because of a tex-common configuration bug
+
+RUN apt-get update -y && \
+    apt-get install -y locales && \
+    locale-gen en_GB.UTF-8 && \
+    update-locale
+ENV LC_COLLATE C
+ENV LANG en_GB.UTF-8
+
+RUN apt-get update && \
+    apt-get build-dep -y r-base
+
+# -------------------------------------------------------------------------
+# clang-15 and gfortran-12
+
+RUN apt-get update -y && \
+    apt-get install -y gnupg
+
+RUN echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-15 main" \
+         > /etc/apt/sources.list.d/llvm.list
+RUN echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-15 main" \
+         >> /etc/apt/sources.list.d/llvm.list
+
+RUN curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
+
+RUN apt-get update -y && \
+    apt-get install -y clang-15 libc++abi-15-dev libc++-15-dev
+
+RUN apt-get update -y && \
+    apt-get install -y gfortran-12
+
+# -------------------------------------------------------------------------
+# Packaging
+
+RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(dpkg --print-architecture).deb" && \
+    apt install -y "./nfpm_$(dpkg --print-architecture).deb" && \
+    rm "nfpm_$(dpkg --print-architecture).deb"
+
+RUN chmod 0777 /opt
+
+# Override the default pager used by R
+ENV PAGER /usr/bin/pager
+
+# R 3.x requires PCRE2 for Pango support on Ubuntu 22
+ENV INCLUDE_PCRE2_IN_R_3 yes
+
+COPY builder/config.ubuntu-2204-asan /config.site
+COPY builder/package.ubuntu-2204-asan /package.sh
+COPY build.sh .
+ENTRYPOINT ./build.sh

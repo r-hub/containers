@@ -38,6 +38,19 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  ubuntu-2204-asan:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-asan
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.ubuntu-2204-asan
+    image: rhub/ubuntu-2204-asan:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+
   fedora-gcc:
     command: ./build.sh
     environment:
