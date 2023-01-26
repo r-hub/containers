@@ -1,1 +1,1 @@
-Sitemap: https://r-hub.github.io/containers/sitemap.xml
+Sitemap: https://github.com/r-hub/containers/sitemap.xml
