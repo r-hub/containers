@@ -2,6 +2,17 @@
 FROM ubuntu:22.04
 
 # ------------------------------------------------------------------------------------
+# Install pre-built R and requirements
+
+RUN apt-get update -y && \
+    apt-get install -y curl && \
+    cd /tmp && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-asan_1_$(dpkg --print-architecture).deb" && \
+    apt install -y ./r-*.deb && \
+    rm r-*.deb && \
+    apt-get clean
+
+# ------------------------------------------------------------------------------------
 # clang 15, gfortran-12
 
 RUN apt-get update -y && \
@@ -16,18 +27,17 @@ RUN apt-get update -y && \
     apt-get install -y gfortran-12 pkg-config && \
     apt-get clean
 
-RUN mkdir -p /root/.R
-COPY Makevars /root/.R
-# we need to set this, because GHA changes $HOME:
-# https://github.com/actions/runner/issues/863
-ENV R_MAKEVARS_USER=/root/.R/Makevars
-
 # ------------------------------------------------------------------------------------
-# Install pre-built R and requirements
+# Update the system config, because the user Makevars is ignored
+# for some packages
+RUN app="-fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer"; \
+    appxx="$app -frtti"; \
+    makeconf="/opt/R/devel-asan/lib/R/etc/Makeconf"; \
+    sed -i -E '/^CC ?=/ s/$/ '"$app"/ "${makeconf}" && \
+    sed -i -E '/^CC[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
+    sed -i -E '/^CXX ?=/ s/$/ '"$appxx"/ "${makeconf}" && \
+    sed -i -E '/^CXX[0-9][0-9] ?=/ s/$/ '"$appxx"/ "${makeconf}"
 
-RUN curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-asan_1_$(dpkg --print-architecture).deb" && \
-    apt install -y ./r-*.deb && \
-    apt-get clean
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH

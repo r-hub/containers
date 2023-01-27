@@ -12,6 +12,7 @@ do_check () {
     packagename=$(basename $pkg | sed "s/_.*$//")
     cd ${packagename}.Rcheck
     fail=false
+    exfile="${packagename}-Ex.Rout"
     pattern='UndefinedBehaviorSanitizer\|AddressSanitizer'
     if [[ -f "${exfile}" ]] && grep -q ${pattern} ${exfile}; then
         fail=true
