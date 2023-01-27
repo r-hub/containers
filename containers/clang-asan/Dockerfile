@@ -87,6 +87,9 @@ ENV RJAVA_JVM_STACK_WORKAROUND 0
 ENV RGL_USE_NULL true
 ENV R_DONT_USE_TK true
 
+ENV OMP_THREAD_LIMIT=2
+ENV R_DATATABLE_NUM_THREADS=2
+
 # ------------------------------------------------------------------------------------
 # Check config, no need to check the PDF manual and vignettes here.
 # We also avoid that bashism checks, as it needs external tools.
