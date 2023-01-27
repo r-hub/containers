@@ -14,6 +14,7 @@ on:
         type: choice
         options:
         - 'atlas'
+        - 'clang-asan'
         - 'clang16'
         - 'gcc13'
         - 'nold'
