@@ -36,6 +36,7 @@ jobs:
       run: r-check
 
     - name: Upload check result as artifact
+      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: check-results
