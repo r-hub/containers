@@ -12,8 +12,8 @@ RUN apt-get update -y && \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-15 libc++abi-15-dev libc++-15-dev && \
-    apt-get install -y gfortran-12 && \
+    apt-get install -y clang-15 libc++abi-15-dev libc++-15-dev libomp-15-dev && \
+    apt-get install -y gfortran-12 pkg-config && \
     apt-get clean
 
 RUN mkdir -p /root/.R
