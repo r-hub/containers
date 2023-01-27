@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="available-containers" class="level1">
 <h1>Available containers</h1>
-<p>Our ultimate goal is to have containers that match all <a href="https://cran.r-project.org/web/checks/check_flavors.html">primary CRAN Linux systems</a> and all <a href="https://cran.r-project.org/web/checks/check_issue_kinds.html">extra CRAN checks</a>.</p>
+<p>Our ultimate goal is to have containers that match all <a href="https://cran.r-project.org/web/checks/check_flavors.html">primary CRAN Linux systems</a> and all <a href="https://cran.r-project.org/web/checks/check_issue_kinds.html�">extra CRAN checks</a>.</p>
 <p>Currently we have the following containers:</p>
 <table class="table">
 <thead>
@@ -162,6 +162,16 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ATLAS</td>
 <td style="text-align: left;">Tests with alternative BLAS/LAPACK implementations</td>
 <td style="text-align: left;"><a href="containers.html#atlas">Details</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">clang-ASAN</td>
+<td style="text-align: left;">Tests of memory access errors using AddressSanitizer</td>
+<td style="text-align: left;"><a href="containers.html#clang-asan">Details</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">clang-UBSAN</td>
+<td style="text-align: left;">Tests of memory access errors using Undefined Behavior Sanitizer</td>
+<td style="text-align: left;"><a href="containers.html#clang-asan">Details</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">clang16</td>
