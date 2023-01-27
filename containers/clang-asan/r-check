@@ -6,11 +6,33 @@ checkdir=${1-/check}
 do_check () {
     pkg=${1}
     echo Checking "$pkg"
-    (
-        cd `dirname $pkg`
-        R -q -e "pak::pkg_install('deps::$pkg', dependencies = TRUE)"
-        R CMD check $CHECK_ARGS	$pkg
-    )
+    cd `dirname $pkg`
+    R -q -e "pak::pkg_install('deps::$pkg', dependencies = TRUE)"
+    R CMD check $CHECK_ARGS $pkg
+    packagename=$(basename $pkg | sed "s/_.*$//")
+    cd ${packagename}.Rcheck
+    fail=false
+    pattern='UndefinedBehaviorSanitizer\|AddressSanitizer'
+    if [[ -f "${exfile}" ]] && grep -q ${pattern} ${exfile}; then
+        fail=true
+        echo ----------------------------------------------------------
+        echo ${exfile}
+        echo ----------------------------------------------------------
+        cat ${exfile}
+        echo ----------------------------------------------------------
+    fi
+    testfiles=$(ls tests | grep ".Rout.fail$")
+    for f in $testfiles; do
+        if grep -q ${pattern} tests/$f; then
+            fail=true
+            echo ----------------------------------------------------------
+            echo tests/${f}
+            echo ----------------------------------------------------------
+            cat tests/${f}
+            echo ----------------------------------------------------------
+        fi
+    done
+    if [[ "$fail" = "true" ]]; then exit 1; fi
 }
 
 for pkg in `ls $checkdir/*.tar.gz`; do

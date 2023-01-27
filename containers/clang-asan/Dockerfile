@@ -91,8 +91,6 @@ ENV OMP_THREAD_LIMIT=2
 ENV R_DATATABLE_NUM_THREADS=2
 
 # ------------------------------------------------------------------------------------
-# Check config, no need to check the PDF manual and vignettes here.
-# We also avoid that bashism checks, as it needs external tools.
+# Check config, only runtime checks
 
-ENV CHECK_ARGS="--no-manual --no-build-vignettes"
-ENV _R_CHECK_BASHISMS_=false
+ENV CHECK_ARGS="--extra-arch --no-stop-on-test-error"
