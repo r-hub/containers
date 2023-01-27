@@ -27,13 +27,6 @@ jobs:
       image: ghcr.io/r-hub/containers/${{ github.event.inputs.inpcont }}:latest
 
     steps:
-    - name: Debug
-      run: |
-        whoami
-        echo $HOME
-        df -h
-        ls -l /root/.R
-
     - name: Download package
       run: |
         mkdir /check
