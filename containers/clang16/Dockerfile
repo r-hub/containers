@@ -66,9 +66,9 @@ COPY r-check /usr/local/bin
 
 RUN apt-get update -y && \
     apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
