@@ -181,3 +181,17 @@ of the extracted package call:
 R -q -e "pak::pkg_install('deps::.', dependencies = TRUE)"
 ```
 This installs all dependencies and system requirements of the package.
+
+
+# Multiple R versions
+
+Some container images (e.g. centos7) have multiple versions of R installed.
+You can use `rig ls` to list all versions, and `rig default <name>` to
+set the default one.
+To run `r-check` with a certain R version, set the `R_VERSION` environment
+variable for the container. E.g.
+
+```sh
+docker run -ti --rm  --platform=linux/amd64 -v `pwd`/check:/check \
+  -e "R_VERSION=3.6.3" ghcr.io/r-hub/containers/centos7:latest r-check
+```
