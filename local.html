@@ -186,6 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#run-r-cmd-check-on-a-tarball" id="toc-run-r-cmd-check-on-a-tarball" class="nav-link" data-scroll-target="#run-r-cmd-check-on-a-tarball">Run <code>R CMD check</code> on a tarball</a></li>
   <li><a href="#interactive-debugging" id="toc-interactive-debugging" class="nav-link" data-scroll-target="#interactive-debugging">Interactive debugging</a></li>
+  <li><a href="#multiple-r-versions" id="toc-multiple-r-versions" class="nav-link" data-scroll-target="#multiple-r-versions">Multiple R versions</a></li>
   </ul>
 </nav>
     </div>
@@ -342,6 +343,12 @@ for details.</code></pre>
 <p>You’ll need to install the dependencies of the package. The easiest is to use pak, which is preinstalled in all containers. From the root directory of the extracted package call:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"pak::pkg_install('deps::.', dependencies = TRUE)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This installs all dependencies and system requirements of the package.</p>
+</section>
+<section id="multiple-r-versions" class="level1">
+<h1>Multiple R versions</h1>
+<p>Some container images (e.g.&nbsp;centos7) have multiple versions of R installed. You can use <code>rig ls</code> to list all versions, and <code>rig default &lt;name&gt;</code> to set the default one. To run <code>r-check</code> with a certain R version, set the <code>R_VERSION</code> environment variable for the container. E.g.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-ti</span> <span class="at">--rm</span>  <span class="at">--platform</span><span class="op">=</span>linux/amd64 <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check <span class="dt">\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-e</span> <span class="st">"R_VERSION=3.6.3"</span> ghcr.io/r-hub/containers/centos7:latest r-check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
