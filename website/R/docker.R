@@ -25,38 +25,33 @@ list_containers <- function() {
   dir("../containers")
 }
 
-pull_containers <- function() {
-  conts <- list_containers()
-  for (cont in conts) {
-    cli::cli_alert_info("Pulling container {cont}")
-    processx::run(
-      echo = TRUE,
-      "docker",
-      c("pull",
-        sprintf("ghcr.io/r-hub/containers/%s", cont),
-        "--platform=linux/amd64"
-      )
-    )
-  }
+docker_pull <- function(name) {
+  cli::cli_alert_info("Pulling container {name}")
+  processx::run(
+    echo = TRUE,
+    "docker",
+    c("pull", name, "--platform=linux/amd64")
+  )
 }
 
 update_manifest <- function() {
   # load known containers
   old <- load_old_manifest()
   old <- unlist(purrr::map(old$containers, "builds"), recursive = FALSE)
+  oldids <- purrr::map_chr(old, "id")
 
   # get data from latest container versions
   if (! tolower(Sys.getenv("UPDATE_MANIFEST", "yes")) %in%
       c("no", "false", "off", "0")) {
-    new <- purrr::map(list_containers(), get_container_data)
+    allconts <- current_containers()
+    new <- list()
+    for (cont in names(allconts)) {
+      shas <- setdiff(purrr::map_chr(allconts[[cont]], "name"), oldids)
+      new <- c(new, purrr::map(shas, get_container_data, cont = cont))
+    }
   } else {
     new <- list()
   }
-
-  # filter out the ones that we have already seen
-  oldids <- purrr::map_chr(old, "id")
-  newids <- purrr::map_chr(new, "id")
-  new <- new[! newids %in% oldids]
 
   # if nothing new, quit here
   if (length(new) == 0) {
@@ -75,7 +70,7 @@ update_manifest <- function() {
       purrr::keep(new, function(x) x$tag == tag)
     )
     sels <- sels[order(purrr::map_chr(sels, "created"), decreasing = TRUE)]
-    utils::tail(sels, 5)
+    utils::head(sels, 5)
   }
 
   conts <- map(
@@ -107,8 +102,12 @@ docker_run <- function(name, cmd, platform = "linux/amd64") {
   )$stdout
 }
 
-get_container_data <- function(cont) {
-  name <- sprintf("ghcr.io/r-hub/containers/%s:latest", cont)
+get_container_data <- function(cont, sha) {
+  cache <- getOption(sha, NULL)
+  if (!is.null(cache)) return(cache)
+  tag <- sprintf("ghcr.io/r-hub/containers/%s:latest", cont)
+  name <- sprintf("ghcr.io/r-hub/containers/%s@%s", cont, sha)
+  docker_pull(name)
 
   id <- docker_inspect(name, "Id")
   created <- docker_inspect(name, "Created")
@@ -133,8 +132,8 @@ get_container_data <- function(cont) {
   pcre <- docker_run(name, c("R", "-q", "--slave", "-e", "pcre_config()"))
   l10n <- docker_run(name, c("R", "-q", "--slave", "-e", "l10n_info()"))
 
-  list(
-    tag = name,
+  result <- list(
+    tag = tag,
     id = id,
     size = size,
     created = created,
@@ -158,4 +157,23 @@ get_container_data <- function(cont) {
     "pcre_config()" = pcre,
     "l10n_info()" = l10n
   )
+
+  options(structure(list(result), names = sha))
+  result
+}
+
+current_containers <- function() {
+  cached <- getOption("rhub::container-cache", NULL)
+  if (!is.null(cached)) return(cached)
+  conts <- list_containers()
+  result <- structure(vector("list", length(conts)), names = conts)
+  for (cont in conts) {
+    result[[cont]] <- gh::gh(
+      "/orgs/r-hub/packages/container/containers%2f{container}/versions",
+      container = cont,
+       per_page = 5
+    )
+  }
+  options("rhub::container-cache" = result)
+  result
 }

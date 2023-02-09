@@ -3,6 +3,7 @@ Version: 1.0.0
 License: MIT
 Depends:
     cli,
+    gh,
     glue,
     jsonlite,
     prettyunits,
