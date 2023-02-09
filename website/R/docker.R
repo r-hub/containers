@@ -105,7 +105,7 @@ docker_run <- function(name, cmd, platform = "linux/amd64") {
 get_container_data <- function(cont, sha) {
   cache <- getOption(sha, NULL)
   if (!is.null(cache)) return(cache)
-  tag <- sprintf("ghcr.io/r-hub/containers/%s/latest", cont)
+  tag <- sprintf("ghcr.io/r-hub/containers/%s:latest", cont)
   name <- sprintf("ghcr.io/r-hub/containers/%s@%s", cont, sha)
   docker_pull(name)
 
