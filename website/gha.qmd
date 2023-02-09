@@ -2,7 +2,7 @@
 title: Run on GitHub Actions
 ---
 
-# For you own package
+# For your own package
 
 ## Regular check
 
