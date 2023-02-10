@@ -88,10 +88,15 @@ update_manifest <- function() {
 }
 
 docker_inspect <- function(name, property) {
-  trimws(processx::run(
+  ans <- trimws(processx::run(
     "docker",
     c("inspect", "-f", paste0("{{.", property, "}}"), name)
   )$stdout)
+
+  # remove [ and ] for array values, should be an array of one element
+  if (first_char(ans) == "[" && last_char(ans) == "]") {
+    ans <- trimws(substr(ans, 2, nchar(ans) - 1))
+  }
 }
 
 docker_run <- function(name, cmd, platform = "linux/amd64") {
@@ -109,7 +114,7 @@ get_container_data <- function(cont, sha) {
   name <- sprintf("ghcr.io/r-hub/containers/%s@%s", cont, sha)
   docker_pull(name)
 
-  id <- docker_inspect(name, "Id")
+  id <- docker_inspect(name, "RepoDigests")
   created <- docker_inspect(name, "Created")
   size <- as.numeric(docker_inspect(name, "Size"))
 
