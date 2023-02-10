@@ -97,6 +97,8 @@ docker_inspect <- function(name, property) {
   if (first_char(ans) == "[" && last_char(ans) == "]") {
     ans <- trimws(substr(ans, 2, nchar(ans) - 1))
   }
+
+  ans
 }
 
 docker_run <- function(name, cmd, platform = "linux/amd64") {
