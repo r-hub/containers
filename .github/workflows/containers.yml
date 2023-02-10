@@ -142,6 +142,7 @@ jobs:
       run: cd website && Rscript update-manifest.R
       env:
         UPDATE_MANIFEST: ${{ github.event.inputs.inpmani }}
+        GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     - uses: quarto-dev/quarto-actions/publish@v2
       with:
