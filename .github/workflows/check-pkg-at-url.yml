@@ -35,7 +35,8 @@ jobs:
     - name: Download package
       run: |
         mkdir /check
-        curl -LO "${{ github.event.inputs.inpurl }}" --output-dir /check
+        cd /check
+        curl -LO "${{ github.event.inputs.inpurl }}"
 
     - name: Install dependencies and check package
       run: r-check
