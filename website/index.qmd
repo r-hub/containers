@@ -17,14 +17,14 @@ systems](https://cran.r-project.org/web/checks/check_flavors.html) and all
 
 Currently we have the following CRAN-like containers:
 
-| CRAN name  | Description                                                      | Details                                |
-|:-----------|:-----------------------------------------------------------------|:---------------------------------------|
-|ATLAS       | Tests with alternative BLAS/LAPACK implementations               | [Details](containers.html#atlas)       |
-|clang-ASAN  | Tests of memory access errors using AddressSanitizer             | [Details](containers.html#clang-asan)  |
-|clang-UBSAN | Tests of memory access errors using Undefined Behavior Sanitizer | [Details](containers.html#clang-asan)  |
-|clang16     | Checks with Clang 16.0.0                                         | [Details](containers.html#clang16)     |
-|gcc13       | Checks with GCC trunk aka 13.0                                   | [Details](containers.html#gcc13)       |
-|noLD        | Tests without long double                                        | [Details](containers.html#nold)        |
+| CRAN name  | R-hub name | Description                                                      | Details                                |
+|:-----------|:-----------|:-----------------------------------------------------------------|:---------------------------------------|
+|ATLAS       | atlas      | Tests with alternative BLAS/LAPACK implementations               | [Details](containers.html#atlas)       |
+|clang-ASAN  | clang-asan | Tests of memory access errors using AddressSanitizer             | [Details](containers.html#clang-asan)  |
+|clang-UBSAN | clang-asan | Tests of memory access errors using Undefined Behavior Sanitizer | [Details](containers.html#clang-asan)  |
+|clang16     | clang16    | Checks with Clang 16.0.0                                         | [Details](containers.html#clang16)     |
+|gcc13       | gcc13      | Checks with GCC trunk aka 13.0                                   | [Details](containers.html#gcc13)       |
+|noLD        | nold       | Tests without long double                                        | [Details](containers.html#nold)        |
 
 Additional containers
 
