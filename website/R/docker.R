@@ -39,6 +39,7 @@ update_manifest <- function() {
   old <- load_old_manifest()
   old <- unlist(purrr::map(old$containers, "builds"), recursive = FALSE)
   oldids <- purrr::map_chr(old, "id")
+  oldids <- sub("^ghcr.io/r-hub/containers/[-.a-zA-Z0-9]+@", "", oldids)
 
   # get data from latest container versions
   if (! tolower(Sys.getenv("UPDATE_MANIFEST", "yes")) %in%
