@@ -16,7 +16,7 @@ format_container <- function(id) {
 }
 
 format_id <- function(id) {
-  id <- sub("^sha256:", "", id)
+  id <- sub("^ghcr.io/r-hub/containers/[-.a-zA-Z0-9]+@sha256:", "", id)
   substr(id, 1, 7)
 }
 
