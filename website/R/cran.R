@@ -1,9 +1,12 @@
 
-issues_summary <- function() {
+issues_summary <- function(exclude = c("OK", "NOTE")) {
   x <- tools:::CRAN_check_details()
-  x <- subset(x, Status != "OK")
-  options(width = 234)
-  with(x, table(substring(Check, 1, 42), as.numeric(factor(Flavor))))
+  x <- subset(x, ! Status %in% exclude)
+  tab <- as.data.frame(
+    with(x, table(substring(Check, 1, 42), factor(Flavor)))
+  )
+  names(tab) <- c("check", "flavor", "count")
+  tab
 }
 
 issues_flavors_summary <- function(exclude = c("OK", "NOTE")) {
