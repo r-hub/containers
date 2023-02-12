@@ -165,6 +165,12 @@ get_container_data <- function(cont, sha) {
     "l10n_info()" = l10n
   )
 
+  processx::run(
+    echo = TRUE,
+    "docker",
+    c("rmi", name)
+  )
+
   options(structure(list(result), names = sha))
   result
 }
