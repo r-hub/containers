@@ -14,10 +14,15 @@ on:
         type: choice
         options:
         - 'atlas'
+        - 'centos7'
         - 'clang-asan'
         - 'clang16'
         - 'gcc13'
         - 'nold'
+      inprver:
+        description: 'R version (for containers with multiple R versions)'
+        required: false
+        type: string
 
 jobs:
   check:
@@ -34,6 +39,8 @@ jobs:
 
     - name: Install dependencies and check package
       run: r-check
+      env:
+        R_VERSION: ${{ github.event.inputs.inprver }}
 
     - name: Upload check result as artifact
       if: always()
