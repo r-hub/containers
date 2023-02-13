@@ -17,9 +17,9 @@ systems](https://cran.r-project.org/web/checks/check_flavors.html) and all
 
 Currently we have the following CRAN-like containers:
 
-| CRAN name                         | R-hub name   | Details                                |
-|:----------------------------------|:-------------|:---------------------------------------|
-| r-devel-linux-x86_64-debian-clang | ubuntu-clang | [Details](containers.html#atlas)       |
+| CRAN name                         | R-hub name   | Details                                 |
+|:----------------------------------|:-------------|:----------------------------------------|
+| r-devel-linux-x86_64-debian-clang | ubuntu-clang | [Details](containers.html#ubuntu-clang) |
 
 Plus the following containers for additional CRAN checks:
 
