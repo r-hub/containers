@@ -19,6 +19,7 @@ on:
         - 'clang16'
         - 'gcc13'
         - 'nold'
+        - 'ubuntu-clang'
       inprver:
         description: 'R version (for containers with multiple R versions)'
         required: false
