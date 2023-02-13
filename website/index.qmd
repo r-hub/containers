@@ -20,6 +20,7 @@ Currently we have the following CRAN-like containers:
 | CRAN name                         | R-hub name   | Details                                 |
 |:----------------------------------|:-------------|:----------------------------------------|
 | r-devel-linux-x86_64-debian-clang | ubuntu-clang | [Details](containers.html#ubuntu-clang) |
+| r-devel-linux-x86_64-debian-gcc   | ubuntu-gcc12 | [Details](containers.html#ubuntu-gcc12) |
 
 Plus the following containers for additional CRAN checks:
 

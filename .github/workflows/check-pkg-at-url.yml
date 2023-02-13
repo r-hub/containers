@@ -20,6 +20,7 @@ on:
         - 'gcc13'
         - 'nold'
         - 'ubuntu-clang'
+        - 'ubuntu-gcc12'
       inprver:
         description: 'R version (for containers with multiple R versions)'
         required: false
