@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/r-hub/containers/index.html</loc>
-    <lastmod>2023-02-13T06:51:33.275Z</lastmod>
+    <lastmod>2023-02-13T14:50:00.962Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/r-hub/containers/containers.html</loc>
-    <lastmod>2023-02-13T06:51:39.803Z</lastmod>
+    <lastmod>2023-02-13T14:50:09.422Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/r-hub/containers/local.html</loc>
-    <lastmod>2023-02-13T06:51:40.343Z</lastmod>
+    <lastmod>2023-02-13T14:50:10.154Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/r-hub/containers/gha.html</loc>
-    <lastmod>2023-02-13T06:51:40.683Z</lastmod>
+    <lastmod>2023-02-13T14:50:10.610Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/r-hub/containers/internals.html</loc>
-    <lastmod>2023-02-13T06:51:40.999Z</lastmod>
+    <lastmod>2023-02-13T14:50:11.030Z</lastmod>
   </url>
 </urlset>
