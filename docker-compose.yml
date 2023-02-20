@@ -24,6 +24,19 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  ubuntu-2204-clang:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-clang
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.ubuntu-2204-clang
+    image: rhub/ubuntu-2204-clang:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+
   ubuntu-2204-nold:
     command: ./build.sh
     environment:
