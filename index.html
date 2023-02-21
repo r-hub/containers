@@ -154,6 +154,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="header">
 <th style="text-align: left;">CRAN name</th>
 <th style="text-align: left;">R-hub name</th>
+<th style="text-align: left;">OS</th>
+<th style="text-align: left;">R version</th>
 <th style="text-align: left;">Details</th>
 </tr>
 </thead>
@@ -161,11 +163,15 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">r-devel-linux-x86_64-debian-clang</td>
 <td style="text-align: left;">ubuntu-clang</td>
+<td style="text-align: left;">Ubuntu 22.04.1 LTS</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
 <td style="text-align: left;"><a href="containers.html#ubuntu-clang">Details</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">r-devel-linux-x86_64-debian-gcc</td>
 <td style="text-align: left;">ubuntu-gcc12</td>
+<td style="text-align: left;">Ubuntu 22.04.1 LTS</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
 <td style="text-align: left;"><a href="containers.html#ubuntu-gcc12">Details</a></td>
 </tr>
 </tbody>
@@ -177,7 +183,9 @@ ul.task-list li input[type="checkbox"] {
 <th style="text-align: left;">CRAN name</th>
 <th style="text-align: left;">R-hub name</th>
 <th style="text-align: left;">Description</th>
-<th style="text-align: left;">Details</th>
+<th style="text-align: left;">OS</th>
+<th style="text-align: left;">R version</th>
+<th>Details</th>
 </tr>
 </thead>
 <tbody>
@@ -185,52 +193,70 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ATLAS</td>
 <td style="text-align: left;">atlas</td>
 <td style="text-align: left;">Tests with alternative BLAS/LAPACK implementations</td>
-<td style="text-align: left;"><a href="containers.html#atlas">Details</a></td>
+<td style="text-align: left;">Fedora Linux 36 (Container Image)</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
+<td><a href="containers.html#atlas">Details</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">clang-ASAN</td>
 <td style="text-align: left;">clang-asan</td>
 <td style="text-align: left;">Tests of memory access errors using AddressSanitizer</td>
-<td style="text-align: left;"><a href="containers.html#clang-asan">Details</a></td>
+<td style="text-align: left;">Ubuntu 22.04.1 LTS</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
+<td><a href="containers.html#clang-asan">Details</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">clang-UBSAN</td>
 <td style="text-align: left;">clang-asan</td>
 <td style="text-align: left;">Tests of memory access errors using Undefined Behavior Sanitizer</td>
-<td style="text-align: left;"><a href="containers.html#clang-asan">Details</a></td>
+<td style="text-align: left;">Ubuntu 22.04.1 LTS</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
+<td><a href="containers.html#clang-asan">Details</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">clang16</td>
 <td style="text-align: left;">clang16</td>
 <td style="text-align: left;">Checks with Clang 16.0.0</td>
-<td style="text-align: left;"><a href="containers.html#clang16">Details</a></td>
+<td style="text-align: left;">Ubuntu 22.04.1 LTS</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-19 r83869)</td>
+<td><a href="containers.html#clang16">Details</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">gcc13</td>
 <td style="text-align: left;">gcc13</td>
 <td style="text-align: left;">Checks with GCC trunk aka 13.0</td>
-<td style="text-align: left;"><a href="containers.html#gcc13">Details</a></td>
+<td style="text-align: left;">Fedora Linux 39 (Container Image Prerelease)</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
+<td><a href="containers.html#gcc13">Details</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">noLD</td>
 <td style="text-align: left;">nold</td>
 <td style="text-align: left;">Tests without long double</td>
-<td style="text-align: left;"><a href="containers.html#nold">Details</a></td>
+<td style="text-align: left;">Ubuntu 22.04.1 LTS</td>
+<td style="text-align: left;">R Under development (unstable) (2023-02-20 r83878)</td>
+<td><a href="containers.html#nold">Details</a></td>
 </tr>
 </tbody>
 </table>
-<p>Additional containers</p>
+<p>And these additional containers:</p>
 <table class="table">
 <thead>
 <tr class="header">
+<th style="text-align: left;">R-hub name</th>
 <th style="text-align: left;">Description</th>
-<th style="text-align: left;">Details</th>
+<th style="text-align: left;">OS</th>
+<th style="text-align: left;">R version</th>
+<th>Details</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">centos7</td>
 <td style="text-align: left;">Test R on CentOS 7 (equivalent to RHEL 7), w/ multiple R versions</td>
-<td style="text-align: left;"><a href="containers.html#centos7">Details</a></td>
+<td style="text-align: left;">CentOS Linux 7 (Core)</td>
+<td style="text-align: left;">Last 5 releases, R-next, R-devel</td>
+<td><a href="containers.html#centos7">Details</a></td>
 </tr>
 </tbody>
 </table>
