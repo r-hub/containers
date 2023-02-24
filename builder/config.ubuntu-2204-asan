@@ -1,11 +1,11 @@
 
-CC=clang-15
-CXX="clang++-15 -stdlib=libc++"
+CC=clang-16
+CXX="clang++-16 -stdlib=libc++"
 
-#CC="clang-15 -fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer"
-#CXX="clang++-15 -stdlib=libc++ -fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer -frtti"
+#CC="clang-16 -fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer"
+#CXX="clang++-16 -stdlib=libc++ -fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer -frtti"
 FC=gfortran-12
 CFLAGS="-g -O3 -Wall -pedantic"
 FFLAGS="-g -O2 -mtune=native"
 CXXFLAGS="-g -O3 -Wall -pedantic"
-MAIN_LD="clang++-15 -stdlib=libc++ -fsanitize=undefined,address"
+MAIN_LD="clang++-16 -stdlib=libc++ -fsanitize=undefined,address"
