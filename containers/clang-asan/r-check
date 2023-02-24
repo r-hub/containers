@@ -8,7 +8,7 @@ do_check () {
     echo Checking "$pkg"
     cd `dirname $pkg`
 
-    R -q -f /usr/local/bin/install-deps.R "$pkg"
+    Rscript /usr/local/bin/install-deps.R "$pkg"
 
     R CMD check $CHECK_ARGS $pkg
 
