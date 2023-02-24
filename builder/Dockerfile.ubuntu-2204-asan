@@ -26,20 +26,20 @@ RUN apt-get update && \
     apt-get build-dep -y r-base
 
 # -------------------------------------------------------------------------
-# clang-15 and gfortran-12
+# clang-16 and gfortran-12
 
 RUN apt-get update -y && \
     apt-get install -y gnupg
 
-RUN echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-15 main" \
+RUN echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          > /etc/apt/sources.list.d/llvm.list
-RUN echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-15 main" \
+RUN echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          >> /etc/apt/sources.list.d/llvm.list
 
 RUN curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
 
 RUN apt-get update -y && \
-    apt-get install -y clang-15 libc++abi-15-dev libc++-15-dev libomp-15-dev
+    apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev libomp-16-dev
 
 RUN apt-get update -y && \
     apt-get install -y gfortran-12

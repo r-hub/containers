@@ -4,7 +4,8 @@ FROM ubuntu:22.04
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y curl && \
     cd /tmp && \
     curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-asan_1_$(dpkg --print-architecture).deb" && \
@@ -13,17 +14,18 @@ RUN apt-get update -y && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 15, gfortran-12
+# clang 16, gfortran-12
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y gnupg curl && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-15 main" \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-15 main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-15 libc++abi-15-dev libc++-15-dev libomp-15-dev && \
+    apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev libomp-16-dev && \
     apt-get install -y gfortran-12 pkg-config && \
     apt-get clean
 
@@ -70,7 +72,8 @@ RUN /opt/R/devel-asan/bin/R -q -e \
 # ------------------------------------------------------------------------------------
 # Locale
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
     locale-gen en_GB.UTF-8 && \
