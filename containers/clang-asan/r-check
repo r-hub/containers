@@ -7,8 +7,11 @@ do_check () {
     pkg=${1}
     echo Checking "$pkg"
     cd `dirname $pkg`
-    R -q -e "pak::pkg_install('deps::$pkg', dependencies = TRUE)"
+
+    R -q -f /usr/local/bin/install-deps.R "$pkg"
+
     R CMD check $CHECK_ARGS $pkg
+
     packagename=$(basename $pkg | sed "s/_.*$//")
     cd ${packagename}.Rcheck
     fail=false

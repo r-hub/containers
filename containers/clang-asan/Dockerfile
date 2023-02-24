@@ -90,6 +90,7 @@ RUN /opt/R/devel-asan/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWar
 # Copy check script
 
 COPY r-check /usr/local/bin
+COPY install-deps.R /usr/local/bin
 
 # ------------------------------------------------------------------------------------
 # Check config
