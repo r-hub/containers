@@ -50,18 +50,11 @@ ENV PKG_SYSREQS=true
 ENV R_PKG_SYSREQS2=true
 
 # ------------------------------------------------------------------------------------
-# Set CRAN repo, use P3M on x86_64
+# Set CRAN repo, we don't use P3M, because of the gcc <-> clang ABI
+# differences. :(
 
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile
-RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/jammy/latest", getOption("repos")))' \
-            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
-        curl -s https://api.r-hub.io/rversions/r-release | \
-            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
-            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
-    fi
 
 # ------------------------------------------------------------------------------------
 # Install pak
@@ -90,7 +83,6 @@ RUN /opt/R/devel-asan/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWar
 # Copy check script
 
 COPY r-check /usr/local/bin
-COPY install-deps.R /usr/local/bin
 
 # ------------------------------------------------------------------------------------
 # Check config

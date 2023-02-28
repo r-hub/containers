@@ -24,16 +24,6 @@ ENV PKG_SYSREQS=true
 ENV R_PKG_SYSREQS2=true
 
 # ------------------------------------------------------------------------------------
-# Use P3M on x86_64
-
-RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        curl -s https://api.r-hub.io/rversions/r-release | \
-            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
-            >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
-    fi
-
-# ------------------------------------------------------------------------------------
 # Install pak
 
 RUN /opt/R/devel/bin/R -q -e \
