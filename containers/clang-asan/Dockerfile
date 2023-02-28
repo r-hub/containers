@@ -30,6 +30,16 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
+# system dependencies
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    echo "deb https://r-hub.github.io/ppa/ jammy main" \
+         > /etc/apt/sources.list.d/rhub.list && \
+    curl -L https://raw.githubusercontent.com/r-hub/ppa/main/rhub.gpg.key | apt-key add - && \
+    apt-get update -y && \
+    apt-get install protobuf-clang
+
+# ------------------------------------------------------------------------------------
 # Update the system config, because the user Makevars is ignored
 # for some packages
 RUN app="-fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer"; \
