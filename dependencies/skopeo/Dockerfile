@@ -31,7 +31,7 @@ RUN cd $GOROOT/src/github.com/containers/skopeo-* && \
     export PATH=/usr/lib/go-1.18/bin:$PATH && \
     checkinstall -y -D --pkgname skopeo \
     --maintainer "csardi.gabor@gmail.com" \
-    --requires 'libc6 (>= 2.34), libdevmapper1.02.1 (>= 2:1.02.97), libgpgme11 (>= 1.4.1), libassuan0 (>= 2.5.5), libselinux1 (>= 3.3), libudev1 (>= 249.11), libpcre2-8-0 (>= 10.39)' \
+    --requires '"libc6 (>= 2.34), libdevmapper1.02.1 (>= 2:1.02.97), libgpgme11 (>= 1.4.1), libassuan0 (>= 2.5.5), libselinux1 (>= 3.3), libudev1 (>= 249.11), libpcre2-8-0 (>= 10.39)"' \
     --arch $(dpkg --print-architecture) \
     --pkglicense "Apache-2.0"
 
