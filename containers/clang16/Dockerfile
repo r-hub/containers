@@ -62,7 +62,7 @@ RUN apt-get update -y && \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev && \
+    apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev libomp-16-dev && \
     apt-get install -y gfortran-12 && \
     apt-get clean
 

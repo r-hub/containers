@@ -22,7 +22,7 @@ RUN apt-get update -y && \
 # ------------------------------------------------------------------------------------
 # clang 15, gfortran 12
 RUN apt-get update -y && \
-    apt-get install -y clang-15 gfortran-12 && \
+    apt-get install -y clang-15 libomp-15-dev gfortran-12 && \
     apt-get clean
 
 # We do not replace -lgfortran!
