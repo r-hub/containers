@@ -53,6 +53,7 @@ ${pcre_libs}
 - libx11-6
 - libxt6
 - make
+- pkg-config
 - ucf
 - unzip
 - zip

@@ -69,6 +69,7 @@ depends:
 - openblas-devel
 - pango
 ${pcre_libs}
+- pkgconfig
 - tcl
 - tk
 - unzip
