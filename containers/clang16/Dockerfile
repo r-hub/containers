@@ -6,7 +6,8 @@ FROM ubuntu:22.04
 # rig also sets up the CRAN mirror, we don't install pak, because rig
 # installs it into the user lib, and we want it in the system lib.
 
-RUN ARCH="$(arch)"; \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    ARCH="$(arch)"; \
     if [ "$ARCH" = "aarch64" ]; then ARM64="-arm64"; else ARM64=""; fi; \
     apt-get update -y && \
     apt-get install -y curl && \
@@ -32,7 +33,8 @@ RUN /opt/R/devel/bin/R -q -e \
 # ------------------------------------------------------------------------------------
 # Locale
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
     locale-gen en_GB.UTF-8 && \
@@ -54,7 +56,8 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # clang 16
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y gnupg && \
     echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
          > /etc/apt/sources.list.d/llvm.list && \

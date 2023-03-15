@@ -4,7 +4,8 @@ FROM ubuntu:22.04
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y curl && \
     cd /tmp && \
     curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-nold_1_$(dpkg --print-architecture).deb" && \
@@ -42,7 +43,8 @@ RUN /opt/R/devel-nold/bin/R -q -e \
 # ------------------------------------------------------------------------------------
 # Locale
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
     locale-gen en_US.UTF-8 && \

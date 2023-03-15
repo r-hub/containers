@@ -4,7 +4,8 @@ FROM ubuntu:22.04
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y curl && \
     cd /tmp && \
     curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel_1_$(dpkg --print-architecture).deb" && \
@@ -15,13 +16,15 @@ RUN apt-get update -y && \
 # ------------------------------------------------------------------------------------
 # Tools needed for the check
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y devscripts tidy && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
 # clang 15, gfortran 12
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y clang-15 libomp-15-dev gfortran-12 && \
     apt-get clean
 
@@ -33,7 +36,8 @@ RUN sed -i 's/gcc/clang-15/g' /opt/R/devel/lib/R/etc/Makeconf && \
 # ------------------------------------------------------------------------------------
 # TinyTeX
 
-RUN apt-get update -y && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
     apt-get install -y wget && \
     apt-get clean && \
     cd /root && \
