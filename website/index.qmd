@@ -27,14 +27,14 @@ Currently we have the following CRAN-like containers:
 
 Plus the following containers for additional CRAN checks:
 
-| CRAN name  | R-hub name | Description                                                      | OS                        | R version               | Details                                |
-|:-----------|:-----------|:-----------------------------------------------------------------|:--------------------------|:------------------------|----------------------------------------|
-|ATLAS       | atlas      | Tests with alternative BLAS/LAPACK implementations               | `r os_name("atlas")`      | `r r_ver("atlas")`      | [Details](containers.html#atlas)       |
-|clang-ASAN  | clang-asan | Tests of memory access errors using AddressSanitizer             | `r os_name("clang-asan")` | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
-|clang-UBSAN | clang-asan | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-asan")` | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
-|clang16     | clang16    | Checks with Clang 16.0.0                                         | `r os_name("clang16")`    | `r r_ver("clang16")`    | [Details](containers.html#clang16)     |
-|gcc13       | gcc13      | Checks with GCC trunk aka 13.0                                   | `r os_name("gcc13")`      | `r r_ver("gcc13")`      | [Details](containers.html#gcc13)       |
-|noLD        | nold       | Tests without long double                                        | `r os_name("nold")`       | `r r_ver("nold")`       | [Details](containers.html#nold)        |
+| CRAN name  | R-hub name | Description                                                      | OS                                | R version               | Details                                |
+|:-----------|:-----------|:-----------------------------------------------------------------|:----------------------------------|:------------------------|----------------------------------------|
+|ATLAS       | atlas      | Tests with alternative BLAS/LAPACK implementations               | `r os_name("atlas")`              | `r r_ver("atlas")`      | [Details](containers.html#atlas)       |
+|clang-ASAN  | clang-asan | Tests of memory access errors using AddressSanitizer             | `r os_name("clang-asan")`, libc++ | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
+|clang-UBSAN | clang-asan | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-asan")`, libc++ | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
+|clang16     | clang16    | Checks with Clang 16.0.0                                         | `r os_name("clang16")`, libc++    | `r r_ver("clang16")`    | [Details](containers.html#clang16)     |
+|gcc13       | gcc13      | Checks with GCC trunk aka 13.0                                   | `r os_name("gcc13")`              | `r r_ver("gcc13")`      | [Details](containers.html#gcc13)       |
+|noLD        | nold       | Tests without long double                                        | `r os_name("nold")`               | `r r_ver("nold")`       | [Details](containers.html#nold)        |
 
 And these additional containers:
 
