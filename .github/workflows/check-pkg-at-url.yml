@@ -21,6 +21,8 @@ on:
         - 'nold'
         - 'ubuntu-clang'
         - 'ubuntu-gcc12'
+        - 'ubuntu-next'
+        - 'ubuntu-release'
       inprver:
         description: 'R version (for containers with multiple R versions)'
         required: false
