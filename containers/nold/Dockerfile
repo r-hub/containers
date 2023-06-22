@@ -26,11 +26,9 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-nold/lib/R/library/base/R/Rprofile
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/jammy/latest", getOption("repos")))' \
+        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04/4.4", getOption("repos")))' \
             >> /opt/R/devel-nold/lib/R/library/base/R/Rprofile; \
-        curl -s https://api.r-hub.io/rversions/r-release | \
-            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
+        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
             >> /opt/R/devel-nold/lib/R/library/base/R/Rprofile; \
     fi
 
