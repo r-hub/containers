@@ -66,6 +66,15 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile
 
+RUN if [ "$(uname -p)" = "x86_64" ]; then \
+        echo 'options(pkg.current_platform = "x86_64-pc-linux-gnu-ubuntu-22.04-libc++")' \
+            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
+        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04/4.4/libc++", getOption("repos")))' \
+            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
+        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
+    fi
+
 # ------------------------------------------------------------------------------------
 # Install pak
 

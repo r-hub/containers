@@ -12,7 +12,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl && \
     curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux${ARM64}-latest.tar.gz | tar xz -C /usr/local && \
-    rig add devel --without-pak && \
+    rig add devel --without-pak --without-rspm && \
     rm -rf /tmp/rig && \
     apt-get clean
 
@@ -23,6 +23,18 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 ENV PATH="/opt/R/devel/bin:${PATH}"
 ENV PKG_SYSREQS=true
 ENV R_PKG_SYSREQS2=true
+
+# ------------------------------------------------------------------------------------
+# Use r-hub/repos, set platform
+
+RUN if [ "$(uname -p)" = "x86_64" ]; then \
+        echo 'options(pkg.current_platform = "x86_64-pc-linux-gnu-ubuntu-22.04-libc++")' \
+            >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
+        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04/4.4/libc++", getOption("repos")))' \
+            >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
+        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+            >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
+    fi
 
 # ------------------------------------------------------------------------------------
 # Install pak
