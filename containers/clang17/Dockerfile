@@ -89,12 +89,12 @@ ENV R_MAKEVARS_USER=/root/.R/Makevars
 # ------------------------------------------------------------------------------------
 # system dependencies
 
-#RUN export DEBIAN_FRONTEND=noninteractive && \
-#    echo "deb https://r-hub.github.io/ppa/ jammy main" \
-#         > /etc/apt/sources.list.d/rhub.list && \
-#    curl -L https://raw.githubusercontent.com/r-hub/ppa/main/rhub.gpg.key | apt-key add - && \
-#    apt-get update -y && \
-#    apt-get install protobuf-clang
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    echo "deb https://r-hub.github.io/ppa/ jammy main" \
+         > /etc/apt/sources.list.d/rhub.list && \
+    curl -L https://raw.githubusercontent.com/r-hub/ppa/main/rhub.gpg.key | apt-key add - && \
+    apt-get update -y && \
+    apt-get install protobuf-clang17
 
 # ------------------------------------------------------------------------------------
 # Check config

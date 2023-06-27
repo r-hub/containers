@@ -7,3 +7,12 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/output
+
+  protobuf-clang17:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang17
+    volumes:
+      - .:/output
