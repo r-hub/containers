@@ -25,6 +25,13 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile
 
+RUN if [ "$(uname -p)" = "x86_64" ]; then \
+        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/fedora-36/4.4", getOption("repos")))' \
+            >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
+        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+            >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
+    fi
+
 # ------------------------------------------------------------------------------------
 # Install pak
 
