@@ -159,9 +159,523 @@ ul.task-list li input[type="checkbox"] {
 <section id="atlas" class="level2">
 <h2 class="anchored" data-anchor-id="atlas"><code>atlas</code></h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">e0ee958</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">4480c0c</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">df0c479</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">3397fd9</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">f4c98f0</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">0043722</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">e0ee958</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">4480c0c</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">df0c479</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">3397fd9</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><strong>id:</strong> ghcr.io/r-hub/containers/atlas@sha256:0043722c740304ac5aecab970befc54d3d460bac6f188d9c27c9245ce5de6e5c <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-06-27T07:44:10.826956572Z <br> <strong>size:</strong> 1.42 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux b91eaccbc885 5.15.0-1040-azure #47-Ubuntu SMP Thu Jun 1 19:38:24 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="36 (Container Image)"
+ID=fedora
+VERSION_ID=36
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f36"
+PRETTY_NAME="Fedora Linux 36 (Container Image)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:36"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f36/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=36
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=36
+PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+SUPPORT_END=2023-05-16
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-06-26 r84605)
+Platform: x86_64-pc-linux-gnu
+Running under: Fedora Linux 36 (Container Image)
+
+Matrix products: default
+BLAS/LAPACK: /usr/lib64/atlas/libsatlas.so.3.10;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                zlib                                bzlib 
+                            "1.2.11"                 "1.0.8, 13-Jul-2019" 
+                                  xz                                 PCRE 
+                             "5.4.1"                   "10.40 2022-04-14" 
+                                 ICU                                  TRE 
+                              "69.1"            "TRE 0.8.0 R_fixes (BSD)" 
+                               iconv                             readline 
+                        "glibc 2.35"                                "8.2" 
+                                BLAS 
+"/usr/lib64/atlas/libsatlas.so.3.10" 
+
+
+&gt; libcurlVersion()
+[1] "7.82.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.8"
+attr(,"libssh_version")
+[1] "libssh/0.9.6/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.10.0"
+
+
+&gt; La_library()
+[1] "/usr/lib64/atlas/libsatlas.so.3.10"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.6"                       ""                "1.50.14" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
+CXX = g++ -std=gnu++17
+CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2 -mtune=native -Wall -pedantic
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2 -mtune=native -Wall -pedantic
+SAFE_FFLAGS = -g -O2 -mtune=native -Wall -pedantic -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++17
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRblas
+LAPACK_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRlapack
+MAKE = make
+LIBnn = lib
+AR = gcc-ar
+NM = /usr/bin/nm -B
+RANLIB = gcc-ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>libgcc-12.2.1-4.fc36.x86_64
+crypto-policies-20220428-1.gitdfb10ea.fc36.noarch
+tzdata-2023c-1.fc36.noarch
+fedora-release-identity-container-36-21.noarch
+python-setuptools-wheel-59.6.0-4.fc36.noarch
+publicsuffix-list-dafsa-20230318-1.fc36.noarch
+pcre2-syntax-10.40-1.fc36.noarch
+libreport-filesystem-2.17.4-1.fc36.noarch
+dnf-data-4.15.0-1.fc36.noarch
+fedora-gpg-keys-36-5.noarch
+fedora-release-container-36-21.noarch
+fedora-repos-36-5.noarch
+fedora-release-common-36-21.noarch
+setup-2.14.1-1.fc36.noarch
+filesystem-3.18-2.fc36.x86_64
+basesystem-11-13.fc36.noarch
+coreutils-common-9.0-9.fc36.x86_64
+ncurses-base-6.2-9.20210508.fc36.noarch
+ncurses-libs-6.2-9.20210508.fc36.x86_64
+bash-5.2.15-1.fc36.x86_64
+glibc-common-2.35-22.fc36.x86_64
+glibc-minimal-langpack-2.35-22.fc36.x86_64
+glibc-2.35-22.fc36.x86_64
+zlib-1.2.11-33.fc36.x86_64
+bzip2-libs-1.0.8-11.fc36.x86_64
+libzstd-1.5.5-1.fc36.x86_64
+xz-libs-5.4.1-1.fc36.x86_64
+sqlite-libs-3.36.0-5.fc36.x86_64
+libcap-2.48-4.fc36.x86_64
+popt-1.18-7.fc36.x86_64
+gmp-6.2.1-2.fc36.x86_64
+libgpg-error-1.45-1.fc36.x86_64
+libxml2-2.10.3-2.fc36.x86_64
+libstdc++-12.2.1-4.fc36.x86_64
+libuuid-2.38-1.fc36.x86_64
+libxcrypt-4.4.33-4.fc36.x86_64
+lua-libs-5.4.4-9.fc36.x86_64
+file-libs-5.41-4.fc36.x86_64
+libattr-2.5.1-4.fc36.x86_64
+libacl-2.3.1-3.fc36.x86_64
+libcom_err-1.46.5-2.fc36.x86_64
+libffi-3.4.2-8.fc36.x86_64
+p11-kit-0.24.1-2.fc36.x86_64
+libunistring-1.0-1.fc36.x86_64
+libidn2-2.3.4-1.fc36.x86_64
+libsmartcols-2.38-1.fc36.x86_64
+readline-8.2-2.fc36.x86_64
+libassuan-2.5.5-4.fc36.x86_64
+libgcrypt-1.10.1-3.fc36.x86_64
+gdbm-libs-1.22-2.fc36.x86_64
+json-c-0.15-3.fc36.x86_64
+keyutils-libs-1.6.1-4.fc36.x86_64
+libeconf-0.4.0-3.fc36.x86_64
+libsepol-3.3-3.fc36.x86_64
+lz4-libs-1.9.3-4.fc36.x86_64
+pcre-8.45-1.fc36.1.x86_64
+expat-2.5.0-1.fc36.x86_64
+libtasn1-4.19.0-1.fc36.x86_64
+libcomps-0.1.18-2.fc36.x86_64
+grep-3.7-2.fc36.x86_64
+systemd-libs-250.10-2.fc36.x86_64
+libpsl-0.21.1-5.fc36.x86_64
+mpdecimal-2.5.1-3.fc36.x86_64
+libksba-1.6.3-1.fc36.x86_64
+mpfr-4.1.0-9.fc36.x86_64
+nettle-3.8-1.fc36.x86_64
+libbrotli-1.0.9-7.fc36.x86_64
+libdb-5.3.28-51.fc36.x86_64
+libsigsegv-2.14-2.fc36.x86_64
+gawk-5.1.1-2.fc36.x86_64
+libverto-0.3.2-3.fc36.x86_64
+libyaml-0.2.5-7.fc36.x86_64
+npth-1.6-8.fc36.x86_64
+alternatives-1.22-1.fc36.x86_64
+p11-kit-trust-0.24.1-2.fc36.x86_64
+gnutls-3.8.0-2.fc36.x86_64
+libcap-ng-0.8.3-1.fc36.x86_64
+pam-libs-1.5.2-13.fc36.x86_64
+libgomp-12.2.1-4.fc36.x86_64
+libnghttp2-1.51.0-1.fc36.x86_64
+pcre2-10.40-1.fc36.x86_64
+libselinux-3.3-4.fc36.x86_64
+sed-4.8-10.fc36.x86_64
+openssl-libs-3.0.8-1.fc36.x86_64
+coreutils-9.0-9.fc36.x86_64
+ca-certificates-2023.2.60-1.0.fc36.noarch
+krb5-libs-1.19.2-12.fc36.x86_64
+libtirpc-1.3.3-0.fc36.x86_64
+libnsl2-2.0.0-3.fc36.x86_64
+libblkid-2.38-1.fc36.x86_64
+libmount-2.38-1.fc36.x86_64
+glib2-2.72.3-1.fc36.x86_64
+libfsverity-1.4-7.fc36.x86_64
+zchunk-libs-1.3.1-1.fc36.x86_64
+cyrus-sasl-lib-2.1.27-18.fc36.x86_64
+python-pip-wheel-21.3.1-4.fc36.noarch
+python3-3.10.11-1.fc36.x86_64
+python3-libs-3.10.11-1.fc36.x86_64
+python3-libcomps-0.1.18-2.fc36.x86_64
+gzip-1.11-3.fc36.x86_64
+cracklib-2.9.6-28.fc36.x86_64
+authselect-libs-1.4.0-1.fc36.x86_64
+authselect-1.4.0-1.fc36.x86_64
+libpwquality-1.4.4-7.fc36.x86_64
+pam-1.5.2-13.fc36.x86_64
+libevent-2.1.12-6.fc36.x86_64
+openldap-2.6.4-1.fc36.x86_64
+gnupg2-2.3.7-3.fc36.x86_64
+gpgme-1.17.0-4.fc36.x86_64
+python3-gpg-1.17.0-4.fc36.x86_64
+libarchive-3.5.3-3.fc36.x86_64
+findutils-4.9.0-1.fc36.x86_64
+libsemanage-3.3-3.fc36.x86_64
+shadow-utils-4.11.1-6.fc36.x86_64
+libssh-config-0.9.6-4.fc36.noarch
+libssh-0.9.6-4.fc36.x86_64
+libcurl-7.82.0-14.fc36.x86_64
+curl-7.82.0-14.fc36.x86_64
+rpm-4.17.1-3.fc36.x86_64
+rpm-libs-4.17.1-3.fc36.x86_64
+libmodulemd-2.14.0-2.fc36.x86_64
+libsolv-0.7.22-1.fc36.x86_64
+rpm-build-libs-4.17.1-3.fc36.x86_64
+librepo-1.15.1-1.fc36.x86_64
+libdnf-0.70.0-1.fc36.x86_64
+python3-libdnf-0.70.0-1.fc36.x86_64
+python3-hawkey-0.70.0-1.fc36.x86_64
+tpm2-tss-3.2.2-1.fc36.x86_64
+ima-evm-utils-1.4-5.fc36.x86_64
+rpm-sign-libs-4.17.1-3.fc36.x86_64
+python3-rpm-4.17.1-3.fc36.x86_64
+python3-dnf-4.15.0-1.fc36.noarch
+dnf-4.15.0-1.fc36.noarch
+yum-4.15.0-1.fc36.noarch
+sudo-1.9.13-1.p2.fc36.x86_64
+util-linux-core-2.38-1.fc36.x86_64
+tar-1.34-3.fc36.x86_64
+fedora-repos-modular-36-5.noarch
+rootfiles-8.1-31.fc36.noarch
+gpg-pubkey-38ab71f4-60242b08
+vim-data-9.0.1486-1.fc36.noarch
+elfutils-libelf-0.189-2.fc36.x86_64
+elfutils-default-yama-scope-0.189-2.fc36.noarch
+elfutils-libs-0.189-2.fc36.x86_64
+vim-minimal-9.0.1486-1.fc36.x86_64
+audit-libs-3.1.1-1.fc36.x86_64
+web-assets-filesystem-5-16.fc36.noarch
+js-jquery-3.6.0-2.fc36.noarch
+python-systemd-doc-234-20.fc36.x86_64
+python3-systemd-234-20.fc36.x86_64
+dbus-libs-1.14.4-1.fc36.x86_64
+python3-dbus-1.2.18-3.fc36.x86_64
+python3-six-1.16.0-5.fc36.noarch
+python3-dateutil-2.8.1-8.fc36.noarch
+python3-distro-1.6.0-2.fc36.noarch
+python3-dnf-plugins-core-4.4.0-1.fc36.noarch
+dnf-plugins-core-4.4.0-1.fc36.noarch
+openblas-0.3.19-3.fc36.x86_64
+libmpc-1.2.1-4.fc36.x86_64
+libquadmath-12.2.1-4.fc36.x86_64
+libgfortran-12.2.1-4.fc36.x86_64
+unzip-6.0-57.fc36.x86_64
+tcl-8.6.12-2.fc36.x86_64
+libpng-1.6.37-12.fc36.x86_64
+libICE-1.0.10-8.fc36.x86_64
+libSM-1.2.3-10.fc36.x86_64
+fonts-filesystem-2.0.5-7.fc36.noarch
+zip-3.0-32.fc36.x86_64
+openblas-openmp-0.3.19-3.fc36.x86_64
+openblas-openmp64-0.3.19-3.fc36.x86_64
+openblas-openmp64_-0.3.19-3.fc36.x86_64
+openblas-serial-0.3.19-3.fc36.x86_64
+openblas-serial64-0.3.19-3.fc36.x86_64
+openblas-serial64_-0.3.19-3.fc36.x86_64
+openblas-threads-0.3.19-3.fc36.x86_64
+openblas-threads64-0.3.19-3.fc36.x86_64
+openblas-threads64_-0.3.19-3.fc36.x86_64
+cpp-12.2.1-4.fc36.x86_64
+pcre2-utf32-10.40-1.fc36.x86_64
+pcre2-utf16-10.40-1.fc36.x86_64
+libwebp-1.3.0-1.fc36.x86_64
+libtool-ltdl-2.4.7-1.fc36.x86_64
+libstdc++-devel-12.2.1-4.fc36.x86_64
+libicu-69.1-6.fc36.x86_64
+kernel-headers-6.2.6-100.fc36.x86_64
+google-noto-fonts-common-20201206-10.fc36.noarch
+google-noto-sans-vf-fonts-20201206-10.fc36.noarch
+langpacks-core-font-en-3.0-25.fc36.noarch
+glibc-headers-x86-2.35-22.fc36.noarch
+gc-8.0.6-3.fc36.x86_64
+guile22-2.2.7-5.fc36.x86_64
+make-4.3-7.fc36.x86_64
+fribidi-1.0.11-3.fc36.x86_64
+elfutils-debuginfod-client-0.189-2.fc36.x86_64
+binutils-gold-2.37-37.fc36.x86_64
+binutils-2.37-37.fc36.x86_64
+xml-common-0.6.3-58.fc36.noarch
+which-2.21-32.fc36.x86_64
+pkgconf-m4-1.8.0-2.fc36.noarch
+pixman-0.40.0-5.fc36.x86_64
+openblas-srpm-macros-2-11.fc36.noarch
+openblas-devel-0.3.19-3.fc36.x86_64
+libpkgconf-1.8.0-2.fc36.x86_64
+pkgconf-1.8.0-2.fc36.x86_64
+pkgconf-pkg-config-1.8.0-2.fc36.x86_64
+bzip2-devel-1.0.8-11.fc36.x86_64
+libcurl-devel-7.82.0-14.fc36.x86_64
+libicu-devel-69.1-6.fc36.x86_64
+glibc-devel-2.35-22.fc36.x86_64
+libxcrypt-devel-4.4.33-4.fc36.x86_64
+gcc-12.2.1-4.fc36.x86_64
+gcc-c++-12.2.1-4.fc36.x86_64
+libquadmath-devel-12.2.1-4.fc36.x86_64
+gcc-gfortran-12.2.1-4.fc36.x86_64
+pcre2-devel-10.40-1.fc36.x86_64
+xz-devel-5.4.1-1.fc36.x86_64
+zlib-devel-1.2.11-33.fc36.x86_64
+libjpeg-turbo-2.1.2-2.fc36.x86_64
+libdatrie-0.2.13-3.fc36.x86_64
+libthai-0.1.29-2.fc36.x86_64
+libXau-1.0.9-8.fc36.x86_64
+libxcb-1.13.1-9.fc36.x86_64
+libX11-common-1.7.3.1-2.fc36.noarch
+libX11-1.7.3.1-2.fc36.x86_64
+libXrender-0.9.10-16.fc36.x86_64
+libXext-1.3.4-8.fc36.x86_64
+libXt-1.2.1-2.fc36.x86_64
+libXmu-1.1.3-8.fc36.x86_64
+jbigkit-libs-2.1-23.fc36.x86_64
+libtiff-4.4.0-4.fc36.x86_64
+graphite2-1.3.14-9.fc36.x86_64
+freetype-2.12.1-2.fc36.x86_64
+harfbuzz-4.0.0-2.fc36.x86_64
+fontconfig-2.14.1-2.fc36.x86_64
+libXft-2.3.4-2.fc36.x86_64
+tk-8.6.12-2.fc36.x86_64
+cairo-1.17.6-1.fc36.x86_64
+pango-1.50.14-1.fc36.x86_64
+R-devel-gcc-1-1.x86_64
+glibc-langpack-en-2.35-22.fc36.x86_64
+atlas-3.10.3-19.fc36.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/atlas@sha256:e0ee9589f77b653b1b5758e2584b02e4ac08902934dceba402cc3e2fda2304f9 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-06-27T06:17:10.453639315Z <br> <strong>size:</strong> 1.42 GB <br></p>
 <details>
 <summary>
@@ -675,7 +1189,7 @@ atlas-3.10.3-19.fc36.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/atlas@sha256:4480c0cc50cf4aa0101205769b428aa45193df81a1bd2347f9a00ed28be230fd <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-06-26T06:15:32.933055102Z <br> <strong>size:</strong> 1.42 GB <br></p>
 <details>
 <summary>
@@ -1189,7 +1703,7 @@ atlas-3.10.3-19.fc36.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/atlas@sha256:df0c47998c0b98382cce9056a504b6d7552daf22c2d012453c9920c1cc9f3cd0 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-06-25T06:11:45.039135363Z <br> <strong>size:</strong> 1.42 GB <br></p>
 <details>
 <summary>
@@ -1703,7 +2217,7 @@ atlas-3.10.3-19.fc36.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/atlas@sha256:3397fd99c1ba703fbb4c6c039daa428e69cdc27cb75ad198a4386285c298ea69 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-06-24T06:11:50.565936667Z <br> <strong>size:</strong> 1.42 GB <br></p>
 <details>
 <summary>
@@ -1743,520 +2257,6 @@ R session information
 </summary>
 <pre><code>&gt; sessionInfo()
 R Under development (unstable) (2023-06-23 r84599)
-Platform: x86_64-pc-linux-gnu
-Running under: Fedora Linux 36 (Container Image)
-
-Matrix products: default
-BLAS/LAPACK: /usr/lib64/atlas/libsatlas.so.3.10;  LAPACK version 3.10.0
-
-locale:
- [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
- [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
- [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: Etc/UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.4.0
-</code></pre>
-</details>
-<details>
-<summary>
-R capabilities
-</summary>
-<pre><code>&gt; capabilities()
-       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE 
-</code></pre>
-</details>
-<details>
-<summary>
-R external software
-</summary>
-<pre><code>&gt; extSoftVersion()
-                                zlib                                bzlib 
-                            "1.2.11"                 "1.0.8, 13-Jul-2019" 
-                                  xz                                 PCRE 
-                             "5.4.1"                   "10.40 2022-04-14" 
-                                 ICU                                  TRE 
-                              "69.1"            "TRE 0.8.0 R_fixes (BSD)" 
-                               iconv                             readline 
-                        "glibc 2.35"                                "8.2" 
-                                BLAS 
-"/usr/lib64/atlas/libsatlas.so.3.10" 
-
-
-&gt; libcurlVersion()
-[1] "7.82.0"
-attr(,"ssl_version")
-[1] "OpenSSL/3.0.8"
-attr(,"libssh_version")
-[1] "libssh/0.9.6/openssl/zlib"
-attr(,"protocols")
- [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
- [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
-[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
-[22] "smtps"   "telnet"  "tftp"   
-
-
-&gt; La_version()
-[1] "3.10.0"
-
-
-&gt; La_library()
-[1] "/usr/lib64/atlas/libsatlas.so.3.10"
-
-
-&gt; grSoftVersion()
-                   cairo                  cairoFT                    pango 
-                "1.17.6"                       ""                "1.50.14" 
-                  libpng                     jpeg                  libtiff 
-                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
-
-
-&gt; pcre_config()
-             UTF-8 Unicode properties                JIT              stack 
-              TRUE               TRUE               TRUE              FALSE 
-</code></pre>
-</details>
-<details>
-<summary>
-R localization
-</summary>
-<pre><code>&gt; l10n_info()
-$MBCS
-[1] TRUE
-
-$`UTF-8`
-[1] TRUE
-
-$`Latin-1`
-[1] FALSE
-
-$codeset
-[1] "UTF-8"
-</code></pre>
-</details>
-<details>
-<summary>
-R config
-</summary>
-<pre><code>&gt; R CMD config --all
-CC = gcc
-CFLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
-CPICFLAGS = -fpic
-CPPFLAGS = -I/usr/local/include
-CC17 = gcc -std=gnu17
-C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
-CC23 = gcc -std=gnu2x
-C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
-CC90 = gcc -std=gnu90
-C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
-CC99 = gcc -std=gnu99
-C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection -Werror=implicit-function-declaration -Wstrict-prototypes
-CXX = g++ -std=gnu++17
-CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
-CXXPICFLAGS = -fpic
-CXX11 = g++
-CXX11STD = -std=gnu++11
-CXX11FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
-CXX11PICFLAGS = -fpic
-CXX14 = g++
-CXX14STD = -std=gnu++14
-CXX14FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
-CXX14PICFLAGS = -fpic
-CXX17 = g++
-CXX17STD = -std=gnu++17
-CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
-CXX17PICFLAGS = -fpic
-CXX20 = g++
-CXX20STD = -std=gnu++20
-CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
-CXX20PICFLAG =
-CXX23 = g++
-CXX23STD = -std=gnu++23
-CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-parentheses -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong -fstack-clash-protection -fcf-protection
-CXX23PICFLAGS = -fpic
-DYLIB_EXT = .so
-DYLIB_LD = gcc
-DYLIB_LDFLAGS = -shared -fopenmp
-FC = gfortran
-FFLAGS = -g -O2 -mtune=native -Wall -pedantic
-FPICFLAGS = -fpic
-FLIBS = -lgfortran -lm -lquadmath
-FCFLAGS = -g -O2 -mtune=native -Wall -pedantic
-SAFE_FFLAGS = -g -O2 -mtune=native -Wall -pedantic -msse2 -mfpmath=sse
-OBJC =
-OBJCFLAGS =
-JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
-JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
-JAVAH =
-JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
-JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
-JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
-JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
-LDFLAGS = -L/usr/local/lib
-SHLIB_CFLAGS =
-SHLIB_CXXFLAGS =
-SHLIB_CXXLD = g++ -std=gnu++17
-SHLIB_CXXLDFLAGS = -shared
-SHLIB_CXX11LD = g++ -std=gnu++11
-SHLIB_CXX11LDFLAGS = -shared
-SHLIB_CXX14LD = g++ -std=gnu++14
-SHLIB_CXX14LDFLAGS = -shared
-SHLIB_CXX17LD = g++ -std=gnu++17
-SHLIB_CXX17LDFLAGS = -shared
-SHLIB_CXX20LD = g++ -std=gnu++20
-SHLIB_CXX20LDFLAGS = -shared
-SHLIB_CXX23LD = g++ -std=gnu++23
-SHLIB_CXX23LDFLAGS = -shared
-SHLIB_EXT = .so
-SHLIB_FFLAGS =
-SHLIB_LD = gcc
-SHLIB_LDFLAGS = -shared
-TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
-TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
-BLAS_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRblas
-LAPACK_LIBS = -L/opt/R/devel-gcc/lib/R/lib -lRlapack
-MAKE = make
-LIBnn = lib
-AR = gcc-ar
-NM = /usr/bin/nm -B
-RANLIB = gcc-ranlib
-LTO =
-LTO_FC =
-LTO_LD =
-
-## The following variables are defunct
-CPP CXXCPP
-</code></pre>
-</details>
-<details>
-<summary>
-Compilers
-</summary>
-<pre><code>&gt; $(CC) --version
-gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
-Copyright (C) 2022 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(CXX) --version
-g++ (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
-Copyright (C) 2022 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(FC) --version
-GNU Fortran (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
-Copyright (C) 2022 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-</details>
-<details>
-<summary>
-OS packages
-</summary>
-<pre><code>libgcc-12.2.1-4.fc36.x86_64
-crypto-policies-20220428-1.gitdfb10ea.fc36.noarch
-tzdata-2023c-1.fc36.noarch
-fedora-release-identity-container-36-21.noarch
-python-setuptools-wheel-59.6.0-4.fc36.noarch
-publicsuffix-list-dafsa-20230318-1.fc36.noarch
-pcre2-syntax-10.40-1.fc36.noarch
-libreport-filesystem-2.17.4-1.fc36.noarch
-dnf-data-4.15.0-1.fc36.noarch
-fedora-gpg-keys-36-5.noarch
-fedora-release-container-36-21.noarch
-fedora-repos-36-5.noarch
-fedora-release-common-36-21.noarch
-setup-2.14.1-1.fc36.noarch
-filesystem-3.18-2.fc36.x86_64
-basesystem-11-13.fc36.noarch
-coreutils-common-9.0-9.fc36.x86_64
-ncurses-base-6.2-9.20210508.fc36.noarch
-ncurses-libs-6.2-9.20210508.fc36.x86_64
-bash-5.2.15-1.fc36.x86_64
-glibc-common-2.35-22.fc36.x86_64
-glibc-minimal-langpack-2.35-22.fc36.x86_64
-glibc-2.35-22.fc36.x86_64
-zlib-1.2.11-33.fc36.x86_64
-bzip2-libs-1.0.8-11.fc36.x86_64
-libzstd-1.5.5-1.fc36.x86_64
-xz-libs-5.4.1-1.fc36.x86_64
-sqlite-libs-3.36.0-5.fc36.x86_64
-libcap-2.48-4.fc36.x86_64
-popt-1.18-7.fc36.x86_64
-gmp-6.2.1-2.fc36.x86_64
-libgpg-error-1.45-1.fc36.x86_64
-libxml2-2.10.3-2.fc36.x86_64
-libstdc++-12.2.1-4.fc36.x86_64
-libuuid-2.38-1.fc36.x86_64
-libxcrypt-4.4.33-4.fc36.x86_64
-lua-libs-5.4.4-9.fc36.x86_64
-file-libs-5.41-4.fc36.x86_64
-libattr-2.5.1-4.fc36.x86_64
-libacl-2.3.1-3.fc36.x86_64
-libcom_err-1.46.5-2.fc36.x86_64
-libffi-3.4.2-8.fc36.x86_64
-p11-kit-0.24.1-2.fc36.x86_64
-libunistring-1.0-1.fc36.x86_64
-libidn2-2.3.4-1.fc36.x86_64
-libsmartcols-2.38-1.fc36.x86_64
-readline-8.2-2.fc36.x86_64
-libassuan-2.5.5-4.fc36.x86_64
-libgcrypt-1.10.1-3.fc36.x86_64
-gdbm-libs-1.22-2.fc36.x86_64
-json-c-0.15-3.fc36.x86_64
-keyutils-libs-1.6.1-4.fc36.x86_64
-libeconf-0.4.0-3.fc36.x86_64
-libsepol-3.3-3.fc36.x86_64
-lz4-libs-1.9.3-4.fc36.x86_64
-pcre-8.45-1.fc36.1.x86_64
-expat-2.5.0-1.fc36.x86_64
-libtasn1-4.19.0-1.fc36.x86_64
-libcomps-0.1.18-2.fc36.x86_64
-grep-3.7-2.fc36.x86_64
-systemd-libs-250.10-2.fc36.x86_64
-libpsl-0.21.1-5.fc36.x86_64
-mpdecimal-2.5.1-3.fc36.x86_64
-libksba-1.6.3-1.fc36.x86_64
-mpfr-4.1.0-9.fc36.x86_64
-nettle-3.8-1.fc36.x86_64
-libbrotli-1.0.9-7.fc36.x86_64
-libdb-5.3.28-51.fc36.x86_64
-libsigsegv-2.14-2.fc36.x86_64
-gawk-5.1.1-2.fc36.x86_64
-libverto-0.3.2-3.fc36.x86_64
-libyaml-0.2.5-7.fc36.x86_64
-npth-1.6-8.fc36.x86_64
-alternatives-1.22-1.fc36.x86_64
-p11-kit-trust-0.24.1-2.fc36.x86_64
-gnutls-3.8.0-2.fc36.x86_64
-libcap-ng-0.8.3-1.fc36.x86_64
-pam-libs-1.5.2-13.fc36.x86_64
-libgomp-12.2.1-4.fc36.x86_64
-libnghttp2-1.51.0-1.fc36.x86_64
-pcre2-10.40-1.fc36.x86_64
-libselinux-3.3-4.fc36.x86_64
-sed-4.8-10.fc36.x86_64
-openssl-libs-3.0.8-1.fc36.x86_64
-coreutils-9.0-9.fc36.x86_64
-ca-certificates-2023.2.60-1.0.fc36.noarch
-krb5-libs-1.19.2-12.fc36.x86_64
-libtirpc-1.3.3-0.fc36.x86_64
-libnsl2-2.0.0-3.fc36.x86_64
-libblkid-2.38-1.fc36.x86_64
-libmount-2.38-1.fc36.x86_64
-glib2-2.72.3-1.fc36.x86_64
-libfsverity-1.4-7.fc36.x86_64
-zchunk-libs-1.3.1-1.fc36.x86_64
-cyrus-sasl-lib-2.1.27-18.fc36.x86_64
-python-pip-wheel-21.3.1-4.fc36.noarch
-python3-3.10.11-1.fc36.x86_64
-python3-libs-3.10.11-1.fc36.x86_64
-python3-libcomps-0.1.18-2.fc36.x86_64
-gzip-1.11-3.fc36.x86_64
-cracklib-2.9.6-28.fc36.x86_64
-authselect-libs-1.4.0-1.fc36.x86_64
-authselect-1.4.0-1.fc36.x86_64
-libpwquality-1.4.4-7.fc36.x86_64
-pam-1.5.2-13.fc36.x86_64
-libevent-2.1.12-6.fc36.x86_64
-openldap-2.6.4-1.fc36.x86_64
-gnupg2-2.3.7-3.fc36.x86_64
-gpgme-1.17.0-4.fc36.x86_64
-python3-gpg-1.17.0-4.fc36.x86_64
-libarchive-3.5.3-3.fc36.x86_64
-findutils-4.9.0-1.fc36.x86_64
-libsemanage-3.3-3.fc36.x86_64
-shadow-utils-4.11.1-6.fc36.x86_64
-libssh-config-0.9.6-4.fc36.noarch
-libssh-0.9.6-4.fc36.x86_64
-libcurl-7.82.0-14.fc36.x86_64
-curl-7.82.0-14.fc36.x86_64
-rpm-4.17.1-3.fc36.x86_64
-rpm-libs-4.17.1-3.fc36.x86_64
-libmodulemd-2.14.0-2.fc36.x86_64
-libsolv-0.7.22-1.fc36.x86_64
-rpm-build-libs-4.17.1-3.fc36.x86_64
-librepo-1.15.1-1.fc36.x86_64
-libdnf-0.70.0-1.fc36.x86_64
-python3-libdnf-0.70.0-1.fc36.x86_64
-python3-hawkey-0.70.0-1.fc36.x86_64
-tpm2-tss-3.2.2-1.fc36.x86_64
-ima-evm-utils-1.4-5.fc36.x86_64
-rpm-sign-libs-4.17.1-3.fc36.x86_64
-python3-rpm-4.17.1-3.fc36.x86_64
-python3-dnf-4.15.0-1.fc36.noarch
-dnf-4.15.0-1.fc36.noarch
-yum-4.15.0-1.fc36.noarch
-sudo-1.9.13-1.p2.fc36.x86_64
-util-linux-core-2.38-1.fc36.x86_64
-tar-1.34-3.fc36.x86_64
-fedora-repos-modular-36-5.noarch
-rootfiles-8.1-31.fc36.noarch
-gpg-pubkey-38ab71f4-60242b08
-vim-data-9.0.1486-1.fc36.noarch
-elfutils-libelf-0.189-2.fc36.x86_64
-elfutils-default-yama-scope-0.189-2.fc36.noarch
-elfutils-libs-0.189-2.fc36.x86_64
-vim-minimal-9.0.1486-1.fc36.x86_64
-audit-libs-3.1.1-1.fc36.x86_64
-web-assets-filesystem-5-16.fc36.noarch
-js-jquery-3.6.0-2.fc36.noarch
-python-systemd-doc-234-20.fc36.x86_64
-python3-systemd-234-20.fc36.x86_64
-dbus-libs-1.14.4-1.fc36.x86_64
-python3-dbus-1.2.18-3.fc36.x86_64
-python3-six-1.16.0-5.fc36.noarch
-python3-dateutil-2.8.1-8.fc36.noarch
-python3-distro-1.6.0-2.fc36.noarch
-python3-dnf-plugins-core-4.4.0-1.fc36.noarch
-dnf-plugins-core-4.4.0-1.fc36.noarch
-openblas-0.3.19-3.fc36.x86_64
-libmpc-1.2.1-4.fc36.x86_64
-libquadmath-12.2.1-4.fc36.x86_64
-libgfortran-12.2.1-4.fc36.x86_64
-unzip-6.0-57.fc36.x86_64
-tcl-8.6.12-2.fc36.x86_64
-libpng-1.6.37-12.fc36.x86_64
-libICE-1.0.10-8.fc36.x86_64
-libSM-1.2.3-10.fc36.x86_64
-fonts-filesystem-2.0.5-7.fc36.noarch
-zip-3.0-32.fc36.x86_64
-openblas-openmp-0.3.19-3.fc36.x86_64
-openblas-openmp64-0.3.19-3.fc36.x86_64
-openblas-openmp64_-0.3.19-3.fc36.x86_64
-openblas-serial-0.3.19-3.fc36.x86_64
-openblas-serial64-0.3.19-3.fc36.x86_64
-openblas-serial64_-0.3.19-3.fc36.x86_64
-openblas-threads-0.3.19-3.fc36.x86_64
-openblas-threads64-0.3.19-3.fc36.x86_64
-openblas-threads64_-0.3.19-3.fc36.x86_64
-cpp-12.2.1-4.fc36.x86_64
-pcre2-utf32-10.40-1.fc36.x86_64
-pcre2-utf16-10.40-1.fc36.x86_64
-libwebp-1.3.0-1.fc36.x86_64
-libtool-ltdl-2.4.7-1.fc36.x86_64
-libstdc++-devel-12.2.1-4.fc36.x86_64
-libicu-69.1-6.fc36.x86_64
-kernel-headers-6.2.6-100.fc36.x86_64
-google-noto-fonts-common-20201206-10.fc36.noarch
-google-noto-sans-vf-fonts-20201206-10.fc36.noarch
-langpacks-core-font-en-3.0-25.fc36.noarch
-glibc-headers-x86-2.35-22.fc36.noarch
-gc-8.0.6-3.fc36.x86_64
-guile22-2.2.7-5.fc36.x86_64
-make-4.3-7.fc36.x86_64
-fribidi-1.0.11-3.fc36.x86_64
-elfutils-debuginfod-client-0.189-2.fc36.x86_64
-binutils-gold-2.37-37.fc36.x86_64
-binutils-2.37-37.fc36.x86_64
-xml-common-0.6.3-58.fc36.noarch
-which-2.21-32.fc36.x86_64
-pkgconf-m4-1.8.0-2.fc36.noarch
-pixman-0.40.0-5.fc36.x86_64
-openblas-srpm-macros-2-11.fc36.noarch
-openblas-devel-0.3.19-3.fc36.x86_64
-libpkgconf-1.8.0-2.fc36.x86_64
-pkgconf-1.8.0-2.fc36.x86_64
-pkgconf-pkg-config-1.8.0-2.fc36.x86_64
-bzip2-devel-1.0.8-11.fc36.x86_64
-libcurl-devel-7.82.0-14.fc36.x86_64
-libicu-devel-69.1-6.fc36.x86_64
-glibc-devel-2.35-22.fc36.x86_64
-libxcrypt-devel-4.4.33-4.fc36.x86_64
-gcc-12.2.1-4.fc36.x86_64
-gcc-c++-12.2.1-4.fc36.x86_64
-libquadmath-devel-12.2.1-4.fc36.x86_64
-gcc-gfortran-12.2.1-4.fc36.x86_64
-pcre2-devel-10.40-1.fc36.x86_64
-xz-devel-5.4.1-1.fc36.x86_64
-zlib-devel-1.2.11-33.fc36.x86_64
-libjpeg-turbo-2.1.2-2.fc36.x86_64
-libdatrie-0.2.13-3.fc36.x86_64
-libthai-0.1.29-2.fc36.x86_64
-libXau-1.0.9-8.fc36.x86_64
-libxcb-1.13.1-9.fc36.x86_64
-libX11-common-1.7.3.1-2.fc36.noarch
-libX11-1.7.3.1-2.fc36.x86_64
-libXrender-0.9.10-16.fc36.x86_64
-libXext-1.3.4-8.fc36.x86_64
-libXt-1.2.1-2.fc36.x86_64
-libXmu-1.1.3-8.fc36.x86_64
-jbigkit-libs-2.1-23.fc36.x86_64
-libtiff-4.4.0-4.fc36.x86_64
-graphite2-1.3.14-9.fc36.x86_64
-freetype-2.12.1-2.fc36.x86_64
-harfbuzz-4.0.0-2.fc36.x86_64
-fontconfig-2.14.1-2.fc36.x86_64
-libXft-2.3.4-2.fc36.x86_64
-tk-8.6.12-2.fc36.x86_64
-cairo-1.17.6-1.fc36.x86_64
-pango-1.50.14-1.fc36.x86_64
-R-devel-gcc-1-1.x86_64
-glibc-langpack-en-2.35-22.fc36.x86_64
-atlas-3.10.3-19.fc36.x86_64
-</code></pre>
-</details>
-</div>
-<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-<p><strong>id:</strong> ghcr.io/r-hub/containers/atlas@sha256:f4c98f0652bf968fb2820ef5f76b7f5adbebf264eb1920e5b9b8a074a52e2cda <br> <strong>tag:</strong> ghcr.io/r-hub/containers/atlas:latest <br> <strong>created:</strong> 2023-06-23T06:12:56.794245279Z <br> <strong>size:</strong> 1.42 GB <br></p>
-<details>
-<summary>
-OS version
-</summary>
-<pre><code>&gt; uname -a
-Linux 84e58cbe30dc 5.15.0-1040-azure #47-Ubuntu SMP Thu Jun 1 19:38:24 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
-
-&gt; cat /etc/os-release
-NAME="Fedora Linux"
-VERSION="36 (Container Image)"
-ID=fedora
-VERSION_ID=36
-VERSION_CODENAME=""
-PLATFORM_ID="platform:f36"
-PRETTY_NAME="Fedora Linux 36 (Container Image)"
-ANSI_COLOR="0;38;2;60;110;180"
-LOGO=fedora-logo-icon
-CPE_NAME="cpe:/o:fedoraproject:fedora:36"
-HOME_URL="https://fedoraproject.org/"
-DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f36/system-administrators-guide/"
-SUPPORT_URL="https://ask.fedoraproject.org/"
-BUG_REPORT_URL="https://bugzilla.redhat.com/"
-REDHAT_BUGZILLA_PRODUCT="Fedora"
-REDHAT_BUGZILLA_PRODUCT_VERSION=36
-REDHAT_SUPPORT_PRODUCT="Fedora"
-REDHAT_SUPPORT_PRODUCT_VERSION=36
-PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
-SUPPORT_END=2023-05-16
-VARIANT="Container Image"
-VARIANT_ID=container
-</code></pre>
-</details>
-<details>
-<summary>
-R session information
-</summary>
-<pre><code>&gt; sessionInfo()
-R Under development (unstable) (2023-06-22 r84597)
 Platform: x86_64-pc-linux-gnu
 Running under: Fedora Linux 36 (Container Image)
 
@@ -32126,7 +32126,7 @@ ii  zstd                                 1.4.8+dfsg-3build1                     
 </div>
 </div>
 <hr>
-<p>Container data last updated: 2023-06-27 06:27:58. Download <a href="manifest.json"><code>manifest.json</code></a></p>
+<p>Container data last updated: 2023-06-27 07:48:53. Download <a href="manifest.json"><code>manifest.json</code></a></p>
 
 
 </section>
