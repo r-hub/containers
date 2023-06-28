@@ -94,7 +94,14 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
          > /etc/apt/sources.list.d/rhub.list && \
     curl -L https://raw.githubusercontent.com/r-hub/ppa/main/rhub.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install protobuf-clang17
+    apt-get install protobuf-clang17 && \
+    echo 'export LD_LIBRARY_PATH="/usr/local/clang/lib:${LD_LIBRARY_PATH}"' \
+         >> /opt/R/devel/lib/R/etc/ldpaths && \
+    echo 'PKG_CONFIG_PATH="/usr/local/clang/lib/pkgconfig:${PKG_CONFIG_PATH}"' \
+         >> /opt/R/devel/lib/R/etc/Renviron && \
+    echo 'Sys.setenv(PATH = paste0("/usr/local/clang/bin:", Sys.getenv("PATH")))' \
+         >> /opt/R/devel/lib/R/library/base/R/Rprofile
+
 
 # ------------------------------------------------------------------------------------
 # Check config
