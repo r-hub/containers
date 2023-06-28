@@ -57,6 +57,11 @@ RUN /opt/R/devel-gcc/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarn
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
+# Useful system packages
+
+RUN dnf install -y pkg-config
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"

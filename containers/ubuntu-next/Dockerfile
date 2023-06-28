@@ -70,6 +70,14 @@ RUN /opt/R/next/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings 
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
+# Useful system packages
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y pkg-config && \
+    apt-get clean
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 # From https://svn.r-project.org/R-dev-web/trunk/CRAN/QA/Kurt/.R/check.Renviron

@@ -50,6 +50,11 @@ RUN /opt/R/devel-gcc13/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWa
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
+# Useful system packages
+
+RUN dnf -y install pkg-config
+
+# ------------------------------------------------------------------------------------
 # CRAN's config from https://www.stats.ox.ac.uk/pub/bdr/gcc13/README.txt
 #
 # > Tests as for fedora-gcc but with GCC trunk aka pre-13.0.0 -- the

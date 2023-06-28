@@ -61,6 +61,14 @@ RUN /opt/R/devel-nold/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWar
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
+# Useful system packages
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y pkg-config && \
+    apt-get clean
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
