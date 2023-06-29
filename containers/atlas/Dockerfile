@@ -59,7 +59,7 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf install -y pkg-config devscripts-checkbashisms
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy
 
 # ------------------------------------------------------------------------------------
 # Check config

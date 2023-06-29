@@ -11,14 +11,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# Tools needed for the check
-
-RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update -y && \
-    apt-get install -y devscripts tidy && \
-    apt-get clean
-
-# ------------------------------------------------------------------------------------
 # TinyTeX
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
@@ -74,7 +66,7 @@ COPY r-check /usr/local/bin
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y pkg-config perl && \
+    apt-get install -y pkg-config perl tidy qpdf && \
     apt-get clean
 
 RUN curl -o /usr/local/bin/checkbashisms \

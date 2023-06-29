@@ -44,7 +44,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y pkg-config perl && \
+    apt-get install -y pkg-config perl qpdf tidy && \
     apt-get clean
 
 RUN curl -o /usr/local/bin/checkbashisms \
