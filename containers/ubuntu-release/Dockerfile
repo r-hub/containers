@@ -72,12 +72,16 @@ RUN /opt/R/release/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnin
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
-# Useful system packages
+# Useful system packages, some are needed for R CMD check
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y pkg-config && \
+    apt-get install -y pkg-config perl && \
     apt-get clean
+
+RUN curl -o /usr/local/bin/checkbashisms \
+    https://raw.githubusercontent.com/r-hub/containers/main/dependencies/checkbashisms/checkbashisms && \
+    chmod +x /usr/local/bin/checkbashisms
 
 # ------------------------------------------------------------------------------------
 # Check config
