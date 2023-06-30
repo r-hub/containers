@@ -15,7 +15,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y wget && \
+    apt-get install -y wget perl && \
     apt-get clean && \
     cd /root && \
     wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh -s - --admin --no-path && \
