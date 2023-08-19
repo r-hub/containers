@@ -1,0 +1,43 @@
+# By R and R-hub
+
+{
+   Suppression for wcsrtombs
+   Memcheck:Cond
+   fun:__wcsnlen_sse4_1
+   fun:wcsrtombs
+   fun:wcstombs
+}
+
+{
+   Suppression for do_makename
+   Memcheck:Addr16
+   fun:__wcsnlen_sse4_1
+   fun:wcsrtombs
+   fun:wcstombs
+}
+
+{
+   Suppression for gotoblas #1
+   Memcheck:Value8
+   fun:____strtoul_l_internal
+   fun:get_coretype
+   fun:gotoblas_dynamic_init
+   fun:gotoblas_init
+   fun:call_init
+   fun:call_init
+   fun:_dl_init
+   fun:(below main)
+}
+
+{
+   Suppression for gotoblas #2
+   Memcheck:Cond
+   fun:____strtoul_l_internal
+   fun:get_coretype
+   fun:gotoblas_dynamic_init
+   fun:gotoblas_init
+   fun:call_init
+   fun:call_init
+   fun:_dl_init
+   fun:(below main)
+}
