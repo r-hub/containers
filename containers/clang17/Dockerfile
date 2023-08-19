@@ -83,9 +83,9 @@ RUN curl -o /usr/local/bin/checkbashisms \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-17 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-17 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
