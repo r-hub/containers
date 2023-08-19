@@ -1,0 +1,4 @@
+CFLAGS="-g -O2 -Wall -pedantic -mtune=native"
+CXXFLAGS="-g -O2 -Wall -pedantic -mtune=native"
+FFLAGS="-g -O2 -mtune=native"
+FCFLAGS="-g -O2 -mtune=native"

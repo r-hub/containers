@@ -89,3 +89,18 @@ services:
     image: rhub/fedora-gcc13:latest
     volumes:
       - ./integration/tmp:/tmp/output
+
+  valgrind:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-valgrind
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.valgrind
+      platforms:
+      - linux/amd64
+    image: rhub/valgrind:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
