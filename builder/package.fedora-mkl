@@ -51,9 +51,6 @@ ${pcre_libs}
 contents:
 - src: /opt/R/${R_VERSION}${R_TYPE}
   dst: /opt/R/${R_VERSION}${R_TYPE}
-scripts:
-  postinstall: /post-install.sh
-  postremove: /after-remove.sh
 EOF
 
 nfpm package \
