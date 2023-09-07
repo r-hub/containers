@@ -42,7 +42,7 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
 # ------------------------------------------------------------------------------------
 # Install pak
 
-RUN /opt/R/devel-gcc/bin/R -q -e \
+RUN /opt/R/devel-mkl/bin/R -q -e \
     'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ ENV LANG en_GB.UTF-8
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
 
-RUN /opt/R/devel-gcc/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
+RUN /opt/R/devel-mkl/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
 
 # ------------------------------------------------------------------------------------
 # Copy check script
