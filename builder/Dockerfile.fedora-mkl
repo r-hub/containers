@@ -44,6 +44,10 @@ RUN dnf -y upgrade \
     zlib-devel \
     && dnf clean all
 
+COPY containers/mkl/oneAPI.repo /etc/yum.repos.d
+
+RUN dnf install -y intel-oneapi-mkl-devel-2023.2.0.x86_64
+
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
 
 RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(cat /tmp/arch).rpm" && \
