@@ -31,6 +31,7 @@ depends:
 - g++
 - gcc
 - gfortran
+- intel-oneapi-mkl-2023.2.0
 - libbz2-dev
 - libc6
 - libcairo2

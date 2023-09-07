@@ -29,6 +29,11 @@ RUN apt-get update && \
 COPY builder/intel-oneapi-archive-keyring.gpg /etc/apt/trusted.gpg.d/
 COPY builder/intel-graphics-archive-keyring.gpg /etc/apt/trusted.gpg.d/
 
+RUN echo "deb https://apt.repos.intel.com/oneapi all main " > \
+    /etc/apt/sources.list.d/oneAPI.list
+RUN echo "deb https://repositories.intel.com/graphics/ubuntu jammy flex" > \
+    /etc/apt/sources.list.d/intel-graphics.list
+
 RUN apt-get update && apt-get install -y intel-oneapi-mkl-devel
 
 # -------------------------------------------------------------------------
@@ -45,6 +50,10 @@ ENV PAGER /usr/bin/pager
 
 # R 3.x requires PCRE2 for Pango support on Ubuntu 22
 ENV INCLUDE_PCRE2_IN_R_3 yes
+
+ENV MKL="\"-L/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/  -lmkl_gf_lp64 -lmkl_core -lmkl_sequential\""
+ENV CONFIGURE_OPTIONS="--enable-R-shlib --with-tcltk --enable-memory-profiling --with-x --enable-lto=R --with-blas=$MKL --with-lapack"
+ENV LD_LIBRARY_PATH="/opt/intel/oneapi/mkl/2023.2.0/lib/intel64"
 
 COPY builder/config.ubuntu-2204-mkl /config.site
 COPY builder/package.ubuntu-2204-mkl /package.sh
