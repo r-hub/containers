@@ -81,4 +81,5 @@ ENV R_DATATABLE_NUM_THREADS=2
 # ------------------------------------------------------------------------------------
 # Check config, only runtime checks
 
+ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--use-valgrind --extra-arch --no-stop-on-test-error"

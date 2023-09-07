@@ -78,3 +78,8 @@ RUN blas=$(R -s -q -e 'cat(La_library())') && \
 
 RUN R -q -e 'extSoftVersion()["BLAS"]'
 RUN R -q -e 'La_library()'
+
+# ------------------------------------------------------------------------------------
+# Check config
+
+ENV _R_CHECK_TESTS_NLINES_="0"

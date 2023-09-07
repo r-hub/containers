@@ -82,5 +82,6 @@ RUN ARCH="$(arch)"; \
 # Check config, no need to check the PDF manual and vignettes here.
 # We also avoid that bashism checks, as it needs external tools.
 
+ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
