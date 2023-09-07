@@ -39,6 +39,13 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
             >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile; \
     fi
 
+# We need to do this to be able to use packages that link to the "other"
+# blas and lapack
+
+RUN ln -s libRblas.so /opt/R/devel-mkl/lib/R/lib/libRlapack.so
+RUN ln -s libRblas.so /opt/R/devel-mkl/lib/R/lib/libsatlas.so.3
+RUN ln -s libsatlas.so.3 /opt/R/devel-mkl/lib/R/lib/libsatlas.so
+
 # ------------------------------------------------------------------------------------
 # Install pak
 
