@@ -4,9 +4,9 @@ FROM fedora:36
 # ------------------------------------------------------------------------------------
 # MKL
 
-COPY containers/mkl/oneAPI.repo /etc/yum.repos.d
+COPY oneAPI.repo /etc/yum.repos.d
 
-RUN dnf install -y intel-oneapi-mkl-2023.2.0.x86_64
+RUN dnf install -y intel-oneapi-mkl-2023.2.0
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements

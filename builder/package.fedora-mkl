@@ -59,7 +59,7 @@ depends:
 - gcc
 - gcc-c++
 - gcc-gfortran
-- intel-oneapi-mkl-2023.2.0.x86_64
+- intel-oneapi-mkl-2023.2.0
 - libcurl-devel
 - libicu-devel
 - libSM
