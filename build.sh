@@ -105,6 +105,7 @@ compile_r() {
   fi
 
   # set some common environment variables for the configure step
+  eval "ARGS=( $CONFIGURE_OPTIONS )"
   AWK=/usr/bin/awk \
   LIBnn=lib \
   PERL=/usr/bin/perl \
@@ -116,7 +117,7 @@ compile_r() {
   R_ZIPCMD=/usr/bin/zip \
   ./configure \
     --prefix=/opt/R/${1}${2} \
-    ${CONFIGURE_OPTIONS} \
+    "${ARGS[@]}" \
     ${build_flag}
   make clean
   make

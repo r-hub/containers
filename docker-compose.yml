@@ -90,6 +90,20 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  fedora-mkl:
+    platform: linux/amd64
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-mkl
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.fedora-mkl
+    image: rhub/fedora-mkl:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+
   valgrind:
     command: ./build.sh
     environment:
