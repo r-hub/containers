@@ -17,6 +17,13 @@ issues_flavors_summary <- function(exclude = c("OK", "NOTE")) {
   tab
 }
 
+additional_issues <- function() {
+  x <- readRDS(gzcon(url(
+    "https://cran.r-project.org/web/checks/check_issues.rds"
+  )))
+  as.data.frame(x)
+}
+
 additional_issues_summary <- function() {
   x <- readRDS(gzcon(url(
     "https://cran.r-project.org/web/checks/check_issues.rds"
