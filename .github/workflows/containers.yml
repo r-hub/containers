@@ -97,6 +97,7 @@ jobs:
 
     - name: Test
       run: |
+        docker images
         docker run docker.io/rhub/test:test R --version
 
     - name: Push
