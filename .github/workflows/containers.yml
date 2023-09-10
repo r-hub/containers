@@ -67,6 +67,16 @@ jobs:
     name: ${{ matrix.container }}
 
     steps:
+    # needed for bigger Docker images, if there isn't enough space, then
+    # they build, but are not exported to Docker
+    - name: "Clean up"
+      run: |
+        sudo rm -rf /usr/share/dotnet /usr/share/miniconda \
+                    $JAVA_HOME_8_X64 $JAVA_HOME_11_X64 $JAVA_HOME_17_X64 \
+                    $ANDROID_HOME
+        du -hs
+        docker buildx du
+
     - uses: actions/checkout@v3
 
     - name: Login to GitHub Container Registry
@@ -92,13 +102,11 @@ jobs:
         context: containers/${{ matrix.container }}
         load: true
         tags: |
-          docker.io/rhub/test:test
           rhub/test:test
 
     - name: Test
       run: |
-        docker images
-        docker run docker.io/rhub/test:test R --version
+        docker run rhub/test:test R --version
 
     - name: Push
       uses: docker/build-push-action@v3
