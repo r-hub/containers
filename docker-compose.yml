@@ -104,6 +104,20 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  intel:
+    platform: linux/amd64
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-intel
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.fedora-intel
+    image: rhub/fedora-intel:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+
   valgrind:
     command: ./build.sh
     environment:
