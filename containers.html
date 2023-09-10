@@ -33208,9 +33208,609 @@ qpdf-11.5.0-1.fc38.x86_64
 <section id="mkl" class="level2">
 <h2 class="anchored" data-anchor-id="mkl"><code>mkl</code></h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">4f9c242</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">0aeaf58</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">b26f793</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-4" role="tab" aria-controls="tabset-13-4" aria-selected="false">907f926</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-5" role="tab" aria-controls="tabset-13-5" aria-selected="false">3504408</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">2bf9afa</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">4f9c242</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">0aeaf58</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-4" role="tab" aria-controls="tabset-13-4" aria-selected="false">b26f793</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-5" role="tab" aria-controls="tabset-13-5" aria-selected="false">907f926</a></li></ul>
 <div class="tab-content">
 <div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
+<p><strong>id:</strong> ghcr.io/r-hub/containers/mkl@sha256:2bf9afa11dd617a9424ba2c01e41e58fcc82033304d12a74803848c8e32f5843 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/mkl:latest <br> <strong>created:</strong> 2023-09-10T13:24:18.632049318Z <br> <strong>size:</strong> 3.93 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux d3c19f88dc72 5.15.0-1041-azure #48-Ubuntu SMP Tue Jun 20 20:34:08 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="36 (Container Image)"
+ID=fedora
+VERSION_ID=36
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f36"
+PRETTY_NAME="Fedora Linux 36 (Container Image)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:36"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f36/system-administrators-guide/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=36
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=36
+PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+SUPPORT_END=2023-05-16
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2023-09-09 r85115)
+Platform: x86_64-pc-linux-gnu
+Running under: Fedora Linux 36 (Container Image)
+
+Matrix products: default
+BLAS/LAPACK: /opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so.2;  LAPACK version 3.10.1
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                                                            zlib 
+                                                        "1.2.11" 
+                                                           bzlib 
+                                            "1.0.8, 13-Jul-2019" 
+                                                              xz 
+                                                         "5.4.1" 
+                                                      libdeflate 
+                                                              "" 
+                                                            PCRE 
+                                              "10.40 2022-04-14" 
+                                                             ICU 
+                                                          "69.1" 
+                                                             TRE 
+                                       "TRE 0.8.0 R_fixes (BSD)" 
+                                                           iconv 
+                                                    "glibc 2.35" 
+                                                        readline 
+                                                           "8.2" 
+                                                            BLAS 
+"/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so.2" 
+
+
+&gt; libcurlVersion()
+[1] "7.82.0"
+attr(,"ssl_version")
+[1] "OpenSSL/3.0.8"
+attr(,"libssh_version")
+[1] "libssh/0.9.6/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.10.1"
+
+
+&gt; La_library()
+[1] "/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so.2"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.6"                       ""                "1.50.14" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2
+CC23 = gcc -std=gnu2x
+C23FLAGS = -g -O2
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2
+CXX = g++ -std=gnu++17
+CXXFLAGS = -g -O2
+CXXPICFLAGS = -fpic
+CXX11 = g++
+CXX11STD = -std=gnu++11
+CXX11FLAGS = -g -O2
+CXX11PICFLAGS = -fpic
+CXX14 = g++
+CXX14STD = -std=gnu++14
+CXX14FLAGS = -g -O2
+CXX14PICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2
+CXX20PICFLAG =
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2
+CXX23PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp -g -O2 -fpic
+FC = gfortran
+FFLAGS = -g -O2
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++17
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX11LD = g++ -std=gnu++11
+SHLIB_CXX11LDFLAGS = -shared
+SHLIB_CXX14LD = g++ -std=gnu++14
+SHLIB_CXX14LDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -L/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/ -lmkl_gf_lp64 -lmkl_core -lmkl_sequential
+LAPACK_LIBS =
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/bin/nm -B
+RANLIB = ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>libgcc-12.2.1-4.fc36.x86_64
+crypto-policies-20220428-1.gitdfb10ea.fc36.noarch
+tzdata-2023c-1.fc36.noarch
+fedora-release-identity-container-36-21.noarch
+python-setuptools-wheel-59.6.0-4.fc36.noarch
+publicsuffix-list-dafsa-20230318-1.fc36.noarch
+pcre2-syntax-10.40-1.fc36.noarch
+libreport-filesystem-2.17.4-1.fc36.noarch
+dnf-data-4.15.0-1.fc36.noarch
+fedora-gpg-keys-36-5.noarch
+fedora-release-container-36-21.noarch
+fedora-repos-36-5.noarch
+fedora-release-common-36-21.noarch
+setup-2.14.1-1.fc36.noarch
+filesystem-3.18-2.fc36.x86_64
+basesystem-11-13.fc36.noarch
+coreutils-common-9.0-9.fc36.x86_64
+ncurses-base-6.2-9.20210508.fc36.noarch
+ncurses-libs-6.2-9.20210508.fc36.x86_64
+bash-5.2.15-1.fc36.x86_64
+glibc-common-2.35-22.fc36.x86_64
+glibc-minimal-langpack-2.35-22.fc36.x86_64
+glibc-2.35-22.fc36.x86_64
+zlib-1.2.11-33.fc36.x86_64
+bzip2-libs-1.0.8-11.fc36.x86_64
+libzstd-1.5.5-1.fc36.x86_64
+xz-libs-5.4.1-1.fc36.x86_64
+sqlite-libs-3.36.0-5.fc36.x86_64
+libcap-2.48-4.fc36.x86_64
+popt-1.18-7.fc36.x86_64
+gmp-6.2.1-2.fc36.x86_64
+libgpg-error-1.45-1.fc36.x86_64
+libxml2-2.10.3-2.fc36.x86_64
+libstdc++-12.2.1-4.fc36.x86_64
+libuuid-2.38-1.fc36.x86_64
+libxcrypt-4.4.33-4.fc36.x86_64
+lua-libs-5.4.4-9.fc36.x86_64
+file-libs-5.41-4.fc36.x86_64
+libattr-2.5.1-4.fc36.x86_64
+libacl-2.3.1-3.fc36.x86_64
+libcom_err-1.46.5-2.fc36.x86_64
+libffi-3.4.2-8.fc36.x86_64
+p11-kit-0.24.1-2.fc36.x86_64
+libunistring-1.0-1.fc36.x86_64
+libidn2-2.3.4-1.fc36.x86_64
+libsmartcols-2.38-1.fc36.x86_64
+readline-8.2-2.fc36.x86_64
+libassuan-2.5.5-4.fc36.x86_64
+libgcrypt-1.10.1-3.fc36.x86_64
+gdbm-libs-1.22-2.fc36.x86_64
+json-c-0.15-3.fc36.x86_64
+keyutils-libs-1.6.1-4.fc36.x86_64
+libeconf-0.4.0-3.fc36.x86_64
+libsepol-3.3-3.fc36.x86_64
+lz4-libs-1.9.3-4.fc36.x86_64
+pcre-8.45-1.fc36.1.x86_64
+expat-2.5.0-1.fc36.x86_64
+libtasn1-4.19.0-1.fc36.x86_64
+libcomps-0.1.18-2.fc36.x86_64
+grep-3.7-2.fc36.x86_64
+systemd-libs-250.10-2.fc36.x86_64
+libpsl-0.21.1-5.fc36.x86_64
+mpdecimal-2.5.1-3.fc36.x86_64
+libksba-1.6.3-1.fc36.x86_64
+mpfr-4.1.0-9.fc36.x86_64
+nettle-3.8-1.fc36.x86_64
+libbrotli-1.0.9-7.fc36.x86_64
+libdb-5.3.28-51.fc36.x86_64
+libsigsegv-2.14-2.fc36.x86_64
+gawk-5.1.1-2.fc36.x86_64
+libverto-0.3.2-3.fc36.x86_64
+libyaml-0.2.5-7.fc36.x86_64
+npth-1.6-8.fc36.x86_64
+alternatives-1.22-1.fc36.x86_64
+p11-kit-trust-0.24.1-2.fc36.x86_64
+gnutls-3.8.0-2.fc36.x86_64
+libcap-ng-0.8.3-1.fc36.x86_64
+pam-libs-1.5.2-13.fc36.x86_64
+libgomp-12.2.1-4.fc36.x86_64
+libnghttp2-1.51.0-1.fc36.x86_64
+pcre2-10.40-1.fc36.x86_64
+libselinux-3.3-4.fc36.x86_64
+sed-4.8-10.fc36.x86_64
+openssl-libs-3.0.8-1.fc36.x86_64
+coreutils-9.0-9.fc36.x86_64
+ca-certificates-2023.2.60-1.0.fc36.noarch
+krb5-libs-1.19.2-12.fc36.x86_64
+libtirpc-1.3.3-0.fc36.x86_64
+libnsl2-2.0.0-3.fc36.x86_64
+libblkid-2.38-1.fc36.x86_64
+libmount-2.38-1.fc36.x86_64
+glib2-2.72.3-1.fc36.x86_64
+libfsverity-1.4-7.fc36.x86_64
+zchunk-libs-1.3.1-1.fc36.x86_64
+cyrus-sasl-lib-2.1.27-18.fc36.x86_64
+python-pip-wheel-21.3.1-4.fc36.noarch
+python3-3.10.11-1.fc36.x86_64
+python3-libs-3.10.11-1.fc36.x86_64
+python3-libcomps-0.1.18-2.fc36.x86_64
+gzip-1.11-3.fc36.x86_64
+cracklib-2.9.6-28.fc36.x86_64
+authselect-libs-1.4.0-1.fc36.x86_64
+authselect-1.4.0-1.fc36.x86_64
+libpwquality-1.4.4-7.fc36.x86_64
+pam-1.5.2-13.fc36.x86_64
+libevent-2.1.12-6.fc36.x86_64
+openldap-2.6.4-1.fc36.x86_64
+gnupg2-2.3.7-3.fc36.x86_64
+gpgme-1.17.0-4.fc36.x86_64
+python3-gpg-1.17.0-4.fc36.x86_64
+libarchive-3.5.3-3.fc36.x86_64
+findutils-4.9.0-1.fc36.x86_64
+libsemanage-3.3-3.fc36.x86_64
+shadow-utils-4.11.1-6.fc36.x86_64
+libssh-config-0.9.6-4.fc36.noarch
+libssh-0.9.6-4.fc36.x86_64
+libcurl-7.82.0-14.fc36.x86_64
+curl-7.82.0-14.fc36.x86_64
+rpm-4.17.1-3.fc36.x86_64
+rpm-libs-4.17.1-3.fc36.x86_64
+libmodulemd-2.14.0-2.fc36.x86_64
+libsolv-0.7.22-1.fc36.x86_64
+rpm-build-libs-4.17.1-3.fc36.x86_64
+librepo-1.15.1-1.fc36.x86_64
+libdnf-0.70.0-1.fc36.x86_64
+python3-libdnf-0.70.0-1.fc36.x86_64
+python3-hawkey-0.70.0-1.fc36.x86_64
+tpm2-tss-3.2.2-1.fc36.x86_64
+ima-evm-utils-1.4-5.fc36.x86_64
+rpm-sign-libs-4.17.1-3.fc36.x86_64
+python3-rpm-4.17.1-3.fc36.x86_64
+python3-dnf-4.15.0-1.fc36.noarch
+dnf-4.15.0-1.fc36.noarch
+yum-4.15.0-1.fc36.noarch
+sudo-1.9.13-1.p2.fc36.x86_64
+util-linux-core-2.38-1.fc36.x86_64
+tar-1.34-3.fc36.x86_64
+fedora-repos-modular-36-5.noarch
+rootfiles-8.1-31.fc36.noarch
+gpg-pubkey-38ab71f4-60242b08
+gpg-pubkey-7e6c5dbe-5d91bb57
+intel-oneapi-common-licensing-2023.2.0-2023.2.0-49462.noarch
+intel-oneapi-common-vars-2023.2.0-49462.noarch
+intel-oneapi-condaindex-2023.2.0-49417.x86_64
+intel-oneapi-mkl-common-2023.2.0-2023.2.0-49495.noarch
+intel-oneapi-openmp-common-2023.2.0-2023.2.0-49495.noarch
+intel-oneapi-openmp-2023.2.0-2023.2.0-49495.x86_64
+intel-oneapi-compiler-shared-runtime-2023.2.0-2023.2.0-49495.x86_64
+intel-oneapi-tbb-common-2021.10.0-2021.10.0-49541.noarch
+intel-oneapi-tbb-2021.10.0-2021.10.0-49541.x86_64
+intel-oneapi-compiler-dpcpp-cpp-runtime-2023.2.0-2023.2.0-49495.x86_64
+intel-oneapi-mkl-2023.2.0-2023.2.0-49495.x86_64
+vim-data-9.0.1486-1.fc36.noarch
+elfutils-libelf-0.189-2.fc36.x86_64
+elfutils-default-yama-scope-0.189-2.fc36.noarch
+elfutils-libs-0.189-2.fc36.x86_64
+vim-minimal-9.0.1486-1.fc36.x86_64
+audit-libs-3.1.1-1.fc36.x86_64
+web-assets-filesystem-5-16.fc36.noarch
+js-jquery-3.6.0-2.fc36.noarch
+python-systemd-doc-234-20.fc36.x86_64
+python3-systemd-234-20.fc36.x86_64
+dbus-libs-1.14.4-1.fc36.x86_64
+python3-dbus-1.2.18-3.fc36.x86_64
+python3-six-1.16.0-5.fc36.noarch
+python3-dateutil-2.8.1-8.fc36.noarch
+python3-distro-1.6.0-2.fc36.noarch
+python3-dnf-plugins-core-4.4.0-1.fc36.noarch
+dnf-plugins-core-4.4.0-1.fc36.noarch
+openblas-0.3.19-3.fc36.x86_64
+libmpc-1.2.1-4.fc36.x86_64
+libquadmath-12.2.1-4.fc36.x86_64
+libgfortran-12.2.1-4.fc36.x86_64
+unzip-6.0-57.fc36.x86_64
+tcl-8.6.12-2.fc36.x86_64
+libpng-1.6.37-12.fc36.x86_64
+libICE-1.0.10-8.fc36.x86_64
+libSM-1.2.3-10.fc36.x86_64
+fonts-filesystem-2.0.5-7.fc36.noarch
+zip-3.0-32.fc36.x86_64
+openblas-openmp-0.3.19-3.fc36.x86_64
+openblas-openmp64-0.3.19-3.fc36.x86_64
+openblas-openmp64_-0.3.19-3.fc36.x86_64
+openblas-serial-0.3.19-3.fc36.x86_64
+openblas-serial64-0.3.19-3.fc36.x86_64
+openblas-serial64_-0.3.19-3.fc36.x86_64
+openblas-threads-0.3.19-3.fc36.x86_64
+openblas-threads64-0.3.19-3.fc36.x86_64
+openblas-threads64_-0.3.19-3.fc36.x86_64
+cpp-12.2.1-4.fc36.x86_64
+pcre2-utf32-10.40-1.fc36.x86_64
+pcre2-utf16-10.40-1.fc36.x86_64
+libwebp-1.3.0-1.fc36.x86_64
+libtool-ltdl-2.4.7-1.fc36.x86_64
+libstdc++-devel-12.2.1-4.fc36.x86_64
+libicu-69.1-6.fc36.x86_64
+kernel-headers-6.2.6-100.fc36.x86_64
+google-noto-fonts-common-20201206-10.fc36.noarch
+google-noto-sans-vf-fonts-20201206-10.fc36.noarch
+langpacks-core-font-en-3.0-25.fc36.noarch
+glibc-headers-x86-2.35-22.fc36.noarch
+gc-8.0.6-3.fc36.x86_64
+guile22-2.2.7-5.fc36.x86_64
+make-4.3-7.fc36.x86_64
+fribidi-1.0.11-3.fc36.x86_64
+elfutils-debuginfod-client-0.189-2.fc36.x86_64
+binutils-gold-2.37-37.fc36.x86_64
+binutils-2.37-37.fc36.x86_64
+xml-common-0.6.3-58.fc36.noarch
+which-2.21-32.fc36.x86_64
+pkgconf-m4-1.8.0-2.fc36.noarch
+pixman-0.40.0-5.fc36.x86_64
+openblas-srpm-macros-2-11.fc36.noarch
+openblas-devel-0.3.19-3.fc36.x86_64
+libpkgconf-1.8.0-2.fc36.x86_64
+pkgconf-1.8.0-2.fc36.x86_64
+pkgconf-pkg-config-1.8.0-2.fc36.x86_64
+bzip2-devel-1.0.8-11.fc36.x86_64
+libcurl-devel-7.82.0-14.fc36.x86_64
+libicu-devel-69.1-6.fc36.x86_64
+glibc-devel-2.35-22.fc36.x86_64
+libxcrypt-devel-4.4.33-4.fc36.x86_64
+gcc-12.2.1-4.fc36.x86_64
+gcc-c++-12.2.1-4.fc36.x86_64
+libquadmath-devel-12.2.1-4.fc36.x86_64
+gcc-gfortran-12.2.1-4.fc36.x86_64
+pcre2-devel-10.40-1.fc36.x86_64
+xz-devel-5.4.1-1.fc36.x86_64
+zlib-devel-1.2.11-33.fc36.x86_64
+libjpeg-turbo-2.1.2-2.fc36.x86_64
+libdatrie-0.2.13-3.fc36.x86_64
+libthai-0.1.29-2.fc36.x86_64
+libXau-1.0.9-8.fc36.x86_64
+libxcb-1.13.1-9.fc36.x86_64
+libX11-common-1.7.3.1-2.fc36.noarch
+libX11-1.7.3.1-2.fc36.x86_64
+libXrender-0.9.10-16.fc36.x86_64
+libXext-1.3.4-8.fc36.x86_64
+libXt-1.2.1-2.fc36.x86_64
+libXmu-1.1.3-8.fc36.x86_64
+jbigkit-libs-2.1-23.fc36.x86_64
+libtiff-4.4.0-4.fc36.x86_64
+graphite2-1.3.14-9.fc36.x86_64
+freetype-2.12.1-2.fc36.x86_64
+harfbuzz-4.0.0-2.fc36.x86_64
+fontconfig-2.14.1-2.fc36.x86_64
+libXft-2.3.4-2.fc36.x86_64
+tk-8.6.12-2.fc36.x86_64
+cairo-1.17.6-1.fc36.x86_64
+pango-1.50.14-1.fc36.x86_64
+R-devel-mkl-1-1.x86_64
+glibc-langpack-en-2.35-22.fc36.x86_64
+qpdf-libs-10.6.3-2.fc36.x86_64
+ncurses-6.2-9.20210508.fc36.x86_64
+libtidy-5.8.0-3.fc36.x86_64
+groff-base-1.22.4-9.fc36.x86_64
+perl-Digest-1.20-2.fc36.noarch
+perl-Digest-MD5-2.58-479.fc36.x86_64
+perl-B-1.82-486.fc36.x86_64
+perl-FileHandle-2.03-486.fc36.noarch
+perl-AutoLoader-5.74-486.fc36.noarch
+perl-Data-Dumper-2.183-3.fc36.x86_64
+perl-libnet-3.13-480.fc36.noarch
+perl-base-2.27-486.fc36.noarch
+perl-Net-SSLeay-1.92-2.fc36.x86_64
+perl-URI-5.10-1.fc36.noarch
+perl-Text-Tabs+Wrap-2021.0814-2.fc36.noarch
+perl-if-0.60.900-486.fc36.noarch
+perl-Time-Local-1.300-479.fc36.noarch
+perl-Pod-Escapes-1.07-479.fc36.noarch
+perl-File-Path-2.18-479.fc36.noarch
+perl-Mozilla-CA-20211001-2.fc36.noarch
+perl-IO-Socket-IP-0.41-480.fc36.noarch
+perl-IO-Socket-SSL-2.074-2.fc36.noarch
+perl-Class-Struct-0.66-486.fc36.noarch
+perl-POSIX-1.97-486.fc36.x86_64
+perl-Term-ANSIColor-5.01-480.fc36.noarch
+perl-subs-1.04-486.fc36.noarch
+perl-Term-Cap-1.17-479.fc36.noarch
+perl-Pod-Simple-3.43-3.fc36.noarch
+perl-File-Temp-0.231.100-479.fc36.noarch
+perl-IPC-Open3-1.21-486.fc36.noarch
+perl-HTTP-Tiny-0.082-1.fc36.noarch
+perl-SelectSaver-1.02-486.fc36.noarch
+perl-Symbol-1.09-486.fc36.noarch
+perl-File-stat-1.09-486.fc36.noarch
+perl-Socket-2.036-1.fc36.x86_64
+perl-podlators-4.14-479.fc36.noarch
+perl-Pod-Perldoc-3.28.01-480.fc36.noarch
+perl-Fcntl-1.14-486.fc36.x86_64
+perl-mro-1.25-486.fc36.x86_64
+perl-overloading-0.02-486.fc36.noarch
+perl-IO-1.46-486.fc36.x86_64
+perl-Text-ParseWords-3.31-1.fc36.noarch
+perl-Pod-Usage-2.01-479.fc36.noarch
+perl-Errno-1.33-486.fc36.x86_64
+perl-File-Basename-2.85-486.fc36.noarch
+perl-Getopt-Std-1.13-486.fc36.noarch
+perl-MIME-Base64-3.16-479.fc36.x86_64
+perl-constant-1.33-480.fc36.noarch
+perl-parent-0.238-479.fc36.noarch
+perl-vars-1.05-486.fc36.noarch
+perl-overload-1.33-486.fc36.noarch
+perl-Scalar-List-Utils-1.63-489.fc36.x86_64
+perl-Storable-3.25-2.fc36.x86_64
+perl-Getopt-Long-2.54-1.fc36.noarch
+perl-DynaLoader-1.50-486.fc36.x86_64
+perl-Carp-1.52-479.fc36.noarch
+perl-Exporter-5.76-480.fc36.noarch
+perl-NDBM_File-1.15-486.fc36.x86_64
+perl-PathTools-3.80-479.fc36.x86_64
+perl-Encode-3.17-485.fc36.x86_64
+perl-libs-5.34.1-486.fc36.x86_64
+perl-interpreter-5.34.1-486.fc36.x86_64
+devscripts-checkbashisms-2.22.1-1.fc36.x86_64
+tidy-5.8.0-3.fc36.x86_64
+qpdf-10.6.3-2.fc36.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/mkl@sha256:4f9c2422d13a803995fbb5c3b468b8461e266a2781e3a7d71479d795febfd0ea <br> <strong>tag:</strong> ghcr.io/r-hub/containers/mkl:latest <br> <strong>created:</strong> 2023-09-10T06:11:49.645663523Z <br> <strong>size:</strong> 3.93 GB <br></p>
 <details>
 <summary>
@@ -33810,7 +34410,7 @@ qpdf-10.6.3-2.fc36.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
+<div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/mkl@sha256:0aeaf584520b488c4525adf7c7cba6243adbcfa2ef6e337f41f54f71d7d3e64d <br> <strong>tag:</strong> ghcr.io/r-hub/containers/mkl:latest <br> <strong>created:</strong> 2023-09-09T06:11:48.052082965Z <br> <strong>size:</strong> 3.93 GB <br></p>
 <details>
 <summary>
@@ -34410,7 +35010,7 @@ qpdf-10.6.3-2.fc36.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
+<div id="tabset-13-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-4-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/mkl@sha256:b26f7939de6384317cdb57c6c1f3d7a3aa29fc140a95ea220b89b116e72f34af <br> <strong>tag:</strong> ghcr.io/r-hub/containers/mkl:latest <br> <strong>created:</strong> 2023-09-08T09:52:07.751284589Z <br> <strong>size:</strong> 3.93 GB <br></p>
 <details>
 <summary>
@@ -35010,7 +35610,7 @@ qpdf-10.6.3-2.fc36.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-13-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-4-tab">
+<div id="tabset-13-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-5-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/mkl@sha256:907f926127323b2f69cbc76b824fa4a11e6c545927e4f5d13c6b9ee913d7a9ba <br> <strong>tag:</strong> ghcr.io/r-hub/containers/mkl:latest <br> <strong>created:</strong> 2023-09-08T08:54:01.129535508Z <br> <strong>size:</strong> 3.93 GB <br></p>
 <details>
 <summary>
@@ -35504,594 +36104,6 @@ pkgconf-m4-1.8.0-2.fc36.noarch
 pixman-0.40.0-5.fc36.x86_64
 openblas-srpm-macros-2-11.fc36.noarch
 openblas-devel-0.3.19-3.fc36.x86_64
-libpkgconf-1.8.0-2.fc36.x86_64
-pkgconf-1.8.0-2.fc36.x86_64
-pkgconf-pkg-config-1.8.0-2.fc36.x86_64
-bzip2-devel-1.0.8-11.fc36.x86_64
-libcurl-devel-7.82.0-14.fc36.x86_64
-libicu-devel-69.1-6.fc36.x86_64
-glibc-devel-2.35-22.fc36.x86_64
-libxcrypt-devel-4.4.33-4.fc36.x86_64
-gcc-12.2.1-4.fc36.x86_64
-gcc-c++-12.2.1-4.fc36.x86_64
-libquadmath-devel-12.2.1-4.fc36.x86_64
-gcc-gfortran-12.2.1-4.fc36.x86_64
-pcre2-devel-10.40-1.fc36.x86_64
-xz-devel-5.4.1-1.fc36.x86_64
-zlib-devel-1.2.11-33.fc36.x86_64
-libjpeg-turbo-2.1.2-2.fc36.x86_64
-libdatrie-0.2.13-3.fc36.x86_64
-libthai-0.1.29-2.fc36.x86_64
-libXau-1.0.9-8.fc36.x86_64
-libxcb-1.13.1-9.fc36.x86_64
-libX11-common-1.7.3.1-2.fc36.noarch
-libX11-1.7.3.1-2.fc36.x86_64
-libXrender-0.9.10-16.fc36.x86_64
-libXext-1.3.4-8.fc36.x86_64
-libXt-1.2.1-2.fc36.x86_64
-libXmu-1.1.3-8.fc36.x86_64
-jbigkit-libs-2.1-23.fc36.x86_64
-libtiff-4.4.0-4.fc36.x86_64
-graphite2-1.3.14-9.fc36.x86_64
-freetype-2.12.1-2.fc36.x86_64
-harfbuzz-4.0.0-2.fc36.x86_64
-fontconfig-2.14.1-2.fc36.x86_64
-libXft-2.3.4-2.fc36.x86_64
-tk-8.6.12-2.fc36.x86_64
-cairo-1.17.6-1.fc36.x86_64
-pango-1.50.14-1.fc36.x86_64
-R-devel-mkl-1-1.x86_64
-glibc-langpack-en-2.35-22.fc36.x86_64
-qpdf-libs-10.6.3-2.fc36.x86_64
-ncurses-6.2-9.20210508.fc36.x86_64
-libtidy-5.8.0-3.fc36.x86_64
-groff-base-1.22.4-9.fc36.x86_64
-perl-Digest-1.20-2.fc36.noarch
-perl-Digest-MD5-2.58-479.fc36.x86_64
-perl-B-1.82-486.fc36.x86_64
-perl-FileHandle-2.03-486.fc36.noarch
-perl-AutoLoader-5.74-486.fc36.noarch
-perl-Data-Dumper-2.183-3.fc36.x86_64
-perl-libnet-3.13-480.fc36.noarch
-perl-base-2.27-486.fc36.noarch
-perl-Net-SSLeay-1.92-2.fc36.x86_64
-perl-URI-5.10-1.fc36.noarch
-perl-Text-Tabs+Wrap-2021.0814-2.fc36.noarch
-perl-if-0.60.900-486.fc36.noarch
-perl-Time-Local-1.300-479.fc36.noarch
-perl-Pod-Escapes-1.07-479.fc36.noarch
-perl-File-Path-2.18-479.fc36.noarch
-perl-Mozilla-CA-20211001-2.fc36.noarch
-perl-IO-Socket-IP-0.41-480.fc36.noarch
-perl-IO-Socket-SSL-2.074-2.fc36.noarch
-perl-Class-Struct-0.66-486.fc36.noarch
-perl-POSIX-1.97-486.fc36.x86_64
-perl-Term-ANSIColor-5.01-480.fc36.noarch
-perl-subs-1.04-486.fc36.noarch
-perl-Term-Cap-1.17-479.fc36.noarch
-perl-Pod-Simple-3.43-3.fc36.noarch
-perl-File-Temp-0.231.100-479.fc36.noarch
-perl-IPC-Open3-1.21-486.fc36.noarch
-perl-HTTP-Tiny-0.082-1.fc36.noarch
-perl-SelectSaver-1.02-486.fc36.noarch
-perl-Symbol-1.09-486.fc36.noarch
-perl-File-stat-1.09-486.fc36.noarch
-perl-Socket-2.036-1.fc36.x86_64
-perl-podlators-4.14-479.fc36.noarch
-perl-Pod-Perldoc-3.28.01-480.fc36.noarch
-perl-Fcntl-1.14-486.fc36.x86_64
-perl-mro-1.25-486.fc36.x86_64
-perl-overloading-0.02-486.fc36.noarch
-perl-IO-1.46-486.fc36.x86_64
-perl-Text-ParseWords-3.31-1.fc36.noarch
-perl-Pod-Usage-2.01-479.fc36.noarch
-perl-Errno-1.33-486.fc36.x86_64
-perl-File-Basename-2.85-486.fc36.noarch
-perl-Getopt-Std-1.13-486.fc36.noarch
-perl-MIME-Base64-3.16-479.fc36.x86_64
-perl-constant-1.33-480.fc36.noarch
-perl-parent-0.238-479.fc36.noarch
-perl-vars-1.05-486.fc36.noarch
-perl-overload-1.33-486.fc36.noarch
-perl-Scalar-List-Utils-1.63-489.fc36.x86_64
-perl-Storable-3.25-2.fc36.x86_64
-perl-Getopt-Long-2.54-1.fc36.noarch
-perl-DynaLoader-1.50-486.fc36.x86_64
-perl-Carp-1.52-479.fc36.noarch
-perl-Exporter-5.76-480.fc36.noarch
-perl-NDBM_File-1.15-486.fc36.x86_64
-perl-PathTools-3.80-479.fc36.x86_64
-perl-Encode-3.17-485.fc36.x86_64
-perl-libs-5.34.1-486.fc36.x86_64
-perl-interpreter-5.34.1-486.fc36.x86_64
-devscripts-checkbashisms-2.22.1-1.fc36.x86_64
-tidy-5.8.0-3.fc36.x86_64
-qpdf-10.6.3-2.fc36.x86_64
-</code></pre>
-</details>
-</div>
-<div id="tabset-13-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-5-tab">
-<p><strong>id:</strong> ghcr.io/r-hub/containers/mkl@sha256:35044088634abb241e8e03961b8809ef67886258d00f465b4813a1725e4f648e <br> <strong>tag:</strong> ghcr.io/r-hub/containers/mkl:latest <br> <strong>created:</strong> 2023-09-08T06:05:28.774001998Z <br> <strong>size:</strong> 3.57 GB <br></p>
-<details>
-<summary>
-OS version
-</summary>
-<pre><code>&gt; uname -a
-Linux 80f337cef0e1 5.15.0-1041-azure #48-Ubuntu SMP Tue Jun 20 20:34:08 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
-
-&gt; cat /etc/os-release
-NAME="Fedora Linux"
-VERSION="36 (Container Image)"
-ID=fedora
-VERSION_ID=36
-VERSION_CODENAME=""
-PLATFORM_ID="platform:f36"
-PRETTY_NAME="Fedora Linux 36 (Container Image)"
-ANSI_COLOR="0;38;2;60;110;180"
-LOGO=fedora-logo-icon
-CPE_NAME="cpe:/o:fedoraproject:fedora:36"
-HOME_URL="https://fedoraproject.org/"
-DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f36/system-administrators-guide/"
-SUPPORT_URL="https://ask.fedoraproject.org/"
-BUG_REPORT_URL="https://bugzilla.redhat.com/"
-REDHAT_BUGZILLA_PRODUCT="Fedora"
-REDHAT_BUGZILLA_PRODUCT_VERSION=36
-REDHAT_SUPPORT_PRODUCT="Fedora"
-REDHAT_SUPPORT_PRODUCT_VERSION=36
-PRIVACY_POLICY_URL="https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
-SUPPORT_END=2023-05-16
-VARIANT="Container Image"
-VARIANT_ID=container
-</code></pre>
-</details>
-<details>
-<summary>
-R session information
-</summary>
-<pre><code>&gt; sessionInfo()
-R Under development (unstable) (2023-09-06 r85088)
-Platform: x86_64-pc-linux-gnu
-Running under: Fedora Linux 36 (Container Image)
-
-Matrix products: default
-BLAS/LAPACK: /opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so.2;  LAPACK version 3.10.1
-
-locale:
- [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
- [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
- [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: Etc/UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.4.0
-</code></pre>
-</details>
-<details>
-<summary>
-R capabilities
-</summary>
-<pre><code>&gt; capabilities()
-       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE 
-</code></pre>
-</details>
-<details>
-<summary>
-R external software
-</summary>
-<pre><code>&gt; extSoftVersion()
-                                                            zlib 
-                                                        "1.2.11" 
-                                                           bzlib 
-                                            "1.0.8, 13-Jul-2019" 
-                                                              xz 
-                                                         "5.4.1" 
-                                                      libdeflate 
-                                                              "" 
-                                                            PCRE 
-                                              "10.40 2022-04-14" 
-                                                             ICU 
-                                                          "69.1" 
-                                                             TRE 
-                                       "TRE 0.8.0 R_fixes (BSD)" 
-                                                           iconv 
-                                                    "glibc 2.35" 
-                                                        readline 
-                                                           "8.2" 
-                                                            BLAS 
-"/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so.2" 
-
-
-&gt; libcurlVersion()
-[1] "7.82.0"
-attr(,"ssl_version")
-[1] "OpenSSL/3.0.8"
-attr(,"libssh_version")
-[1] "libssh/0.9.6/openssl/zlib"
-attr(,"protocols")
- [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
- [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
-[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
-[22] "smtps"   "telnet"  "tftp"   
-
-
-&gt; La_version()
-[1] "3.10.1"
-
-
-&gt; La_library()
-[1] "/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so.2"
-
-
-&gt; grSoftVersion()
-                   cairo                  cairoFT                    pango 
-                "1.17.6"                       ""                "1.50.14" 
-                  libpng                     jpeg                  libtiff 
-                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
-
-
-&gt; pcre_config()
-             UTF-8 Unicode properties                JIT              stack 
-              TRUE               TRUE               TRUE              FALSE 
-</code></pre>
-</details>
-<details>
-<summary>
-R localization
-</summary>
-<pre><code>&gt; l10n_info()
-$MBCS
-[1] TRUE
-
-$`UTF-8`
-[1] TRUE
-
-$`Latin-1`
-[1] FALSE
-
-$codeset
-[1] "UTF-8"
-</code></pre>
-</details>
-<details>
-<summary>
-R config
-</summary>
-<pre><code>&gt; R CMD config --all
-CC = gcc
-CFLAGS = -g -O2
-CPICFLAGS = -fpic
-CPPFLAGS = -I/usr/local/include
-CC17 = gcc -std=gnu17
-C17FLAGS = -g -O2
-CC23 = gcc -std=gnu2x
-C23FLAGS = -g -O2
-CC90 = gcc -std=gnu90
-C90FLAGS = -g -O2
-CC99 = gcc -std=gnu99
-C99FLAGS = -g -O2
-CXX = g++ -std=gnu++17
-CXXFLAGS = -g -O2
-CXXPICFLAGS = -fpic
-CXX11 = g++
-CXX11STD = -std=gnu++11
-CXX11FLAGS = -g -O2
-CXX11PICFLAGS = -fpic
-CXX14 = g++
-CXX14STD = -std=gnu++14
-CXX14FLAGS = -g -O2
-CXX14PICFLAGS = -fpic
-CXX17 = g++
-CXX17STD = -std=gnu++17
-CXX17FLAGS = -g -O2
-CXX17PICFLAGS = -fpic
-CXX20 = g++
-CXX20STD = -std=gnu++20
-CXX20FLAGS = -g -O2
-CXX20PICFLAG =
-CXX23 = g++
-CXX23STD = -std=gnu++23
-CXX23FLAGS = -g -O2
-CXX23PICFLAGS = -fpic
-DYLIB_EXT = .so
-DYLIB_LD = gcc
-DYLIB_LDFLAGS = -shared -fopenmp -g -O2 -fpic
-FC = gfortran
-FFLAGS = -g -O2
-FPICFLAGS = -fpic
-FLIBS = -lgfortran -lm -lquadmath
-FCFLAGS = -g -O2
-SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
-OBJC =
-OBJCFLAGS =
-JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
-JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
-JAVAH =
-JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
-JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
-JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
-JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
-LDFLAGS = -L/usr/local/lib
-SHLIB_CFLAGS =
-SHLIB_CXXFLAGS =
-SHLIB_CXXLD = g++ -std=gnu++17
-SHLIB_CXXLDFLAGS = -shared
-SHLIB_CXX11LD = g++ -std=gnu++11
-SHLIB_CXX11LDFLAGS = -shared
-SHLIB_CXX14LD = g++ -std=gnu++14
-SHLIB_CXX14LDFLAGS = -shared
-SHLIB_CXX17LD = g++ -std=gnu++17
-SHLIB_CXX17LDFLAGS = -shared
-SHLIB_CXX20LD = g++ -std=gnu++20
-SHLIB_CXX20LDFLAGS = -shared
-SHLIB_CXX23LD = g++ -std=gnu++23
-SHLIB_CXX23LDFLAGS = -shared
-SHLIB_EXT = .so
-SHLIB_FFLAGS =
-SHLIB_LD = gcc
-SHLIB_LDFLAGS = -shared
-TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
-TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
-BLAS_LIBS = -L/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/ -lmkl_gf_lp64 -lmkl_core -lmkl_sequential
-LAPACK_LIBS =
-MAKE = make
-LIBnn = lib
-AR = ar
-NM = /usr/bin/nm -B
-RANLIB = ranlib
-LTO =
-LTO_FC =
-LTO_LD =
-
-## The following variables are defunct
-CPP CXXCPP
-</code></pre>
-</details>
-<details>
-<summary>
-Compilers
-</summary>
-<pre><code>&gt; $(CC) --version
-gcc (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
-Copyright (C) 2022 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(CXX) --version
-g++ (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
-Copyright (C) 2022 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(FC) --version
-GNU Fortran (GCC) 12.2.1 20221121 (Red Hat 12.2.1-4)
-Copyright (C) 2022 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-</details>
-<details>
-<summary>
-OS packages
-</summary>
-<pre><code>libgcc-12.2.1-4.fc36.x86_64
-crypto-policies-20220428-1.gitdfb10ea.fc36.noarch
-tzdata-2023c-1.fc36.noarch
-fedora-release-identity-container-36-21.noarch
-python-setuptools-wheel-59.6.0-4.fc36.noarch
-publicsuffix-list-dafsa-20230318-1.fc36.noarch
-pcre2-syntax-10.40-1.fc36.noarch
-libreport-filesystem-2.17.4-1.fc36.noarch
-dnf-data-4.15.0-1.fc36.noarch
-fedora-gpg-keys-36-5.noarch
-fedora-release-container-36-21.noarch
-fedora-repos-36-5.noarch
-fedora-release-common-36-21.noarch
-setup-2.14.1-1.fc36.noarch
-filesystem-3.18-2.fc36.x86_64
-basesystem-11-13.fc36.noarch
-coreutils-common-9.0-9.fc36.x86_64
-ncurses-base-6.2-9.20210508.fc36.noarch
-ncurses-libs-6.2-9.20210508.fc36.x86_64
-bash-5.2.15-1.fc36.x86_64
-glibc-common-2.35-22.fc36.x86_64
-glibc-minimal-langpack-2.35-22.fc36.x86_64
-glibc-2.35-22.fc36.x86_64
-zlib-1.2.11-33.fc36.x86_64
-bzip2-libs-1.0.8-11.fc36.x86_64
-libzstd-1.5.5-1.fc36.x86_64
-xz-libs-5.4.1-1.fc36.x86_64
-sqlite-libs-3.36.0-5.fc36.x86_64
-libcap-2.48-4.fc36.x86_64
-popt-1.18-7.fc36.x86_64
-gmp-6.2.1-2.fc36.x86_64
-libgpg-error-1.45-1.fc36.x86_64
-libxml2-2.10.3-2.fc36.x86_64
-libstdc++-12.2.1-4.fc36.x86_64
-libuuid-2.38-1.fc36.x86_64
-libxcrypt-4.4.33-4.fc36.x86_64
-lua-libs-5.4.4-9.fc36.x86_64
-file-libs-5.41-4.fc36.x86_64
-libattr-2.5.1-4.fc36.x86_64
-libacl-2.3.1-3.fc36.x86_64
-libcom_err-1.46.5-2.fc36.x86_64
-libffi-3.4.2-8.fc36.x86_64
-p11-kit-0.24.1-2.fc36.x86_64
-libunistring-1.0-1.fc36.x86_64
-libidn2-2.3.4-1.fc36.x86_64
-libsmartcols-2.38-1.fc36.x86_64
-readline-8.2-2.fc36.x86_64
-libassuan-2.5.5-4.fc36.x86_64
-libgcrypt-1.10.1-3.fc36.x86_64
-gdbm-libs-1.22-2.fc36.x86_64
-json-c-0.15-3.fc36.x86_64
-keyutils-libs-1.6.1-4.fc36.x86_64
-libeconf-0.4.0-3.fc36.x86_64
-libsepol-3.3-3.fc36.x86_64
-lz4-libs-1.9.3-4.fc36.x86_64
-pcre-8.45-1.fc36.1.x86_64
-expat-2.5.0-1.fc36.x86_64
-libtasn1-4.19.0-1.fc36.x86_64
-libcomps-0.1.18-2.fc36.x86_64
-grep-3.7-2.fc36.x86_64
-systemd-libs-250.10-2.fc36.x86_64
-libpsl-0.21.1-5.fc36.x86_64
-mpdecimal-2.5.1-3.fc36.x86_64
-libksba-1.6.3-1.fc36.x86_64
-mpfr-4.1.0-9.fc36.x86_64
-nettle-3.8-1.fc36.x86_64
-libbrotli-1.0.9-7.fc36.x86_64
-libdb-5.3.28-51.fc36.x86_64
-libsigsegv-2.14-2.fc36.x86_64
-gawk-5.1.1-2.fc36.x86_64
-libverto-0.3.2-3.fc36.x86_64
-libyaml-0.2.5-7.fc36.x86_64
-npth-1.6-8.fc36.x86_64
-alternatives-1.22-1.fc36.x86_64
-p11-kit-trust-0.24.1-2.fc36.x86_64
-gnutls-3.8.0-2.fc36.x86_64
-libcap-ng-0.8.3-1.fc36.x86_64
-pam-libs-1.5.2-13.fc36.x86_64
-libgomp-12.2.1-4.fc36.x86_64
-libnghttp2-1.51.0-1.fc36.x86_64
-pcre2-10.40-1.fc36.x86_64
-libselinux-3.3-4.fc36.x86_64
-sed-4.8-10.fc36.x86_64
-openssl-libs-3.0.8-1.fc36.x86_64
-coreutils-9.0-9.fc36.x86_64
-ca-certificates-2023.2.60-1.0.fc36.noarch
-krb5-libs-1.19.2-12.fc36.x86_64
-libtirpc-1.3.3-0.fc36.x86_64
-libnsl2-2.0.0-3.fc36.x86_64
-libblkid-2.38-1.fc36.x86_64
-libmount-2.38-1.fc36.x86_64
-glib2-2.72.3-1.fc36.x86_64
-libfsverity-1.4-7.fc36.x86_64
-zchunk-libs-1.3.1-1.fc36.x86_64
-cyrus-sasl-lib-2.1.27-18.fc36.x86_64
-python-pip-wheel-21.3.1-4.fc36.noarch
-python3-3.10.11-1.fc36.x86_64
-python3-libs-3.10.11-1.fc36.x86_64
-python3-libcomps-0.1.18-2.fc36.x86_64
-gzip-1.11-3.fc36.x86_64
-cracklib-2.9.6-28.fc36.x86_64
-authselect-libs-1.4.0-1.fc36.x86_64
-authselect-1.4.0-1.fc36.x86_64
-libpwquality-1.4.4-7.fc36.x86_64
-pam-1.5.2-13.fc36.x86_64
-libevent-2.1.12-6.fc36.x86_64
-openldap-2.6.4-1.fc36.x86_64
-gnupg2-2.3.7-3.fc36.x86_64
-gpgme-1.17.0-4.fc36.x86_64
-python3-gpg-1.17.0-4.fc36.x86_64
-libarchive-3.5.3-3.fc36.x86_64
-findutils-4.9.0-1.fc36.x86_64
-libsemanage-3.3-3.fc36.x86_64
-shadow-utils-4.11.1-6.fc36.x86_64
-libssh-config-0.9.6-4.fc36.noarch
-libssh-0.9.6-4.fc36.x86_64
-libcurl-7.82.0-14.fc36.x86_64
-curl-7.82.0-14.fc36.x86_64
-rpm-4.17.1-3.fc36.x86_64
-rpm-libs-4.17.1-3.fc36.x86_64
-libmodulemd-2.14.0-2.fc36.x86_64
-libsolv-0.7.22-1.fc36.x86_64
-rpm-build-libs-4.17.1-3.fc36.x86_64
-librepo-1.15.1-1.fc36.x86_64
-libdnf-0.70.0-1.fc36.x86_64
-python3-libdnf-0.70.0-1.fc36.x86_64
-python3-hawkey-0.70.0-1.fc36.x86_64
-tpm2-tss-3.2.2-1.fc36.x86_64
-ima-evm-utils-1.4-5.fc36.x86_64
-rpm-sign-libs-4.17.1-3.fc36.x86_64
-python3-rpm-4.17.1-3.fc36.x86_64
-python3-dnf-4.15.0-1.fc36.noarch
-dnf-4.15.0-1.fc36.noarch
-yum-4.15.0-1.fc36.noarch
-sudo-1.9.13-1.p2.fc36.x86_64
-util-linux-core-2.38-1.fc36.x86_64
-tar-1.34-3.fc36.x86_64
-fedora-repos-modular-36-5.noarch
-rootfiles-8.1-31.fc36.noarch
-gpg-pubkey-38ab71f4-60242b08
-gpg-pubkey-7e6c5dbe-5d91bb57
-intel-oneapi-common-licensing-2023.2.0-2023.2.0-49462.noarch
-intel-oneapi-common-vars-2023.2.0-49462.noarch
-intel-oneapi-condaindex-2023.2.0-49417.x86_64
-intel-oneapi-mkl-common-2023.2.0-2023.2.0-49495.noarch
-intel-oneapi-openmp-common-2023.2.0-2023.2.0-49495.noarch
-intel-oneapi-openmp-2023.2.0-2023.2.0-49495.x86_64
-intel-oneapi-compiler-shared-runtime-2023.2.0-2023.2.0-49495.x86_64
-intel-oneapi-tbb-common-2021.10.0-2021.10.0-49541.noarch
-intel-oneapi-tbb-2021.10.0-2021.10.0-49541.x86_64
-intel-oneapi-compiler-dpcpp-cpp-runtime-2023.2.0-2023.2.0-49495.x86_64
-intel-oneapi-mkl-2023.2.0-2023.2.0-49495.x86_64
-vim-data-9.0.1486-1.fc36.noarch
-elfutils-libelf-0.189-2.fc36.x86_64
-elfutils-default-yama-scope-0.189-2.fc36.noarch
-elfutils-libs-0.189-2.fc36.x86_64
-vim-minimal-9.0.1486-1.fc36.x86_64
-audit-libs-3.1.1-1.fc36.x86_64
-web-assets-filesystem-5-16.fc36.noarch
-js-jquery-3.6.0-2.fc36.noarch
-python-systemd-doc-234-20.fc36.x86_64
-python3-systemd-234-20.fc36.x86_64
-dbus-libs-1.14.4-1.fc36.x86_64
-python3-dbus-1.2.18-3.fc36.x86_64
-python3-six-1.16.0-5.fc36.noarch
-python3-dateutil-2.8.1-8.fc36.noarch
-python3-distro-1.6.0-2.fc36.noarch
-python3-dnf-plugins-core-4.4.0-1.fc36.noarch
-dnf-plugins-core-4.4.0-1.fc36.noarch
-libmpc-1.2.1-4.fc36.x86_64
-libquadmath-12.2.1-4.fc36.x86_64
-unzip-6.0-57.fc36.x86_64
-tcl-8.6.12-2.fc36.x86_64
-libpng-1.6.37-12.fc36.x86_64
-libICE-1.0.10-8.fc36.x86_64
-libSM-1.2.3-10.fc36.x86_64
-fonts-filesystem-2.0.5-7.fc36.noarch
-zip-3.0-32.fc36.x86_64
-libgfortran-12.2.1-4.fc36.x86_64
-cpp-12.2.1-4.fc36.x86_64
-pcre2-utf32-10.40-1.fc36.x86_64
-pcre2-utf16-10.40-1.fc36.x86_64
-libwebp-1.3.0-1.fc36.x86_64
-libtool-ltdl-2.4.7-1.fc36.x86_64
-libstdc++-devel-12.2.1-4.fc36.x86_64
-libicu-69.1-6.fc36.x86_64
-kernel-headers-6.2.6-100.fc36.x86_64
-google-noto-fonts-common-20201206-10.fc36.noarch
-google-noto-sans-vf-fonts-20201206-10.fc36.noarch
-langpacks-core-font-en-3.0-25.fc36.noarch
-glibc-headers-x86-2.35-22.fc36.noarch
-gc-8.0.6-3.fc36.x86_64
-guile22-2.2.7-5.fc36.x86_64
-make-4.3-7.fc36.x86_64
-fribidi-1.0.11-3.fc36.x86_64
-elfutils-debuginfod-client-0.189-2.fc36.x86_64
-binutils-gold-2.37-37.fc36.x86_64
-binutils-2.37-37.fc36.x86_64
-xml-common-0.6.3-58.fc36.noarch
-which-2.21-32.fc36.x86_64
-pkgconf-m4-1.8.0-2.fc36.noarch
-pixman-0.40.0-5.fc36.x86_64
 libpkgconf-1.8.0-2.fc36.x86_64
 pkgconf-1.8.0-2.fc36.x86_64
 pkgconf-pkg-config-1.8.0-2.fc36.x86_64
@@ -37269,7 +37281,7 @@ ii  zlib1g-dev:amd64              1:1.2.11.dfsg-2ubuntu9.2                amd64 
 </div>
 </div>
 <hr>
-<p>Container data last updated: 2023-09-10 06:26:00. Download <a href="manifest.json"><code>manifest.json</code></a></p>
+<p>Container data last updated: 2023-09-10 13:31:43. Download <a href="manifest.json"><code>manifest.json</code></a></p>
 
 
 </section>
