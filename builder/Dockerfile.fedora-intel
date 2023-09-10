@@ -46,7 +46,7 @@ RUN dnf -y upgrade \
     zlib-devel \
     && dnf clean all
 
-COPY containers/mkl/oneAPI.repo /etc/yum.repos.d
+COPY containers/intel/oneAPI.repo /etc/yum.repos.d
 
 RUN dnf install -y \
     intel-oneapi-mkl-devel-2023.2.0.x86_64 \
@@ -71,7 +71,7 @@ ENV CONFIGURE_OPTIONS="\
     --with-tcl-config=/usr/lib64/tclConfig.sh \
     --with-tk-config=/usr/lib64/tkConfig.sh \
     --enable-prebuilt-html \
-    --with-blas=\"-L/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/ -lmkl_gf_lp64 -lmkl_core -lmkl_sequential\" \
+    --with-blas=\"-L/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/ -lmkl_intel_lp64 -lmkl_core -lmkl_sequential\" \
     --with-lapack"
 
 ENV LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/:/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin
