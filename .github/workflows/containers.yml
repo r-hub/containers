@@ -92,11 +92,12 @@ jobs:
         context: containers/${{ matrix.container }}
         load: true
         tags: |
+          docker.io/rhub/test:test
           rhub/test:test
 
     - name: Test
       run: |
-        docker run rhub/test:test R --version
+        docker run docker.io/rhub/test:test R --version
 
     - name: Push
       uses: docker/build-push-action@v3
