@@ -92,6 +92,7 @@ jobs:
         context: containers/${{ matrix.container }}
         load: true
         tags: |
+          docker.io/rhub/test:test
           rhub/test:test
 
     - name: Test
