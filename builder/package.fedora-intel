@@ -30,10 +30,10 @@ fi
 # https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Shared-BLAS
 cat <<EOF >> /post-install.sh
 mv /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so.keep
-ln -s /opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_gf_lp64.so /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so
-ln -s libRblas.so /opt/R/devel-mkl/lib/R/lib/libRlapack.so
-ln -s libRblas.so /opt/R/devel-mkl/lib/R/lib/libsatlas.so.3
-ln -s libsatlas.so.3 /opt/R/devel-mkl/lib/R/lib/libsatlas.so
+ln -s /opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_intel_lp64.so /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so
+ln -s libRblas.so /opt/R/devel-intel/lib/R/lib/libRlapack.so
+ln -s libRblas.so /opt/R/devel-intel/lib/R/lib/libsatlas.so.3
+ln -s libsatlas.so.3 /opt/R/devel-intel/lib/R/lib/libsatlas.so
 EOF
 
 # Create after-remove script to remove internal BLAS, which won't be cleaned up automatically.
@@ -59,6 +59,8 @@ homepage: https://www.r-project.org
 license: GPLv2+
 depends:
 - bzip2-devel
+- gcc
+- gcc-c++
 - intel-oneapi-compiler-dpcpp-cpp-2023.2.1
 - intel-oneapi-compiler-fortran-2023.2.1
 - intel-oneapi-mkl-2023.2.0
@@ -69,7 +71,6 @@ depends:
 - libXmu
 - libXt
 - make
-- openblas-devel
 - pango
 ${pcre_libs}
 - pkgconfig
