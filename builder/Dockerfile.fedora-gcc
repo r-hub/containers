@@ -1,7 +1,7 @@
 
-FROM fedora:36
+FROM fedora:38
 
-ENV OS_IDENTIFIER fedora-36
+ENV OS_IDENTIFIER fedora-38
 
 RUN dnf -y upgrade \
     && dnf -y install dnf-plugins-core \
