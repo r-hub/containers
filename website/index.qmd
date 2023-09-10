@@ -38,6 +38,7 @@ Plus the following containers for additional CRAN checks:
 |clang17     | clang17    | Checks with LLVM pre-17.0.0                                      | `r os_name("clang17")`, libc++    | `r r_ver("clang17")`    | [Details](containers.html#clang17)     |
 |donttest    | donttest   | Tests including `\donttest` examples                             | `r os_name("donttest")`           | `r r_ver("donttest")`   | [Details](containers.html#donttest)    |
 |gcc13       | gcc13      | Checks with GCC trunk aka 13.0                                   | `r os_name("gcc13")`              | `r r_ver("gcc13")`      | [Details](containers.html#gcc13)       |
+|Intel       | intel      | Checks with Intel oneAPI 2023.x compilers                        | `r os_name("intel")`              | `r r_ver("intel")`      | [Details](containers.html#intel)       |
 |MKL         | mkl        | Tests with alternative BLAS/LAPACK implementations               | `r os_name("mkl")`                | `r r_ver("mkl")`        | [Details](containers.html#mkl)         |
 |noLD        | nold       | Tests without long double                                        | `r os_name("nold")`               | `r r_ver("nold")`       | [Details](containers.html#nold)        |
 |valgrind    | valgrind   | Tests of memory access errors using valgrind                     | `r os_name("valgrind")`           | `r r_ver("valgrind")`   | [Details](containers.html#valgrind)    |
