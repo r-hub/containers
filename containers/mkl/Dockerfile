@@ -1,5 +1,5 @@
 
-FROM fedora:36
+FROM fedora:38
 
 # ------------------------------------------------------------------------------------
 # MKL
@@ -14,7 +14,7 @@ RUN dnf install -y intel-oneapi-mkl-2023.2.0
 RUN dnf -y upgrade && \
     dnf -y install dnf-plugins-core && \
     dnf -y install curl && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-fedora-36-devel-mkl-1-1.$(arch).rpm" && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-fedora-38-devel-mkl-1-1.$(arch).rpm" && \
     yum install -y R-*.rpm && \
     rm R-*.rpm
 
@@ -33,7 +33,7 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile
 
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/fedora-36/4.4", getOption("repos")))' \
+        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/fedora-38/4.4", getOption("repos")))' \
             >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile; \
         echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
             >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile; \
