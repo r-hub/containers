@@ -97,7 +97,7 @@ jobs:
 
     - name: Test
       run: |
-        docker run rhub/test:test R --version
+        docker run docker.io/rhub/test:test R --version
 
     - name: Push
       uses: docker/build-push-action@v3
