@@ -1,0 +1,49 @@
+#! /bin/bash
+set -e
+
+checkdir=${1-/check}
+
+do_check () {
+    pkg=${1}
+    echo Checking "$pkg"
+    (
+        cd `dirname $pkg`
+
+        # We do _not_ install soft dependencies, but we need to install some
+        # testing packages, if they are requested:
+        # https://github.com/wch/r-source/blob/19442601da115d28f6e5a8341e0e62ed8d0aa11c/src/library/tools/R/check.R#L220
+        # Currently they are: RUnit, testthat, tinytest.
+        # We also include all packages in 'VignetteBuilder', we assume no
+        # dependency requirements here.
+
+        # NOTE: this also works if a package has 'Remotes' package sources
+        # declared to the testing package or the vignette builder.
+
+        R -q -e "
+          options(pak.no_extra_messages = TRUE)
+          testing <- c('testthat', 'RUnit', 'tinytest')
+          vign <- pak:::remote(function() {
+            desc::desc_get_list('VignetteBuilder', character(), file = '$pkg')
+          })
+          ok <- c(vign, testing)
+          suggested <- pak::pkg_deps(
+            'deps::$pkg',
+            dependencies = list(direct = 'Suggests', indirect = character())
+          )
+          # drop the 'deps::...' ref
+          suggested <- suggested[-1,,drop = FALSE]
+          # use 'ref', not 'package', so Remotes work
+          extra <- suggested[['ref']][ suggested[['package']] %in% ok ]
+          pak::pkg_install(c('deps::$pkg', extra))"
+
+        # We remove pak from the system library, to checks packages
+        # depending on it properly
+        R -q -e 'remove.packages("pak", lib = .Library)'
+
+        R CMD check $CHECK_ARGS	$pkg
+    )
+}
+
+for pkg in `ls $checkdir/*.tar.gz`; do
+    do_check "$pkg"
+done
