@@ -49,7 +49,7 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
 # Install pak
 
 RUN /opt/R/next/bin/R -q -e \
-    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "release", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "stable", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
