@@ -1,4 +1,5 @@
 #! /bin/bash
+set -a && . /opt/intel/oneapi/setvars.sh && set +a
 set -e
 
 checkdir=${1-/check}
