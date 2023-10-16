@@ -6,7 +6,7 @@ FROM fedora:38
 
 COPY oneAPI.repo /etc/yum.repos.d
 
-RUN dnf install -y intel-oneapi-mkl-2023.2.0
+RUN dnf install -y intel-oneapi-mkl-devel-2023.2.0
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
@@ -66,7 +66,13 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy procps
+
+# ------------------------------------------------------------------------------------
+# Copy MKL environment
+
+ENV SETVARS_ARGS --config=/opt/mklconfig.txt
+COPY mklconfig.txt /opt/mklconfig.txt
 
 # ------------------------------------------------------------------------------------
 # Check config

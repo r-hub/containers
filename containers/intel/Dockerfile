@@ -7,7 +7,7 @@ FROM fedora:38
 COPY oneAPI.repo /etc/yum.repos.d
 
 RUN dnf install -y \
-    intel-oneapi-mkl-2023.2.0 \
+    intel-oneapi-mkl-devel-2023.2.0 \
     intel-oneapi-compiler-dpcpp-cpp-2023.2.1.x86_64 \
     intel-oneapi-compiler-fortran-2023.2.1.x86_64
 
@@ -72,7 +72,7 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy procps
 
 # ------------------------------------------------------------------------------------
 # Check config
