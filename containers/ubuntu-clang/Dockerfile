@@ -67,6 +67,12 @@ RUN /opt/R/devel/bin/R -q -e \
 # ------------------------------------------------------------------------------------
 # Locale
 
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y locales && \
+    apt-get clean && \
+    locale-gen en_US.UTF-8 && \
+    update-locale
 ENV LANG C
 
 # ------------------------------------------------------------------------------------
