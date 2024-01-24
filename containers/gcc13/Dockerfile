@@ -109,3 +109,6 @@ ENV _R_CHECK_RD_MATH_RENDERING_ true
 ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
+
+# Support R CMD INSTALL --use-LTO ., similarly to CRAN at https://www.stats.ox.ac.uk/pub/bdr/LTO/README.txt
+RUN echo -e '# Support --use-LTO\nLTO_OPT = -flto=10\nLTO_FC_OPT = -flto=10' >> /opt/R/devel-gcc13/lib/R/etc/Makeconf
