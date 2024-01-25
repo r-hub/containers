@@ -91,7 +91,7 @@ ENV _R_CHECK_LIMIT_CORES_ true
 ENV _R_CHECK_LENGTH_1_CONDITION_ package:_R_CHECK_PACKAGE_NAME_,verbose
 #ENV _R_CHECK_LENGTH_1_LOGIC2_="package:_R_CHECK_PACKAGE_NAME_,verbose"
 ENV _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_ true
-ENV _R_CHECK_COMPILATION_FLAGS_KNOWN_="-Wno-deprecated-declarations -Wno-ignored-attributes -Wno-parentheses-Werror=format-security -Wp,-D_FORTIFY_SOURCE=2i -Werror=implicit-function-declaration"
+ENV _R_CHECK_COMPILATION_FLAGS_KNOWN_="-Wno-deprecated-declarations -Wno-ignored-attributes -Wno-parentheses-Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Werror=implicit-function-declaration"
 ENV _R_CHECK_AUTOCONF_ true
 ENV _R_CHECK_THINGS_IN_CHECK_DIR_ true
 ENV _R_CHECK_THINGS_IN_TEMP_DIR_ true
