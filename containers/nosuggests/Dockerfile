@@ -59,10 +59,15 @@ RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy
 # ------------------------------------------------------------------------------------
 # TinyTeX
 
-RUN dnf install -y perl wget && \
+RUN dnf install -y perl wget which && \
     cd /root && \
-    wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh -s - --admin --no-path && \
-    ~/.TinyTeX/bin/*/tlmgr install makeindex
+    if [ "$(uname -m)" = "x86_64" ]; then \
+      wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
+        ~/.TinyTeX/bin/*/tlmgr install makeindex; \
+    else \
+      wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh -s - --admin --no-path && \
+        ~/.TinyTeX/bin/*/tlmgr install makeindex; \
+    fi
 # we can't really query the arch here (FIXME!), but this should be ok
 ENV PATH="/root/.TinyTeX/bin/x86_64-linux:/root/.TinyTeX/bin/aarch64-linux:${PATH}"
 
