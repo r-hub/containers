@@ -22,7 +22,7 @@ jobs:
     outputs:
       platforms: ${{ steps.setup-matrix.outputs.platforms }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up matrix of R builds
       id: setup-matrix
       run: |
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     name: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build base image
         run: docker compose build ${{ matrix.platform }}
