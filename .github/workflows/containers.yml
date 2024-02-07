@@ -99,6 +99,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         platforms: linux/amd64
+        provenance: false
         context: containers/${{ matrix.container }}
         load: true
         tags: |
@@ -112,6 +113,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         platforms: linux/amd64
+        provenance: false
         context: containers/${{ matrix.container }}
         push: true
         outputs:
