@@ -161,3 +161,4 @@ ENV _R_CHECK_RD_MATH_RENDERING_=true
 ENV _R_CHECK_DEPENDS_ONLY_=true
 
 ENV CHECK_ARGS="--extra-arch"
+ENV BUILD_ARGS="--no-build-vignettes"

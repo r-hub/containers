@@ -108,6 +108,7 @@ ENV _R_CHECK_RD_MATH_RENDERING_ true
 
 ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
+ENV BUILD_ARGS="--no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
 
 # Support R CMD INSTALL --use-LTO ., similarly to CRAN at https://www.stats.ox.ac.uk/pub/bdr/LTO/README.txt
