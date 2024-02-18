@@ -64,6 +64,18 @@ RUN /opt/R/release/bin/R -q -e \
 RUN /opt/R/release/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
 
 # ------------------------------------------------------------------------------------
+# Locale
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y locales && \
+    apt-get clean && \
+    locale-gen en_GB.UTF-8 && \
+    update-locale
+ENV LC_COLLATE C
+ENV LANG en_GB.UTF-8
+
+# ------------------------------------------------------------------------------------
 # Copy check script
 
 COPY r-check /usr/local/bin

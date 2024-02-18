@@ -26,6 +26,18 @@ RUN sed -i 's/gcc/gcc-12/g' /opt/R/devel/lib/R/etc/Makeconf && \
     sed -i 's/\bgfortran/gfortran-12/g' /opt/R/devel/lib/R/etc/Makeconf
 
 # ------------------------------------------------------------------------------------
+# Locale
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y locales && \
+    apt-get clean && \
+    locale-gen en_GB.UTF-8 && \
+    update-locale
+ENV LC_COLLATE C
+ENV LANG en_GB.UTF-8
+
+# ------------------------------------------------------------------------------------
 # TinyTeX
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
