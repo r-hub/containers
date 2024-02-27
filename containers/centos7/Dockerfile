@@ -84,5 +84,4 @@ RUN ARCH="$(arch)"; \
 
 ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
-ENV BUILD_ARGS="--no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false

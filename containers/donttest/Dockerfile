@@ -79,7 +79,6 @@ RUN curl -o /usr/local/bin/checkbashisms \
 
 ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
-ENV BUILD_ARGS="--no-build-vignettes"
 
 ENV _R_CHECK_DONTTEST_EXAMPLES_=true
 ENV _R_CHECK_THINGS_IN_OTHER_DIRS_=true

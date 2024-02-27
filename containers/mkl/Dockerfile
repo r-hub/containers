@@ -78,5 +78,4 @@ COPY mklconfig.txt /opt/mklconfig.txt
 # Check config
 
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
-ENV BUILD_ARGS="--no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
