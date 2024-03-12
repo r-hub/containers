@@ -1,0 +1,10 @@
+services:
+
+  imagemagick:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
