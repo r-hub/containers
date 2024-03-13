@@ -1,0 +1,55 @@
+services:
+
+  jags:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
+
+  jags-clang17:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang17
+    volumes:
+      - .:/output
+
+  jags-clang18:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang18
+    volumes:
+      - .:/output
+
+  jags-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
+
+  jags-clang17-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang17
+    volumes:
+      - .:/output
+
+  jags-clang18-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang18
+    volumes:
+      - .:/output
