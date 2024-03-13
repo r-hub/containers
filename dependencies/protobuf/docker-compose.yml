@@ -26,3 +26,30 @@ services:
       dockerfile: Dockerfile-clang18
     volumes:
       - .:/output
+
+  protobuf-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
+
+  protobuf-clang17-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang17
+    volumes:
+      - .:/output
+
+  protobuf-clang18-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang18
+    volumes:
+      - .:/output

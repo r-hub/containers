@@ -1,6 +1,16 @@
 services:
 
   skopeo:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
+
+  skopeo-arm64:
+    platform: linux/arm64
     command: /root/build.sh
     build:
       context: .
