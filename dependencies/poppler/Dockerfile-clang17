@@ -1,0 +1,65 @@
+
+FROM ubuntu:22.04
+
+WORKDIR /root
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y curl xz-utils && \
+    curl -LO https://poppler.freedesktop.org/poppler-24.03.0.tar.xz && \
+    tar xf poppler-*.xz && \
+    rm poppler-*.xz
+
+# ------------------------------------------------------------------------------------
+# clang 17, gfortran-12
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y gnupg curl && \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-17 main" \
+         > /etc/apt/sources.list.d/llvm.list && \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-17 main" \
+         >> /etc/apt/sources.list.d/llvm.list && \
+    curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    apt-get update -y && \
+    apt-get install -y clang-17 libc++abi-17-dev libc++-17-dev libomp-17-dev && \
+    apt-get install -y pkg-config make gfortran
+
+RUN ln -s /usr/bin/clang-17 /usr/bin/clang && \
+    ln -s /usr/bin/clang++-17 /usr/bin/clang++
+
+# dependencies
+RUN apt-get install -y cmake libnss3-dev \
+    libtiff-dev liblcms2-dev libopenjp2-7-dev \
+    libboost1.74-all-dev libfreetype-dev libfontconfig-dev \
+    libcurl4-openssl-dev qtbase5-dev
+
+RUN cd poppler-* && \
+    mkdir build && \
+    cd build && \
+    CC=clang CXX=clang++ CXXFLAGS="-stdlib=libc++ -O3 -g" LDFLAGS="-stdlib=libc++ -lc++ -lc++abi" \
+      cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/clang \
+      -DCMAKE_BUILD_TYPE=release -DENABLE_QT6=OFF -DENABLE_GPGME=OFF && \
+    make
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get install -y checkinstall && \
+    cd poppler-* && \
+    mkdir -p /usr/share/doc/poppler-clang17/ && \
+    cp COPYING NEWS ChangeLog README.md /usr/share/doc/poppler-clang17/ && \
+    echo /usr/share/doc/poppler-clang17/COPYING > /tmp/xlist && \
+    echo /usr/share/doc/poppler-clang17/NEWS >> /tmp/xlist && \
+    echo /usr/share/doc/poppler-clang17/aChangeLog >> /tmp/xlist && \
+    echo /usr/share/doc/poppler-clang17/README.md >> /tmp/xlist && \
+    cd build && \
+    checkinstall -y -D --pkgname poppler-clang17 \
+    --pkgversion $(basename `pwd` | sed 's/^[^-]*-//') \
+    --maintainer "csardi.gabor@gmail.com" \
+    --include /tmp/xlist \
+    --requires 'libc++1-16,libc++abi1-16,libunwind-16,libc6,libgcc-s1' \
+    --arch $(dpkg --print-architecture) \
+    --pkglicense "See COPYING file."
+
+RUN cp poppler-*/build/poppler-clang*.deb /root/
+
+COPY build.sh /root/build.sh

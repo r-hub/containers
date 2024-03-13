@@ -1,0 +1,55 @@
+services:
+
+  poppler:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
+
+  poppler-clang17:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang17
+    volumes:
+      - .:/output
+
+  poppler-clang18:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang18
+    volumes:
+      - .:/output
+
+  poppler-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/output
+
+  poppler-clang17-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang17
+    volumes:
+      - .:/output
+
+  poppler-clang18-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang18
+    volumes:
+      - .:/output
