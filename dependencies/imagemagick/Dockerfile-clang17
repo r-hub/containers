@@ -11,22 +11,22 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm ImageMagick.tar.gz
 
 # ------------------------------------------------------------------------------------
-# clang 16, gfortran-12
+# clang 17, gfortran-12
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y gnupg curl && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-17 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-17 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev libomp-16-dev && \
+    apt-get install -y clang-17 libc++abi-17-dev libc++-17-dev libomp-17-dev && \
     apt-get install -y pkg-config make
 
-RUN ln -s /usr/bin/clang-16 /usr/bin/clang && \
-    ln -s /usr/bin/clang++-16 /usr/bin/clang++
+RUN ln -s /usr/bin/clang-17 /usr/bin/clang && \
+    ln -s /usr/bin/clang++-17 /usr/bin/clang++
 
 # dependencies
 RUN apt-get install -y libjpeg8-dev libpng-dev libtiff-dev
@@ -43,18 +43,18 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y checkinstall && \
     cd ImageMagick-* && \
-    mkdir -p /usr/share/doc/imagemagick-clang/ && \
-    cp LICENSE README.md /usr/share/doc/imagemagick-clang/ && \
-    echo /usr/share/doc/imagemagick-clang/LICENSE > /tmp/xlist && \
-    echo /usr/share/doc/imagemagick-clang/README.md >> /tmp/xlist && \
-    checkinstall -y -D --pkgname imagemagick-clang \
+    mkdir -p /usr/share/doc/imagemagick-clang17/ && \
+    cp LICENSE README.md /usr/share/doc/imagemagick-clang17/ && \
+    echo /usr/share/doc/imagemagick-clang17/LICENSE > /tmp/xlist && \
+    echo /usr/share/doc/imagemagick-clang17/README.md >> /tmp/xlist && \
+    checkinstall -y -D --pkgname imagemagick-clang17 \
     --pkgversion $(basename `pwd` | sed 's/^[^-]*-//') \
     --maintainer "csardi.gabor@gmail.com" \
     --include /tmp/xlist \
-    --requires 'libc++1-16,libc++abi1-16,libunwind-16,libc6,libgcc-s1,libomp5-16,zlib1g,libxml2,liblzma5,libpng16-16,libjpeg-turbo8,libtiff5,libjbig0' \
+    --requires 'libc++1-17,libc++abi1-17,libunwind-17,libc6,libgcc-s1,libomp5-17,zlib1g,libxml2,liblzma5,libpng16-16,libjpeg-turbo8,libtiff5,libjbig0' \
     --arch $(dpkg --print-architecture) \
     --pkglicense "See LICENSE file."
 
-RUN cp ImageMagick-*/imagemagick-clang*.deb /root/
+RUN cp ImageMagick-*/imagemagick-clang17*.deb /root/
 
 COPY build.sh /root/build.sh
