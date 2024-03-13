@@ -103,9 +103,9 @@ ENV R_MAKEVARS_USER=/root/.R/Makevars
 # system dependencies
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    echo "deb https://ppa.r-pkg.org jammy main" \
+    echo "deb https://repos-ppa.r-pkg.org jammy main" \
          > /etc/apt/sources.list.d/rhub.list && \
-    curl -L https://raw.githubusercontent.com/r-hub/ppa/main/rhub.gpg.key | apt-key add - && \
+    curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | apt-key add - && \
     apt-get update -y && \
     apt-get install protobuf-clang jags-clang imagemagick-clang && \
     echo 'export LD_LIBRARY_PATH="/usr/local/clang/lib:${LD_LIBRARY_PATH}"' \
