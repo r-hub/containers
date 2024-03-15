@@ -36,7 +36,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
          > /etc/apt/sources.list.d/rhub.list && \
     curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install protobuf-clang jags-clang imagemagick-clang poppler-clang
+    apt-get install protobuf-clang18 jags-clang18 imagemagick-clang18 poppler-clang18
 
 # ------------------------------------------------------------------------------------
 # Useful system packages, some are needed for R CMD check
