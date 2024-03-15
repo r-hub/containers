@@ -1,7 +1,7 @@
-CC="clang -fsanitize=addres-fno-omit-frame-pointer"
-CXX="clang++ -fsanitize=address,undefinedt -fno-omit-frame-pointer -frtti"
+CC="clang-18"
+CXX="clang++-18 -stdlib=libc++"
+FC="flang-new-18"
 
-FC=flang-new-18
 CFLAGS="-g -O3 -Wall -pedantic  -Wp,-D_FORTIFY_SOURCE=3"
 CXXFLAGS="-g -O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3"
 FFLAGS="-O2 -pedantic"
