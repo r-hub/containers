@@ -14,19 +14,18 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 16, gfortran-12
+# clang 18
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y gnupg curl && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
+    apt-get install -y gnupg && \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-16 libc++abi-16-dev libc++-16-dev libomp-16-dev && \
-    apt-get install -y gfortran-12 && \
+    apt-get install -y clang-18 libc++abi-18-dev libc++-18-dev libomp-18-dev flang-18 && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------

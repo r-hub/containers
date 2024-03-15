@@ -1,14 +1,11 @@
+CC="clang -fsanitize=addres-fno-omit-frame-pointer"
+CXX="clang++ -fsanitize=address,undefinedt -fno-omit-frame-pointer -frtti"
 
-CC=clang-16
-CXX="clang++-16 -stdlib=libc++"
-
-#CC="clang-16 -fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer"
-#CXX="clang++-16 -stdlib=libc++ -fsanitize=address,undefined -fno-sanitize=float-divide-by-zero -fno-sanitize=alignment -fno-omit-frame-pointer -frtti"
-FC=gfortran-12
-CFLAGS="-g -O3 -Wall -pedantic"
-FFLAGS="-g -O2 -mtune=native"
-CXXFLAGS="-g -O3 -Wall -pedantic"
-MAIN_LD="clang++-16 -stdlib=libc++ -fsanitize=undefined,address"
+FC=flang-new-18
+CFLAGS="-g -O3 -Wall -pedantic  -Wp,-D_FORTIFY_SOURCE=3"
+CXXFLAGS="-g -O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3"
+FFLAGS="-O2 -pedantic"
+MAIN_LD="clang++-18 -stdlib=libc++ -fsanitize=undefined,address"
 R_LD_LIBRARY_PATH="/usr/local/clang/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu"
 CPPFLAGS="-I/usr/local/clang/include -I/usr/local/include"
 LDFLAGS="-L/usr/local/clang/lib -L/usr/local/lib"
