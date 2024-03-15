@@ -56,7 +56,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     --pkgversion $(basename `pwd` | sed 's/^[^-]*-//') \
     --maintainer "csardi.gabor@gmail.com" \
     --include /tmp/xlist \
-    --requires 'libc++1-16,libc++abi1-16,libunwind-16,libc6,libgcc-s1' \
+    --requires 'libc++1-18,libc++abi1-18,libunwind-18,libc6,libgcc-s1' \
     --arch $(dpkg --print-architecture) \
     --pkglicense "See COPYING file."
 
