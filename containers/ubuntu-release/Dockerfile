@@ -13,20 +13,19 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# TinyTeX
+# TinyTeX, only available for x86_64
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update -y && \
-    apt-get install -y wget perl && \
-    apt-get clean && \
-    cd /root && \
     if [ "$(uname -m)" = "x86_64" ]; then \
+      apt-get update -y && \
+      apt-get install -y wget && \
+      apt-get clean && \
+      cd /root && \
       wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
-        ~/.TinyTeX/bin/*/tlmgr install makeindex; \
-    else \
-      wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh -s - --admin --no-path && \
-        ~/.TinyTeX/bin/*/tlmgr install makeindex; \
+      ~/.TinyTeX/bin/*/tlmgr update --self && \
+      ~/.TinyTeX/bin/*/tlmgr install makeindex; \
     fi
+
 # we can't really query the arch here (FIXME!), but this should be ok
 ENV PATH="/root/.TinyTeX/bin/x86_64-linux:/root/.TinyTeX/bin/aarch64-linux:${PATH}"
 
