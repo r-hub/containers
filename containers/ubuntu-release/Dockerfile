@@ -18,11 +18,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     if [ "$(uname -m)" = "x86_64" ]; then \
       apt-get update -y && \
-      apt-get install -y wget && \
+      apt-get install -y wget perl && \
       apt-get clean && \
       cd /root && \
       wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
-      ~/.TinyTeX/bin/*/tlmgr update --self && \
+      ~/.TinyTeX/bin/*/tlmgr update --self || true && \
       ~/.TinyTeX/bin/*/tlmgr install makeindex; \
     fi
 
