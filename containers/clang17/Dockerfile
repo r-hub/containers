@@ -28,9 +28,11 @@ ENV R_PKG_SYSREQS2=true
 # Use r-hub/repos, set platform
 
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(pkg.current_platform = "x86_64-pc-linux-gnu-ubuntu-22.04-libc++")' \
+        . /etc/os-release; \
+        echo "options(pkg.current_platform = 'x86_64-pc-linux-gnu-${ID}-${VERSION_ID}-libc++')" \
             >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
-        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04/4.4/libc++", getOption("repos")))' \
+        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}/libc++', getOption('repos')))" \
             >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
         echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
             >> /opt/R/devel/lib/R/library/base/R/Rprofile; \

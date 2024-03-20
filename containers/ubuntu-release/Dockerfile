@@ -6,7 +6,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y curl jq && \
     R_VERSION=$(curl -sL https://api.r-hub.io/rversions/r-release | jq -r .version) && \
     cd /tmp && \
-    curl -LO "https://cdn.posit.co/r/ubuntu-2204/pkgs/r-${R_VERSION}_1_amd64.deb" && \
+    . /etc/os-release && \
+    curl -LO "https://cdn.posit.co/r/${ID}-$(echo $VERSION_ID | tr -d .)/pkgs/r-${R_VERSION}_1_amd64.deb" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     ln -s /opt/R/* /opt/R/release && \
@@ -47,7 +48,8 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
             >> /opt/R/release/lib/R/library/base/R/Rprofile; \
         curl -s https://api.r-hub.io/rversions/r-release | \
             sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
+        . /etc/os-release; \
+        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' ('${ID}-${VERSION_ID})' R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
             >> /opt/R/release/lib/R/library/base/R/Rprofile; \
     fi
 

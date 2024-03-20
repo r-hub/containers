@@ -8,7 +8,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl && \
     cd /tmp && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel_1_$(dpkg --print-architecture).deb" && \
+    . /etc/os-release && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-${ID}-$(echo $VERSION_ID | tr -d .)-devel_1_$(dpkg --print-architecture).deb" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     apt-get clean
@@ -56,7 +57,9 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel/lib/R/library/base/R/Rprofile
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04/4.4", getOption("repos")))' \
+        . /etc/os-release; \
+        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
             >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
         echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
             >> /opt/R/devel/lib/R/library/base/R/Rprofile; \

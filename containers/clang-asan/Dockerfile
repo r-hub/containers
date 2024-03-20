@@ -8,7 +8,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl && \
     cd /tmp && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-ubuntu-2204-devel-asan_1_$(dpkg --print-architecture).deb" && \
+    . /etc/os-release && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-${ID}-$(echo $VERSION_ID | tr -d .)-devel-asan_1_$(dpkg --print-architecture).deb" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     apt-get clean
@@ -78,9 +79,11 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile
 
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(pkg.current_platform = "x86_64-pc-linux-gnu-ubuntu-22.04-libc++")' \
+        . /etc/os-release; \
+        echo "options(pkg.current_platform = 'x86_64-pc-linux-gnu-${ID}-${VERSION_ID}-libc++')" \
             >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
-        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04/4.4/libc++", getOption("repos")))' \
+        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}/libc++', getOption('repos')))" \
             >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
         echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
             >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \

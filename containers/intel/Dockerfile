@@ -17,7 +17,8 @@ RUN dnf install -y \
 RUN dnf -y upgrade && \
     dnf -y install dnf-plugins-core && \
     dnf -y install curl && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-fedora-38-devel-intel-1-1.$(arch).rpm" && \
+    . /etc/os-release && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-${ID}-${VERSION_ID}-devel-intel-1-1.$(arch).rpm" && \
     yum install -y R-*.rpm && \
     rm R-*.rpm
 
@@ -39,7 +40,9 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-intel/lib/R/library/base/R/Rprofile
 
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RHUB = "https://raw.githubusercontent.com/r-hub/repos/main/fedora-38/4.4", getOption("repos")))' \
+        . /etc/os-release; \
+        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
             >> /opt/R/devel-intel/lib/R/library/base/R/Rprofile; \
         echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
             >> /opt/R/devel-intel/lib/R/library/base/R/Rprofile; \

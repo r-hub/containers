@@ -5,7 +5,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl jq && \
     cd /tmp && \
-    curl -LO "https://cdn.posit.co/r/ubuntu-2204/pkgs/r-next_1_amd64.deb" && \
+    . /etc/os-release && \
+    curl -LO "https://cdn.posit.co/r/${ID}-$(echo $VERSION_ID | tr -d .)/pkgs/r-next_1_amd64.deb" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     apt-get clean
