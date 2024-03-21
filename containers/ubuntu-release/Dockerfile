@@ -49,7 +49,7 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
         curl -s https://api.r-hub.io/rversions/r-release | \
             sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
         . /etc/os-release; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' ('${ID}-${VERSION_ID})' R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
+        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' ('${ID}-${VERSION_ID}' R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
             >> /opt/R/release/lib/R/library/base/R/Rprofile; \
     fi
 
