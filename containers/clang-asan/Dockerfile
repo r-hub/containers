@@ -102,7 +102,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
-    locale-gen en_GB.UTF-8 && \
+    locale-gen en_GB.UTF-8 en_US.UTF-8 && \
     update-locale
 ENV LC_COLLATE C
 ENV LANG en_GB.UTF-8
