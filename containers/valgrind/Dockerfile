@@ -71,6 +71,8 @@ RUN dnf -y install pkg-config devscripts-checkbashisms qpdf tidy valgrind
 COPY valgrind.supp .
 RUN cat valgrind.supp >> /usr/libexec/valgrind/default.supp && \
     rm valgrind.supp
+RUN echo "--track-origins=yes" >> ~/.valgrindrc
+RUN echo "--leak-check=full"   >> ~/.valgrindrc
 
 # ------------------------------------------------------------------------------------
 # Check config
