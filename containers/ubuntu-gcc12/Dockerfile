@@ -33,10 +33,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
-    locale-gen en_GB.UTF-8 en_US.UTF-8 && \
+    locale-gen C.UTF-8 en_GB.UTF-8 en_US.UTF-8 && \
     update-locale
 ENV LC_COLLATE C
-ENV LANG en_GB.UTF-8
+ENV LANG C.UTF-8
 
 # ------------------------------------------------------------------------------------
 # TinyTeX, only available for x86_64
@@ -82,11 +82,6 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
 
 RUN /opt/R/devel/bin/R -q -e \
     'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
-
-# ------------------------------------------------------------------------------------
-# Locale
-
-ENV LANG C
 
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest

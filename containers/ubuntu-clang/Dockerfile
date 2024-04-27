@@ -78,9 +78,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
-    locale-gen en_US.UTF-8 en_US.UTF-8 && \
+    locale-gen C.UTF-8 en_GB.UTF-8 en_US.UTF-8 && \
     update-locale
-ENV LANG C
+ENV LC_COLLATE C
+ENV LANG C.UTF-8
 
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
