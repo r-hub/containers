@@ -37,6 +37,19 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  ubuntu-2204-wllvm:
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-wllvm
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.ubuntu-2204-wllvm
+    image: rhub/ubuntu-2204-wllvm:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+
   ubuntu-2204-nold:
     command: ./build.sh
     environment:
