@@ -53,3 +53,21 @@ services:
       dockerfile: Dockerfile-clang18
     volumes:
       - .:/output
+
+  jags-fedora-38:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-fedora38
+    volumes:
+      - .:/output
+
+  jags-fedora-38-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-fedora38
+    volumes:
+      - .:/output

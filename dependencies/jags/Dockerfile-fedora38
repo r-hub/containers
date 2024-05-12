@@ -1,0 +1,27 @@
+FROM fedora:38
+
+WORKDIR /root
+
+RUN curl -L -o jags.tar.gz \
+        https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Source/JAGS-4.3.2.tar.gz/download && \
+    tar xzf jags.tar.gz && \
+    rm jags.tar.gz
+
+RUN dnf install -y gcc gfortran g++ flexiblas-devel libtool
+
+RUN cd JAGS-* && \
+    ./configure --prefix=/usr --with-blas='-lflexiblas' && \
+    make && \
+    make install DESTDIR=/opt/jags
+
+RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
+
+RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(cat /tmp/arch).rpm" && \
+    dnf install -y "nfpm_$(cat /tmp/arch).rpm" && \
+    rm "nfpm_$(cat /tmp/arch).rpm"
+
+COPY package.fedora-38 /root/package.sh
+
+RUN /root/package.sh
+
+COPY build.sh /root/build.sh
