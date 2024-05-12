@@ -22,6 +22,9 @@ RUN dnf -y upgrade && \
     yum install -y R-*.rpm && \
     rm R-*.rpm
 
+# Extra system packages that pak does not know about
+RUN dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
+
 # This is needed, according tp https://www.stats.ox.ac.uk/pub/bdr/Intel/README.txt
 RUN echo 'ulimit -s 51200' > /etc/profile.d/ulimit.sh
 
