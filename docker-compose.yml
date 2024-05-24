@@ -90,6 +90,20 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  fedora-gcc14:
+    platform: linux/amd64
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-gcc14
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.fedora-gcc14
+    image: rhub/fedora-gcc14:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+
   fedora-mkl:
     platform: linux/amd64
     command: ./build.sh
