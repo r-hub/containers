@@ -25,7 +25,7 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-gcc14/lib/R/library/base/R/Rprofile
 
-RUN if [ "$(uname -p)" = "x86_64" ]; then \
+RUN if [ "$(arch)" = "x86_64" ]; then \
         . /etc/os-release; \
         RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
         echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
