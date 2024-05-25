@@ -32,9 +32,9 @@ RUN if [ "$(arch)" = "x86_64" ]; then \
         . /etc/os-release; \
         RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
         echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
-            >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile; \
+            >> /opt/R/devel-gcc13/lib/R/library/base/R/Rprofile; \
         echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
-            >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile; \
+            >> /opt/R/devel-gcc13/lib/R/library/base/R/Rprofile; \
     fi
 
 # ------------------------------------------------------------------------------------
