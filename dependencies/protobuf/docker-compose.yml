@@ -27,6 +27,15 @@ services:
     volumes:
       - .:/output
 
+  protobuf-clang19:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang19
+    volumes:
+      - .:/output
+
   protobuf-arm64:
     platform: linux/arm64
     command: /root/build.sh
@@ -51,5 +60,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-clang18
+    volumes:
+      - .:/output
+
+  protobuf-clang19-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang19
     volumes:
       - .:/output
