@@ -6,7 +6,7 @@ WORKDIR /root
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl xz-utils && \
-    curl -LO https://poppler.freedesktop.org/poppler-24.03.0.tar.xz && \
+    curl -LO https://poppler.freedesktop.org/poppler-24.05.0.tar.xz && \
     tar xf poppler-*.xz && \
     rm poppler-*.xz
 
