@@ -37,15 +37,10 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
             >> /opt/R/devel-rchk/lib/R/library/base/R/Rprofile; \
     fi
 # ------------------------------------------------------------------------------------
-# Install pak, our build is not compatible with this image, so install from source
-# install.packages() does not fail, so fail explicitly
-
-RUN apt-get install -y libcurl4-openssl-dev
+# Install pak
 
 RUN /opt/R/devel-rchk/bin/R -q -e \
-    'install.packages("pak", repos = "https://cloud.r-project.org")'
-
-RUN /opt/R/devel-rchk/bin/R -q -e 'pak::lib_status()'
+    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch)); st <- pak::lib_status()'
 
 # ------------------------------------------------------------------------------------
 # Locale
