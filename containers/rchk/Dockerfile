@@ -37,10 +37,15 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
             >> /opt/R/devel-rchk/lib/R/library/base/R/Rprofile; \
     fi
 # ------------------------------------------------------------------------------------
-# Install pak
+# Install pak, our build is not compatible with this image, so install from source
+# install.packages() does not fail, so fail explicitly
+
+RUN apt-get install -y libcurl4-openssl-dev
 
 RUN /opt/R/devel-rchk/bin/R -q -e \
-    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+    'install.packages("pak", repos = "https://cloud.r-project.org")'
+
+RUN /opt/R/devel-rchk/bin/R -q -e 'pak::lib_status()'
 
 # ------------------------------------------------------------------------------------
 # Locale
@@ -63,3 +68,9 @@ RUN /opt/R/devel-rchk/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWar
 # Copy check script
 
 COPY r-check /usr/local/bin
+
+# ------------------------------------------------------------------------------------
+# Config for r-hub/actions
+
+ENV RHUB_ACTIONS_DEPS_DEPENDENCIES='list(direct = "LinkingTo", indirect = "hard")'
+ENV RHUB_ACTIONS_CHECK_SCRIPT=rchk.sh
