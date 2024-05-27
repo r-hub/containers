@@ -1,0 +1,94 @@
+#!/bin/bash
+
+if [[ ! -d /tmp/output/${OS_IDENTIFIER} ]]; then
+  mkdir -p "/tmp/output/${OS_IDENTIFIER}"
+fi
+
+# R 3.x requires PCRE1. On Ubuntu 22, R 3.x also requires PCRE2 for Pango support.
+pcre_libs='- libpcre2-dev'
+if [[ "${R_VERSION}" =~ ^3 ]]; then
+  pcre_libs='- libpcre2-dev
+- libpcre3-dev'
+fi
+
+# Extract byte code from base R
+(
+    cd /opt/R/devel-rchk/
+    /opt/R/devel-rchk/python//bin/extract-bc lib/R/bin/exec/R
+    mv lib/R/bin/exec/R.bc R.bc
+)
+
+# Reset compilers in system config, so packages are normally installed
+# without WLLVM
+sed -i 's|/opt/R/devel-rchk/python/bin/wllvm|clang|g' \
+    /opt/R/devel-rchk/lib/R/etc/Makeconf
+
+# Update default compilers, add extra Makevars file that
+# the check script can use
+
+cat <<EOF > /tmp/nfpm.yml
+name: r-${R_VERSION}${R_TYPE}
+version: 1
+version_schema: none
+section: universe/math
+priority: optional
+arch: $(dpkg --print-architecture)
+maintainer: Posit Software, PBC <https://github.com/rstudio/r-builds>
+description: |
+  GNU R statistical computation and graphics system
+vendor: Posit Software, PBC
+homepage: https://www.r-project.org
+license: GPL-2
+deb:
+  fields:
+    Bugs: https://github.com/rstudio/r-builds/issues
+depends:
+- clang
+- file
+- gfortran
+- libbz2-dev
+- libc++-dev
+- libc++abi-dev
+- libc6
+- libcairo2
+- libcurl4
+- libglib2.0-0
+- libgomp1
+- libicu-dev
+- libjpeg8
+- liblzma-dev
+- libopenblas-dev
+- libpango-1.0-0
+- libpangocairo-1.0-0
+- libpaper-utils
+${pcre_libs}
+- libpng16-16
+- libreadline8
+- libtcl8.6
+- libtiff5
+- libtk8.6
+- libx11-6
+- libxt6
+- libllvm14
+- llvm
+- make
+- pkg-config
+- python3
+- ucf
+- unzip
+- zip
+- zlib1g-dev
+contents:
+- src: /opt/R/${R_VERSION}${R_TYPE}
+  dst: /opt/R/${R_VERSION}${R_TYPE}
+EOF
+
+nfpm package \
+  -f /tmp/nfpm.yml \
+  -p deb \
+  -t "/tmp/output/${OS_IDENTIFIER}"
+
+TMP=$(ls /tmp/output/${OS_IDENTIFIER}/r-${R_VERSION}${R_TYPE}*.deb | head -1)
+mv "$TMP" $(echo $TMP | sed "s|/r-|/r-rstudio-${OS_IDENTIFIER}-|")
+
+export PKG_FILE=$(ls /tmp/output/${OS_IDENTIFIER}/r-*.deb | head -1)
