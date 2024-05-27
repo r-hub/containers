@@ -11,6 +11,21 @@ if [[ "${R_VERSION}" =~ ^3 ]]; then
 - libpcre3-dev'
 fi
 
+# Extract byte code from base R
+(
+    cd /opt/R/devel-rchk/
+    /opt/R/devel-rchk/python//bin/extract-bc lib/R/bin/exec/R
+    mv lib/R/bin/exec/R.bc R.bc
+)
+
+# Reset compilers in system config, so packages are normally installed
+# without WLLVM
+sed -i 's|/opt/R/devel-rchk/python/bin/wllvm|clang|g' \
+    /opt/R/devel-rchk/lib/R/etc/Makeconf
+
+# Update default compilers, add extra Makevars file that
+# the check script can use
+
 cat <<EOF > /tmp/nfpm.yml
 name: r-${R_VERSION}${R_TYPE}
 version: 1
@@ -29,8 +44,11 @@ deb:
     Bugs: https://github.com/rstudio/r-builds/issues
 depends:
 - clang
+- file
 - gfortran
 - libbz2-dev
+- libc++-dev
+- libc++abi-dev
 - libc6
 - libcairo2
 - libcurl4
@@ -51,8 +69,11 @@ ${pcre_libs}
 - libtk8.6
 - libx11-6
 - libxt6
+- libllvm14
+- llvm
 - make
 - pkg-config
+- python3
 - ucf
 - unzip
 - zip

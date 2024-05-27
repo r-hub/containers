@@ -1,0 +1,22 @@
+#! /bin/bash
+set -e
+
+checkdir=${1-/check}
+
+do_check () {
+    pkg=${1}
+    echo Checking "$pkg"
+    (
+        cd `dirname $pkg`
+        R -q -e "pak::pkg_install('deps::$pkg', dependencies = list(direct = 'LinkingTo', indirect = 'hard')"
+	tar xzf $pkg
+	topdir="`tar tzf xmlparsedata_1.0.5.tar.gz | head -1`"
+	PACKAGE="`dirname $topdir`"
+	cd PACKAGE
+	/opt/R/r-deve-rchk/bin/rchk.sh 
+    )
+}
+
+for pkg in `ls $checkdir/*.tar.gz`; do
+    do_check "$pkg"
+done

@@ -1,47 +1,65 @@
-## Emacs, make this -*- mode: sh; -*-
 
-FROM ubuntu:22.04 as build
+FROM ubuntu:22.04
 
-WORKDIR /root
+# ------------------------------------------------------------------------------------
+# Install pre-built R and requirements
 
-# -------------------------------------------------------------------------
-# Install rchk
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y curl && \
+    cd /tmp && \
+    . /etc/os-release && \
+    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-${ID}-$(echo $VERSION_ID | tr -d .)-devel-rchk_1_$(dpkg --print-architecture).deb" && \
+    apt install -y ./r-*.deb && \
+    rm r-*.deb && \
+    apt-get clean
 
-RUN set -x \
-    && export DEBIAN_FRONTEND=noninteractive \
-    && sed -i "s|# deb-src|deb-src|g" /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get install -y git make clang llvm-dev '^clang++$' llvm \
-               libllvm14 libc++-dev libc++abi-dev \
-    && apt-get clean
+# ------------------------------------------------------------------------------------
+# Put R on PATH
+# AUto-install system requirements
 
-RUN set -x \
-    && git clone -b llvm14 https://github.com/kalibera/rchk.git \
-    && cd rchk/src \
-    && echo 'export WLLVM=/usr/local/bin'    > ../scripts/config.inc \
-    && echo 'export LLVM=/usr/lib/llvm-14' >> ../scripts/config.inc \
-    && echo 'export RCHK=/root/rchk' >> ../scripts/config.inc \
-    && CXX=clang++ make
+ENV PATH="/opt/R/devel-rchk/bin:${PATH}"
+ENV PKG_SYSREQS=true
+ENV R_PKG_SYSREQS2=true
 
-RUN set -x \
-    && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get update -y \
-    && apt-get install -y python3-pip \
-    && pip3 install wllvm \
-    && apt-get clean
+# ------------------------------------------------------------------------------------
+# Set CRAN repo, R-hub repo
 
-## Get R sources and configure rchk
-RUN set -x \
-    && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get update -y \
-    && apt-get install -y subversion rsync file \
-    && mkdir /root/R-svn/ && \
-    svn checkout https://svn.r-project.org/R/trunk /root/R-svn
+RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
+    >> /opt/R/devel-rchk/lib/R/library/base/R/Rprofile
 
-ENV WLLVM=/usr/local/bin
-ENV LLVM=/usr/lib/llvm-14
-ENV RCHK=/root/rchk
+RUN if [ "$(uname -p)" = "x86_64" ]; then \
+        . /etc/os-release; \
+        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
+            >> /opt/R/devel-rchk/lib/R/library/base/R/Rprofile; \
+        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+            >> /opt/R/devel-rchk/lib/R/library/base/R/Rprofile; \
+    fi
+# ------------------------------------------------------------------------------------
+# Install pak
 
-RUN set -x \
-    && cd /root/R-svn/ \
-    && /root/rchk/scripts/build_r.sh
+RUN /opt/R/devel-rchk/bin/R -q -e \
+    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+
+# ------------------------------------------------------------------------------------
+# Locale
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y locales && \
+    apt-get clean && \
+    locale-gen en_GB.UTF-8 en_US.UTF-8 && \
+    update-locale
+ENV LC_COLLATE C
+ENV LANG en_GB.UTF-8
+
+# ------------------------------------------------------------------------------------
+# Use user's package library for the rest
+
+RUN /opt/R/devel-rchk/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
+
+# ------------------------------------------------------------------------------------
+# Copy check script
+
+COPY r-check /usr/local/bin
