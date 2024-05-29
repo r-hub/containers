@@ -45,6 +45,7 @@ Plus the following containers for additional CRAN checks:
 |Intel       | intel      | Checks with Intel oneAPI 2023.x compilers                        | `r os_name("intel")`              | `r r_ver("intel")`      | [Details](containers.html#intel)       |
 |MKL         | mkl        | Tests with alternative BLAS/LAPACK implementations               | `r os_name("mkl")`                | `r r_ver("mkl")`        | [Details](containers.html#mkl)         |
 |noLD        | nold       | Tests without long double                                        | `r os_name("nold")`               | `r r_ver("nold")`       | [Details](containers.html#nold)        |
+|noRemap     | noremap    | Compile C++ code with R_NO_REMAP defined                         | `r os_name("noremap")`            | `r r_ver("noremap")`    | [Details](containers.html#noremap)     |
 |noSuggests  | nosuggests | Tests without suggested packages                                 | `r os_name("nosuggests")`         | `r r_ver("nosuggests")` | [Details](containers.html#nosuggests)  |
 |rchk        | rchk       | Checks of native code (C/C++) based on static code analysis      | `r os_name("rchk")`               | `r r_ver("rchk")`       | [Details](containers.html#rchk)        |
 |valgrind    | valgrind   | Tests of memory access errors using valgrind                     | `r os_name("valgrind")`           | `r r_ver("valgrind")`   | [Details](containers.html#valgrind)    |
