@@ -1,0 +1,28 @@
+CC=clang-16
+CC17 = clang-16 -std=gnu17
+CC23 = clang-16 -std=gnu2x
+CC90 = clang-16 -std=gnu90
+CC99 = clang-16 -std=gnu99
+
+CFLAGS=-O3 -Wall -pedantic
+C17FLAGS=-O3 -Wall -pedantic
+C23FLAGS=-O3 -Wall -pedantic
+C90FLAGS=-O3 -Wall -pedantic
+C99FLAGS=-O3 -Wall -pedantic
+
+CXX=clang++-16 -stdlib=libc++
+CXX11=clang++-16 -stdlib=libc++
+CXX14=clang++-16 -stdlib=libc++
+CXX17=clang++-16 -stdlib=libc++
+CXX20=clang++-16 -stdlib=libc++
+CXX23=clang++-16 -stdlib=libc++
+
+CXXFLAGS=-O3 -Wall -pedantic -frtti
+CXX11FLAGS=-O3 -Wall -pedantic -frtti
+CXX14FLAGS=-O3 -Wall -pedantic -frtti
+CXX17FLAGS=-O3 -Wall -pedantic -frtti
+CXX20FLAGS=-O3 -Wall -pedantic -frtti
+CXX23FLAGS=-O3 -Wall -pedantic -frtti
+
+FC=gfortran-12
+FFLAGS=-O2 -mtune=native -Wall -pedantic
