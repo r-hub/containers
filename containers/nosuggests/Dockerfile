@@ -60,7 +60,7 @@ RUN /opt/R/devel-gcc/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarn
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy
 
 # ------------------------------------------------------------------------------------
 # TinyTeX, only available for x86_64

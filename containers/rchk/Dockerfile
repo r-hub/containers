@@ -55,6 +55,14 @@ ENV LC_COLLATE C
 ENV LANG en_GB.UTF-8
 
 # ------------------------------------------------------------------------------------
+# System packages
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y git && \
+    apt-get clean
+
+# ------------------------------------------------------------------------------------
 # Use user's package library for the rest
 
 RUN /opt/R/devel-rchk/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'

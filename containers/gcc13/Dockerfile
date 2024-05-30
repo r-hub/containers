@@ -64,7 +64,7 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf -y install pkg-config devscripts-checkbashisms qpdf tidy
+RUN dnf -y install pkg-config devscripts-checkbashisms qpdf git tidy
 
 # ------------------------------------------------------------------------------------
 # CRAN's config from https://www.stats.ox.ac.uk/pub/bdr/gcc13/README.txt

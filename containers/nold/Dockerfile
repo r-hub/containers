@@ -68,7 +68,7 @@ COPY r-check /usr/local/bin
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y pkg-config perl tidy qpdf && \
+    apt-get install -y pkg-config perl tidy qpdf git && \
     apt-get clean
 
 RUN curl -o /usr/local/bin/checkbashisms \

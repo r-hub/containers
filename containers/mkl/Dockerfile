@@ -72,7 +72,7 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf install -y pkg-config devscripts-checkbashisms qpdf tidy procps
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy procps
 
 # ------------------------------------------------------------------------------------
 # Copy MKL environment

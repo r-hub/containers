@@ -66,7 +66,7 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf -y install pkg-config devscripts-checkbashisms qpdf tidy valgrind
+RUN dnf -y install pkg-config devscripts-checkbashisms qpdf tidy valgrind git
 
 # ------------------------------------------------------------------------------------
 # valgrind config
