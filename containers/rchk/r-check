@@ -8,12 +8,12 @@ do_check () {
     echo Checking "$pkg"
     (
         cd `dirname $pkg`
-        R -q -e "pak::pkg_install('deps::$pkg', dependencies = list(direct = 'LinkingTo', indirect = 'hard')"
+        R -q -e "pak::pkg_install('deps::$pkg', dependencies = list(direct = 'LinkingTo', indirect = 'hard'))"
 	tar xzf $pkg
-	topdir="`tar tzf xmlparsedata_1.0.5.tar.gz | head -1`"
-	PACKAGE="`dirname $topdir`"
-	cd PACKAGE
-	/opt/R/r-deve-rchk/bin/rchk.sh 
+	descdir="`tar tzf $pkg | grep DESCRIPTION | head -1`"
+	package="`dirname $descdir`"
+	cd $package
+	/opt/R/devel-rchk/bin/rchk.sh
     )
 }
 
