@@ -27,3 +27,4 @@ CXX23FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
 FC=flang-new-18
 FFLAGS=-O2 -pedantic
 FLIBS=-L/usr/lib/llvm-18/lib -lFortran_main -lFortranRuntime -lFortranDecimal -lm
+F_VISIBILITY=
