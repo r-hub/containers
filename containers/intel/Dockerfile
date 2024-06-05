@@ -6,10 +6,12 @@ FROM fedora:38
 
 COPY oneAPI.repo /etc/yum.repos.d
 
+# Need intel-oneapi-runtime-libs for https://github.com/r-hub/rhub/issues/616
 RUN dnf install -y \
     intel-oneapi-mkl-devel-2023.2.0 \
     intel-oneapi-compiler-dpcpp-cpp-2023.2.1.x86_64 \
-    intel-oneapi-compiler-fortran-2023.2.1.x86_64
+    intel-oneapi-compiler-fortran-2023.2.1.x86_64 \
+    intel-oneapi-runtime-libs-2023.2.0
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
