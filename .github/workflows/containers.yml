@@ -71,11 +71,12 @@ jobs:
     # they build, but are not exported to Docker
     - name: "Clean up"
       run: |
-        sudo rm -rf /usr/share/dotnet $CONDA $VCPKG_INSTALLATION_ROOT \
-                    $JAVA_HOME_8_X64 $JAVA_HOME_11_X64 $JAVA_HOME_17_X64 $JAVA_HOME_21_X64 \
-                    $CHROMEWEBDRIVER $EDGEWEBDRIVER $GECKOWEBDRIVER $SELENIUM_JAR_PATH \
-                    $ANDROID_HOME
-        du -hs
+        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost \
+          $AGENT_TOOLSDIRECTORY $CONDA $VCPKG_INSTALLATION_ROOT \
+          $JAVA_HOME_8_X64 $JAVA_HOME_11_X64 $JAVA_HOME_17_X64 $JAVA_HOME_21_X64 \
+          $CHROMEWEBDRIVER $EDGEWEBDRIVER $GECKOWEBDRIVER $SELENIUM_JAR_PATH \
+          $ANDROID_HOME
+        df -h /
         docker buildx du
 
     - uses: actions/checkout@v4
