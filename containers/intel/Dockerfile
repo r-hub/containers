@@ -2,7 +2,7 @@
 FROM fedora:38
 
 # ------------------------------------------------------------------------------------
-# MKL
+# onAPI, MKL
 
 COPY oneAPI.repo /etc/yum.repos.d
 
@@ -12,7 +12,8 @@ RUN dnf install -y \
     intel-oneapi-compiler-dpcpp-cpp-2024.2.x86_64 \
     intel-oneapi-compiler-fortran-2024.2.x86_64 \
     intel-oneapi-runtime-libs-2024.2.0 \
-    intel-oneapi-mkl-devel-2024.2.0
+    intel-oneapi-mkl-devel-2024.2.0 && \
+    dnf clean all
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
@@ -23,10 +24,12 @@ RUN dnf -y upgrade && \
     . /etc/os-release && \
     curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-${ID}-${VERSION_ID}-devel-intel-1-1.$(arch).rpm" && \
     yum install -y R-*.rpm && \
-    rm R-*.rpm
+    rm R-*.rpm && \
+    dnf clean all
 
 # Extra system packages that pak does not know about
-RUN dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
+RUN dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm && \
+    dnf clean all
 
 # This is needed, according tp https://www.stats.ox.ac.uk/pub/bdr/Intel/README.txt
 RUN echo 'ulimit -s 51200' > /etc/profile.d/ulimit.sh
@@ -63,7 +66,8 @@ RUN /opt/R/devel-intel/bin/R -q -e \
 # ------------------------------------------------------------------------------------
 # Locale
 
-RUN dnf install -y glibc-langpack-en
+RUN dnf install -y glibc-langpack-en && \
+    dnf clean all
 
 ENV LC_ALL en_GB.UTF-8
 ENV LANG en_GB.UTF-8
@@ -81,7 +85,8 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Useful system packages
 
-RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy procps
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy procps && \
+    dnf clean all
 
 # ------------------------------------------------------------------------------------
 # Copy MKL environment
