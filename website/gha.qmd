@@ -110,7 +110,7 @@ jobs:
       run: r-check
 
     - name: Upload check result as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: check-results
         path: /check
