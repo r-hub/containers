@@ -8,10 +8,11 @@ COPY oneAPI.repo /etc/yum.repos.d
 
 # Need intel-oneapi-runtime-libs for https://github.com/r-hub/rhub/issues/616
 RUN dnf install -y \
-    intel-oneapi-mkl-devel-2023.2.0 \
-    intel-oneapi-compiler-dpcpp-cpp-2023.2.1.x86_64 \
-    intel-oneapi-compiler-fortran-2023.2.1.x86_64 \
-    intel-oneapi-runtime-libs-2023.2.0
+    intel-oneapi-mkl-devel-2024.2.0 \
+    intel-oneapi-compiler-dpcpp-cpp-2024.2.x86_64 \
+    intel-oneapi-compiler-fortran-2024.2.x86_64 \
+    intel-oneapi-runtime-libs-2024.2.0 \
+    intel-oneapi-mkl-devel-2024.2.0
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
@@ -44,7 +45,7 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-intel/lib/R/library/base/R/Rprofile
 
-RUN if [ "$(uname -p)" = "x86_64" ]; then \
+RUN if [ "$(uname -p)" = "x86_64" ] || [ "$(uname -m)" == "x86_64" ]; then \
         . /etc/os-release; \
         RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
         echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
@@ -81,6 +82,12 @@ COPY r-check /usr/local/bin
 # Useful system packages
 
 RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy procps
+
+# ------------------------------------------------------------------------------------
+# Copy MKL environment
+
+ENV SETVARS_ARGS --config=/opt/mklconfig.txt
+COPY mklconfig.txt /opt/mklconfig.txt
 
 # ------------------------------------------------------------------------------------
 # Check config
