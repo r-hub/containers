@@ -30,7 +30,7 @@ fi
 # https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Shared-BLAS
 cat <<EOF >> /post-install.sh
 mv /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so.keep
-ln -s /opt/intel/oneapi/mkl/2023.2.0/lib/intel64/libmkl_intel_lp64.so /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so
+ln -s /opt/intel/oneapi/mkl/2024.2/lib/intel64/libmkl_intel_lp64.so /opt/R/${R_VERSION}${R_TYPE}/lib/R/lib/libRblas.so
 ln -s libRblas.so /opt/R/devel-intel/lib/R/lib/libRlapack.so
 ln -s libRblas.so /opt/R/devel-intel/lib/R/lib/libsatlas.so.3
 ln -s libsatlas.so.3 /opt/R/devel-intel/lib/R/lib/libsatlas.so
@@ -61,9 +61,9 @@ depends:
 - bzip2-devel
 - gcc
 - gcc-c++
-- intel-oneapi-compiler-dpcpp-cpp-2023.2.1
-- intel-oneapi-compiler-fortran-2023.2.1
-- intel-oneapi-mkl-2023.2.0
+- intel-oneapi-compiler-dpcpp-cpp-2024.2
+- intel-oneapi-compiler-fortran-2024.2
+- intel-oneapi-mkl-2024.2
 - libcurl-devel
 - libicu-devel
 - libSM

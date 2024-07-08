@@ -49,9 +49,11 @@ RUN dnf -y upgrade \
 COPY containers/intel/oneAPI.repo /etc/yum.repos.d
 
 RUN dnf install -y \
-    intel-oneapi-mkl-devel-2023.2.0.x86_64 \
-    intel-oneapi-compiler-dpcpp-cpp-2023.2.1.x86_64 \
-    intel-oneapi-compiler-fortran-2023.2.1.x86_64
+    intel-oneapi-mkl-devel-2024.2.0 \
+    intel-oneapi-compiler-dpcpp-cpp-2024.2.x86_64 \
+    intel-oneapi-compiler-fortran-2024.2.x86_64 \
+    intel-oneapi-runtime-libs-2024.2.0 \
+    intel-oneapi-mkl-devel-2024.2.0
 
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
 
@@ -71,13 +73,13 @@ ENV CONFIGURE_OPTIONS="\
     --with-tcl-config=/usr/lib64/tclConfig.sh \
     --with-tk-config=/usr/lib64/tkConfig.sh \
     --enable-prebuilt-html \
-    --with-blas=\"-L/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/ -lmkl_intel_lp64 -lmkl_core -lmkl_sequential\" \
+    --with-blas=\"-L/opt/intel/oneapi/mkl/2024.2/lib/intel64/ -lmkl_intel_lp64 -lmkl_core -lmkl_sequential\" \
     --with-lapack"
 
-ENV LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/:/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin
+ENV LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib/intel64/
 
 # RHEL 9 doesn't have the inconsolata font, so override the defaults.
-# This may be removed if RHEL ever adds the texlive-inconsolata package from Fedora.
+# This may be removed if RHEL ever adds the texlive-inconsolasta package from Fedora.
 # Or check `dnf provides '*/inconsolata.sty'` for a package that provides it.
 # https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Making-the-manuals
 ENV R_RD4PDF="times,hyper"

@@ -1,14 +1,14 @@
 #! /bin/sh
 
-R_LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2023.2.0/lib/intel64/:/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin
+R_LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib/intel64/
 
-CC=/opt/intel/oneapi/compiler/2023.2.1/linux/bin/icx
-CXX=/opt/intel/oneapi/compiler/2023.2.1/linux/bin/icpx
-FC=/opt/intel/oneapi/compiler/2023.2.1/linux/bin/ifx
+CC=/opt/intel/oneapi/compiler/2024.2/bin/icx
+CXX=/opt/intel/oneapi/compiler/2024.2/bin/icpx
+FC=/opt/intel/oneapi/compiler/2024.2//bin/ifx
 CFLAGS="-O3 -fp-model precise -Wall -Wstrict-prototypes"
 C17FLAGS="-O3 -fp-model precise -Wall -Wno-strict-prototypes"
 FFLAGS="-O3 -fp-model precise -warn all,noexternals"
 FCFLAGS="-free -O3 -fp-model precise -warn all,noexternals"
 CXXFLAGS="-O3 -fp-model precise -Wall"
-LDFLAGS="-L/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin"
-MAIN_LDFLAGS="-L/opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin -lifport -limf -lintlc  -lifcoremt -lirc -lirng -lsvml"
+LDFLAGS="-L/opt/intel/oneapi/mkl/2024.2/lib/intel64/"
+MAIN_LDFLAGS="-L/opt/intel/oneapi/mkl/2024.2/lib/intel64/ -lifport -limf -lintlc  -lifcoremt -lirc -lirng -lsvml"
