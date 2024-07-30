@@ -26,6 +26,13 @@ ENV LC_COLLATE C
 ENV LANG en_US.UTF-8
 ENV TZ UTC
 
+# useful for R CMD check
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y devscripts && \
+    apt-get clean
+
 # check config
 
 ENV _R_CHECK_BASHISMS_=false
