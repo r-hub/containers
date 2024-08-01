@@ -30,7 +30,7 @@ docker_pull <- function(name) {
   processx::run(
     echo = TRUE,
     "docker",
-    c("pull", name, "--platform=linux/amd64")
+    c("pull", name)
   )
 }
 
@@ -102,11 +102,11 @@ docker_inspect <- function(name, property) {
   ans
 }
 
-docker_run <- function(name, cmd, platform = "linux/amd64") {
+docker_run <- function(name, cmd) {
   processx::run(
     echo_cmd = TRUE,
     "docker",
-    c("run", "--rm", paste0("--platform=", platform), name, cmd)
+    c("run", "--rm", name, cmd)
   )$stdout
 }
 
