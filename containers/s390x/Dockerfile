@@ -33,6 +33,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y devscripts && \
     apt-get clean
 
+# Copy check script
+
+COPY r-check /usr/local/bin
+
 # check config
 
 ENV _R_CHECK_BASHISMS_=false
