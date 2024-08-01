@@ -18,4 +18,12 @@ conts = os.listdir("containers")
 if args.containers != 'all':
     containers = args.containers.split(",")
     conts = [ p for p in containers if p in conts ]
-print(json.dumps(conts))
+
+# some hardcoded platforms
+platforms = { 's390x': 'linux/s390x' }
+conf = [ {
+    'container': c,
+    'platform': platforms[c] if c in platforms else 'linux/amd64'
+} for c in conts ]
+
+print(json.dumps(conf))

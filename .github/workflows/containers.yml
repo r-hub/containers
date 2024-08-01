@@ -44,15 +44,15 @@ jobs:
     if: ${{ github.event.inputs.inpcont == '' || github.event.inputs.inpcont == 'yes' }}
     runs-on: ubuntu-latest
     outputs:
-      containers: ${{ steps.setup-matrix.outputs.containers }}
+      config: ${{ steps.setup-matrix.outputs.config }}
 
     steps:
     - uses: actions/checkout@v4
     - name: Set up matrix of containers
       id: setup-matrix
       run: |
-        containers=$(python tests/get-containers.py ${{ github.event.inputs.inpwhichcont }})
-        echo "containers=$containers" >> $GITHUB_OUTPUT
+        config=$(python tests/get-containers.py ${{ github.event.inputs.inpwhichcont }})
+        echo "config=$config" >> $GITHUB_OUTPUT
 
   # ------------------------------------------------------------------------
 
@@ -62,9 +62,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        container: ${{ fromJson(needs.setup-matrix.outputs.containers) }}
+        config: ${{ fromJson(needs.setup-matrix.outputs.config) }}
     runs-on: ubuntu-latest
-    name: ${{ matrix.container }}
+    name: ${{ matrix.config.container }}
 
     steps:
     # needed for bigger Docker images, if there isn't enough space, then
@@ -117,9 +117,9 @@ jobs:
     - name: Build
       uses: docker/build-push-action@v5
       with:
-        platforms: linux/amd64
+        platforms: ${{ matrix.config.platform || 'linux/amd64' }}
         provenance: false
-        context: containers/${{ matrix.container }}
+        context: containers/${{ matrix.config.container }}
         load: true
         tags: |
           rhub/test:test
@@ -131,14 +131,14 @@ jobs:
     - name: Push
       uses: docker/build-push-action@v5
       with:
-        platforms: linux/amd64
+        platforms: ${{ matrix.config.platform || 'linux/amd64' }}
         provenance: false
-        context: containers/${{ matrix.container }}
+        context: containers/${{ matrix.config.container }}
         push: true
         outputs:
         tags: |
-          rhub/${{ matrix.container }}:latest
-          ghcr.io/r-hub/containers/${{ matrix.container }}:latest
+          rhub/${{ matrix.config.container }}:latest
+          ghcr.io/r-hub/containers/${{ matrix.config.container }}:latest
 
   # ------------------------------------------------------------------------
 
