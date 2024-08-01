@@ -54,6 +54,7 @@ And these additional containers:
 
 |R-hub name | Description                                                      | OS                     | R version                        | Details                                |
 |:----------|:-----------------------------------------------------------------|:-----------------------|:---------------------------------|----------------------------------------|
+| s390x     | Test on a big-endian platform: s390x Linux                       | `r os_name("s390x")`   | `r r_ver("s390x")`               | [Details](containers.html#s390x)       |
 | centos7   | Test R on CentOS 7 (equivalent to RHEL 7), w/ multiple R versions| `r os_name("centos7")` | Last 5 releases, R-next, R-devel | [Details](containers.html#centos7)     |
 
 All containers are available from
