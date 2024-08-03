@@ -3,7 +3,11 @@ FROM centos:7
 
 WORKDIR /root
 
-RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN yum install -y https://dl.fedoraproject.org/pub/archive/epel/7/$(arch)/Packages/e/epel-release-7-14.noarch.rpm || \
+    yum install -y https://dl.fedoraproject.org/pub/archive/epel/7/$(arch)/Packages/e/epel-release-7-12.noarch.rpm
+
+# Use vault.centos.org since CentOS 7 is EOL and the official mirrors are no longer available
+RUN sed -i -e 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/*
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
