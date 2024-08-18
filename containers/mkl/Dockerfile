@@ -72,8 +72,10 @@ COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
 # Useful system packages
+# openblas-threads is needed for binary packages linking to LAPACK, built on vanilla Fedora
 
-RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy procps
+RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy procps openblas-threads && \
+    dnf clean all
 
 # ------------------------------------------------------------------------------------
 # Copy MKL environment
