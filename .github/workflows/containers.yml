@@ -117,7 +117,7 @@ jobs:
     - name: Build
       uses: docker/build-push-action@v5
       with:
-        platforms: ${{ matrix.config.platform || 'linux/amd64' }}
+        platforms: ${{ matrix.config.testplatform || 'linux/amd64' }}
         secret-envs: |
           REDHAT_ORG_RHEL7=REDHAT_ORG_RHEL7
           REDHAT_ORG_RHEL8=REDHAT_ORG_RHEL8
@@ -146,6 +146,13 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         platforms: ${{ matrix.config.platform || 'linux/amd64' }}
+        secret-envs: |
+          REDHAT_ORG_RHEL7=REDHAT_ORG_RHEL7
+          REDHAT_ORG_RHEL8=REDHAT_ORG_RHEL8
+          REDHAT_ORG_RHEL9=REDHAT_ORG_RHEL9
+          REDHAT_ACTIVATION_KEY_RHEL7=REDHAT_ACTIVATION_KEY_RHEL7
+          REDHAT_ACTIVATION_KEY_RHEL8=REDHAT_ACTIVATION_KEY_RHEL8
+          REDHAT_ACTIVATION_KEY_RHEL9=REDHAT_ACTIVATION_KEY_RHEL9
         provenance: false
         context: containers/${{ matrix.config.container }}
         push: true
@@ -153,6 +160,13 @@ jobs:
         tags: |
           rhub/${{ matrix.config.container }}:latest
           ghcr.io/r-hub/containers/${{ matrix.config.container }}:latest
+      env:
+        REDHAT_ORG_RHEL7: ${{ secrets.REDHAT_ORG }}
+        REDHAT_ORG_RHEL8: ${{ secrets.REDHAT_ORG }}
+        REDHAT_ORG_RHEL9: ${{ secrets.REDHAT_ORG }}
+        REDHAT_ACTIVATION_KEY_RHEL7: ${{ secrets.REDHAT_ACTIVATION_KEY_RHEL7 }}
+        REDHAT_ACTIVATION_KEY_RHEL8: ${{ secrets.REDHAT_ACTIVATION_KEY_RHEL8 }}
+        REDHAT_ACTIVATION_KEY_RHEL9: ${{ secrets.REDHAT_ACTIVATION_KEY_RHEL9 }}
 
   # ------------------------------------------------------------------------
 
