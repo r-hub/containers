@@ -19,10 +19,18 @@ if args.containers != 'all':
     containers = args.containers.split(",")
     conts = [ p for p in containers if p in conts ]
 
-# some hardcoded platforms
-platforms = { 's390x': 'linux/s390x' }
+# some hardcoded platforms and secrets
+testplatforms = {
+    's390x': 'linux/s390x'
+}
+platforms = {
+    's390x': 'linux/s390x',
+    'rhel8': 'linux/amd64,linux/arm64',
+    'rhel9': 'linux/amd64,linux/arm64'
+}
 conf = [ {
     'container': c,
+    'testplatform': testplatforms[c] if c in testplatforms else 'linux/amd64',
     'platform': platforms[c] if c in platforms else 'linux/amd64'
 } for c in conts ]
 
