@@ -26,7 +26,7 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL8 \
         --activationkey `cat /run/secrets/REDHAT_ACTIVATION_KEY_RHEL8` && \
     yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-latest-1.$(arch).rpm && \
     rig add ${R_VERSION} && \
-    yum install -y harfbuzz-devel fribidi-devel && \
+    yum install -y harfbuzz-devel fribidi-devel glibc-langpack-en & \
     yum clean all && \
     rm -rf /tmp/* && \
     subscription-manager unregister
