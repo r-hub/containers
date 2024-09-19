@@ -35,3 +35,6 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL7 \
     yum clean all && \
     rm -rf /tmp/* && \
     subscription-manager unregister
+
+# For R CMD check
+ENV _R_CHECK_BASHISMS_=false
