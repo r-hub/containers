@@ -32,4 +32,7 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL8 \
     subscription-manager unregister
 
 # For R CMD check
-ENV _R_CHECK_BASHISMS_=false
+
+RUN curl -o /usr/local/bin/checkbashisms \
+    https://raw.githubusercontent.com/r-hub/containers/main/dependencies/checkbashisms/checkbashisms && \
+    chmod +x /usr/local/bin/checkbashisms
