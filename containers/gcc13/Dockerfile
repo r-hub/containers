@@ -67,6 +67,15 @@ COPY r-check /usr/local/bin
 RUN dnf -y install pkg-config devscripts-checkbashisms qpdf git tidy
 
 # ------------------------------------------------------------------------------------
+# Makevars
+
+RUN mkdir -p /root/.R
+COPY Makevars /root/.R
+# we need to set this, because GHA changes $HOME:
+# https://github.com/actions/runner/issues/863
+ENV R_MAKEVARS_USER=/root/.R/Makevars
+
+# ------------------------------------------------------------------------------------
 # CRAN's config from https://www.stats.ox.ac.uk/pub/bdr/gcc13/README.txt
 #
 # > Tests as for fedora-gcc but with GCC trunk aka pre-13.0.0 -- the
