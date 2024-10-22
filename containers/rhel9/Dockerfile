@@ -5,6 +5,7 @@ ARG R_VERSION=release
 # To work around a rig bug and a pak bug
 ENV RIG_PLATFORM=rhel-9
 ENV PKG_SYSREQS_PLATFORM=redhat-9
+ENV LANG=en_US.UTF-8
 
 # ## Notes
 #
