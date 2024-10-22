@@ -28,7 +28,7 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL9 \
     yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-latest-1.$(arch).rpm && \
     rig add ${R_VERSION} && \
     sed -i 's|/rhel8/|/rhel9/|g' /opt/R/current/lib/R/library/base/R/Rprofile && \
-    yum install -y git libgit2 fribidi-devel glibc-langpack-en && \
+    yum install -y --allowerasing fribidi-devel glibc-langpack-en diffutils perl libcurl && \
     yum clean all && \
     rm -rf /tmp/* && \
     subscription-manager unregister
