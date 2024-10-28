@@ -141,6 +141,9 @@ jobs:
     - name: Test
       run: |
         docker run rhub/test:test R --version
+        docker run rhub/test:test sh -c '$(R CMD config CC) --version'
+        docker run rhub/test:test sh -c '$(R CMD config CXX) --version'
+        docker run rhub/test:test sh -c '$(R CMD config FC) --version'
 
     - name: Push
       uses: docker/build-push-action@v5
