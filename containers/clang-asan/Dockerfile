@@ -15,18 +15,18 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 18
+# clang 19
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main" \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-18 libc++abi-18-dev libc++-18-dev libomp-18-dev flang-18 && \
+    apt-get install -y clang-19 libc++abi-19-dev libc++-19-dev libomp-19-dev flang-19 && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
          > /etc/apt/sources.list.d/rhub.list && \
     curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install protobuf-clang18 jags-clang18 imagemagick-clang18 poppler-clang18
+    apt-get install protobuf-clang19 jags-clang19 imagemagick-clang19 poppler-clang19
 
 # ------------------------------------------------------------------------------------
 # Useful system packages, some are needed for R CMD check
