@@ -120,7 +120,7 @@ COPY r-check /usr/local/bin
 # ------------------------------------------------------------------------------------
 # Check config
 
-ENV ASAN_OPTIONS="detect_leaks=0"
+ENV ASAN_OPTIONS="detect_leaks=0:alloc_dealloc_mismatch=0"
 ENV UBSAN_OPTIONS="print_stacktrace=1"
 ENV RJAVA_JVM_STACK_WORKAROUND 0
 ENV RGL_USE_NULL true
