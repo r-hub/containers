@@ -1,4 +1,3 @@
-
 FROM fedora:40
 
 # ------------------------------------------------------------------------------------
@@ -14,6 +13,11 @@ RUN dnf -y upgrade && \
 # Extra system packages that pak does not know about
 RUN dnf install -y flexiblas
 RUN dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
+
+# ------------------------------------------------------------------------------------
+# Install development tools and sanitizers
+
+RUN dnf -y install libasan libubsan
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
@@ -43,6 +47,12 @@ RUN if [ "$(arch)" = "x86_64" ]; then \
 
 RUN /opt/R/devel-gcc14/bin/R -q -e \
     'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+
+# ------------------------------------------------------------------------------------
+# Install pkgbuild, rcmdcheck, and decor
+
+RUN /opt/R/devel-gcc14/bin/R -q -e \
+    'install.packages(c("pkgbuild", "rcmdcheck", "decor"), repos = "https://cran.rstudio.com")'
 
 # ------------------------------------------------------------------------------------
 # Locale
@@ -129,10 +139,8 @@ RUN echo -e '# Support --use-LTO\nLTO_OPT = -flto=10\nLTO_FC_OPT = -flto=10' >> 
 # UBSAN and ASAN configuration
 # adapted from https://www.stats.ox.ac.uk/pub/bdr/memtests/README.txt
 
-RUN echo -e 'CC=gcc-14\nCXX="g++-14 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer"\nCFLAGS="-g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wp,-D_FORTIFY_SOURCE=3"\nFC=gfortran-14\nFFLAGS="-g -O2 -mtune=native"\nCXXFLAGS="-g -O2 -Wall -pedantic -mtune=native"\nMAIN_LDFLAGS="-fsanitize=address,undefined -pthread"' >> /opt/R/devel-gcc14/lib/R/etc/Makeconf
-
-RUN echo -e 'CC = gcc-14 -std=gnu99 -fsanitize=address,undefined -fno-omit-frame-pointer\nFC = gfortran-14 -fsanitize=address' >> ~/.R/Makevars
-
+RUN mkdir -p ~/.R/ && echo -e 'CC=gcc -std=gnu11 -fsanitize=address,undefined -fno-omit-frame-pointer\nFC=gfortran -fsanitize=address' >> ~/.R/Makevars
+ENV LD_PRELOAD=/usr/lib64/libasan.so.8
 ENV ASAN_OPTIONS='detect_leaks=0'
 ENV UBSAN_OPTIONS='print_stacktrace=1'
 ENV RJAVA_JVM_STACK_WORKAROUND=0
