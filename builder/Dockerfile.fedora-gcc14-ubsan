@@ -43,6 +43,8 @@ RUN dnf -y upgrade \
     wget \
     xz-devel \
     zlib-devel \
+    libasan \
+    libubsan \
     && dnf clean all
 
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch

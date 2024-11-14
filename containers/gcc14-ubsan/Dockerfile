@@ -15,11 +15,6 @@ RUN dnf install -y flexiblas
 RUN dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
-# Install development tools and sanitizers
-
-RUN dnf -y install libasan libubsan
-
-# ------------------------------------------------------------------------------------
 # Put R on PATH
 # Auto-install system requirements
 
