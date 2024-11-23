@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+set -e
+
 MAKEVARS=`mktemp`
 cat >$MAKEVARS <<EOF
 CPICFLAGS=-fPIC
