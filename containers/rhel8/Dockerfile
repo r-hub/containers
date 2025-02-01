@@ -6,6 +6,7 @@ ARG R_VERSION=release
 ENV RIG_PLATFORM=rhel-8
 ENV PKG_SYSREQS_PLATFORM=redhat-8
 ENV LANG=en_US.UTF-8
+ENV TZ=UTC
 
 # ## Notes
 #
