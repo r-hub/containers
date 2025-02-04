@@ -54,7 +54,7 @@ RUN curl -o /usr/local/bin/checkbashisms \
 # ------------------------------------------------------------------------------------
 # Update the system config, because the user Makevars is ignored
 # for some packages
-RUN app="-fsanitize=undefined -fno-sanitize=function -fno-omit-frame-pointer"
+RUN app="-fsanitize=undefined -fno-sanitize=function -fno-omit-frame-pointer" \
     appxx="$app -frtti"; \
     makeconf="/opt/R/devel-asan/lib/R/etc/Makeconf"; \
     sed -i -E '/^CC ?=/ s/$/ '"$app"/ "${makeconf}" && \
