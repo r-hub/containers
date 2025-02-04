@@ -34,7 +34,7 @@ Plus the following containers for additional CRAN checks:
 |ATLAS       | atlas      | Tests with alternative BLAS/LAPACK implementations               | `r os_name("atlas")`              | `r r_ver("atlas")`      | [Details](containers.html#atlas)       |
 |C23         | c23        | Checks of compiling C code in C23 mode                           | `r os_name("c23")`, libc++        | `r r_ver("c23")`    | [Details](containers.html#c23)             |
 |clang-ASAN  | clang-asan | Tests of memory access errors using AddressSanitizer             | `r os_name("clang-asan")`, libc++ | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
-|clang-UBSAN | clang-unsan | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-ubsan")`, libc++ | `r r_ver("clang-ubsan")` | [Details](containers.html#clang-ubsan)  |
+|clang-UBSAN | clang-ubsan | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-ubsan")`, libc++ | `r r_ver("clang-ubsan")` | [Details](containers.html#clang-ubsan)  |
 |clang16     | clang16    | Checks with Clang 16.0.0                                         | `r os_name("clang16")`, libc++    | `r r_ver("clang16")`    | [Details](containers.html#clang16)     |
 |clang17     | clang17    | Checks with LLVM pre-17.0.0                                      | `r os_name("clang17")`, libc++    | `r r_ver("clang17")`    | [Details](containers.html#clang17)     |
 |clang18     | clang18    | Checks with LLVM pre-18.0.0                                      | `r os_name("clang18")`, libc++    | `r r_ver("clang18")`    | [Details](containers.html#clang18)     |
