@@ -1,0 +1,41 @@
+diff --git a/src/library/tcltk/src/tcltk.c b/src/library/tcltk/src/tcltk.c
+index a326ddb..ad35a37 100644
+--- a/src/library/tcltk/src/tcltk.c
++++ b/src/library/tcltk/src/tcltk.c
+@@ -331,7 +331,7 @@ SEXP RTcl_StringFromObj(SEXP args)
+ 
+ SEXP RTcl_ObjAsCharVector(SEXP args)
+ {
+-    int count;
++    Tcl_Size count;
+     Tcl_Obj **elem, *obj;
+     int ret, i;
+     SEXP ans;
+@@ -405,7 +405,7 @@ SEXP RTcl_ObjFromCharVector(SEXP args)
+ 
+ SEXP RTcl_ObjAsDoubleVector(SEXP args)
+ {
+-    int count;
++    Tcl_Size count;
+     Tcl_Obj **elem, *obj;
+     int ret, i;
+     double x;
+@@ -470,7 +470,7 @@ SEXP RTcl_ObjFromDoubleVector(SEXP args)
+ 
+ SEXP RTcl_ObjAsIntVector(SEXP args)
+ {
+-    int count;
++    Tcl_Size ount;
+     Tcl_Obj **elem, *obj;
+     int ret, i;
+     int x;
+@@ -525,7 +525,8 @@ SEXP RTcl_ObjFromIntVector(SEXP args)
+ 
+ SEXP RTcl_ObjAsRawVector(SEXP args)
+ {
+-    int nb, count, i, j;
++    Tcl_Size nb, count;
++    int i, j;
+     Tcl_Obj **elem, *obj;
+     unsigned char *ret;
+     SEXP ans, el;

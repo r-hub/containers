@@ -120,6 +120,20 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
+  fedora-gcc15:
+    platform: linux/amd64
+    command: ./build.sh
+    environment:
+      - R_VERSION=devel
+      - R_TYPE=-gcc15
+      - LOCAL_STORE=/tmp/output
+    build:
+      context: .
+      dockerfile: builder/Dockerfile.fedora-gcc15
+    image: rhub/fedora-gcc14:latest
+    volumes:
+      - ./integration/tmp:/tmp/output
+      
   fedora-mkl:
     platform: linux/amd64
     command: ./build.sh

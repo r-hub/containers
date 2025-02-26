@@ -40,6 +40,27 @@ fetch_r_source() {
   rm /tmp/R-${1}.tar.gz
 }
 
+# Apply a patch for this R version if present. Typically for R-devel.
+patch_r() {
+  cd /tmp/R-${1}
+
+  if [ -f "/patches/R-${OS_IDENTIFIER}.patch" ]; then
+      patch -p1 < "/patches/R-${OS_IDENTIFIER}.patch"
+  fi
+
+  if [ -f "/patches/R-${1}.patch" ]; then
+      patch -p1 < "/patches/R-${1}.patch"
+  fi
+
+  if [ -f "/patches/R-${1}-${OS_IDENTIFIER}.patch" ]; then
+      patch -p1 < "/patches/R-${1}-${OS_IDENTIFIER}.patch"
+  fi
+
+  if [ -f "/patches/R-${1}-`arch`.patch" ]; then
+      patch -p1 < "/patches/R-${1}-`arch`.patch"
+  fi
+}
+
 # compile_r() - $1 as r version
 compile_r() {
   cd /tmp/R-${1}
@@ -168,6 +189,7 @@ _version_is_less_than() {
 ###### RUN R COMPILE PROCEDURE ######
 set_up_environment
 fetch_r_source $R_VERSION
+patch_r $R_VERSION
 compile_r $R_VERSION $R_TYPE
 package_r $R_VERSION $R_TYPE
 archive_r $R_VERSION $R_TYPE
