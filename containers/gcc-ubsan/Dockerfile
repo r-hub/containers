@@ -63,17 +63,6 @@ RUN /opt/R/devel-gcc14/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWa
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
-# Sanitizer libs are needed
-
-RUN dnf -y install libasan libubsan
-RUN sed -i '1 a\export LD_PRELOAD="/usr/lib64/libasan.so.8:/usr/lib64/libubsan.so.1"' /opt/R/devel-gcc14/bin/R
-RUN mv /opt/R/devel-gcc14/bin/Rscript /opt/R/devel-gcc14/bin/Rscript2
-RUN echo '#!/usr/bin/env bash' >> /opt/R/devel-gcc14/bin/Rscript && \
-    echo 'export LD_PRELOAD="/usr/lib64/libasan.so.8:/usr/lib64/libubsan.so.1"' >> /opt/R/devel-gcc14/bin/Rscript && \
-    echo 'Rscript2 "$@"' >> /opt/R/devel-gcc14/bin/Rscript && \
-    chmod +x /opt/R/devel-gcc14/bin/Rscript
-
-# ------------------------------------------------------------------------------------
 # Useful system packages
 
 RUN dnf -y install pkg-config devscripts-checkbashisms qpdf git tidy
@@ -134,34 +123,5 @@ ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
 
-# ------------------------------------------------------------------------------------
-# Update the system config, because the user Makevars is ignored
-# for some packages
-# 1. update CC and CXX calls
-# 2. set CFLAGS, CXXFLAGS, MAIN_LDFLAGS
-# 3. set FFLAGS
-# 4. set LTO and LTO_OPT
-RUN app="-fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer "; \
-    cf="-g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation  -Wno-alloc-size-larger-than"; \
-    cxf="-g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation  -Wno-alloc-size-larger-than"; \
-    mld="-fsanitize=address,undefined -pthread"; \
-    ff="-g -O2 -mtune=native"; \
-    makeconf="/opt/R/devel-gcc14/lib/R/etc/Makeconf"; \
-    sed -i -E '/^CC ?=/ s/$/ '"$app"/ "${makeconf}" && \
-    sed -i -E '/^CC[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
-    sed -i -E '/^CXX ?=/ s/$/ '"$app"/ "${makeconf}" && \
-    sed -i -E '/^CXX[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
-    sed -i 's/^CFLAGS\b.*$/CFLAGS ='"$cf"/ "${makeconf}" && \
-    sed -i 's/^C\([0-9][0-9]\)FLAGS\b.*$/C\1FLAGS = '"$cf"/ "${makeconf}" && \
-    sed -i 's/^CXXFLAGS\b.*$/CXXFLAGS ='"$cxf"/ "${makeconf}" && \
-    sed -i 's/^CXX\([0-9][0-9]\)FLAGS\b.*$/CXX\1FLAGS ='"$cxf"/ "${makeconf}"&& \
-    sed -i 's/^MAIN_LDFLAGS\b.*$/MAIN_LDFLAGS = '"$mld"/ "${makeconf}" && \
-    sed -i 's/^FFLAGS\b.*$/FFLAGS = '"$ff"/ "${makeconf}" && \
-    sed -i 's/^LTO\b.*$/LTO = -flto=10/' "${makeconf}" && \
-    sed -i 's/^LTO_OPT\b.*$/LTO_OPT = -flto/' "${makeconf}"
-
-ENV ASAN_OPTIONS='detect_leaks=0'
-ENV UBSAN_OPTIONS='print_stacktrace=1'
-ENV RJAVA_JVM_STACK_WORKAROUND=0
-ENV RGL_USE_NULL=true
-ENV R_DONT_USE_TK=true
+# Support R CMD INSTALL --use-LTO ., similarly to CRAN at https://www.stats.ox.ac.uk/pub/bdr/LTO/README.txt
+RUN echo -e '# Support --use-LTO\nLTO_OPT = -flto=10\nLTO_FC_OPT = -flto=10' >> /opt/R/devel-gcc14/lib/R/etc/Makeconf
