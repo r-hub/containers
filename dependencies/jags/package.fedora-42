@@ -1,0 +1,25 @@
+
+cat <<EOF > /tmp/nfpm.yml
+name: jags
+version: 4.3.2
+arch: $(cat /tmp/arch)
+release: 1
+maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+description: |
+  Just Another Gibbs Sampler
+vendor: Gabor Csardi
+homepage: https://mcmc-jags.sourceforge.io/
+license: GPLv2
+depends:
+- libstdc++
+- glibc
+- libgcc
+contents:
+- src: /opt/jags
+  dst: /
+EOF
+
+nfpm package \
+  -f /tmp/nfpm.yml \
+  -p rpm \
+  -t /root
