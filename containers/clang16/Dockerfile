@@ -166,3 +166,7 @@ ENV _R_CHECK_RD_MATH_RENDERING_ true
 ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"
 ENV _R_CHECK_BASHISMS_=false
+
+# ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

@@ -38,3 +38,6 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL7 \
 
 # For R CMD check
 ENV _R_CHECK_BASHISMS_=false
+
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

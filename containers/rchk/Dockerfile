@@ -73,6 +73,10 @@ RUN /opt/R/devel-rchk/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWar
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Config for r-hub/actions
 
 ENV RHUB_ACTIONS_DEPS_DEPENDENCIES='list(direct = "LinkingTo", indirect = "hard")'

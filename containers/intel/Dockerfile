@@ -96,6 +96,10 @@ ENV SETVARS_ARGS --config=/opt/mklconfig.txt
 COPY mklconfig.txt /opt/mklconfig.txt
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 ENV CHECK_ARGS="--no-manual --no-build-vignettes"

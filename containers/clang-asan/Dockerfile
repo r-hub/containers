@@ -134,3 +134,7 @@ ENV R_DATATABLE_NUM_THREADS=2
 
 ENV _R_CHECK_TESTS_NLINES_="0"
 ENV CHECK_ARGS="--extra-arch --no-stop-on-test-error"
+
+# ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

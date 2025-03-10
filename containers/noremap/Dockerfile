@@ -118,6 +118,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
          >> /opt/R/devel/lib/R/library/base/R/Rprofile
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Check config from https://www.stats.ox.ac.uk/pub/bdr/noRemap/00README.txt
 # Tests using _R_CXX_NO_REMAP_= true, which compiles C++ code with
 # R_NO_REMAP defined.  Otherwise as for the fedora-gcc checks:

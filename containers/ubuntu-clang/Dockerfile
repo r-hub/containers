@@ -106,6 +106,10 @@ RUN curl -o /usr/local/bin/checkbashisms \
     chmod +x /usr/local/bin/checkbashisms
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 # From https://svn.r-project.org/R-dev-web/trunk/CRAN/QA/Kurt/.R/check.Renviron

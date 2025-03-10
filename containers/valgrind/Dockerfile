@@ -77,6 +77,10 @@ RUN cat valgrind.supp >> /usr/libexec/valgrind/default.supp && \
 ENV VALGRIND_OPTS="--track-origins=yes --leak-check=full"
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 ENV RJAVA_JVM_STACK_WORKAROUND 0

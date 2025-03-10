@@ -76,6 +76,10 @@ RUN curl -o /usr/local/bin/checkbashisms \
     chmod +x /usr/local/bin/checkbashisms
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Check config
 
 ENV _R_CHECK_TESTS_NLINES_="0"

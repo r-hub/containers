@@ -165,3 +165,7 @@ ENV UBSAN_OPTIONS='print_stacktrace=1'
 ENV RJAVA_JVM_STACK_WORKAROUND=0
 ENV RGL_USE_NULL=true
 ENV R_DONT_USE_TK=true
+
+# ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

@@ -87,3 +87,7 @@ ENV _R_CHECK_THINGS_IN_OTHER_DIRS_=true
 ENV _R_CHECK_THINGS_IN_OTHER_DIRS_EXCLUDE_=/opt/R/devel/lib/R/etc/exclude
 RUN curl -L https://raw.githubusercontent.com/r-devel/r-dev-web/345a85338c9ecb31c6ea6a25e688833e232185aa/CRAN/QA/BDR/blackswan/exclude \
     -o /opt/R/devel/lib/R/etc/exclude
+
+# ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

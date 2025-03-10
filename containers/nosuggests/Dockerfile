@@ -83,6 +83,10 @@ ENV PATH="/root/.TinyTeX/bin/x86_64-linux:/root/.TinyTeX/bin/aarch64-linux:${PAT
 COPY r-check /usr/local/bin
 
 # ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
+# ------------------------------------------------------------------------------------
 # Check config
 # https://github.com/r-devel/r-dev-web/blob/master/CRAN/QA/BDR/gannet/packages/incoming/check-noSuggests
 

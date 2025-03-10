@@ -40,3 +40,6 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL9 \
 RUN curl -o /usr/local/bin/checkbashisms \
     https://raw.githubusercontent.com/r-hub/containers/main/dependencies/checkbashisms/checkbashisms && \
     chmod +x /usr/local/bin/checkbashisms
+
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

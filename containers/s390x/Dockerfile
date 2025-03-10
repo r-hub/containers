@@ -33,6 +33,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y devscripts && \
     apt-get clean
 
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+
 # Copy check script
 
 COPY r-check /usr/local/bin

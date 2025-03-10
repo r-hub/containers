@@ -125,3 +125,7 @@ ENV _R_CHECK_BASHISMS_=false
 
 # Support R CMD INSTALL --use-LTO ., similarly to CRAN at https://www.stats.ox.ac.uk/pub/bdr/LTO/README.txt
 RUN echo -e '# Support --use-LTO\nLTO_OPT = -flto=10\nLTO_FC_OPT = -flto=10' >> /opt/R/devel-gcc14/lib/R/etc/Makeconf
+
+# ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
