@@ -86,5 +86,4 @@ COPY builder/config.fedora-gcc.aarch64 /config.site.aarch64
 
 COPY builder/package.fedora-gcc15 /package.sh
 COPY build.sh .
-COPY patches /patches
 ENTRYPOINT ./build.sh
