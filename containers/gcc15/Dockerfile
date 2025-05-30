@@ -12,8 +12,8 @@ RUN dnf -y upgrade && \
     rm R-*.rpm
 
 # Extra system packages that pak does not know about
-RUN dnf install -y flexiblas
-RUN dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
+RUN dnf install -y flexiblas awk && \
+    dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
