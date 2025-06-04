@@ -94,6 +94,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y clang-20 libc++abi-20-dev libc++-20-dev libomp-20-dev flang-20 && \
     apt-get clean
 
+# check for a packaging bug
+# https://github.com/r-hub/containers/issues/93
+RUN [ -f /usr/lib/x86_64-linux-gnu/libc++.so.1 ]
+
 RUN mkdir -p /root/.R
 COPY Makevars /root/.R
 # we need to set this, because GHA changes $HOME:
