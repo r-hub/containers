@@ -34,7 +34,7 @@ Plus the following containers for additional CRAN checks:
 |ATLAS       | atlas      | Tests with alternative BLAS/LAPACK implementations               | `r os_name("atlas")`              | `r r_ver("atlas")`      | [Details](containers.html#atlas)       |
 |C23         | c23        | Checks of compiling C code in C23 mode                           | `r os_name("c23")`, libc++        | `r r_ver("c23")`    | [Details](containers.html#c23)             |
 |clang-ASAN  | clang-asan | Tests of memory access errors using AddressSanitizer             | `r os_name("clang-asan")`, libc++ | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
-|clang-UBSAN | clang-ubsan | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-ubsan")`, libc++ | `r r_ver("clang-ubsan")` | [Details](containers.html#clang-ubsan)  |
+|clang-UBSAN | clang-ubsan| Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-ubsan")`, libc++| `r r_ver("clang-ubsan")`| [Details](containers.html#clang-ubsan) |
 |clang16     | clang16    | Checks with Clang 16.0.0                                         | `r os_name("clang16")`, libc++    | `r r_ver("clang16")`    | [Details](containers.html#clang16)     |
 |clang17     | clang17    | Checks with LLVM pre-17.0.0                                      | `r os_name("clang17")`, libc++    | `r r_ver("clang17")`    | [Details](containers.html#clang17)     |
 |clang18     | clang18    | Checks with LLVM pre-18.0.0                                      | `r os_name("clang18")`, libc++    | `r r_ver("clang18")`    | [Details](containers.html#clang18)     |
@@ -44,8 +44,8 @@ Plus the following containers for additional CRAN checks:
 |gcc13       | gcc13      | Checks with GCC trunk aka 13.0                                   | `r os_name("gcc13")`              | `r r_ver("gcc13")`      | [Details](containers.html#gcc13)       |
 |gcc14       | gcc14      | Checks with GCC trunk aka 14.0                                   | `r os_name("gcc14")`              | `r r_ver("gcc14")`      | [Details](containers.html#gcc14)       |
 |gcc15       | gcc15      | Checks with GCC trunk aka 15.0                                   | `r os_name("gcc15")`              | `r r_ver("gcc15")`      | [Details](containers.html#gcc15)       |
-|gcc-ASAN    | gcc-asan   | Tests of memory access errors using AddressSanitizer             | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)       |
-|gcc-UBSAN   | gcc-asan   | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)       |
+|gcc-ASAN    | gcc-asan   | Tests of memory access errors using AddressSanitizer             | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)    |
+|gcc-UBSAN   | gcc-asan   | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)    |
 |Intel       | intel      | Checks with Intel oneAPI 2023.x compilers                        | `r os_name("intel")`              | `r r_ver("intel")`      | [Details](containers.html#intel)       |
 |MKL         | mkl        | Tests with alternative BLAS/LAPACK implementations               | `r os_name("mkl")`                | `r r_ver("mkl")`        | [Details](containers.html#mkl)         |
 |noLD        | nold       | Tests without long double                                        | `r os_name("nold")`               | `r r_ver("nold")`       | [Details](containers.html#nold)        |
