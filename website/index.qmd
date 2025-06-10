@@ -47,6 +47,7 @@ Plus the following containers for additional CRAN checks:
 |gcc-ASAN    | gcc-asan   | Tests of memory access errors using AddressSanitizer             | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)    |
 |gcc-UBSAN   | gcc-asan   | Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)    |
 |Intel       | intel      | Checks with Intel oneAPI 2023.x compilers                        | `r os_name("intel")`              | `r r_ver("intel")`      | [Details](containers.html#intel)       |
+|LTO         | lto        | Tests for link-time optimization type mismatches                 | `r os_name("lto")`                | `r r_ver("lto")`        | [Details](containers.html#lto)         |
 |MKL         | mkl        | Tests with alternative BLAS/LAPACK implementations               | `r os_name("mkl")`                | `r r_ver("mkl")`        | [Details](containers.html#mkl)         |
 |noLD        | nold       | Tests without long double                                        | `r os_name("nold")`               | `r r_ver("nold")`       | [Details](containers.html#nold)        |
 |noRemap     | noremap    | Compile C++ code with R_NO_REMAP defined                         | `r os_name("noremap")`            | `r r_ver("noremap")`    | [Details](containers.html#noremap)     |
