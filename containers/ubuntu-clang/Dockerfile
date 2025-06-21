@@ -14,6 +14,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm r-*.deb && \
     apt-get clean
 
+# System requirements that pak does not know about
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y patch && \
+    apt-get clean
+
 # ------------------------------------------------------------------------------------
 # clang 15, gfortran 12
 RUN export DEBIAN_FRONTEND=noninteractive && \

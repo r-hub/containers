@@ -9,6 +9,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y r-rig && \
     rig add devel --without-pak
 
+# System requirements that pak does not know about
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y patch && \
+    apt-get clean
+
 # ------------------------------------------------------------------------------------
 # TinyTeX, only available for x86_64
 

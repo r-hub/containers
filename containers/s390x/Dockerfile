@@ -10,6 +10,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04-s390x/4.3', getOption('repos')))" \
       >> /usr/lib/R/library/base/R/Rprofile
 
+# System requirements that pak does not know about
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y patch && \
+    apt-get clean
+
 # Install pak into system lib
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \

@@ -13,6 +13,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     ln -s /opt/R/* /opt/R/release && \
     apt-get clean
 
+# System requirements that pak does not know about
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y patch && \
+    apt-get clean
+
 # ------------------------------------------------------------------------------------
 # TinyTeX, only available for x86_64
 

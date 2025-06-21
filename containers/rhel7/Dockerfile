@@ -31,7 +31,7 @@ RUN --mount=type=secret,id=REDHAT_ORG_RHEL7 \
     yum install -y https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm && \
     yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-latest-1.$(arch).rpm && \
     rig add ${R_VERSION} && \
-    yum install -y harfbuzz-devel fribidi-devel libtiff-devel devscripts-minimal && \
+    yum install -y harfbuzz-devel fribidi-devel libtiff-devel devscripts-minimal patch && \
     yum clean all && \
     rm -rf /tmp/* && \
     subscription-manager unregister

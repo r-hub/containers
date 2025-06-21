@@ -21,7 +21,7 @@ RUN dnf -y upgrade && \
     rm R-*.rpm
 
 # Extra system packages that pak does not know about
-RUN dnf install -y gawk && \
+RUN dnf install -y gawk patch && \
     dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------

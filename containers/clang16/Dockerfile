@@ -16,6 +16,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm -rf /tmp/rig && \
     apt-get clean
 
+# System requirements that pak does not know about
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y patch && \
+    apt-get clean
+
 # ------------------------------------------------------------------------------------
 # Put R on PATH
 # AUto-install system requirements

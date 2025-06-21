@@ -13,6 +13,12 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt install -y ./r-*.deb && \
     apt-get clean
 
+# System requirements that pak does not know about
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y patch && \
+    apt-get clean
+
 # ------------------------------------------------------------------------------------
 # Put R on PATH
 # AUto-install system requirements
