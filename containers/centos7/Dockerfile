@@ -12,25 +12,15 @@ RUN sed -i -e 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.o
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
 
-ENV R_VERSIONS="devel next 4.2.2 4.1.3 4.0.5 3.6.3 3.5.3"
+RUN yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-latest-1.$(arch).rpm
 
-RUN ARCH="$(arch)"; \
-    if [ "$ARCH" = "x86_64" ]; then \
-      for R_VERSION in $R_VERSIONS; do \
-        curl -Os https://cdn.posit.co/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm; \
-        yum install -y R-${R_VERSION}-1-1.x86_64.rpm; \
-        rm R-${R_VERSION}-1-1.x86_64.rpm; \
-      done; \
-    fi
+ENV R_VERSIONS="devel next release oldrel/1 oldrel/2 oldrel/3 oldrel/4"
 
-RUN ARCH="$(arch)"; \
-    if [ "$ARCH" = "aarch64" ]; then \
-      for R_VERSION in $R_VERSIONS; do \
-        curl -OLs https://github.com/r-hub/R/releases/download/v${R_VERSION}/r-rstudio-centos-7-${R_VERSION}-1-1.aarch64.rpm; \
-        yum install -y r-rstudio-*.rpm; \
-        rm r-rstudio-*.rpm; \
-      done; \
-    fi
+RUN for R_VERSION in $R_VERSIONS; do \
+        rig add ${R_VERSION}; \
+        rm -rf /tmp/rig; \
+      done
+RUN rig default release
 
 # ------------------------------------------------------------------------------------
 # Auto-install system requirements
