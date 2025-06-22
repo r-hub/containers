@@ -31,7 +31,7 @@ ENV R_PKG_SYSREQS2=true
 # ------------------------------------------------------------------------------------
 # Set CRAN repo, no P3M for CentOS
 
-RUN for R_VERSION in $R_VERSIONS; do \
+RUN for R_VERSION in `ls /opt/R/`; do \
       echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
       >> /opt/R/${R_VERSION}/lib/R/library/base/R/Rprofile; \
     done
@@ -46,7 +46,7 @@ ENV LANG en_US.UTF-8
 # ------------------------------------------------------------------------------------
 # Install pak
 
-RUN for R_VERSION in $R_VERSIONS; do \
+RUN for R_VERSION in `ls /opt/R/`; do \
     /opt/R/${R_VERSION}/bin/R -q -e \
       'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'; \
     done
@@ -54,7 +54,7 @@ RUN for R_VERSION in $R_VERSIONS; do \
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
 
-RUN for R_VERSION in $R_VERSIONS; do \
+RUN for R_VERSION in `ls /opt/R/`; do \
       /opt/R/${R_VERSION}/bin/R -q -e \
         'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'; \
     done
