@@ -202,7 +202,7 @@ jobs:
     - name: Install R packages
       uses: r-lib/actions/setup-r-dependencies@v2
       with:
-        extra-packages: any::pkgload
+        extra-packages: any::pkgload, httr2@1.1.2
         working-directory: website
 
     - name: Build manifest
