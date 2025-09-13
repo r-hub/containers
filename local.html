@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d68be38d83eca2bb035acf846ffba811.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1713c1db1ad41a796903378fc9ac7b2b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,6 +115,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R-hub</span>
     </a>
@@ -212,17 +215,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Run <code>R CMD check</code> on a tarball</h1>
 <ol type="1">
 <li><p>Create a directory, e.g.&nbsp;<code>check</code>. E.g. on Unix:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Put the source R package into this directory, e.g.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"download.packages('cli', 'check')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"download.packages('cli', 'check')"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Start the container with the <code>check</code> directory mounted at <code>/check</code> and run the <code>r-check</code> command. E.g. for the <code>gcc13</code> image you would run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check ghcr.io/r-hub/containers/gcc13:latest r-check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check ghcr.io/r-hub/containers/gcc13:latest r-check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you are running this on a non-Intel machine (eg. an M1 mac), pass <code>--platform=linux/amd64</code> to <code>docker run</code>. Note that this will make Docker emulate an <code>x86_64</code> processor, which is usually 5-10 times slower than native execution.</p></li>
 <li><p>The result of the check will be in the <code>check</code> directory, in the usual <code>&lt;pkgname&gt;.Rcheck</code> directory.</p></li>
 </ol>
 <p>Here is the complete output from a check of a very simple package, that has no dependencies, only some system dependencies:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> check</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"download.packages('tiff', 'check')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> check</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"download.packages('tiff', 'check')"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>&gt; download.packages('tiff', 'check')
 trying URL 'https://cloud.r-project.org/src/contrib/tiff_0.1-11.tar.gz'
 Content type 'application/x-gzip' length 68157 bytes (66 KB)
@@ -231,8 +234,8 @@ downloaded 66 KB
 
      [,1]   [,2]
 [1,] "tiff" "check/tiff_0.1-11.tar.gz"</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--platform</span><span class="op">=</span>linux/amd64 <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check <span class="dt">\</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  ghcr.io/r-hub/containers/gcc13:latest r-check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--platform</span><span class="op">=</span>linux/amd64 <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  ghcr.io/r-hub/containers/gcc13:latest r-check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>Checking /check/tiff_0.1-11.tar.gz
 &gt; pak::pkg_install('deps::/check/tiff_0.1-11.tar.gz', dependencies = TRUE)
 
@@ -317,23 +320,23 @@ Status: 1 WARNING, 1 NOTE
 See
   ‘/check/tiff.Rcheck/00check.log’
 for details.</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> check/tiff.Rcheck/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> check/tiff.Rcheck/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>00_pkg_src/ 00install.out   tiff-Ex.R   tiff-Ex.pdf
 00check.log tiff/       tiff-Ex.Rout</code></pre>
 </section>
 <section id="interactive-debugging" class="level1">
 <h1>Interactive debugging</h1>
 <p>This is similar to running <code>R CMD check</code>, but start <code>bash</code> instead of <code>r-check</code>, and use <code>-ti</code> to create an interactive session:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check ghcr.io/r-hub/containers/gcc13:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check ghcr.io/r-hub/containers/gcc13:latest bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You’ll need to install the dependencies of the package. The easiest is to use pak, which is preinstalled in all containers. From the root directory of the extracted package call:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"pak::pkg_install('deps::.', dependencies = TRUE)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"pak::pkg_install('deps::.', dependencies = TRUE)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This installs all dependencies and system requirements of the package.</p>
 </section>
 <section id="multiple-r-versions" class="level1">
 <h1>Multiple R versions</h1>
 <p>Some container images (e.g.&nbsp;centos7) have multiple versions of R installed. You can use <code>rig ls</code> to list all versions, and <code>rig default &lt;name&gt;</code> to set the default one. To run <code>r-check</code> with a certain R version, set the <code>R_VERSION</code> environment variable for the container. E.g.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-ti</span> <span class="at">--rm</span>  <span class="at">--platform</span><span class="op">=</span>linux/amd64 <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check <span class="dt">\</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-e</span> <span class="st">"R_VERSION=3.6.3"</span> ghcr.io/r-hub/containers/centos7:latest r-check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-ti</span> <span class="at">--rm</span>  <span class="at">--platform</span><span class="op">=</span>linux/amd64 <span class="at">-v</span> <span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span>/check:/check <span class="dt">\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-e</span> <span class="st">"R_VERSION=3.6.3"</span> ghcr.io/r-hub/containers/centos7:latest r-check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -390,13 +393,14 @@ for details.</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
