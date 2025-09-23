@@ -1,5 +1,6 @@
 
 FROM fedora:42
+ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements

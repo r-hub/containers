@@ -1,5 +1,6 @@
 
 FROM ghcr.io/r-hub/containers/ubuntu-release:latest
+ENV R_HUB=true
 
 RUN makeconf="/opt/R/release/lib/R/etc/Makeconf"; \
     sed -i -E '/^LTO ?=/ s/$/ '"-flto"/ "${makeconf}" && \

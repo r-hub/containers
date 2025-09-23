@@ -1,4 +1,5 @@
 FROM registry.access.redhat.com/ubi7/ubi
+ENV R_HUB=true
 
 ARG R_VERSION=release
 

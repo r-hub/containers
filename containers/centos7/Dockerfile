@@ -1,5 +1,6 @@
 
 FROM centos:7
+ENV R_HUB=true
 
 WORKDIR /root
 

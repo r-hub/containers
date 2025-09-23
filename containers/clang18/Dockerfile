@@ -1,5 +1,6 @@
 
 FROM ubuntu:22.04
+ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements

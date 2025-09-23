@@ -1,5 +1,6 @@
 
 FROM ubuntu:22.04
+ENV R_HUB=true
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \

@@ -1,4 +1,5 @@
 FROM redhat/ubi8:latest
+ENV R_HUB=true
 
 ARG R_VERSION=release
 

@@ -1,5 +1,6 @@
 
 FROM --platform=linux/s390x ubuntu:24.04
+ENV R_HUB=true
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \

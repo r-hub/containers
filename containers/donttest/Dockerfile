@@ -1,5 +1,6 @@
 
 FROM ubuntu:22.04
+ENV R_HUB=true
 
 COPY rig.gpg /etc/apt/trusted.gpg.d/rig.gpg
 RUN echo "deb http://rig.r-pkg.org/deb rig main" > \
