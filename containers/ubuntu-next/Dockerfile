@@ -1,5 +1,5 @@
 
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 ENV R_HUB=true
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
@@ -49,11 +49,11 @@ ENV R_PKG_SYSREQS2=true
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/next/lib/R/library/base/R/Rprofile
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/jammy/latest", getOption("repos")))' \
+        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/noble/latest", getOption("repos")))' \
             >> /opt/R/next/lib/R/library/base/R/Rprofile; \
         curl -s https://api.r-hub.io/rversions/r-release | \
             sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-22.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
+        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' (ubuntu-24.04) R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
             >> /opt/R/next/lib/R/library/base/R/Rprofile; \
     fi
 
