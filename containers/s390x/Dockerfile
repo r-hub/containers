@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # Use R-hub repo
-RUN echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-22.04-s390x/4.3', getOption('repos')))" \
+RUN echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-24.04-s390x/4.3', getOption('repos')))" \
       >> /usr/lib/R/library/base/R/Rprofile
 
 # System requirements that pak does not know about
