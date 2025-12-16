@@ -16,9 +16,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y gnupg curl && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-20 main" \
          > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-20 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
@@ -56,7 +56,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     --pkgversion $(basename `pwd` | sed 's/^[^-]*-//') \
     --maintainer "csardi.gabor@gmail.com" \
     --include /tmp/xlist \
-    --requires 'libc++1-20,libc++abi1-20,libunwind-20,libc6,libgcc-s1' \
+    --requires 'libc++1,libc++abi1,libunwind,libc6,libgcc-s1' \
     --arch $(dpkg --print-architecture) \
     --pkglicense "See COPYING file."
 
