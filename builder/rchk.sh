@@ -12,11 +12,11 @@ LD=clang++ -stdlib=libc++
 EOF
 
 /opt/R/devel-rchk/bin/R CMD config --all |
-    grep 'CXX[0-9]* +=' |
+    grep 'CXX[0-9]*\s*=' |
     sed 's/clang/wllvm/g' >> "$MAKEVARS"
 
 /opt/R/devel-rchk/bin/R CMD config --all |
-    grep 'CC[0-9]* +=' |
+    grep 'CC[0-9]*\s*=' |
     sed 's/clang/wllvm/g' >> "$MAKEVARS"
 
 export R_MAKEVARS_USER="$MAKEVARS"
