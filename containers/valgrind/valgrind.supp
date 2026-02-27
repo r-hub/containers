@@ -41,3 +41,29 @@
    fun:_dl_init
    fun:(below main)
 }
+
+{
+   Suppression for glibc dynamic linker memory leaks
+   Memcheck:Leak
+   match-leak-kinds: definite,possible,indirect
+   fun:malloc
+   ...
+   fun:dl_open_worker*
+}
+
+{
+   Suppression for glibc dynamic linker memory leaks (dlopen)
+   Memcheck:Leak
+   match-leak-kinds: definite,possible,indirect
+   fun:malloc
+   ...
+   fun:*dlopen*
+}
+
+{
+   Suppression for glibc dynamic linker from ld-*.so
+   Memcheck:Leak
+   match-leak-kinds: definite,possible,indirect
+   fun:*alloc
+   obj:*/ld-*.so
+}
