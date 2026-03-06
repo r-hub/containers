@@ -69,7 +69,7 @@ RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     if [ "$(uname -m)" = "x86_64" ]; then \
-    dnf install -y wget perl && \
+    dnf install -y wget perl xz-utils && \
       cd /root && \
       wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
       ~/.TinyTeX/bin/*/tlmgr update --self || true && \

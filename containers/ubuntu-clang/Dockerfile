@@ -7,7 +7,7 @@ ENV R_HUB=true
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y curl && \
+    apt-get install -y curl xz-utils && \
     cd /tmp && \
     . /etc/os-release && \
     curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-${ID}-$(echo $VERSION_ID | tr -d .)-devel_1_$(dpkg --print-architecture).deb" && \
