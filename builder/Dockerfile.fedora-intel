@@ -1,7 +1,7 @@
 
-FROM fedora:38
+FROM fedora:42
 
-ENV OS_IDENTIFIER fedora-38
+ENV OS_IDENTIFIER fedora-42
 
 # Even though we don't use gcc & co, we need to install them, because
 # otherwise configure fails
@@ -15,7 +15,7 @@ RUN dnf -y upgrade \
     cpp \
     gcc \
     gcc-c++ \
-    java-11-openjdk-devel \
+    java-21-openjdk-devel \
     libICE-devel \
     libSM-devel \
     libX11-devel \
@@ -49,11 +49,11 @@ RUN dnf -y upgrade \
 COPY containers/intel/oneAPI.repo /etc/yum.repos.d
 
 RUN dnf install -y \
-    intel-oneapi-mkl-devel-2024.2.0 \
-    intel-oneapi-compiler-dpcpp-cpp-2024.2.x86_64 \
-    intel-oneapi-compiler-fortran-2024.2.x86_64 \
-    intel-oneapi-runtime-libs-2024.2.0 \
-    intel-oneapi-mkl-devel-2024.2.0
+    intel-oneapi-mkl-devel-2025.3.0 \
+    intel-oneapi-compiler-dpcpp-cpp-2025.3.x86_64 \
+    intel-oneapi-compiler-fortran-2025.3.x86_64 \
+    intel-oneapi-runtime-libs-2025.3.0 \
+    intel-oneapi-mkl-devel-2025.3.0
 
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
 
@@ -73,10 +73,10 @@ ENV CONFIGURE_OPTIONS="\
     --with-tcl-config=/usr/lib64/tclConfig.sh \
     --with-tk-config=/usr/lib64/tkConfig.sh \
     --enable-prebuilt-html \
-    --with-blas=\"-L/opt/intel/oneapi/mkl/2024.2/lib/intel64/ -lmkl_intel_lp64 -lmkl_core -lmkl_sequential\" \
+    --with-blas=\"-L/opt/intel/oneapi/mkl/2025.3/lib/intel64/ -lmkl_intel_lp64 -lmkl_core -lmkl_sequential\" \
     --with-lapack"
 
-ENV LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib/intel64/
+ENV LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2025.3/lib/intel64/
 
 # RHEL 9 doesn't have the inconsolata font, so override the defaults.
 # This may be removed if RHEL ever adds the texlive-inconsolasta package from Fedora.
