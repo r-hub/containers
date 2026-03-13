@@ -1,0 +1,18 @@
+#! /bin/bash
+set -e
+
+checkdir=${1-/check}
+
+do_check () {
+    pkg=${1}
+    echo Checking "$pkg"
+    (
+        cd `dirname $pkg`
+        R -q -e "pak::pkg_install('deps::$pkg', dependencies = TRUE)"
+        R CMD check $CHECK_ARGS	$pkg
+    )
+}
+
+for pkg in `ls $checkdir/*.tar.gz`; do
+    do_check "$pkg"
+done
