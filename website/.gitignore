@@ -2,3 +2,5 @@
 /_site
 /index_cache
 /manifest.json
+
+**/*.quarto_ipynb

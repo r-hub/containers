@@ -1,4 +1,3 @@
-
 load_old_manifest <- function() {
   path <- "_site/manifest.json"
   if (file.exists(path)) {
@@ -42,8 +41,10 @@ update_manifest <- function() {
   oldids <- sub("^ghcr.io/r-hub/containers/[-.a-zA-Z0-9]+@", "", oldids)
 
   # get data from latest container versions
-  if (! tolower(Sys.getenv("UPDATE_MANIFEST", "yes")) %in%
-      c("no", "false", "off", "0")) {
+  if (
+    !tolower(Sys.getenv("UPDATE_MANIFEST", "yes")) %in%
+      c("no", "false", "off", "0")
+  ) {
     allconts <- current_containers()
     new <- list()
     for (cont in names(allconts)) {
@@ -89,10 +90,12 @@ update_manifest <- function() {
 }
 
 docker_inspect <- function(name, property) {
-  ans <- trimws(processx::run(
-    "docker",
-    c("inspect", "-f", paste0("{{.", property, "}}"), name)
-  )$stdout)
+  ans <- trimws(
+    processx::run(
+      "docker",
+      c("inspect", "-f", paste0("{{.", property, "}}"), name)
+    )$stdout
+  )
 
   # remove [ and ] for array values, should be an array of one element
   if (first_char(ans) == "[" && last_char(ans) == "]") {
@@ -112,7 +115,9 @@ docker_run <- function(name, cmd) {
 
 get_container_data <- function(cont, sha) {
   cache <- getOption(sha, NULL)
-  if (!is.null(cache)) return(cache)
+  if (!is.null(cache)) {
+    return(cache)
+  }
   tag <- sprintf("ghcr.io/r-hub/containers/%s:latest", cont)
   name <- sprintf("ghcr.io/r-hub/containers/%s@%s", cont, sha)
   docker_pull(name)
@@ -178,14 +183,16 @@ get_container_data <- function(cont, sha) {
 
 current_containers <- function() {
   cached <- getOption("rhub::container-cache", NULL)
-  if (!is.null(cached)) return(cached)
+  if (!is.null(cached)) {
+    return(cached)
+  }
   conts <- list_containers()
   result <- structure(vector("list", length(conts)), names = conts)
   for (cont in conts) {
     result[[cont]] <- gh::gh(
       "/orgs/r-hub/packages/container/containers%2f{container}/versions",
       container = cont,
-       per_page = 5
+      per_page = 5
     )
   }
   options("rhub::container-cache" = result)

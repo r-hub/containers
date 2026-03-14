@@ -43,16 +43,16 @@ services:
       - R_VERSION=devel
       - R_TYPE=-rchk
       - LOCAL_STORE=/tmp/output
-#      - R_TARBALL_URL=https://cran.microsoft.com/snapshot/2023-02-28/src/base-prerelease/R-devel_2023-02-27_r83911.tar.gz
-#      - R_TARBALL_URL=https://cran.microsoft.com/snapshot/2023-03-01/src/base-prerelease/R-devel_2023-02-28_r83917.tar.gz
-#      - R_TARBALL_URL=https://github.com/r-hub/containers/releases/download/latest/R-devel_2023-03-15_r83984-0.tar.gz
+    #      - R_TARBALL_URL=https://cran.microsoft.com/snapshot/2023-02-28/src/base-prerelease/R-devel_2023-02-27_r83911.tar.gz
+    #      - R_TARBALL_URL=https://cran.microsoft.com/snapshot/2023-03-01/src/base-prerelease/R-devel_2023-02-28_r83917.tar.gz
+    #      - R_TARBALL_URL=https://github.com/r-hub/containers/releases/download/latest/R-devel_2023-03-15_r83984-0.tar.gz
     build:
       context: .
       dockerfile: builder/Dockerfile.ubuntu-2204-rchk
     image: rhub/ubuntu-2204-rchk:latest
     volumes:
       - ./integration/tmp:/tmp/output
-      
+
   ubuntu-2204-nold:
     command: ./build.sh
     environment:
@@ -133,7 +133,7 @@ services:
     image: rhub/fedora-gcc14:latest
     volumes:
       - ./integration/tmp:/tmp/output
-      
+
   fedora-mkl:
     platform: linux/amd64
     command: ./build.sh
@@ -148,20 +148,6 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
-  intel:
-    platform: linux/amd64
-    command: ./build.sh
-    environment:
-      - R_VERSION=devel
-      - R_TYPE=-intel
-      - LOCAL_STORE=/tmp/output
-    build:
-      context: .
-      dockerfile: builder/Dockerfile.fedora-intel
-    image: rhub/fedora-intel:latest
-    volumes:
-      - ./integration/tmp:/tmp/output
-
   valgrind:
     command: ./build.sh
     environment:
@@ -172,7 +158,7 @@ services:
       context: .
       dockerfile: builder/Dockerfile.valgrind
       platforms:
-      - linux/amd64
+        - linux/amd64
     image: rhub/valgrind:latest
     volumes:
       - ./integration/tmp:/tmp/output

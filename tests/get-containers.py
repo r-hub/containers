@@ -18,6 +18,12 @@ conts = os.listdir("containers")
 if args.containers != 'all':
     containers = args.containers.split(",")
     conts = [ p for p in containers if p in conts ]
+else:
+    # Filter out deprecated containers
+    with open("deprecated.txt", "r") as f:
+        deprecated = [line.strip() for line in f if line.strip()]
+    conts = [p for p in conts if p not in deprecated]
+
 
 # some hardcoded platforms and secrets
 testplatforms = {

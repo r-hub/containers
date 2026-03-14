@@ -1,21 +1,46 @@
 ---
 title: R-hub containers
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 4
+    toc-title: "On this page"
 ---
 
-```{r include = FALSE, cache = FALSE}
+# Active containers
+
+```{r load-manifest, include = FALSE, cache = FALSE}
 pkgload::load_all()
 conts <- load_new_manifest()
 ```
 
-```{r echo = FALSE, output = "asis", cache = FALSE}
+```{r render-containers, echo = FALSE}
 tags <- purrr::map_chr(conts$containers, "tag")
+ord <- order(tags)
+conts$containers <- conts$containers[ord]
+tags <- tags[ord]
 out <- character(length(tags))
 for (t in seq_along(tags)) {
   tag <- tags[t]
   out1 <- knitr::knit_child("tag.qmd", quiet = TRUE)
   out[t] <- paste(out1, collapse = "\n")
 }
-cat(out, sep = "\n\n")
+```
+
+```{r output-active, echo = FALSE, results = 'asis', cache = FALSE}
+deprecated <- readLines("../deprecated.txt")
+is_deprecated_tag <- tags %in%
+  c(deprecated, paste0("ghcr.io/r-hub/containers/", deprecated, ":latest"))
+cat(out[!is_deprecated_tag], sep = "\n\n")
+```
+
+---
+
+# Deprecated containers
+
+```{r output-deprecated, echo = FALSE, results = 'asis', cache = FALSE}
+cat(out[is_deprecated_tag], sep = "\n\n")
 ```
 
 ---

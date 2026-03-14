@@ -1,1 +1,4 @@
 /integration
+
+/.quarto/
+**/*.quarto_ipynb
