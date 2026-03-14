@@ -134,6 +134,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#available-containers" id="toc-available-containers" class="nav-link active" data-scroll-target="#available-containers">Available containers</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#deprecated-containers" id="toc-deprecated-containers" class="nav-link" data-scroll-target="#deprecated-containers">Deprecated containers</a></li>
   </ul>
 </nav>
     </div>
@@ -338,14 +339,6 @@ ul.task-list li input[type="checkbox"] {
 <td><a href="containers.html#gcc-asan">Details</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Intel</td>
-<td style="text-align: left;">intel</td>
-<td style="text-align: left;">Checks with Intel oneAPI 2023.x compilers</td>
-<td style="text-align: left;">Fedora Linux 38 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-02-19 r89439)</td>
-<td><a href="containers.html#intel">Details</a></td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">LTO</td>
 <td style="text-align: left;">lto</td>
 <td style="text-align: left;">Tests for link-time optimization type mismatches</td>
@@ -353,7 +346,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">R version 4.5.3 (2026-03-11)</td>
 <td><a href="containers.html#lto">Details</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">MKL</td>
 <td style="text-align: left;">mkl</td>
 <td style="text-align: left;">Tests with alternative BLAS/LAPACK implementations</td>
@@ -361,7 +354,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">R Under development (unstable) (2026-03-13 r89618)</td>
 <td><a href="containers.html#mkl">Details</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">noLD</td>
 <td style="text-align: left;">nold</td>
 <td style="text-align: left;">Tests without long double</td>
@@ -369,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">R Under development (unstable) (2026-03-13 r89618)</td>
 <td><a href="containers.html#nold">Details</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">noRemap</td>
 <td style="text-align: left;">noremap</td>
 <td style="text-align: left;">Compile C++ code with R_NO_REMAP defined</td>
@@ -377,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">R Under development (unstable) (2026-03-12 r89611)</td>
 <td><a href="containers.html#noremap">Details</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">noSuggests</td>
 <td style="text-align: left;">nosuggests</td>
 <td style="text-align: left;">Tests without suggested packages</td>
@@ -385,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">R Under development (unstable) (2026-03-13 r89618)</td>
 <td><a href="containers.html#nosuggests">Details</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">rchk</td>
 <td style="text-align: left;">rchk</td>
 <td style="text-align: left;">Checks of native code (C/C++) based on static code analysis</td>
@@ -393,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">R Under development (unstable) (2026-03-13 r89618)</td>
 <td><a href="containers.html#rchk">Details</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">valgrind</td>
 <td style="text-align: left;">valgrind</td>
 <td style="text-align: left;">Tests of memory access errors using valgrind</td>
@@ -458,6 +451,32 @@ ul.task-list li input[type="checkbox"] {
 <section id="usage" class="level1">
 <h1>Usage</h1>
 <p>You can use these containers <a href="local.html">on your machine</a>, or on <a href="gha.html">GitHub Actions</a>.</p>
+</section>
+<section id="deprecated-containers" class="level1">
+<h1>Deprecated containers</h1>
+<p>Containers not updated any more:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">CRAN name</th>
+<th style="text-align: left;">R-hub name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">OS</th>
+<th style="text-align: left;">R version</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intel</td>
+<td style="text-align: left;">intel</td>
+<td style="text-align: left;">Checks with Intel oneAPI 2023.x compilers</td>
+<td style="text-align: left;">Fedora Linux 38 (Container Image)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-02-19 r89439)</td>
+<td><a href="containers.html#intel">Details</a></td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
