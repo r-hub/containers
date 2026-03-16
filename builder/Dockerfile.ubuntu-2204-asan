@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y curl libcurl4-openssl-dev libicu-dev \
-            libopenblas-base libpcre2-dev wget python3-pip
+    libopenblas-base libpcre2-dev wget python3-pip
 
 # Locales are needed because of a tex-common configuration bug
 
@@ -26,18 +26,18 @@ RUN apt-get update && \
     apt-get build-dep -y r-base
 
 # -------------------------------------------------------------------------
-# clang-19
+# clang-22
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main" \
-         > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main" \
-         >> /etc/apt/sources.list.d/llvm.list && \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    > /etc/apt/sources.list.d/llvm.list && \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-19 libc++abi-19-dev libc++-19-dev libomp-19-dev flang-19 && \
+    apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev flang-22 && \
     apt-get clean
 
 # -------------------------------------------------------------------------
