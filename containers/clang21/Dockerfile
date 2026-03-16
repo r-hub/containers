@@ -119,7 +119,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     > /etc/apt/sources.list.d/rhub.list && \
     curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install protobuf-clang20 jags-clang20 imagemagick-clang20  poppler-clang20 && \
+    apt-get install -y protobuf-clang21 jags-clang21 imagemagick-clang21  poppler-clang21 && \
     echo 'export LD_LIBRARY_PATH="/usr/local/clang/lib:${LD_LIBRARY_PATH}"' \
     >> /opt/R/devel/lib/R/etc/ldpaths && \
     echo 'PKG_CONFIG_PATH="/usr/local/clang/lib/pkgconfig:${PKG_CONFIG_PATH}"' \
