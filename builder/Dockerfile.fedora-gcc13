@@ -1,7 +1,7 @@
 
-FROM fedora:42
+FROM fedora:38
 
-ENV OS_IDENTIFIER fedora-42
+ENV OS_IDENTIFIER fedora-38
 
 RUN dnf -y upgrade \
     && dnf -y install dnf-plugins-core \
@@ -13,7 +13,7 @@ RUN dnf -y upgrade \
     gcc \
     g++ \
     gfortran \
-    java-21-openjdk-devel \
+    java-11-openjdk-devel \
     libICE-devel \
     libSM-devel \
     libX11-devel \
