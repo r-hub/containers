@@ -1,5 +1,4 @@
-
-FROM fedora:38
+FROM fedora:42
 ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
@@ -15,7 +14,7 @@ RUN dnf -y upgrade && \
 
 # Extra system packages that pak does not know about
 RUN dnf install -y gawk patch && \
-    dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
+    dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
@@ -32,13 +31,13 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-valgrind/lib/R/library/base/R/Rprofile
 
 RUN if [ "`arch`" = "x86_64" ]; then \
-        echo "Setting up R-hub repo"; \
-        . /etc/os-release; \
-        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
-        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
-            >> /opt/R/devel-valgrind/lib/R/library/base/R/Rprofile; \
-        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
-            >> /opt/R/devel-valgrind/lib/R/library/base/R/Rprofile; \
+    echo "Setting up R-hub repo"; \
+    . /etc/os-release; \
+    RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+    echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
+    >> /opt/R/devel-valgrind/lib/R/library/base/R/Rprofile; \
+    echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+    >> /opt/R/devel-valgrind/lib/R/library/base/R/Rprofile; \
     fi
 
 # ------------------------------------------------------------------------------------
