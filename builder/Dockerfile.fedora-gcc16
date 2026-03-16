@@ -13,7 +13,7 @@ RUN dnf -y upgrade \
     gcc \
     g++ \
     gfortran \
-    java-21-openjdk-devel \
+    java-25-openjdk-devel \
     libICE-devel \
     libSM-devel \
     libX11-devel \
