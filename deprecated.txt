@@ -5,3 +5,4 @@ clang19
 intel
 gcc13
 gcc14
+noremap
