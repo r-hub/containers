@@ -1,27 +1,22 @@
 
-FROM fedora:38
+FROM fedora:42
 ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
-# Install pre-built R and requirements
+# Install rig and R
 
-RUN dnf -y upgrade && \
-    dnf -y install dnf-plugins-core && \
-    dnf -y install curl && \
-    . /etc/os-release && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/R-rstudio-${ID}-${VERSION_ID}-devel-gcc-1-1.$(arch).rpm" && \
-    yum install -y R-*.rpm && \
-    rm R-*.rpm
+RUN yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-latest-1.$(arch).rpm && \
+    rig add devel
 
 # Extra system packages that pak does not know about
 RUN dnf install -y gawk patch && \
-    dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
+    dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
 # AUto-install system requirements
 
-ENV PATH="/opt/R/devel-gcc/bin:${PATH}"
+ENV PATH="/opt/R/devel/bin:${PATH}"
 ENV PKG_SYSREQS=true
 ENV R_PKG_SYSREQS2=true
 
@@ -29,22 +24,16 @@ ENV R_PKG_SYSREQS2=true
 # Set CRAN repo, no P3M for Fedora
 
 RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
-    >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile
+    >> /opt/R/devel/lib/R/library/base/R/Rprofile
 
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        . /etc/os-release; \
-        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
-        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
-            >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
-        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
-            >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
+    . /etc/os-release; \
+    RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+    echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
+    >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
+    echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+    >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
     fi
-
-# ------------------------------------------------------------------------------------
-# Install pak
-
-RUN /opt/R/devel-gcc/bin/R -q -e \
-    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
 # Locale
@@ -57,7 +46,7 @@ ENV LANG en_GB.UTF-8
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
 
-RUN /opt/R/devel-gcc/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
+RUN /opt/R/devel/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
 
 # ------------------------------------------------------------------------------------
 # Copy check script
@@ -78,11 +67,14 @@ ENV _R_CHECK_BASHISMS_=false
 # ------------------------------------------------------------------------------------
 # ATLAS
 
-RUN dnf install -y atlas
+RUN dnf install -y atlas patchelf
 
-RUN blas=$(R -s -q -e 'cat(La_library())') && \
-    mv $blas $blas.bak && \
-    ln -s /usr/lib64/atlas/libsatlas.so.*.* $blas
+RUN patchelf --replace-needed \
+    libflexiblas.so.3 /usr/lib64/atlas/libsatlas.so.3 \
+    /opt/R/devel/lib/R/modules/lapack.so && \
+    patchelf --replace-needed \
+    libflexiblas.so.3 /usr/lib64/atlas/libsatlas.so.3 \
+    /opt/R/devel/lib/R/lib/libR.so
 
 RUN R -q -e 'extSoftVersion()["BLAS"]'
 RUN R -q -e 'La_library()'
