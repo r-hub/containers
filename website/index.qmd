@@ -36,6 +36,8 @@ Plus the following containers for additional CRAN checks:
 |clang-ASAN  | clang-asan | Tests of memory access errors using AddressSanitizer             | `r os_name("clang-asan")`, libc++ | `r r_ver("clang-asan")` | [Details](containers.html#clang-asan)  |
 |clang-UBSAN | clang-ubsan| Tests of memory access errors using Undefined Behavior Sanitizer | `r os_name("clang-ubsan")`, libc++| `r r_ver("clang-ubsan")`| [Details](containers.html#clang-ubsan) |
 |clang20     | clang20    | Checks with LLVM pre-20.0.0                                      | `r os_name("clang20")`, libc++    | `r r_ver("clang20")`    | [Details](containers.html#clang20)     |
+|clang21     | clang21    | Checks with LLVM 21.x                                            | `r os_name("clang21")`, libc++    | `r r_ver("clang21")`    | [Details](containers.html#clang21)     |
+|clang22     | clang22    | Checks with LLVM 22.x                                            | `r os_name("clang22")`, libc++    | `r r_ver("clang22")`    | [Details](containers.html#clang22)     |
 |donttest    | donttest   | Tests including `\donttest` examples                             | `r os_name("donttest")`           | `r r_ver("donttest")`   | [Details](containers.html#donttest)    |
 |gcc15       | gcc15      | Checks with GCC trunk aka 15.0                                   | `r os_name("gcc15")`              | `r r_ver("gcc15")`      | [Details](containers.html#gcc15)       |
 |gcc-ASAN    | gcc-asan   | Tests of memory access errors using AddressSanitizer             | `r os_name("gcc-asan")`           | `r r_ver("gcc-asan")`   | [Details](containers.html#gcc-asan)    |
