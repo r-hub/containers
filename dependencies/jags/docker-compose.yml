@@ -45,6 +45,24 @@ services:
     volumes:
       - .:/output
 
+  jags-clang21:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang21
+    volumes:
+      - .:/output
+
+  jags-clang22:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang22
+    volumes:
+      - .:/output
+
   jags-arm64:
     platform: linux/arm64
     command: /root/build.sh
@@ -90,6 +108,24 @@ services:
     volumes:
       - .:/output
 
+  jags-clang21-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang21
+    volumes:
+      - .:/output
+
+  jags-clang22-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang22
+    volumes:
+      - .:/output
+
   jags-fedora-38:
     platform: linux/amd64
     command: /root/build.sh
@@ -123,5 +159,23 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-fedora42
+    volumes:
+      - .:/output
+
+  jags-fedora-44:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-fedora44
+    volumes:
+      - .:/output
+
+  jags-fedora-44-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-fedora44
     volumes:
       - .:/output
