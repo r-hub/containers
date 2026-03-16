@@ -1,7 +1,7 @@
 
-FROM fedora:42
+FROM fedora:44
 
-ENV OS_IDENTIFIER fedora-42
+ENV OS_IDENTIFIER fedora-44
 
 RUN dnf -y upgrade \
     && dnf -y install dnf-plugins-core \
@@ -84,6 +84,6 @@ ENV INCLUDE_PCRE2_IN_R_3 yes
 COPY builder/config.fedora-gcc /config.site
 COPY builder/config.fedora-gcc.aarch64 /config.site.aarch64
 
-COPY builder/package.fedora-gcc15 /package.sh
+COPY builder/package.fedora-gcc16 /package.sh
 COPY build.sh .
 ENTRYPOINT ./build.sh
