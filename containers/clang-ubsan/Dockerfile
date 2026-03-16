@@ -22,18 +22,18 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 19
+# clang 22
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main" \
-         > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main" \
-         >> /etc/apt/sources.list.d/llvm.list && \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    > /etc/apt/sources.list.d/llvm.list && \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    >> /etc/apt/sources.list.d/llvm.list && \
     curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-19 libc++abi-19-dev libc++-19-dev libomp-19-dev flang-19 && \
+    apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev flang-22 && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
@@ -41,10 +41,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "deb https://repos-ppa.r-pkg.org jammy main" \
-         > /etc/apt/sources.list.d/rhub.list && \
+    > /etc/apt/sources.list.d/rhub.list && \
     curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install protobuf-clang19 jags-clang19 imagemagick-clang19 poppler-clang19
+    apt-get install protobuf-clang22 jags-clang22 imagemagick-clang22 poppler-clang22
 
 # ------------------------------------------------------------------------------------
 # Useful system packages, some are needed for R CMD check
@@ -68,7 +68,7 @@ RUN app="-fsanitize=undefined -fno-sanitize=function -fno-omit-frame-pointer" \
     sed -i -E '/^CC[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
     sed -i -E '/^CXX ?=/ s/$/ '"$appxx"/ "${makeconf}" && \
     sed -i -E '/^CXX[0-9][0-9] ?=/ s/$/ '"$appxx"/ "${makeconf}" && \
-    sed -i '/^SAN_LIBS[ ]*=/i UBSAN_DIR = /usr/lib/llvm-19/lib/clang/19/lib/linux' "${makeconf}" && \
+    sed -i '/^SAN_LIBS[ ]*=/i UBSAN_DIR = /usr/lib/llvm-22/lib/clang/22/lib/linux' "${makeconf}" && \
     sed -i 's|^SAN_LIBS[ ]*=.*$|SAN_LIBS = -L$(UBSAN_DIR) -Wl,-rpath,$(UBSAN_DIR) -lclang_rt.ubsan_standalone-x86_64|' "${makeconf}"
 
 # ------------------------------------------------------------------------------------
@@ -87,14 +87,14 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile
 
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        . /etc/os-release; \
-        echo "options(pkg.current_platform = 'x86_64-pc-linux-gnu-${ID}-${VERSION_ID}-libc++')" \
-            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
-        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
-        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}/libc++', getOption('repos')))" \
-            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
-        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
-            >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
+    . /etc/os-release; \
+    echo "options(pkg.current_platform = 'x86_64-pc-linux-gnu-${ID}-${VERSION_ID}-libc++')" \
+    >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
+    RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+    echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}/libc++', getOption('repos')))" \
+    >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
+    echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+    >> /opt/R/devel-asan/lib/R/library/base/R/Rprofile; \
     fi
 
 # ------------------------------------------------------------------------------------
