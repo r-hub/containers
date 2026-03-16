@@ -1,0 +1,29 @@
+CC=clang-21
+CC17 = clang-21 -std=gnu17
+CC23 = clang-21 -std=gnu2x
+CC90 = clang-21 -std=gnu90
+CC99 = clang-21 -std=gnu99
+
+CFLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C17FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C23FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C90FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C99FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+
+CXX=clang++-21 -stdlib=libc++
+CXX11=clang++-21 -stdlib=libc++
+CXX14=clang++-21 -stdlib=libc++
+CXX17=clang++-21 -stdlib=libc++
+CXX20=clang++-21 -stdlib=libc++
+CXX23=clang++-21 -stdlib=libc++
+
+CXXFLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX11FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX14FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX17FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX20FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX23FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+
+FC=flang-new-21
+FFLAGS=-O2 -pedantic
+FLIBS=-L/usr/lib/llvm-21/lib -lFortranRuntime -lFortranDecimal -lm
