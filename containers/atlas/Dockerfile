@@ -4,9 +4,11 @@ ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
 # Install rig and R
+# rig also sets up the CRAN mirror, we don't install pak, because rig
+# installs it into the user lib, and we want it in the system lib.
 
 RUN yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-latest-1.$(arch).rpm && \
-    rig add devel
+    rig add devel --without-pak
 
 # Extra system packages that pak does not know about
 RUN dnf install -y gawk patch && \
@@ -34,6 +36,12 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
     echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
     >> /opt/R/devel/lib/R/library/base/R/Rprofile; \
     fi
+
+# ------------------------------------------------------------------------------------
+# Install pak
+
+RUN /opt/R/devel/bin/R -q -e \
+    'install.packages("pak", lib = .Library, repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
 # Locale
