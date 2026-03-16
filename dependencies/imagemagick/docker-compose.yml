@@ -44,7 +44,16 @@ services:
       dockerfile: Dockerfile-clang20
     volumes:
       - .:/output
-      
+
+  imagemagick-clang21:
+    platform: linux/amd64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang21
+    volumes:
+      - .:/output
+
   imagemagick-arm64:
     platform: linux/arm64
     command: /root/build.sh
@@ -87,5 +96,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-clang20
+    volumes:
+      - .:/output
+
+  imagemagick-clang21-arm64:
+    platform: linux/arm64
+    command: /root/build.sh
+    build:
+      context: .
+      dockerfile: Dockerfile-clang21
     volumes:
       - .:/output
