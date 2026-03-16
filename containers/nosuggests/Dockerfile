@@ -1,5 +1,5 @@
 
-FROM fedora:38
+FROM fedora:42
 ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ RUN dnf -y upgrade && \
 
 # Extra system packages that pak does not know about
 RUN dnf install -y gawk patch && \
-    dnf install -y https://rpms.r-pkg.org/fedora-38/jags-4.3.2-1.$(arch).rpm
+    dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
@@ -32,12 +32,12 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
     >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile
 
 RUN if [ "$(uname -m)" = "x86_64" ]; then \
-        . /etc/os-release; \
-        RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
-        echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
-            >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
-        echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
-            >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
+    . /etc/os-release; \
+    RVER=$(R -s -e 'cat(paste(getRversion()[,1:2]))'); \
+    echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/${ID}-${VERSION_ID}/${RVER}', getOption('repos')))" \
+    >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
+    echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
+    >> /opt/R/devel-gcc/lib/R/library/base/R/Rprofile; \
     fi
 
 # ------------------------------------------------------------------------------------
@@ -70,10 +70,10 @@ RUN dnf install -y pkg-config devscripts-checkbashisms qpdf git tidy
 RUN export DEBIAN_FRONTEND=noninteractive && \
     if [ "$(uname -m)" = "x86_64" ]; then \
     dnf install -y wget perl xz && \
-      cd /root && \
-      wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
-      ~/.TinyTeX/bin/*/tlmgr update --self || true && \
-      ~/.TinyTeX/bin/*/tlmgr install makeindex; \
+    cd /root && \
+    wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
+    ~/.TinyTeX/bin/*/tlmgr update --self || true && \
+    ~/.TinyTeX/bin/*/tlmgr install makeindex; \
     fi
 
 # we can't really query the arch here (FIXME!), but this should be ok
