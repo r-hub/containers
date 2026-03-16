@@ -6,4 +6,5 @@ clang20
 intel
 gcc13
 gcc14
+gcc15
 noremap
