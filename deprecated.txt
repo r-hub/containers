@@ -2,6 +2,7 @@ clang16
 clang17
 clang18
 clang19
+clang20
 intel
 gcc13
 gcc14
