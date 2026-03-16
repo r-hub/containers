@@ -72,7 +72,9 @@ You can use these containers [on your machine](local.html), or on
 
 # Deprecated containers
 
-Containers not updated any more:
+Deprecated containers are not updated any more.
+
+<details><summary>See list.</summary>
 
 | CRAN name  | R-hub name | Description                                                      | OS                                | R version               | Details                                |
 |:-----------|:-----------|:-----------------------------------------------------------------|:----------------------------------|:------------------------|----------------------------------------|
@@ -87,3 +89,5 @@ Containers not updated any more:
 |gcc15       | gcc15      | Checks with GCC trunk aka 15.0                                   | `r os_name("gcc15")`              | `r r_ver("gcc15")`      | [Details](containers.html#gcc15)       |
 |Intel       | intel      | Checks with Intel oneAPI 2023.x compilers                        | `r os_name("intel")`              | `r r_ver("intel")`      | [Details](containers.html#intel)       |
 |noRemap     | noremap    | Compile C++ code with R_NO_REMAP defined                         | `r os_name("noremap")`            | `r r_ver("noremap")`    | [Details](containers.html#noremap)     |
+
+</details>

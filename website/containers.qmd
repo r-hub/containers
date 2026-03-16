@@ -39,9 +39,13 @@ cat(out[!is_deprecated_tag], sep = "\n\n")
 
 # Deprecated containers
 
+<details><summary>See list.</summary>
+
 ```{r output-deprecated, echo = FALSE, results = 'asis', cache = FALSE}
 cat(out[is_deprecated_tag], sep = "\n\n")
 ```
+
+</details>
 
 ---
 Container data last updated: `r conts$updated`.
