@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Docker containers for R developers – R-hub</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,15 +35,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-afa37c5c79185640b9c231024f4fe5ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dea667461a5c81afc9ba75ce94cd63f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -179,14 +181,14 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">r-devel-linux-x86_64-debian-clang</td>
 <td style="text-align: left;">ubuntu-clang</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td style="text-align: left;"><a href="containers.html#ubuntu-clang">Details</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">r-devel-linux-x86_64-debian-gcc</td>
 <td style="text-align: left;">ubuntu-gcc12</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td style="text-align: left;"><a href="containers.html#ubuntu-gcc12">Details</a></td>
 </tr>
 <tr class="odd">
@@ -223,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">atlas</td>
 <td style="text-align: left;">Tests with alternative BLAS/LAPACK implementations</td>
 <td style="text-align: left;">Fedora Linux 42 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-18 r89649)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#atlas">Details</a></td>
 </tr>
 <tr class="even">
@@ -231,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">clang-asan</td>
 <td style="text-align: left;">Tests of memory access errors using AddressSanitizer</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS, libc++</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#clang-asan">Details</a></td>
 </tr>
 <tr class="odd">
@@ -239,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">clang-ubsan</td>
 <td style="text-align: left;">Tests of memory access errors using Undefined Behavior Sanitizer</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS, libc++</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#clang-ubsan">Details</a></td>
 </tr>
 <tr class="even">
@@ -247,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">clang21</td>
 <td style="text-align: left;">Checks with LLVM 21.x</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS, libc++</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-18 r89649)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#clang21">Details</a></td>
 </tr>
 <tr class="odd">
@@ -255,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">clang22</td>
 <td style="text-align: left;">Checks with LLVM 22.x</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS, libc++</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-18 r89649)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
 <td><a href="containers.html#clang22">Details</a></td>
 </tr>
 <tr class="even">
@@ -263,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">donttest</td>
 <td style="text-align: left;">Tests including <code>\donttest</code> examples</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-18 r89649)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
 <td><a href="containers.html#donttest">Details</a></td>
 </tr>
 <tr class="odd">
@@ -271,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">gcc16</td>
 <td style="text-align: left;">Checks with GCC trunk aka 16.0</td>
 <td style="text-align: left;">Fedora Linux 44 (Container Image Prerelease)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#gcc16">Details</a></td>
 </tr>
 <tr class="even">
@@ -279,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">gcc-asan</td>
 <td style="text-align: left;">Tests of memory access errors using AddressSanitizer</td>
 <td style="text-align: left;">Fedora Linux 42 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-18 r89649)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
 <td><a href="containers.html#gcc-asan">Details</a></td>
 </tr>
 <tr class="odd">
@@ -287,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">gcc-asan</td>
 <td style="text-align: left;">Tests of memory access errors using Undefined Behavior Sanitizer</td>
 <td style="text-align: left;">Fedora Linux 42 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-18 r89649)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
 <td><a href="containers.html#gcc-asan">Details</a></td>
 </tr>
 <tr class="even">
@@ -303,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">mkl</td>
 <td style="text-align: left;">Tests with alternative BLAS/LAPACK implementations</td>
 <td style="text-align: left;">Fedora Linux 42 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#mkl">Details</a></td>
 </tr>
 <tr class="even">
@@ -311,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">nold</td>
 <td style="text-align: left;">Tests without long double</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#nold">Details</a></td>
 </tr>
 <tr class="odd">
@@ -319,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">nosuggests</td>
 <td style="text-align: left;">Tests without suggested packages</td>
 <td style="text-align: left;">Fedora Linux 42 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#nosuggests">Details</a></td>
 </tr>
 <tr class="even">
@@ -327,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">rchk</td>
 <td style="text-align: left;">Checks of native code (C/C++) based on static code analysis</td>
 <td style="text-align: left;">Ubuntu 22.04.5 LTS</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#rchk">Details</a></td>
 </tr>
 <tr class="odd">
@@ -335,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">valgrind</td>
 <td style="text-align: left;">Tests of memory access errors using valgrind</td>
 <td style="text-align: left;">Fedora Linux 42 (Container Image)</td>
-<td style="text-align: left;">R Under development (unstable) (2026-03-19 r89661)</td>
+<td style="text-align: left;">R Under development (unstable) (2026-03-20 r89667)</td>
 <td><a href="containers.html#valgrind">Details</a></td>
 </tr>
 </tbody>
