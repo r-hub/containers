@@ -8,7 +8,7 @@ ENV R_HUB=true
 COPY oneAPI.repo /etc/yum.repos.d
 
 # Need intel-oneapi-runtime-libs for https://github.com/r-hub/rhub/issues/616
-RUN dnf install -y intel-oneapi-mkl-devel-2024.2 intel-oneapi-runtime-libs-2024.2.0
+RUN dnf install -y intel-oneapi-mkl-devel-2025.3 intel-oneapi-runtime-libs-2025.3.0
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
