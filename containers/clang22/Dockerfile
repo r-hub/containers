@@ -148,6 +148,7 @@ ENV _R_CHECK_NATIVE_ROUTINE_REGISTRATION_ true
 ENV _R_CHECK_FF_CALLS_ registration
 ENV _R_CHECK_PRAGMAS_ true
 ENV _R_CHECK_COMPILATION_FLAGS_ true
+ENV _R_CHECK_COMPILATION_FLAGS_KNOWN_ "-Werror=implicit-function-declaration -Wno-error=enum-constexpr-conversion -Wp,-D_FORTIFY_SOURCE=3 -Wno-missing-template-arg-list-after-template-kw"
 ENV _R_CHECK_R_DEPENDS_ true
 ENV _R_CHECK_PACKAGES_USED_IN_TESTS_USE_SUBDIRS_ true
 ENV _R_CHECK_SHLIB_OPENMP_FLAGS_ true
