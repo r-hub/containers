@@ -8,7 +8,8 @@ RUN set -x \
   && apt-get update \
   && apt-get install -y curl gcc libcurl4-openssl-dev libicu-dev \
      libopenblas-dev libpcre2-dev make python3-pip wget \
-  && apt-get build-dep -y r-base
+  && apt-get build-dep -y r-base \
+  && apt-get install gfortran
 
 RUN chmod 0777 /opt
 
