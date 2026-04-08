@@ -26,4 +26,4 @@ CXX23FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
 
 FC=flang-new-22
 FFLAGS=-O2 -pedantic
-FLIBS=-L/usr/lib/llvm-22/lib -lFortranRuntime -lFortranDecimal -lm
+FLIBS=-L/usr/lib/llvm-22/lib -lFortranDecimal -lm
