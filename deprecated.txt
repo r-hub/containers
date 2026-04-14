@@ -9,3 +9,4 @@ gcc13
 gcc14
 gcc15
 noremap
+ubuntu-gcc12

@@ -23,7 +23,7 @@ Currently we have the following CRAN-like containers:
 | CRAN name                         | R-hub name      | OS                             | R version                    | Details                                    |
 |:----------------------------------|:----------------|:-------------------------------|:-----------------------------|:-------------------------------------------|
 | r-devel-linux-x86_64-debian-clang | ubuntu-clang    | `r os_name("ubuntu-clang")`    | `r r_ver("ubuntu-clang")`    | [Details](containers.html#ubuntu-clang)    |
-| r-devel-linux-x86_64-debian-gcc   | ubuntu-gcc12    | `r os_name("ubuntu-gcc12")`    | `r r_ver("ubuntu-gcc12")`    | [Details](containers.html#ubuntu-gcc12)    |
+| r-devel-linux-x86_64-debian-gcc   | ubuntu-gcc15    | `r os_name("ubuntu-gcc15")`    | `r r_ver("ubuntu-gcc15")`    | [Details](containers.html#ubuntu-gcc15)    |
 | r-patched-linux-x86_64            | ubuntu-next     | `r os_name("ubuntu-next")`     | `r r_ver("ubuntu-next")`     | [Details](containers.html#ubuntu-next)     |
 | r-release-linux-x86_64            | ubuntu-release  | `r os_name("ubuntu-release")`  | `r r_ver("ubuntu-release")`  | [Details](containers.html#ubuntu-release)  |
 
