@@ -21,6 +21,7 @@ on:
         - 'nold'
         - 'ubuntu-clang'
         - 'ubuntu-gcc12'
+        - 'ubuntu-gcc15'
         - 'ubuntu-next'
         - 'ubuntu-release'
       inprver:
