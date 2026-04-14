@@ -10,7 +10,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y curl && \
     cd /tmp && \
     . /etc/os-release && \
-    curl -LO "https://github.com/r-hub/containers/releases/download/latest/r-rstudio-${ID}-$(echo $VERSION_ID | tr -d .)-devel_1_$(dpkg --print-architecture).deb" && \
+    curl -LO "https://cdn.posit.co/r/${ID}-$(echo $VERSION_ID | tr -d .)/pkgs/r-devel_1_$(dpkg --print-architecture).deb" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     apt-get clean
