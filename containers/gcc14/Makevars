@@ -1,0 +1,14 @@
+CFLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C17FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C23FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C90FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+C99FLAGS=-O3 -Wall -pedantic -Wp,-D_FORTIFY_SOURCE=3
+
+CXXFLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX11FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX14FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX17FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX20FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+CXX23FLAGS=-O3 -Wall -pedantic -frtti -Wp,-D_FORTIFY_SOURCE=3
+
+FFLAGS=-O2 -pedantic
