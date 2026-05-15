@@ -67,10 +67,10 @@ ENV CONFIGURE_OPTIONS="\
     --with-tk-config=/usr/lib64/tkConfig.sh \
     --enable-prebuilt-html \
     --enable-lto=R \
-    --with-blas=\"-L/opt/intel/oneapi/mkl/2025.3/lib/intel64/ -lmkl_gf_lp64 -lmkl_core -lmkl_sequential\" \
+    --with-blas=\"-L/opt/intel/oneapi/mkl/latest/lib/intel64/ -lmkl_gf_lp64 -lmkl_core -lmkl_sequential\" \
     --with-lapack"
 
-ENV LD_LIBRARY_PATH="/opt/intel/oneapi/mkl/2025.3/lib/intel64"
+ENV LD_LIBRARY_PATH="/opt/intel/oneapi/mkl/latest/lib/intel64"
 
 # RHEL 9 doesn't have the inconsolata font, so override the defaults.
 # This may be removed if RHEL ever adds the texlive-inconsolata package from Fedora.
