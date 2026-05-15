@@ -1,0 +1,15 @@
+Work around clang 14 rejecting a declaration immediately after a label
+in src/library/stats/src/stl.c. Adding an empty statement makes the
+construct valid C99/C11, while remaining a no-op under newer compilers.
+
+--- a/src/library/stats/src/stl.c
++++ b/src/library/stats/src/stl.c
+@@ -480,7 +480,7 @@
+     if (! (j - i > 10)) {
+ 	goto L174;
+     }
+-L10:
++L10: ;
+     int k = i, l = j,
+ 	ij = (i + j) / 2;
+     double t = a[ij];

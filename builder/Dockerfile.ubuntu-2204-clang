@@ -32,5 +32,6 @@ ENV PAGER /usr/bin/pager
 ENV INCLUDE_PCRE2_IN_R_3 yes
 
 COPY builder/package.ubuntu-2204-clang /package.sh
+COPY patches /patches
 COPY build.sh .
 ENTRYPOINT ./build.sh

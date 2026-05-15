@@ -83,5 +83,6 @@ ENV INCLUDE_PCRE2_IN_R_3 yes
 
 COPY builder/rchk.sh /opt/R/devel-rchk/bin/rchk.sh
 COPY builder/package.ubuntu-2204-rchk /package.sh
+COPY patches /patches
 COPY build.sh .
 ENTRYPOINT ./build.sh
