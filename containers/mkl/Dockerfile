@@ -1,5 +1,5 @@
 
-FROM fedora:42
+FROM fedora:42 AS setup
 ENV R_HUB=true
 
 # ------------------------------------------------------------------------------------
@@ -8,7 +8,8 @@ ENV R_HUB=true
 COPY oneAPI.repo /etc/yum.repos.d
 
 # Need intel-oneapi-runtime-libs for https://github.com/r-hub/rhub/issues/616
-RUN dnf install -y intel-oneapi-mkl-devel-2025.3.0 intel-oneapi-runtime-libs-2025.3.0
+ENV ONEAPI_VERSION="2025.3"
+RUN dnf install -y intel-oneapi-mkl-devel-${ONEAPI_VERSION} intel-oneapi-runtime-libs-${ONEAPI_VERSION}.0
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements
@@ -47,6 +48,8 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
     echo 'options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])))' \
     >> /opt/R/devel-mkl/lib/R/library/base/R/Rprofile; \
     fi
+
+FROM setup as final
 
 # ------------------------------------------------------------------------------------
 # Install pak

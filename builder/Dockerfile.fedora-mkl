@@ -46,7 +46,9 @@ RUN dnf -y upgrade \
 
 COPY containers/mkl/oneAPI.repo /etc/yum.repos.d
 
-RUN dnf install -y intel-oneapi-mkl-devel-2025.3.0
+ENV ONEAPI_VERSION="2025.3"
+ENV ONEAPI_PATH="/opt/intel/oneapi/mkl/${ONEAPI_VERSION}"
+RUN dnf install -y intel-oneapi-mkl-devel-${ONEAPI_VERSION}
 
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
 
@@ -58,6 +60,7 @@ RUN chmod 0777 /opt
 
 # Configure flags for RHEL 9 that don't use the defaults in build.sh
 ENV CONFIGURE_OPTIONS="\
+    LDFLAGS=\"-L${ONEAPI_PATH}/lib -Wl,-rpath,${ONEAPI_PATH}/lib\" \
     --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
@@ -67,10 +70,8 @@ ENV CONFIGURE_OPTIONS="\
     --with-tk-config=/usr/lib64/tkConfig.sh \
     --enable-prebuilt-html \
     --enable-lto=R \
-    --with-blas=\"-L/opt/intel/oneapi/mkl/latest/lib/intel64/ -lmkl_gf_lp64 -lmkl_core -lmkl_sequential\" \
+    --with-blas=\"-lmkl_gf_lp64 -lmkl_core -lmkl_sequential\" \
     --with-lapack"
-
-ENV LD_LIBRARY_PATH="/opt/intel/oneapi/mkl/latest/lib/intel64"
 
 # RHEL 9 doesn't have the inconsolata font, so override the defaults.
 # This may be removed if RHEL ever adds the texlive-inconsolata package from Fedora.
