@@ -49085,9 +49085,2388 @@ glibc-gconv-extra-2.28-251.el8_10.34.x86_64
 <section id="rhel9" class="level2">
 <h2 class="anchored" data-anchor-id="rhel9"><code>rhel9</code></h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true" href="">b86a469</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false" href="">6dcef79</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-3" role="tab" aria-controls="tabset-17-3" aria-selected="false" href="">73f4b4c</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-4" role="tab" aria-controls="tabset-17-4" aria-selected="false" href="">b5d7e72</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-5" role="tab" aria-controls="tabset-17-5" aria-selected="false" href="">ca321b4</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true" href="">ae7563a</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false" href="">fb5de38</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-3" role="tab" aria-controls="tabset-17-3" aria-selected="false" href="">651b7e8</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-4" role="tab" aria-controls="tabset-17-4" aria-selected="false" href="">b86a469</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-5" role="tab" aria-controls="tabset-17-5" aria-selected="false" href="">6dcef79</a></li></ul>
 <div class="tab-content">
 <div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
+<p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:ae7563a85d722fa9eaebf414dbc536f56e7134e1be716bbe6621b4912c1e4f00 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-24T14:33:45.039975819Z <br> <strong>size:</strong> 982.01 MB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux cb07ca04bc87 6.17.0-1013-azure #13~24.04.1-Ubuntu SMP Wed Apr 15 16:52:17 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Red Hat Enterprise Linux"
+VERSION="9.8 (Plow)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="9.8"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="Red Hat Enterprise Linux 9.8 (Plow)"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
+BUG_REPORT_URL="https://issues.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_BUGZILLA_PRODUCT_VERSION=9.8
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="9.8"
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R version 4.6.0 (2026-04-24)
+Platform: aarch64-unknown-linux-gnu
+Running under: Red Hat Enterprise Linux 9.8 (Plow)
+
+Matrix products: default
+BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                       zlib                       bzlib 
+                   "1.2.11"        "1.0.8, 13-Jul-2019" 
+                         xz                  libdeflate 
+                    "5.2.5"                          "" 
+                       zstd                        PCRE 
+                         ""          "10.40 2022-04-14" 
+                        ICU                         TRE 
+                     "67.1"   "TRE 0.8.0 R_fixes (BSD)" 
+                      iconv                    readline 
+               "glibc 2.34"                       "8.1" 
+                       BLAS 
+"FlexiBLAS OPENBLAS-OPENMP" 
+
+
+&gt; libcurlVersion()
+[1] "7.76.1"
+attr(,"ssl_version")
+[1] "OpenSSL/3.5.5"
+attr(,"libssh_version")
+[1] "libssh/0.10.4/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.9.0"
+
+
+&gt; La_library()
+[1] "FlexiBLAS OPENBLAS-OPENMP"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.4"                       ""                 "1.48.7" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2
+CPICFLAGS = -fPIC
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2
+CC23 =
+C23FLAGS =
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2
+CXX = g++ -std=gnu++20
+CXXFLAGS = -g -O2
+CXXPICFLAGS = -fPIC
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2
+CXX17PICFLAGS = -fPIC
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2
+CXX20PICFLAGS = -fPIC
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2
+CXX23PICFLAGS = -fPIC
+CXX26 =
+CXX26STD =
+CXX26FLAGS =
+CXX26PICFLAGS =
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2
+FPICFLAGS = -fPIC
+FLIBS = -lgfortran -lm
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++20
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_CXX26LD =
+SHLIB_CXX26LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -lflexiblas
+LAPACK_LIBS =
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/bin/nm -B
+RANLIB = ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>redhat-release-9.8-1.0.el9.aarch64
+gpg-pubkey-fd431d51-4ae0493b
+gpg-pubkey-5a6340b3-6229229e
+setup-2.13.7-10.el9.noarch
+filesystem-3.16-5.el9.aarch64
+tzdata-2026a-1.el9.noarch
+basesystem-11-13.el9.noarch
+python3-setuptools-wheel-53.0.0-15.el9.noarch
+pcre2-syntax-10.40-6.el9.noarch
+ncurses-base-6.2-12.20210508.el9.noarch
+ncurses-libs-6.2-12.20210508.el9.aarch64
+bash-5.1.8-9.el9.aarch64
+libgcc-11.5.0-14.el9.aarch64
+glibc-minimal-langpack-2.34-266.el9_8.aarch64
+glibc-common-2.34-266.el9_8.aarch64
+glibc-2.34-266.el9_8.aarch64
+zlib-1.2.11-40.el9.aarch64
+bzip2-libs-1.0.8-11.el9.aarch64
+xz-libs-5.2.5-8.el9_0.aarch64
+libzstd-1.5.5-1.el9.aarch64
+sqlite-libs-3.34.1-10.el9_8.aarch64
+libgpg-error-1.42-5.el9.aarch64
+libxml2-2.9.13-14.el9_7.aarch64
+libattr-2.5.1-3.el9.aarch64
+libacl-2.3.1-4.el9.aarch64
+libcap-2.48-10.el9_8.1.aarch64
+libffi-3.4.2-8.el9.aarch64
+libstdc++-11.5.0-14.el9.aarch64
+popt-1.18-8.el9.aarch64
+crypto-policies-20260224-1.gitea0f072.el9_8.noarch
+json-c-0.14-11.el9.aarch64
+keyutils-libs-1.6.3-1.el9.aarch64
+libcom_err-1.46.5-8.el9.aarch64
+libtasn1-4.16.0-9.el9.aarch64
+libuuid-2.37.4-25.el9.aarch64
+libxcrypt-4.4.18-3.el9.aarch64
+lua-libs-5.4.4-4.el9.aarch64
+readline-8.1-4.el9.aarch64
+p11-kit-0.26.2-1.el9.aarch64
+libassuan-2.5.5-3.el9.aarch64
+elfutils-libelf-0.194-1.el9.aarch64
+file-libs-5.39-17.el9.aarch64
+expat-2.5.0-6.el9.aarch64
+gdbm-libs-1.23-1.el9.aarch64
+gmp-6.2.0-13.el9.aarch64
+libsepol-3.6-3.el9.aarch64
+libsigsegv-2.13-4.el9.aarch64
+libsmartcols-2.37.4-25.el9.aarch64
+libunistring-0.9.10-15.el9.aarch64
+pcre-8.44-4.el9.aarch64
+grep-3.6-5.el9.aarch64
+libidn2-2.3.0-7.el9.aarch64
+mpfr-4.1.0-10.el9.aarch64
+gawk-5.1.0-6.el9.aarch64
+libcomps-0.1.18-1.el9.aarch64
+keyutils-1.6.3-1.el9.aarch64
+attr-2.5.1-3.el9.aarch64
+libgcrypt-1.10.0-11.el9.aarch64
+libksba-1.5.1-7.el9.aarch64
+alternatives-1.24-2.el9.aarch64
+p11-kit-trust-0.26.2-1.el9.aarch64
+libcap-ng-0.8.2-7.el9.aarch64
+audit-libs-3.1.5-8.el9.aarch64
+libgomp-11.5.0-14.el9.aarch64
+libnghttp2-1.43.0-6.el9_8.1.aarch64
+libtool-ltdl-2.4.6-46.el9.aarch64
+libverto-0.3.2-3.el9.aarch64
+libyaml-0.2.5-7.el9.aarch64
+lz4-libs-1.9.3-5.el9.aarch64
+nettle-3.10.1-1.el9.aarch64
+gnutls-3.8.10-3.el9.aarch64
+npth-1.6-8.el9.aarch64
+pcre2-10.40-6.el9.aarch64
+libselinux-3.6-3.el9.aarch64
+coreutils-single-8.32-40.el9.aarch64
+sed-4.8-10.el9.aarch64
+libblkid-2.37.4-25.el9.aarch64
+libmount-2.37.4-25.el9.aarch64
+glib2-2.68.4-19.el9_8.1.aarch64
+json-glib-1.6.6-1.el9.aarch64
+openssl-fips-provider-so-3.0.7-8.el9.aarch64
+openssl-fips-provider-3.0.7-8.el9.aarch64
+findutils-4.8.0-7.el9.aarch64
+ca-certificates-2025.2.80_v9.0.305-91.el9.noarch
+openssl-libs-3.5.5-2.el9_8.aarch64
+krb5-libs-1.21.1-10.el9_8.aarch64
+curl-minimal-7.76.1-40.el9.aarch64
+cyrus-sasl-lib-2.1.27-22.el9.aarch64
+libarchive-3.5.3-9.el9_7.aarch64
+rpm-4.16.1.3-40.el9.aarch64
+rpm-libs-4.16.1.3-40.el9.aarch64
+libmodulemd-2.13.0-2.el9.aarch64
+libsolv-0.7.24-4.el9.aarch64
+libevent-2.1.12-8.el9_4.aarch64
+librhsm-0.0.3-9.el9.aarch64
+python3-pip-wheel-21.3.1-2.el9_8.noarch
+python3-3.9.25-7.el9_8.aarch64
+python3-libs-3.9.25-7.el9_8.aarch64
+python3-libcomps-0.1.18-1.el9.aarch64
+libsemanage-3.6-5.el9_6.aarch64
+shadow-utils-4.9-16.el9.aarch64
+openldap-2.6.8-4.el9.aarch64
+gnupg2-2.3.3-5.el9_7.aarch64
+gpgme-1.15.1-6.el9.aarch64
+librepo-1.19.0-1.el9.aarch64
+libdnf-0.69.0-18.el9.aarch64
+python3-libdnf-0.69.0-18.el9.aarch64
+python3-hawkey-0.69.0-18.el9.aarch64
+python3-gpg-1.15.1-6.el9.aarch64
+tpm2-tss-3.2.3-1.el9.aarch64
+ima-evm-utils-1.6.2-2.el9.aarch64
+rpm-sign-libs-4.16.1.3-40.el9.aarch64
+elfutils-default-yama-scope-0.194-1.el9.noarch
+elfutils-libs-0.194-1.el9.aarch64
+rpm-build-libs-4.16.1.3-40.el9.aarch64
+python3-rpm-4.16.1.3-40.el9.aarch64
+libreport-filesystem-2.15.2-6.el9.noarch
+dnf-data-4.14.0-34.el9_8.noarch
+python3-dnf-4.14.0-34.el9_8.noarch
+dnf-4.14.0-34.el9_8.noarch
+fonts-filesystem-2.0.5-7.el9.1.noarch
+dejavu-sans-fonts-2.37-18.el9.noarch
+langpacks-core-font-en-3.0-16.el9.noarch
+langpacks-core-en-3.0-16.el9.noarch
+langpacks-en-3.0-16.el9.noarch
+yum-4.14.0-34.el9_8.noarch
+libdnf-plugin-subscription-manager-1.29.50-1.el9.aarch64
+crypto-policies-scripts-20260224-1.gitea0f072.el9_8.noarch
+gzip-1.12-1.el9.aarch64
+tar-1.34-11.el9.aarch64
+vim-minimal-8.2.2637-26.el9_8.4.aarch64
+gdb-gdbserver-16.3-3.el9.aarch64
+rootfiles-8.1-35.el9.noarch
+systemd-libs-252-67.el9_8.2.aarch64
+python3-six-1.15.0-9.el9.noarch
+python3-dateutil-2.9.0.post0-1.el9_7.noarch
+dmidecode-3.6-2.el9.aarch64
+python3-iniparse-0.4-45.el9.noarch
+subscription-manager-rhsm-certificates-20220623-1.el9.noarch
+python3-setuptools-53.0.0-15.el9.noarch
+python3-idna-2.10-7.el9_4.1.noarch
+libfdisk-2.37.4-25.el9.aarch64
+cracklib-2.9.6-28.el9.aarch64
+cracklib-dicts-2.9.6-28.el9.aarch64
+python3-inotify-0.9.6-25.el9.noarch
+dbus-libs-1.12.20-8.el9.aarch64
+python3-dbus-1.2.18-2.el9.aarch64
+python3-systemd-234-19.el9.aarch64
+util-linux-core-2.37.4-25.el9.aarch64
+which-2.21-30.el9_6.aarch64
+systemd-rpm-macros-252-67.el9_8.2.noarch
+python3-pysocks-1.7.1-12.el9.noarch
+python3-urllib3-1.26.5-6.el9_7.1.noarch
+python3-librepo-1.19.0-1.el9.aarch64
+python3-decorator-4.4.2-6.el9.noarch
+python3-chardet-4.0.0-5.el9.noarch
+python3-requests-2.25.1-10.el9_6.noarch
+python3-cloud-what-1.29.50-1.el9.aarch64
+python3-subscription-manager-rhsm-1.29.50-1.el9.aarch64
+psmisc-23.4-3.el9.aarch64
+openssl-3.5.5-2.el9_8.aarch64
+libutempter-1.2.1-6.el9.aarch64
+libseccomp-2.5.2-2.el9.aarch64
+libmnl-1.0.4-16.el9_4.aarch64
+libeconf-0.4.1-5.el9.aarch64
+libdb-5.3.28-57.el9_6.aarch64
+pam-1.5.1-28.el9.aarch64
+libpwquality-1.4.4-8.el9.aarch64
+util-linux-2.37.4-25.el9.aarch64
+libuser-0.63-17.el9.aarch64
+passwd-0.80-12.el9.aarch64
+usermode-1.114-7.el9.aarch64
+virt-what-1.27-2.el9.aarch64
+libbpf-1.5.0-3.el9.aarch64
+iproute-6.17.0-2.el9.aarch64
+kmod-libs-28-11.el9.aarch64
+gobject-introspection-1.68.0-11.el9.aarch64
+python3-gobject-base-noarch-3.40.1-6.el9.noarch
+python3-gobject-base-3.40.1-6.el9.aarch64
+acl-2.3.1-4.el9.aarch64
+dbus-1.12.20-8.el9.aarch64
+systemd-pam-252-67.el9_8.2.aarch64
+systemd-252-67.el9_8.2.aarch64
+dbus-common-1.12.20-8.el9.noarch
+dbus-broker-28-7.el9.aarch64
+python3-dnf-plugins-core-4.3.0-26.el9.noarch
+subscription-manager-1.29.50-1.el9.aarch64
+r-rig-0.7.0-1.aarch64
+dnf-plugins-core-4.3.0-26.el9.noarch
+epel-release-9-10.el9.noarch
+libgfortran-11.5.0-14.el9.aarch64
+flexiblas-3.0.4-8.el9.aarch64
+libmpc-1.2.1-4.el9.aarch64
+openblas-0.3.29-1.el9.aarch64
+unzip-6.0-60.el9.aarch64
+libpng-1.6.37-15.el9_8.aarch64
+elfutils-debuginfod-client-0.194-1.el9.aarch64
+binutils-gold-2.35.2-72.el9.aarch64
+binutils-2.35.2-72.el9.aarch64
+libICE-1.0.10-8.el9.aarch64
+libSM-1.2.3-10.el9.aarch64
+make-4.3-8.el9.aarch64
+tcl-8.6.10-7.el9.aarch64
+zip-3.0-35.el9.aarch64
+openblas-openmp-0.3.29-1.el9.aarch64
+flexiblas-openblas-openmp-3.0.4-8.el9.aarch64
+flexiblas-netlib-3.0.4-8.el9.aarch64
+openblas-openmp64-0.3.29-1.el9.aarch64
+flexiblas-openblas-openmp64-3.0.4-8.el9.aarch64
+flexiblas-netlib64-3.0.4-8.el9.aarch64
+cpp-11.5.0-14.el9.aarch64
+libubsan-11.5.0-14.el9.aarch64
+libstdc++-devel-11.5.0-14.el9.aarch64
+libasan-11.5.0-14.el9.aarch64
+libX11-common-1.8.12-1.el9.noarch
+kernel-headers-5.14.0-687.10.1.el9_8.aarch64
+pcre2-utf32-10.40-6.el9.aarch64
+pcre2-utf16-10.40-6.el9.aarch64
+libicu-67.1-10.el9_6.aarch64
+libbrotli-1.0.9-9.el9_7.aarch64
+libatomic-11.5.0-14.el9.aarch64
+libjpeg-turbo-2.0.90-7.el9.aarch64
+libXau-1.0.9-8.el9.aarch64
+libxcb-1.13.1-9.el9.aarch64
+libX11-1.8.12-1.el9.aarch64
+libXrender-0.9.10-16.el9.aarch64
+libXext-1.3.4-8.el9.aarch64
+libXt-1.2.0-6.el9.aarch64
+libXmu-1.1.3-8.el9.aarch64
+xml-common-0.6.3-58.el9.noarch
+libwebp-1.2.0-8.el9_3.aarch64
+libdatrie-0.2.13-4.el9.aarch64
+libthai-0.1.28-8.el9.aarch64
+jbigkit-libs-2.1-23.el9.aarch64
+libtiff-4.4.0-18.el9_8.aarch64
+pixman-0.40.0-6.el9_3.aarch64
+fribidi-1.0.10-6.el9.2.aarch64
+libpkgconf-1.7.3-10.el9.aarch64
+pkgconf-1.7.3-10.el9.aarch64
+pkgconf-m4-1.7.3-10.el9.noarch
+pkgconf-pkg-config-1.7.3-10.el9.aarch64
+flexiblas-devel-3.0.4-8.el9.aarch64
+zlib-devel-1.2.11-40.el9.aarch64
+glibc-devel-2.34-266.el9_8.aarch64
+libxcrypt-devel-4.4.18-3.el9.aarch64
+gcc-11.5.0-14.el9.aarch64
+gcc-c++-11.5.0-14.el9.aarch64
+gcc-gfortran-11.5.0-14.el9.aarch64
+xz-devel-5.2.5-8.el9_0.aarch64
+libicu-devel-67.1-10.el9_6.aarch64
+pcre2-devel-10.40-6.el9.aarch64
+bzip2-devel-1.0.8-11.el9.aarch64
+libcurl-devel-7.76.1-40.el9.aarch64
+graphite2-1.3.14-9.el9.aarch64
+freetype-2.10.4-10.el9_5.aarch64
+harfbuzz-2.7.4-10.el9.aarch64
+fontconfig-2.14.0-2.el9_1.aarch64
+libXft-2.3.3-8.el9.aarch64
+tk-8.6.10-9.el9.aarch64
+cairo-1.17.4-7.el9.aarch64
+pango-1.48.7-3.el9.aarch64
+R-4.6.0-1-1.aarch64
+pyproject-srpm-macros-1.18.5-1.el9.noarch
+llvm-filesystem-21.1.8-2.el9.aarch64
+gcc-plugin-annobin-11.5.0-14.el9.aarch64
+efi-srpm-macros-6-4.el9.noarch
+dwz-0.16-1.el9.aarch64
+ncurses-6.2-12.20210508.el9.aarch64
+libssh-config-0.10.4-18.el9.noarch
+libssh-0.10.4-18.el9.aarch64
+libedit-3.1-39.20210216cvs.el9.aarch64
+llvm-libs-21.1.8-2.el9.aarch64
+annobin-12.98-2.el9.aarch64
+file-5.39-17.el9.aarch64
+qt5-srpm-macros-5.15.9-1.el9.noarch
+openblas-srpm-macros-2-11.el9.noarch
+perl-srpm-macros-1-41.el9.noarch
+sombok-2.4.0-16.el9.aarch64
+rust-srpm-macros-17-4.el9.noarch
+ghc-srpm-macros-1.5.0-6.el9.noarch
+lua-srpm-macros-1-6.el9.noarch
+ocaml-srpm-macros-6-6.el9.noarch
+publicsuffix-list-dafsa-20210518-3.el9.noarch
+libpsl-0.21.1-5.el9.aarch64
+info-6.7-15.el9.aarch64
+ed-1.14.2-12.el9.aarch64
+python3-pyparsing-2.4.7-9.el9.noarch
+systemtap-sdt-dtrace-5.4-4.el9.aarch64
+systemtap-sdt-devel-5.4-4.el9.aarch64
+groff-base-1.22.4-10.el9.aarch64
+perl-Digest-1.19-4.el9.noarch
+perl-Digest-MD5-2.58-4.el9.aarch64
+perl-B-1.80-481.1.el9_6.aarch64
+perl-FileHandle-2.03-481.1.el9_6.noarch
+perl-Data-Dumper-2.174-462.el9.aarch64
+perl-libnet-3.13-4.el9.noarch
+perl-AutoLoader-5.74-481.1.el9_6.noarch
+perl-Class-Struct-0.66-481.1.el9_6.noarch
+perl-base-2.27-481.1.el9_6.noarch
+perl-URI-5.09-3.el9.noarch
+perl-Term-ANSIColor-5.01-461.el9.noarch
+perl-Socket-2.031-4.el9.aarch64
+perl-Time-Local-1.300-7.el9.noarch
+perl-POSIX-1.94-481.1.el9_6.aarch64
+perl-Mozilla-CA-20200520-6.el9.noarch
+perl-SelectSaver-1.02-481.1.el9_6.noarch
+perl-if-0.60.800-481.1.el9_6.noarch
+perl-mro-1.23-481.1.el9_6.aarch64
+perl-IO-Socket-IP-0.41-5.el9.noarch
+perl-File-stat-1.09-481.1.el9_6.noarch
+perl-overloading-0.02-481.1.el9_6.noarch
+perl-subs-1.03-481.1.el9_6.noarch
+perl-Text-Tabs+Wrap-2013.0523-460.el9.noarch
+perl-Term-Cap-1.17-460.el9.noarch
+perl-Pod-Escapes-1.07-460.el9.noarch
+perl-Pod-Usage-2.01-4.el9.noarch
+perl-File-Path-2.18-4.el9.noarch
+perl-IO-Socket-SSL-2.073-2.el9.noarch
+perl-Net-SSLeay-1.94-3.el9.aarch64
+perl-Text-ParseWords-3.30-460.el9.noarch
+perl-parent-0.238-460.el9.noarch
+perl-MIME-Base64-3.16-4.el9.aarch64
+perl-constant-1.33-461.el9.noarch
+perl-Errno-1.30-481.1.el9_6.aarch64
+perl-Fcntl-1.13-481.1.el9_6.aarch64
+perl-File-Basename-2.85-481.1.el9_6.noarch
+perl-Getopt-Std-1.12-481.1.el9_6.noarch
+perl-Scalar-List-Utils-1.56-462.el9.aarch64
+perl-Symbol-1.08-481.1.el9_6.noarch
+perl-Storable-3.21-460.el9.aarch64
+perl-IPC-Open3-1.21-481.1.el9_6.noarch
+perl-IO-1.43-481.1.el9_6.aarch64
+perl-overload-1.31-481.1.el9_6.noarch
+perl-Pod-Simple-3.42-4.el9.noarch
+perl-Getopt-Long-2.52-4.el9.noarch
+perl-podlators-4.14-460.el9.noarch
+perl-File-Temp-0.231.100-4.el9.noarch
+perl-HTTP-Tiny-0.076-462.el9.noarch
+perl-vars-1.05-481.1.el9_6.noarch
+perl-Exporter-5.74-461.el9.noarch
+perl-Carp-1.50-460.el9.noarch
+perl-GDBM_File-1.18-481.1.el9_6.aarch64
+perl-NDBM_File-1.15-481.1.el9_6.aarch64
+perl-ODBM_File-1.16-481.1.el9_6.aarch64
+perl-DB_File-1.855-4.el9.aarch64
+perl-PathTools-3.78-461.el9.aarch64
+perl-Encode-3.08-462.el9.aarch64
+perl-libs-5.32.1-481.1.el9_6.aarch64
+perl-Pod-Perldoc-3.28.01-461.el9.noarch
+perl-doc-5.32.1-481.1.el9_6.noarch
+perl-interpreter-5.32.1-481.1.el9_6.aarch64
+perl-File-Find-1.37-481.1.el9_6.noarch
+perl-File-Copy-2.34-481.1.el9_6.noarch
+perl-ExtUtils-Manifest-1.73-4.el9.noarch
+perl-Time-HiRes-1.9764-462.el9.aarch64
+perl-DynaLoader-1.47-481.1.el9_6.aarch64
+perl-ExtUtils-ParseXS-3.40-460.el9.noarch
+perl-threads-2.25-460.el9.aarch64
+perl-threads-shared-1.61-460.el9.aarch64
+perl-Compress-Raw-Zlib-2.101-5.el9.aarch64
+perl-File-Compare-1.100.600-481.1.el9_6.noarch
+perl-lib-0.65-481.1.el9_6.aarch64
+perl-Digest-SHA-6.02-461.el9.aarch64
+perl-Filter-1.60-4.el9.aarch64
+perl-Perl-OSType-1.010-461.el9.noarch
+perl-Module-Load-0.36-4.el9.noarch
+perl-Unicode-Normalize-1.27-461.el9.aarch64
+perl-Devel-Peek-1.28-481.1.el9_6.aarch64
+perl-Term-ReadLine-1.17-481.1.el9_6.noarch
+perl-Tie-4.6-481.1.el9_6.noarch
+perl-locale-1.09-481.1.el9_6.noarch
+perl-version-0.99.28-4.el9.aarch64
+perl-CPAN-Meta-Requirements-2.140-461.el9.noarch
+perl-Module-Metadata-1.000037-460.el9.noarch
+perl-Module-CoreList-5.20240609-1.el9.noarch
+perl-meta-notation-5.32.1-481.1.el9_6.noarch
+perl-Pod-Html-1.25-481.1.el9_6.noarch
+perl-Dumpvalue-2.27-481.1.el9_6.noarch
+perl-encoding-3.00-462.el9.aarch64
+perl-TermReadKey-2.38-11.el9.aarch64
+perl-Net-Ping-2.74-5.el9.noarch
+perl-ExtUtils-Command-7.60-3.el9.noarch
+perl-Text-Balanced-2.04-4.el9.noarch
+perl-ExtUtils-MM-Utils-7.60-3.el9.noarch
+perl-Compress-Raw-Bzip2-2.101-5.el9.aarch64
+perl-IO-Compress-2.102-4.el9.noarch
+perl-IO-Zlib-1.11-4.el9.noarch
+perl-CPAN-Meta-YAML-0.018-461.el9.noarch
+perl-Tie-RefHash-1.40-4.el9.noarch
+perl-Devel-PPPort-3.62-4.el9.aarch64
+perl-Params-Util-1.102-5.el9.aarch64
+perl-Sub-Install-0.928-28.el9.noarch
+perl-AutoSplit-5.74-481.1.el9_6.noarch
+perl-Benchmark-1.23-481.1.el9_6.noarch
+perl-Test-Harness-3.42-461.el9.noarch
+perl-DirHandle-1.05-481.1.el9_6.noarch
+perl-ExtUtils-Constant-0.25-481.1.el9_6.noarch
+perl-Hash-Util-FieldHash-1.20-481.1.el9_6.aarch64
+perl-Hash-Util-0.23-481.1.el9_6.aarch64
+perl-I18N-LangTags-0.44-481.1.el9_6.noarch
+perl-Locale-Maketext-1.29-461.el9.noarch
+perl-Locale-Maketext-Simple-0.21-481.1.el9_6.noarch
+perl-Params-Check-0.38-461.el9.noarch
+perl-Module-Load-Conditional-0.74-4.el9.noarch
+perl-IPC-Cmd-1.04-461.el9.noarch
+perl-I18N-Langinfo-0.19-481.1.el9_6.aarch64
+perl-Math-Complex-1.59-481.1.el9_6.noarch
+perl-Math-BigInt-1.9998.18-460.el9.noarch
+perl-JSON-PP-4.06-4.el9.noarch
+perl-CPAN-Meta-2.150010-460.el9.noarch
+perl-Math-BigRat-0.2614-460.el9.noarch
+perl-Opcode-1.48-481.1.el9_6.aarch64
+perl-Safe-2.41-481.1.el9_6.noarch
+perl-SelfLoader-1.26-481.1.el9_6.noarch
+perl-Sys-Hostname-1.23-481.1.el9_6.aarch64
+perl-User-pwent-1.03-481.1.el9_6.noarch
+perl-autouse-1.11-481.1.el9_6.noarch
+perl-Devel-SelfStubber-1.06-481.1.el9_6.noarch
+perl-bignum-0.51-460.el9.noarch
+perl-Math-BigInt-FastCalc-0.500.900-460.el9.aarch64
+perl-Encode-Locale-1.05-21.el9.noarch
+perl-File-Fetch-1.00-4.el9.noarch
+perl-fields-2.27-481.1.el9_6.noarch
+perl-Data-OptList-0.110-17.el9.noarch
+perl-DBM_Filter-0.06-481.1.el9_6.noarch
+perl-Filter-Simple-0.96-460.el9.noarch
+perl-open-1.12-481.1.el9_6.noarch
+perl-debugger-1.56-481.1.el9_6.noarch
+perl-sigtrap-1.09-481.1.el9_6.noarch
+perl-Module-CoreList-tools-5.20240609-1.el9.noarch
+perl-experimental-0.022-6.el9.noarch
+perl-Env-1.04-460.el9.noarch
+perl-Unicode-Collate-1.29-4.el9.aarch64
+perl-Unicode-UCD-0.75-481.1.el9_6.noarch
+perl-Archive-Zip-1.68-6.el9.noarch
+perl-Thread-Queue-3.14-460.el9.noarch
+perl-Thread-3.05-481.1.el9_6.noarch
+perl-Thread-Semaphore-2.13-481.1.el9_6.noarch
+perl-Digest-SHA1-2.13-34.el9.aarch64
+perl-Pod-Checker-1.74-4.el9.noarch
+kernel-srpm-macros-1.0-14.el9.noarch
+fonts-srpm-macros-2.0.5-7.el9.1.noarch
+python-srpm-macros-3.9-54.el9.noarch
+go-srpm-macros-3.8.1-1.el9.noarch
+redhat-rpm-config-210-1.el9.noarch
+perl-ExtUtils-Install-2.20-4.el9.noarch
+perl-devel-5.32.1-481.1.el9_6.aarch64
+perl-ExtUtils-MakeMaker-7.60-3.el9.noarch
+perl-ExtUtils-CBuilder-0.280236-5.el9.noarch
+perl-ExtUtils-Embed-1.35-481.1.el9_6.noarch
+perl-ExtUtils-Miniperl-1.09-481.1.el9_6.noarch
+perl-libnetcfg-5.32.1-481.1.el9_6.noarch
+perl-Encode-devel-3.08-462.el9.aarch64
+perl-inc-latest-0.500-20.el9.noarch
+perl-diagnostics-1.37-481.1.el9_6.noarch
+perl-macros-5.32.1-481.1.el9_6.noarch
+perl-utils-5.32.1-481.1.el9_6.noarch
+perl-Algorithm-Diff-1.2010-4.el9.noarch
+perl-Text-Diff-1.45-13.el9.noarch
+perl-Module-Signature-0.88-1.el9.noarch
+perl-IPC-SysV-2.09-4.el9.aarch64
+perl-MRO-Compat-0.13-15.el9.noarch
+perl-CPAN-DistnameInfo-0.12-23.el9.noarch
+perl-Text-Template-1.59-5.el9.noarch
+perl-Compress-Raw-Lzma-2.101-3.el9.aarch64
+perl-IO-Compress-Lzma-2.101-4.el9.noarch
+perl-Archive-Tar-2.38-6.el9.noarch
+perl-Sys-Syslog-0.36-461.el9.aarch64
+perl-Text-Glob-0.11-15.el9.noarch
+perl-File-Which-1.23-10.el9.noarch
+perl-File-HomeDir-1.006-4.el9.noarch
+perl-Term-Size-Perl-0.031-12.el9.aarch64
+perl-Term-Size-Any-0.002-35.el9.noarch
+perl-Importer-0.026-4.el9.noarch
+perl-Package-Generator-1.106-23.el9.noarch
+perl-Sub-Exporter-0.987-27.el9.noarch
+perl-Data-Section-0.200007-14.el9.noarch
+perl-Software-License-0.103014-12.el9.noarch
+perl-Module-Build-0.42.31-9.el9.noarch
+perl-Config-Perl-V-0.33-4.el9.noarch
+perl-IPC-System-Simple-1.30-6.el9.noarch
+perl-autodie-2.34-4.el9.noarch
+perl-local-lib-2.000024-13.el9.noarch
+perl-Compress-Bzip2-2.28-5.el9.aarch64
+perl-Devel-Size-0.83-10.el9.aarch64
+perl-MIME-Charset-1.012.2-15.el9.noarch
+perl-Unicode-LineBreak-2019.001-11.el9.aarch64
+perl-PerlIO-via-QuotedPrint-0.09-4.el9.noarch
+perl-Object-HashBase-0.009-7.el9.noarch
+perl-Term-Table-0.015-8.el9.noarch
+perl-Test-Simple-1.302183-4.el9.noarch
+perl-Attribute-Handlers-1.01-481.1.el9_6.noarch
+perl-Config-Extensions-0.03-481.1.el9_6.noarch
+perl-English-1.11-481.1.el9_6.noarch
+perl-File-DosGlob-1.12-481.1.el9_6.aarch64
+perl-FileCache-1.10-481.1.el9_6.noarch
+perl-FindBin-1.51-481.1.el9_6.noarch
+perl-I18N-Collate-1.02-481.1.el9_6.noarch
+perl-Memoize-1.03-481.1.el9_6.noarch
+perl-Module-Loaded-0.08-481.1.el9_6.noarch
+perl-NEXT-0.67-481.1.el9_6.noarch
+perl-Net-1.02-481.1.el9_6.noarch
+perl-Pod-Functions-1.13-481.1.el9_6.noarch
+perl-Search-Dict-1.07-481.1.el9_6.noarch
+perl-Term-Complete-1.403-481.1.el9_6.noarch
+perl-Test-1.31-481.1.el9_6.noarch
+perl-Text-Abbrev-1.02-481.1.el9_6.noarch
+perl-Tie-File-1.06-481.1.el9_6.noarch
+perl-Tie-Memoize-1.1-481.1.el9_6.noarch
+perl-Time-1.03-481.1.el9_6.noarch
+perl-Time-Piece-1.3401-481.1.el9_6.aarch64
+perl-blib-1.07-481.1.el9_6.noarch
+perl-deprecate-0.04-481.1.el9_6.noarch
+perl-encoding-warnings-0.13-481.1.el9_6.noarch
+perl-filetest-1.03-481.1.el9_6.noarch
+perl-less-0.03-481.1.el9_6.noarch
+perl-perlfaq-5.20210520-1.el9.noarch
+perl-ph-5.32.1-481.1.el9_6.aarch64
+perl-sort-2.04-481.1.el9_6.noarch
+perl-vmsish-1.04-481.1.el9_6.noarch
+perl-CPAN-2.29-5.el9_6.noarch
+perl-5.32.1-481.1.el9_6.aarch64
+patch-2.7.6-16.el9.aarch64
+libcurl-7.76.1-40.el9.aarch64
+glibc-langpack-en-2.34-266.el9_8.aarch64
+glibc-gconv-extra-2.34-266.el9_8.aarch64
+fribidi-devel-1.0.10-6.el9.2.aarch64
+diffutils-3.7-12.el9.aarch64
+</code></pre>
+</details>
+</div>
+<div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
+<p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:fb5de38e84683a82750b68d15b334b7b044aed5d9f5ea3e571c9e9f8665899fc <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-24T14:24:50.614515669Z <br> <strong>size:</strong> 1.03 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux 05d0335a200e 6.17.0-1013-azure #13~24.04.1-Ubuntu SMP Wed Apr 15 16:52:17 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Red Hat Enterprise Linux"
+VERSION="9.8 (Plow)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="9.8"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="Red Hat Enterprise Linux 9.8 (Plow)"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
+BUG_REPORT_URL="https://issues.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_BUGZILLA_PRODUCT_VERSION=9.8
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="9.8"
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R version 4.6.0 (2026-04-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Red Hat Enterprise Linux 9.8 (Plow)
+
+Matrix products: default
+BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                       zlib                       bzlib 
+                   "1.2.11"        "1.0.8, 13-Jul-2019" 
+                         xz                  libdeflate 
+                    "5.2.5"                          "" 
+                       zstd                        PCRE 
+                         ""          "10.40 2022-04-14" 
+                        ICU                         TRE 
+                     "67.1"   "TRE 0.8.0 R_fixes (BSD)" 
+                      iconv                    readline 
+               "glibc 2.34"                       "8.1" 
+                       BLAS 
+"FlexiBLAS OPENBLAS-OPENMP" 
+
+
+&gt; libcurlVersion()
+[1] "7.76.1"
+attr(,"ssl_version")
+[1] "OpenSSL/3.5.5"
+attr(,"libssh_version")
+[1] "libssh/0.10.4/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.9.0"
+
+
+&gt; La_library()
+[1] "FlexiBLAS OPENBLAS-OPENMP"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.4"                       ""                 "1.48.7" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2
+CC23 =
+C23FLAGS =
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2
+CXX = g++ -std=gnu++20
+CXXFLAGS = -g -O2
+CXXPICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2
+CXX20PICFLAGS = -fpic
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2
+CXX23PICFLAGS = -fpic
+CXX26 =
+CXX26STD =
+CXX26FLAGS =
+CXX26PICFLAGS =
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++20
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_CXX26LD =
+SHLIB_CXX26LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -lflexiblas
+LAPACK_LIBS =
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/bin/nm -B
+RANLIB = ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>redhat-release-9.8-1.0.el9.x86_64
+gpg-pubkey-fd431d51-4ae0493b
+gpg-pubkey-5a6340b3-6229229e
+setup-2.13.7-10.el9.noarch
+filesystem-3.16-5.el9.x86_64
+tzdata-2026a-1.el9.noarch
+basesystem-11-13.el9.noarch
+python3-setuptools-wheel-53.0.0-15.el9.noarch
+pcre2-syntax-10.40-6.el9.noarch
+ncurses-base-6.2-12.20210508.el9.noarch
+ncurses-libs-6.2-12.20210508.el9.x86_64
+bash-5.1.8-9.el9.x86_64
+libgcc-11.5.0-14.el9.x86_64
+glibc-minimal-langpack-2.34-266.el9_8.x86_64
+glibc-common-2.34-266.el9_8.x86_64
+glibc-2.34-266.el9_8.x86_64
+zlib-1.2.11-40.el9.x86_64
+bzip2-libs-1.0.8-11.el9.x86_64
+xz-libs-5.2.5-8.el9_0.x86_64
+libzstd-1.5.5-1.el9.x86_64
+sqlite-libs-3.34.1-10.el9_8.x86_64
+libgpg-error-1.42-5.el9.x86_64
+libxml2-2.9.13-14.el9_7.x86_64
+libattr-2.5.1-3.el9.x86_64
+libacl-2.3.1-4.el9.x86_64
+libcap-2.48-10.el9_8.1.x86_64
+libffi-3.4.2-8.el9.x86_64
+libstdc++-11.5.0-14.el9.x86_64
+popt-1.18-8.el9.x86_64
+crypto-policies-20260224-1.gitea0f072.el9_8.noarch
+json-c-0.14-11.el9.x86_64
+keyutils-libs-1.6.3-1.el9.x86_64
+libcom_err-1.46.5-8.el9.x86_64
+libtasn1-4.16.0-9.el9.x86_64
+libuuid-2.37.4-25.el9.x86_64
+libxcrypt-4.4.18-3.el9.x86_64
+lua-libs-5.4.4-4.el9.x86_64
+readline-8.1-4.el9.x86_64
+p11-kit-0.26.2-1.el9.x86_64
+libassuan-2.5.5-3.el9.x86_64
+elfutils-libelf-0.194-1.el9.x86_64
+file-libs-5.39-17.el9.x86_64
+expat-2.5.0-6.el9.x86_64
+gdbm-libs-1.23-1.el9.x86_64
+gmp-6.2.0-13.el9.x86_64
+libsepol-3.6-3.el9.x86_64
+libsigsegv-2.13-4.el9.x86_64
+libsmartcols-2.37.4-25.el9.x86_64
+libunistring-0.9.10-15.el9.x86_64
+pcre-8.44-4.el9.x86_64
+grep-3.6-5.el9.x86_64
+libidn2-2.3.0-7.el9.x86_64
+mpfr-4.1.0-10.el9.x86_64
+gawk-5.1.0-6.el9.x86_64
+libcomps-0.1.18-1.el9.x86_64
+keyutils-1.6.3-1.el9.x86_64
+attr-2.5.1-3.el9.x86_64
+libgcrypt-1.10.0-11.el9.x86_64
+libksba-1.5.1-7.el9.x86_64
+alternatives-1.24-2.el9.x86_64
+p11-kit-trust-0.26.2-1.el9.x86_64
+libcap-ng-0.8.2-7.el9.x86_64
+audit-libs-3.1.5-8.el9.x86_64
+libgomp-11.5.0-14.el9.x86_64
+libnghttp2-1.43.0-6.el9_8.1.x86_64
+libtool-ltdl-2.4.6-46.el9.x86_64
+libverto-0.3.2-3.el9.x86_64
+libyaml-0.2.5-7.el9.x86_64
+lz4-libs-1.9.3-5.el9.x86_64
+nettle-3.10.1-1.el9.x86_64
+gnutls-3.8.10-3.el9.x86_64
+npth-1.6-8.el9.x86_64
+pcre2-10.40-6.el9.x86_64
+libselinux-3.6-3.el9.x86_64
+coreutils-single-8.32-40.el9.x86_64
+sed-4.8-10.el9.x86_64
+libblkid-2.37.4-25.el9.x86_64
+libmount-2.37.4-25.el9.x86_64
+glib2-2.68.4-19.el9_8.1.x86_64
+json-glib-1.6.6-1.el9.x86_64
+openssl-fips-provider-so-3.0.7-8.el9.x86_64
+openssl-fips-provider-3.0.7-8.el9.x86_64
+findutils-4.8.0-7.el9.x86_64
+ca-certificates-2025.2.80_v9.0.305-91.el9.noarch
+openssl-libs-3.5.5-2.el9_8.x86_64
+krb5-libs-1.21.1-10.el9_8.x86_64
+curl-minimal-7.76.1-40.el9.x86_64
+cyrus-sasl-lib-2.1.27-22.el9.x86_64
+libarchive-3.5.3-9.el9_7.x86_64
+rpm-4.16.1.3-40.el9.x86_64
+rpm-libs-4.16.1.3-40.el9.x86_64
+libmodulemd-2.13.0-2.el9.x86_64
+libsolv-0.7.24-4.el9.x86_64
+libevent-2.1.12-8.el9_4.x86_64
+librhsm-0.0.3-9.el9.x86_64
+python3-pip-wheel-21.3.1-2.el9_8.noarch
+python3-3.9.25-7.el9_8.x86_64
+python3-libs-3.9.25-7.el9_8.x86_64
+python3-libcomps-0.1.18-1.el9.x86_64
+libsemanage-3.6-5.el9_6.x86_64
+shadow-utils-4.9-16.el9.x86_64
+openldap-2.6.8-4.el9.x86_64
+gnupg2-2.3.3-5.el9_7.x86_64
+gpgme-1.15.1-6.el9.x86_64
+librepo-1.19.0-1.el9.x86_64
+libdnf-0.69.0-18.el9.x86_64
+python3-libdnf-0.69.0-18.el9.x86_64
+python3-hawkey-0.69.0-18.el9.x86_64
+python3-gpg-1.15.1-6.el9.x86_64
+tpm2-tss-3.2.3-1.el9.x86_64
+ima-evm-utils-1.6.2-2.el9.x86_64
+rpm-sign-libs-4.16.1.3-40.el9.x86_64
+elfutils-default-yama-scope-0.194-1.el9.noarch
+elfutils-libs-0.194-1.el9.x86_64
+rpm-build-libs-4.16.1.3-40.el9.x86_64
+python3-rpm-4.16.1.3-40.el9.x86_64
+libreport-filesystem-2.15.2-6.el9.noarch
+dnf-data-4.14.0-34.el9_8.noarch
+python3-dnf-4.14.0-34.el9_8.noarch
+dnf-4.14.0-34.el9_8.noarch
+fonts-filesystem-2.0.5-7.el9.1.noarch
+dejavu-sans-fonts-2.37-18.el9.noarch
+langpacks-core-font-en-3.0-16.el9.noarch
+langpacks-core-en-3.0-16.el9.noarch
+langpacks-en-3.0-16.el9.noarch
+yum-4.14.0-34.el9_8.noarch
+libdnf-plugin-subscription-manager-1.29.50-1.el9.x86_64
+crypto-policies-scripts-20260224-1.gitea0f072.el9_8.noarch
+gzip-1.12-1.el9.x86_64
+tar-1.34-11.el9.x86_64
+vim-minimal-8.2.2637-26.el9_8.4.x86_64
+gdb-gdbserver-16.3-3.el9.x86_64
+rootfiles-8.1-35.el9.noarch
+systemd-libs-252-67.el9_8.2.x86_64
+python3-six-1.15.0-9.el9.noarch
+python3-dateutil-2.9.0.post0-1.el9_7.noarch
+dmidecode-3.6-2.el9.x86_64
+python3-iniparse-0.4-45.el9.noarch
+subscription-manager-rhsm-certificates-20220623-1.el9.noarch
+python3-setuptools-53.0.0-15.el9.noarch
+python3-idna-2.10-7.el9_4.1.noarch
+libfdisk-2.37.4-25.el9.x86_64
+cracklib-2.9.6-28.el9.x86_64
+cracklib-dicts-2.9.6-28.el9.x86_64
+python3-inotify-0.9.6-25.el9.noarch
+dbus-libs-1.12.20-8.el9.x86_64
+python3-dbus-1.2.18-2.el9.x86_64
+python3-systemd-234-19.el9.x86_64
+util-linux-core-2.37.4-25.el9.x86_64
+which-2.21-30.el9_6.x86_64
+systemd-rpm-macros-252-67.el9_8.2.noarch
+python3-pysocks-1.7.1-12.el9.noarch
+python3-urllib3-1.26.5-6.el9_7.1.noarch
+python3-librepo-1.19.0-1.el9.x86_64
+python3-decorator-4.4.2-6.el9.noarch
+python3-chardet-4.0.0-5.el9.noarch
+python3-requests-2.25.1-10.el9_6.noarch
+python3-cloud-what-1.29.50-1.el9.x86_64
+python3-subscription-manager-rhsm-1.29.50-1.el9.x86_64
+psmisc-23.4-3.el9.x86_64
+openssl-3.5.5-2.el9_8.x86_64
+libutempter-1.2.1-6.el9.x86_64
+libseccomp-2.5.2-2.el9.x86_64
+libmnl-1.0.4-16.el9_4.x86_64
+libeconf-0.4.1-5.el9.x86_64
+libdb-5.3.28-57.el9_6.x86_64
+pam-1.5.1-28.el9.x86_64
+libpwquality-1.4.4-8.el9.x86_64
+util-linux-2.37.4-25.el9.x86_64
+libuser-0.63-17.el9.x86_64
+passwd-0.80-12.el9.x86_64
+usermode-1.114-7.el9.x86_64
+virt-what-1.27-2.el9.x86_64
+libbpf-1.5.0-3.el9.x86_64
+iproute-6.17.0-2.el9.x86_64
+kmod-libs-28-11.el9.x86_64
+gobject-introspection-1.68.0-11.el9.x86_64
+python3-gobject-base-noarch-3.40.1-6.el9.noarch
+python3-gobject-base-3.40.1-6.el9.x86_64
+acl-2.3.1-4.el9.x86_64
+dbus-1.12.20-8.el9.x86_64
+systemd-pam-252-67.el9_8.2.x86_64
+systemd-252-67.el9_8.2.x86_64
+dbus-common-1.12.20-8.el9.noarch
+dbus-broker-28-7.el9.x86_64
+python3-dnf-plugins-core-4.3.0-26.el9.noarch
+subscription-manager-1.29.50-1.el9.x86_64
+r-rig-0.7.0-1.x86_64
+dnf-plugins-core-4.3.0-26.el9.noarch
+epel-release-9-10.el9.noarch
+libquadmath-11.5.0-14.el9.x86_64
+libgfortran-11.5.0-14.el9.x86_64
+flexiblas-3.0.4-8.el9.x86_64
+libmpc-1.2.1-4.el9.x86_64
+openblas-0.3.29-1.el9.x86_64
+unzip-6.0-60.el9.x86_64
+libpng-1.6.37-15.el9_8.x86_64
+elfutils-debuginfod-client-0.194-1.el9.x86_64
+binutils-gold-2.35.2-72.el9.x86_64
+binutils-2.35.2-72.el9.x86_64
+make-4.3-8.el9.x86_64
+tcl-8.6.10-7.el9.x86_64
+libICE-1.0.10-8.el9.x86_64
+libSM-1.2.3-10.el9.x86_64
+zip-3.0-35.el9.x86_64
+openblas-openmp-0.3.29-1.el9.x86_64
+flexiblas-openblas-openmp-3.0.4-8.el9.x86_64
+flexiblas-netlib-3.0.4-8.el9.x86_64
+openblas-openmp64-0.3.29-1.el9.x86_64
+flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64
+flexiblas-netlib64-3.0.4-8.el9.x86_64
+cpp-11.5.0-14.el9.x86_64
+kernel-headers-5.14.0-687.10.1.el9_8.x86_64
+libstdc++-devel-11.5.0-14.el9.x86_64
+libX11-common-1.8.12-1.el9.noarch
+glibc-headers-2.34-266.el9_8.x86_64
+pcre2-utf32-10.40-6.el9.x86_64
+pcre2-utf16-10.40-6.el9.x86_64
+libicu-67.1-10.el9_6.x86_64
+libbrotli-1.0.9-9.el9_7.x86_64
+graphite2-1.3.14-9.el9.x86_64
+freetype-2.10.4-10.el9_5.x86_64
+harfbuzz-2.7.4-10.el9.x86_64
+libpkgconf-1.7.3-10.el9.x86_64
+pkgconf-1.7.3-10.el9.x86_64
+pkgconf-m4-1.7.3-10.el9.noarch
+pkgconf-pkg-config-1.7.3-10.el9.x86_64
+xz-devel-5.2.5-8.el9_0.x86_64
+glibc-devel-2.34-266.el9_8.x86_64
+libxcrypt-devel-4.4.18-3.el9.x86_64
+gcc-11.5.0-14.el9.x86_64
+gcc-c++-11.5.0-14.el9.x86_64
+libquadmath-devel-11.5.0-14.el9.x86_64
+gcc-gfortran-11.5.0-14.el9.x86_64
+zlib-devel-1.2.11-40.el9.x86_64
+flexiblas-devel-3.0.4-8.el9.x86_64
+pcre2-devel-10.40-6.el9.x86_64
+bzip2-devel-1.0.8-11.el9.x86_64
+libcurl-devel-7.76.1-40.el9.x86_64
+libicu-devel-67.1-10.el9_6.x86_64
+libjpeg-turbo-2.0.90-7.el9.x86_64
+libXau-1.0.9-8.el9.x86_64
+libxcb-1.13.1-9.el9.x86_64
+libX11-1.8.12-1.el9.x86_64
+libXrender-0.9.10-16.el9.x86_64
+libXt-1.2.0-6.el9.x86_64
+libXext-1.3.4-8.el9.x86_64
+libXmu-1.1.3-8.el9.x86_64
+xml-common-0.6.3-58.el9.noarch
+fontconfig-2.14.0-2.el9_1.x86_64
+libXft-2.3.3-8.el9.x86_64
+tk-8.6.10-9.el9.x86_64
+libwebp-1.2.0-8.el9_3.x86_64
+jbigkit-libs-2.1-23.el9.x86_64
+libtiff-4.4.0-18.el9_8.x86_64
+pixman-0.40.0-6.el9_3.x86_64
+cairo-1.17.4-7.el9.x86_64
+libdatrie-0.2.13-4.el9.x86_64
+libthai-0.1.28-8.el9.x86_64
+fribidi-1.0.10-6.el9.2.x86_64
+pango-1.48.7-3.el9.x86_64
+R-4.6.0-1-1.x86_64
+pyproject-srpm-macros-1.18.5-1.el9.noarch
+llvm-filesystem-21.1.8-2.el9.x86_64
+gcc-plugin-annobin-11.5.0-14.el9.x86_64
+efi-srpm-macros-6-4.el9.noarch
+dwz-0.16-1.el9.x86_64
+ncurses-6.2-12.20210508.el9.x86_64
+libssh-config-0.10.4-18.el9.noarch
+libssh-0.10.4-18.el9.x86_64
+libedit-3.1-39.20210216cvs.el9.x86_64
+llvm-libs-21.1.8-2.el9.x86_64
+annobin-12.98-2.el9.x86_64
+file-5.39-17.el9.x86_64
+groff-base-1.22.4-10.el9.x86_64
+perl-Digest-1.19-4.el9.noarch
+perl-B-1.80-481.1.el9_6.x86_64
+perl-FileHandle-2.03-481.1.el9_6.noarch
+perl-Digest-MD5-2.58-4.el9.x86_64
+perl-Data-Dumper-2.174-462.el9.x86_64
+perl-libnet-3.13-4.el9.noarch
+perl-AutoLoader-5.74-481.1.el9_6.noarch
+perl-Class-Struct-0.66-481.1.el9_6.noarch
+perl-base-2.27-481.1.el9_6.noarch
+perl-URI-5.09-3.el9.noarch
+perl-Term-ANSIColor-5.01-461.el9.noarch
+perl-Time-Local-1.300-7.el9.noarch
+perl-Socket-2.031-4.el9.x86_64
+perl-Mozilla-CA-20200520-6.el9.noarch
+perl-POSIX-1.94-481.1.el9_6.x86_64
+perl-SelectSaver-1.02-481.1.el9_6.noarch
+perl-if-0.60.800-481.1.el9_6.noarch
+perl-mro-1.23-481.1.el9_6.x86_64
+perl-IO-Socket-IP-0.41-5.el9.noarch
+perl-File-stat-1.09-481.1.el9_6.noarch
+perl-overloading-0.02-481.1.el9_6.noarch
+perl-subs-1.03-481.1.el9_6.noarch
+perl-Text-Tabs+Wrap-2013.0523-460.el9.noarch
+perl-Term-Cap-1.17-460.el9.noarch
+perl-Pod-Escapes-1.07-460.el9.noarch
+perl-File-Path-2.18-4.el9.noarch
+perl-Net-SSLeay-1.94-3.el9.x86_64
+perl-Pod-Usage-2.01-4.el9.noarch
+perl-IO-Socket-SSL-2.073-2.el9.noarch
+perl-parent-0.238-460.el9.noarch
+perl-constant-1.33-461.el9.noarch
+perl-Text-ParseWords-3.30-460.el9.noarch
+perl-MIME-Base64-3.16-4.el9.x86_64
+perl-Scalar-List-Utils-1.56-462.el9.x86_64
+perl-Errno-1.30-481.1.el9_6.x86_64
+perl-Fcntl-1.13-481.1.el9_6.x86_64
+perl-File-Basename-2.85-481.1.el9_6.noarch
+perl-Getopt-Std-1.12-481.1.el9_6.noarch
+perl-Symbol-1.08-481.1.el9_6.noarch
+perl-Storable-3.21-460.el9.x86_64
+perl-IPC-Open3-1.21-481.1.el9_6.noarch
+perl-IO-1.43-481.1.el9_6.x86_64
+perl-overload-1.31-481.1.el9_6.noarch
+perl-Pod-Simple-3.42-4.el9.noarch
+perl-File-Temp-0.231.100-4.el9.noarch
+perl-vars-1.05-481.1.el9_6.noarch
+perl-Getopt-Long-2.52-4.el9.noarch
+perl-podlators-4.14-460.el9.noarch
+perl-HTTP-Tiny-0.076-462.el9.noarch
+perl-Exporter-5.74-461.el9.noarch
+perl-Carp-1.50-460.el9.noarch
+perl-PathTools-3.78-461.el9.x86_64
+perl-DB_File-1.855-4.el9.x86_64
+perl-GDBM_File-1.18-481.1.el9_6.x86_64
+perl-NDBM_File-1.15-481.1.el9_6.x86_64
+perl-ODBM_File-1.16-481.1.el9_6.x86_64
+perl-Encode-3.08-462.el9.x86_64
+perl-libs-5.32.1-481.1.el9_6.x86_64
+perl-Pod-Perldoc-3.28.01-461.el9.noarch
+perl-doc-5.32.1-481.1.el9_6.noarch
+perl-interpreter-5.32.1-481.1.el9_6.x86_64
+perl-File-Find-1.37-481.1.el9_6.noarch
+perl-File-Copy-2.34-481.1.el9_6.noarch
+perl-ExtUtils-Manifest-1.73-4.el9.noarch
+perl-Time-HiRes-1.9764-462.el9.x86_64
+perl-DynaLoader-1.47-481.1.el9_6.x86_64
+perl-ExtUtils-ParseXS-3.40-460.el9.noarch
+perl-Compress-Raw-Zlib-2.101-5.el9.x86_64
+perl-threads-2.25-460.el9.x86_64
+perl-threads-shared-1.61-460.el9.x86_64
+perl-File-Compare-1.100.600-481.1.el9_6.noarch
+perl-lib-0.65-481.1.el9_6.x86_64
+perl-Digest-SHA-6.02-461.el9.x86_64
+perl-Filter-1.60-4.el9.x86_64
+perl-Perl-OSType-1.010-461.el9.noarch
+perl-Module-Load-0.36-4.el9.noarch
+perl-Unicode-Normalize-1.27-461.el9.x86_64
+perl-Devel-Peek-1.28-481.1.el9_6.x86_64
+perl-Term-ReadLine-1.17-481.1.el9_6.noarch
+perl-Tie-4.6-481.1.el9_6.noarch
+perl-locale-1.09-481.1.el9_6.noarch
+perl-version-0.99.28-4.el9.x86_64
+perl-CPAN-Meta-Requirements-2.140-461.el9.noarch
+perl-Module-Metadata-1.000037-460.el9.noarch
+perl-Module-CoreList-5.20240609-1.el9.noarch
+perl-meta-notation-5.32.1-481.1.el9_6.noarch
+perl-Pod-Html-1.25-481.1.el9_6.noarch
+perl-Dumpvalue-2.27-481.1.el9_6.noarch
+perl-encoding-3.00-462.el9.x86_64
+perl-TermReadKey-2.38-11.el9.x86_64
+perl-Net-Ping-2.74-5.el9.noarch
+perl-ExtUtils-Command-7.60-3.el9.noarch
+perl-Text-Balanced-2.04-4.el9.noarch
+perl-Compress-Raw-Bzip2-2.101-5.el9.x86_64
+perl-IO-Compress-2.102-4.el9.noarch
+perl-IO-Zlib-1.11-4.el9.noarch
+perl-ExtUtils-MM-Utils-7.60-3.el9.noarch
+perl-CPAN-Meta-YAML-0.018-461.el9.noarch
+perl-Params-Util-1.102-5.el9.x86_64
+perl-Devel-PPPort-3.62-4.el9.x86_64
+perl-Tie-RefHash-1.40-4.el9.noarch
+perl-Sub-Install-0.928-28.el9.noarch
+perl-AutoSplit-5.74-481.1.el9_6.noarch
+perl-Benchmark-1.23-481.1.el9_6.noarch
+perl-Test-Harness-3.42-461.el9.noarch
+perl-DirHandle-1.05-481.1.el9_6.noarch
+perl-ExtUtils-Constant-0.25-481.1.el9_6.noarch
+perl-Hash-Util-FieldHash-1.20-481.1.el9_6.x86_64
+perl-Hash-Util-0.23-481.1.el9_6.x86_64
+perl-I18N-LangTags-0.44-481.1.el9_6.noarch
+perl-Locale-Maketext-1.29-461.el9.noarch
+perl-Locale-Maketext-Simple-0.21-481.1.el9_6.noarch
+perl-Params-Check-0.38-461.el9.noarch
+perl-Module-Load-Conditional-0.74-4.el9.noarch
+perl-IPC-Cmd-1.04-461.el9.noarch
+perl-I18N-Langinfo-0.19-481.1.el9_6.x86_64
+perl-Math-Complex-1.59-481.1.el9_6.noarch
+perl-Math-BigInt-1.9998.18-460.el9.noarch
+perl-JSON-PP-4.06-4.el9.noarch
+perl-CPAN-Meta-2.150010-460.el9.noarch
+perl-Math-BigRat-0.2614-460.el9.noarch
+perl-Opcode-1.48-481.1.el9_6.x86_64
+perl-Safe-2.41-481.1.el9_6.noarch
+perl-SelfLoader-1.26-481.1.el9_6.noarch
+perl-Sys-Hostname-1.23-481.1.el9_6.x86_64
+perl-User-pwent-1.03-481.1.el9_6.noarch
+perl-autouse-1.11-481.1.el9_6.noarch
+perl-Devel-SelfStubber-1.06-481.1.el9_6.noarch
+perl-bignum-0.51-460.el9.noarch
+perl-Math-BigInt-FastCalc-0.500.900-460.el9.x86_64
+perl-Encode-Locale-1.05-21.el9.noarch
+perl-File-Fetch-1.00-4.el9.noarch
+perl-fields-2.27-481.1.el9_6.noarch
+perl-Data-OptList-0.110-17.el9.noarch
+perl-DBM_Filter-0.06-481.1.el9_6.noarch
+perl-Filter-Simple-0.96-460.el9.noarch
+perl-open-1.12-481.1.el9_6.noarch
+perl-debugger-1.56-481.1.el9_6.noarch
+perl-sigtrap-1.09-481.1.el9_6.noarch
+perl-Module-CoreList-tools-5.20240609-1.el9.noarch
+perl-experimental-0.022-6.el9.noarch
+perl-Env-1.04-460.el9.noarch
+perl-Unicode-Collate-1.29-4.el9.x86_64
+perl-Unicode-UCD-0.75-481.1.el9_6.noarch
+perl-Archive-Zip-1.68-6.el9.noarch
+perl-Thread-Queue-3.14-460.el9.noarch
+perl-Thread-3.05-481.1.el9_6.noarch
+perl-Thread-Semaphore-2.13-481.1.el9_6.noarch
+perl-Digest-SHA1-2.13-34.el9.x86_64
+perl-Pod-Checker-1.74-4.el9.noarch
+kernel-srpm-macros-1.0-14.el9.noarch
+perl-diagnostics-1.37-481.1.el9_6.noarch
+perl-macros-5.32.1-481.1.el9_6.noarch
+perl-utils-5.32.1-481.1.el9_6.noarch
+perl-MRO-Compat-0.13-15.el9.noarch
+perl-Algorithm-Diff-1.2010-4.el9.noarch
+perl-Text-Diff-1.45-13.el9.noarch
+perl-Module-Signature-0.88-1.el9.noarch
+perl-CPAN-DistnameInfo-0.12-23.el9.noarch
+perl-Text-Template-1.59-5.el9.noarch
+perl-Sys-Syslog-0.36-461.el9.x86_64
+perl-Devel-Size-0.83-10.el9.x86_64
+perl-File-Which-1.23-10.el9.noarch
+perl-File-HomeDir-1.006-4.el9.noarch
+perl-local-lib-2.000024-13.el9.noarch
+perl-Text-Glob-0.11-15.el9.noarch
+perl-Object-HashBase-0.009-7.el9.noarch
+perl-Importer-0.026-4.el9.noarch
+perl-Compress-Raw-Lzma-2.101-3.el9.x86_64
+perl-IO-Compress-Lzma-2.101-4.el9.noarch
+perl-Archive-Tar-2.38-6.el9.noarch
+perl-Package-Generator-1.106-23.el9.noarch
+perl-Sub-Exporter-0.987-27.el9.noarch
+perl-Data-Section-0.200007-14.el9.noarch
+perl-Software-License-0.103014-12.el9.noarch
+perl-Config-Perl-V-0.33-4.el9.noarch
+perl-IPC-System-Simple-1.30-6.el9.noarch
+perl-autodie-2.34-4.el9.noarch
+perl-MIME-Charset-1.012.2-15.el9.noarch
+perl-Term-Size-Perl-0.031-12.el9.x86_64
+perl-Term-Size-Any-0.002-35.el9.noarch
+perl-Compress-Bzip2-2.28-5.el9.x86_64
+perl-PerlIO-via-QuotedPrint-0.09-4.el9.noarch
+perl-IPC-SysV-2.09-4.el9.x86_64
+perl-perlfaq-5.20210520-1.el9.noarch
+perl-Attribute-Handlers-1.01-481.1.el9_6.noarch
+perl-Config-Extensions-0.03-481.1.el9_6.noarch
+perl-English-1.11-481.1.el9_6.noarch
+perl-File-DosGlob-1.12-481.1.el9_6.x86_64
+perl-FileCache-1.10-481.1.el9_6.noarch
+perl-FindBin-1.51-481.1.el9_6.noarch
+perl-I18N-Collate-1.02-481.1.el9_6.noarch
+perl-Memoize-1.03-481.1.el9_6.noarch
+perl-Module-Loaded-0.08-481.1.el9_6.noarch
+perl-NEXT-0.67-481.1.el9_6.noarch
+perl-Net-1.02-481.1.el9_6.noarch
+perl-Pod-Functions-1.13-481.1.el9_6.noarch
+perl-Search-Dict-1.07-481.1.el9_6.noarch
+perl-Term-Complete-1.403-481.1.el9_6.noarch
+perl-Test-1.31-481.1.el9_6.noarch
+perl-Text-Abbrev-1.02-481.1.el9_6.noarch
+perl-Tie-File-1.06-481.1.el9_6.noarch
+perl-Tie-Memoize-1.1-481.1.el9_6.noarch
+perl-Time-1.03-481.1.el9_6.noarch
+perl-Time-Piece-1.3401-481.1.el9_6.x86_64
+perl-blib-1.07-481.1.el9_6.noarch
+perl-deprecate-0.04-481.1.el9_6.noarch
+perl-encoding-warnings-0.13-481.1.el9_6.noarch
+perl-filetest-1.03-481.1.el9_6.noarch
+perl-less-0.03-481.1.el9_6.noarch
+perl-ph-5.32.1-481.1.el9_6.x86_64
+perl-sort-2.04-481.1.el9_6.noarch
+perl-vmsish-1.04-481.1.el9_6.noarch
+info-6.7-15.el9.x86_64
+ed-1.14.2-12.el9.x86_64
+python3-pyparsing-2.4.7-9.el9.noarch
+systemtap-sdt-dtrace-5.4-4.el9.x86_64
+systemtap-sdt-devel-5.4-4.el9.x86_64
+publicsuffix-list-dafsa-20210518-3.el9.noarch
+libpsl-0.21.1-5.el9.x86_64
+qt5-srpm-macros-5.15.9-1.el9.noarch
+perl-srpm-macros-1-41.el9.noarch
+lua-srpm-macros-1-6.el9.noarch
+rust-srpm-macros-17-4.el9.noarch
+ocaml-srpm-macros-6-6.el9.noarch
+ghc-srpm-macros-1.5.0-6.el9.noarch
+openblas-srpm-macros-2-11.el9.noarch
+fonts-srpm-macros-2.0.5-7.el9.1.noarch
+python-srpm-macros-3.9-54.el9.noarch
+go-srpm-macros-3.8.1-1.el9.noarch
+redhat-rpm-config-210-1.el9.noarch
+perl-devel-5.32.1-481.1.el9_6.x86_64
+perl-ExtUtils-Install-2.20-4.el9.noarch
+perl-ExtUtils-MakeMaker-7.60-3.el9.noarch
+perl-ExtUtils-CBuilder-0.280236-5.el9.noarch
+perl-ExtUtils-Embed-1.35-481.1.el9_6.noarch
+perl-ExtUtils-Miniperl-1.09-481.1.el9_6.noarch
+perl-libnetcfg-5.32.1-481.1.el9_6.noarch
+perl-inc-latest-0.500-20.el9.noarch
+perl-Module-Build-0.42.31-9.el9.noarch
+perl-Encode-devel-3.08-462.el9.x86_64
+sombok-2.4.0-16.el9.x86_64
+perl-Unicode-LineBreak-2019.001-11.el9.x86_64
+perl-Term-Table-0.015-8.el9.noarch
+perl-Test-Simple-1.302183-4.el9.noarch
+perl-CPAN-2.29-5.el9_6.noarch
+perl-5.32.1-481.1.el9_6.x86_64
+libcurl-7.76.1-40.el9.x86_64
+patch-2.7.6-16.el9.x86_64
+glibc-langpack-en-2.34-266.el9_8.x86_64
+glibc-gconv-extra-2.34-266.el9_8.x86_64
+diffutils-3.7-12.el9.x86_64
+fribidi-devel-1.0.10-6.el9.2.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-17-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-3-tab">
+<p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:651b7e8717a5c2db1ae72458676a675f636258d728ab5cb8ce789b15827aa2fe <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-24T14:24:50.614515669Z <br> <strong>size:</strong> 1.03 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux b25a7bfed796 6.17.0-1013-azure #13~24.04.1-Ubuntu SMP Wed Apr 15 16:52:17 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Red Hat Enterprise Linux"
+VERSION="9.8 (Plow)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="9.8"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="Red Hat Enterprise Linux 9.8 (Plow)"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
+BUG_REPORT_URL="https://issues.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_BUGZILLA_PRODUCT_VERSION=9.8
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="9.8"
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R version 4.6.0 (2026-04-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Red Hat Enterprise Linux 9.8 (Plow)
+
+Matrix products: default
+BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                       zlib                       bzlib 
+                   "1.2.11"        "1.0.8, 13-Jul-2019" 
+                         xz                  libdeflate 
+                    "5.2.5"                          "" 
+                       zstd                        PCRE 
+                         ""          "10.40 2022-04-14" 
+                        ICU                         TRE 
+                     "67.1"   "TRE 0.8.0 R_fixes (BSD)" 
+                      iconv                    readline 
+               "glibc 2.34"                       "8.1" 
+                       BLAS 
+"FlexiBLAS OPENBLAS-OPENMP" 
+
+
+&gt; libcurlVersion()
+[1] "7.76.1"
+attr(,"ssl_version")
+[1] "OpenSSL/3.5.5"
+attr(,"libssh_version")
+[1] "libssh/0.10.4/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"   
+
+
+&gt; La_version()
+[1] "3.9.0"
+
+
+&gt; La_library()
+[1] "FlexiBLAS OPENBLAS-OPENMP"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.17.4"                       ""                 "1.48.7" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc
+CFLAGS = -g -O2
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17
+C17FLAGS = -g -O2
+CC23 =
+C23FLAGS =
+CC90 = gcc -std=gnu90
+C90FLAGS = -g -O2
+CC99 = gcc -std=gnu99
+C99FLAGS = -g -O2
+CXX = g++ -std=gnu++20
+CXXFLAGS = -g -O2
+CXXPICFLAGS = -fpic
+CXX17 = g++
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2
+CXX17PICFLAGS = -fpic
+CXX20 = g++
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2
+CXX20PICFLAGS = -fpic
+CXX23 = g++
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2
+CXX23PICFLAGS = -fpic
+CXX26 =
+CXX26STD =
+CXX26FLAGS =
+CXX26PICFLAGS =
+DYLIB_EXT = .so
+DYLIB_LD = gcc
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS =
+JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
+JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
+JAVAH =
+JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
+JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++20
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX17LD = g++ -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_CXX26LD =
+SHLIB_CXX26LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
+BLAS_LIBS = -lflexiblas
+LAPACK_LIBS =
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/bin/nm -B
+RANLIB = ranlib
+LTO =
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>redhat-release-9.8-1.0.el9.x86_64
+gpg-pubkey-fd431d51-4ae0493b
+gpg-pubkey-5a6340b3-6229229e
+setup-2.13.7-10.el9.noarch
+filesystem-3.16-5.el9.x86_64
+tzdata-2026a-1.el9.noarch
+basesystem-11-13.el9.noarch
+python3-setuptools-wheel-53.0.0-15.el9.noarch
+pcre2-syntax-10.40-6.el9.noarch
+ncurses-base-6.2-12.20210508.el9.noarch
+ncurses-libs-6.2-12.20210508.el9.x86_64
+bash-5.1.8-9.el9.x86_64
+libgcc-11.5.0-14.el9.x86_64
+glibc-minimal-langpack-2.34-266.el9_8.x86_64
+glibc-common-2.34-266.el9_8.x86_64
+glibc-2.34-266.el9_8.x86_64
+zlib-1.2.11-40.el9.x86_64
+bzip2-libs-1.0.8-11.el9.x86_64
+xz-libs-5.2.5-8.el9_0.x86_64
+libzstd-1.5.5-1.el9.x86_64
+sqlite-libs-3.34.1-10.el9_8.x86_64
+libgpg-error-1.42-5.el9.x86_64
+libxml2-2.9.13-14.el9_7.x86_64
+libattr-2.5.1-3.el9.x86_64
+libacl-2.3.1-4.el9.x86_64
+libcap-2.48-10.el9_8.1.x86_64
+libffi-3.4.2-8.el9.x86_64
+libstdc++-11.5.0-14.el9.x86_64
+popt-1.18-8.el9.x86_64
+crypto-policies-20260224-1.gitea0f072.el9_8.noarch
+json-c-0.14-11.el9.x86_64
+keyutils-libs-1.6.3-1.el9.x86_64
+libcom_err-1.46.5-8.el9.x86_64
+libtasn1-4.16.0-9.el9.x86_64
+libuuid-2.37.4-25.el9.x86_64
+libxcrypt-4.4.18-3.el9.x86_64
+lua-libs-5.4.4-4.el9.x86_64
+readline-8.1-4.el9.x86_64
+p11-kit-0.26.2-1.el9.x86_64
+libassuan-2.5.5-3.el9.x86_64
+elfutils-libelf-0.194-1.el9.x86_64
+file-libs-5.39-17.el9.x86_64
+expat-2.5.0-6.el9.x86_64
+gdbm-libs-1.23-1.el9.x86_64
+gmp-6.2.0-13.el9.x86_64
+libsepol-3.6-3.el9.x86_64
+libsigsegv-2.13-4.el9.x86_64
+libsmartcols-2.37.4-25.el9.x86_64
+libunistring-0.9.10-15.el9.x86_64
+pcre-8.44-4.el9.x86_64
+grep-3.6-5.el9.x86_64
+libidn2-2.3.0-7.el9.x86_64
+mpfr-4.1.0-10.el9.x86_64
+gawk-5.1.0-6.el9.x86_64
+libcomps-0.1.18-1.el9.x86_64
+keyutils-1.6.3-1.el9.x86_64
+attr-2.5.1-3.el9.x86_64
+libgcrypt-1.10.0-11.el9.x86_64
+libksba-1.5.1-7.el9.x86_64
+alternatives-1.24-2.el9.x86_64
+p11-kit-trust-0.26.2-1.el9.x86_64
+libcap-ng-0.8.2-7.el9.x86_64
+audit-libs-3.1.5-8.el9.x86_64
+libgomp-11.5.0-14.el9.x86_64
+libnghttp2-1.43.0-6.el9_8.1.x86_64
+libtool-ltdl-2.4.6-46.el9.x86_64
+libverto-0.3.2-3.el9.x86_64
+libyaml-0.2.5-7.el9.x86_64
+lz4-libs-1.9.3-5.el9.x86_64
+nettle-3.10.1-1.el9.x86_64
+gnutls-3.8.10-3.el9.x86_64
+npth-1.6-8.el9.x86_64
+pcre2-10.40-6.el9.x86_64
+libselinux-3.6-3.el9.x86_64
+coreutils-single-8.32-40.el9.x86_64
+sed-4.8-10.el9.x86_64
+libblkid-2.37.4-25.el9.x86_64
+libmount-2.37.4-25.el9.x86_64
+glib2-2.68.4-19.el9_8.1.x86_64
+json-glib-1.6.6-1.el9.x86_64
+openssl-fips-provider-so-3.0.7-8.el9.x86_64
+openssl-fips-provider-3.0.7-8.el9.x86_64
+findutils-4.8.0-7.el9.x86_64
+ca-certificates-2025.2.80_v9.0.305-91.el9.noarch
+openssl-libs-3.5.5-2.el9_8.x86_64
+krb5-libs-1.21.1-10.el9_8.x86_64
+curl-minimal-7.76.1-40.el9.x86_64
+cyrus-sasl-lib-2.1.27-22.el9.x86_64
+libarchive-3.5.3-9.el9_7.x86_64
+rpm-4.16.1.3-40.el9.x86_64
+rpm-libs-4.16.1.3-40.el9.x86_64
+libmodulemd-2.13.0-2.el9.x86_64
+libsolv-0.7.24-4.el9.x86_64
+libevent-2.1.12-8.el9_4.x86_64
+librhsm-0.0.3-9.el9.x86_64
+python3-pip-wheel-21.3.1-2.el9_8.noarch
+python3-3.9.25-7.el9_8.x86_64
+python3-libs-3.9.25-7.el9_8.x86_64
+python3-libcomps-0.1.18-1.el9.x86_64
+libsemanage-3.6-5.el9_6.x86_64
+shadow-utils-4.9-16.el9.x86_64
+openldap-2.6.8-4.el9.x86_64
+gnupg2-2.3.3-5.el9_7.x86_64
+gpgme-1.15.1-6.el9.x86_64
+librepo-1.19.0-1.el9.x86_64
+libdnf-0.69.0-18.el9.x86_64
+python3-libdnf-0.69.0-18.el9.x86_64
+python3-hawkey-0.69.0-18.el9.x86_64
+python3-gpg-1.15.1-6.el9.x86_64
+tpm2-tss-3.2.3-1.el9.x86_64
+ima-evm-utils-1.6.2-2.el9.x86_64
+rpm-sign-libs-4.16.1.3-40.el9.x86_64
+elfutils-default-yama-scope-0.194-1.el9.noarch
+elfutils-libs-0.194-1.el9.x86_64
+rpm-build-libs-4.16.1.3-40.el9.x86_64
+python3-rpm-4.16.1.3-40.el9.x86_64
+libreport-filesystem-2.15.2-6.el9.noarch
+dnf-data-4.14.0-34.el9_8.noarch
+python3-dnf-4.14.0-34.el9_8.noarch
+dnf-4.14.0-34.el9_8.noarch
+fonts-filesystem-2.0.5-7.el9.1.noarch
+dejavu-sans-fonts-2.37-18.el9.noarch
+langpacks-core-font-en-3.0-16.el9.noarch
+langpacks-core-en-3.0-16.el9.noarch
+langpacks-en-3.0-16.el9.noarch
+yum-4.14.0-34.el9_8.noarch
+libdnf-plugin-subscription-manager-1.29.50-1.el9.x86_64
+crypto-policies-scripts-20260224-1.gitea0f072.el9_8.noarch
+gzip-1.12-1.el9.x86_64
+tar-1.34-11.el9.x86_64
+vim-minimal-8.2.2637-26.el9_8.4.x86_64
+gdb-gdbserver-16.3-3.el9.x86_64
+rootfiles-8.1-35.el9.noarch
+systemd-libs-252-67.el9_8.2.x86_64
+python3-six-1.15.0-9.el9.noarch
+python3-dateutil-2.9.0.post0-1.el9_7.noarch
+dmidecode-3.6-2.el9.x86_64
+python3-iniparse-0.4-45.el9.noarch
+subscription-manager-rhsm-certificates-20220623-1.el9.noarch
+python3-setuptools-53.0.0-15.el9.noarch
+python3-idna-2.10-7.el9_4.1.noarch
+libfdisk-2.37.4-25.el9.x86_64
+cracklib-2.9.6-28.el9.x86_64
+cracklib-dicts-2.9.6-28.el9.x86_64
+python3-inotify-0.9.6-25.el9.noarch
+dbus-libs-1.12.20-8.el9.x86_64
+python3-dbus-1.2.18-2.el9.x86_64
+python3-systemd-234-19.el9.x86_64
+util-linux-core-2.37.4-25.el9.x86_64
+which-2.21-30.el9_6.x86_64
+systemd-rpm-macros-252-67.el9_8.2.noarch
+python3-pysocks-1.7.1-12.el9.noarch
+python3-urllib3-1.26.5-6.el9_7.1.noarch
+python3-librepo-1.19.0-1.el9.x86_64
+python3-decorator-4.4.2-6.el9.noarch
+python3-chardet-4.0.0-5.el9.noarch
+python3-requests-2.25.1-10.el9_6.noarch
+python3-cloud-what-1.29.50-1.el9.x86_64
+python3-subscription-manager-rhsm-1.29.50-1.el9.x86_64
+psmisc-23.4-3.el9.x86_64
+openssl-3.5.5-2.el9_8.x86_64
+libutempter-1.2.1-6.el9.x86_64
+libseccomp-2.5.2-2.el9.x86_64
+libmnl-1.0.4-16.el9_4.x86_64
+libeconf-0.4.1-5.el9.x86_64
+libdb-5.3.28-57.el9_6.x86_64
+pam-1.5.1-28.el9.x86_64
+libpwquality-1.4.4-8.el9.x86_64
+util-linux-2.37.4-25.el9.x86_64
+libuser-0.63-17.el9.x86_64
+passwd-0.80-12.el9.x86_64
+usermode-1.114-7.el9.x86_64
+virt-what-1.27-2.el9.x86_64
+libbpf-1.5.0-3.el9.x86_64
+iproute-6.17.0-2.el9.x86_64
+kmod-libs-28-11.el9.x86_64
+gobject-introspection-1.68.0-11.el9.x86_64
+python3-gobject-base-noarch-3.40.1-6.el9.noarch
+python3-gobject-base-3.40.1-6.el9.x86_64
+acl-2.3.1-4.el9.x86_64
+dbus-1.12.20-8.el9.x86_64
+systemd-pam-252-67.el9_8.2.x86_64
+systemd-252-67.el9_8.2.x86_64
+dbus-common-1.12.20-8.el9.noarch
+dbus-broker-28-7.el9.x86_64
+python3-dnf-plugins-core-4.3.0-26.el9.noarch
+subscription-manager-1.29.50-1.el9.x86_64
+r-rig-0.7.0-1.x86_64
+dnf-plugins-core-4.3.0-26.el9.noarch
+epel-release-9-10.el9.noarch
+libquadmath-11.5.0-14.el9.x86_64
+libgfortran-11.5.0-14.el9.x86_64
+flexiblas-3.0.4-8.el9.x86_64
+libmpc-1.2.1-4.el9.x86_64
+openblas-0.3.29-1.el9.x86_64
+unzip-6.0-60.el9.x86_64
+libpng-1.6.37-15.el9_8.x86_64
+elfutils-debuginfod-client-0.194-1.el9.x86_64
+binutils-gold-2.35.2-72.el9.x86_64
+binutils-2.35.2-72.el9.x86_64
+make-4.3-8.el9.x86_64
+tcl-8.6.10-7.el9.x86_64
+libICE-1.0.10-8.el9.x86_64
+libSM-1.2.3-10.el9.x86_64
+zip-3.0-35.el9.x86_64
+openblas-openmp-0.3.29-1.el9.x86_64
+flexiblas-openblas-openmp-3.0.4-8.el9.x86_64
+flexiblas-netlib-3.0.4-8.el9.x86_64
+openblas-openmp64-0.3.29-1.el9.x86_64
+flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64
+flexiblas-netlib64-3.0.4-8.el9.x86_64
+cpp-11.5.0-14.el9.x86_64
+kernel-headers-5.14.0-687.10.1.el9_8.x86_64
+libstdc++-devel-11.5.0-14.el9.x86_64
+libX11-common-1.8.12-1.el9.noarch
+glibc-headers-2.34-266.el9_8.x86_64
+pcre2-utf32-10.40-6.el9.x86_64
+pcre2-utf16-10.40-6.el9.x86_64
+libicu-67.1-10.el9_6.x86_64
+libbrotli-1.0.9-9.el9_7.x86_64
+graphite2-1.3.14-9.el9.x86_64
+freetype-2.10.4-10.el9_5.x86_64
+harfbuzz-2.7.4-10.el9.x86_64
+libpkgconf-1.7.3-10.el9.x86_64
+pkgconf-1.7.3-10.el9.x86_64
+pkgconf-m4-1.7.3-10.el9.noarch
+pkgconf-pkg-config-1.7.3-10.el9.x86_64
+xz-devel-5.2.5-8.el9_0.x86_64
+glibc-devel-2.34-266.el9_8.x86_64
+libxcrypt-devel-4.4.18-3.el9.x86_64
+gcc-11.5.0-14.el9.x86_64
+gcc-c++-11.5.0-14.el9.x86_64
+libquadmath-devel-11.5.0-14.el9.x86_64
+gcc-gfortran-11.5.0-14.el9.x86_64
+zlib-devel-1.2.11-40.el9.x86_64
+flexiblas-devel-3.0.4-8.el9.x86_64
+pcre2-devel-10.40-6.el9.x86_64
+bzip2-devel-1.0.8-11.el9.x86_64
+libcurl-devel-7.76.1-40.el9.x86_64
+libicu-devel-67.1-10.el9_6.x86_64
+libjpeg-turbo-2.0.90-7.el9.x86_64
+libXau-1.0.9-8.el9.x86_64
+libxcb-1.13.1-9.el9.x86_64
+libX11-1.8.12-1.el9.x86_64
+libXrender-0.9.10-16.el9.x86_64
+libXt-1.2.0-6.el9.x86_64
+libXext-1.3.4-8.el9.x86_64
+libXmu-1.1.3-8.el9.x86_64
+xml-common-0.6.3-58.el9.noarch
+fontconfig-2.14.0-2.el9_1.x86_64
+libXft-2.3.3-8.el9.x86_64
+tk-8.6.10-9.el9.x86_64
+libwebp-1.2.0-8.el9_3.x86_64
+jbigkit-libs-2.1-23.el9.x86_64
+libtiff-4.4.0-18.el9_8.x86_64
+pixman-0.40.0-6.el9_3.x86_64
+cairo-1.17.4-7.el9.x86_64
+libdatrie-0.2.13-4.el9.x86_64
+libthai-0.1.28-8.el9.x86_64
+fribidi-1.0.10-6.el9.2.x86_64
+pango-1.48.7-3.el9.x86_64
+R-4.6.0-1-1.x86_64
+pyproject-srpm-macros-1.18.5-1.el9.noarch
+llvm-filesystem-21.1.8-2.el9.x86_64
+gcc-plugin-annobin-11.5.0-14.el9.x86_64
+efi-srpm-macros-6-4.el9.noarch
+dwz-0.16-1.el9.x86_64
+ncurses-6.2-12.20210508.el9.x86_64
+libssh-config-0.10.4-18.el9.noarch
+libssh-0.10.4-18.el9.x86_64
+libedit-3.1-39.20210216cvs.el9.x86_64
+llvm-libs-21.1.8-2.el9.x86_64
+annobin-12.98-2.el9.x86_64
+file-5.39-17.el9.x86_64
+groff-base-1.22.4-10.el9.x86_64
+perl-Digest-1.19-4.el9.noarch
+perl-B-1.80-481.1.el9_6.x86_64
+perl-FileHandle-2.03-481.1.el9_6.noarch
+perl-Digest-MD5-2.58-4.el9.x86_64
+perl-Data-Dumper-2.174-462.el9.x86_64
+perl-libnet-3.13-4.el9.noarch
+perl-AutoLoader-5.74-481.1.el9_6.noarch
+perl-Class-Struct-0.66-481.1.el9_6.noarch
+perl-base-2.27-481.1.el9_6.noarch
+perl-URI-5.09-3.el9.noarch
+perl-Term-ANSIColor-5.01-461.el9.noarch
+perl-Time-Local-1.300-7.el9.noarch
+perl-Socket-2.031-4.el9.x86_64
+perl-Mozilla-CA-20200520-6.el9.noarch
+perl-POSIX-1.94-481.1.el9_6.x86_64
+perl-SelectSaver-1.02-481.1.el9_6.noarch
+perl-if-0.60.800-481.1.el9_6.noarch
+perl-mro-1.23-481.1.el9_6.x86_64
+perl-IO-Socket-IP-0.41-5.el9.noarch
+perl-File-stat-1.09-481.1.el9_6.noarch
+perl-overloading-0.02-481.1.el9_6.noarch
+perl-subs-1.03-481.1.el9_6.noarch
+perl-Text-Tabs+Wrap-2013.0523-460.el9.noarch
+perl-Term-Cap-1.17-460.el9.noarch
+perl-Pod-Escapes-1.07-460.el9.noarch
+perl-File-Path-2.18-4.el9.noarch
+perl-Net-SSLeay-1.94-3.el9.x86_64
+perl-Pod-Usage-2.01-4.el9.noarch
+perl-IO-Socket-SSL-2.073-2.el9.noarch
+perl-parent-0.238-460.el9.noarch
+perl-constant-1.33-461.el9.noarch
+perl-Text-ParseWords-3.30-460.el9.noarch
+perl-MIME-Base64-3.16-4.el9.x86_64
+perl-Scalar-List-Utils-1.56-462.el9.x86_64
+perl-Errno-1.30-481.1.el9_6.x86_64
+perl-Fcntl-1.13-481.1.el9_6.x86_64
+perl-File-Basename-2.85-481.1.el9_6.noarch
+perl-Getopt-Std-1.12-481.1.el9_6.noarch
+perl-Symbol-1.08-481.1.el9_6.noarch
+perl-Storable-3.21-460.el9.x86_64
+perl-IPC-Open3-1.21-481.1.el9_6.noarch
+perl-IO-1.43-481.1.el9_6.x86_64
+perl-overload-1.31-481.1.el9_6.noarch
+perl-Pod-Simple-3.42-4.el9.noarch
+perl-File-Temp-0.231.100-4.el9.noarch
+perl-vars-1.05-481.1.el9_6.noarch
+perl-Getopt-Long-2.52-4.el9.noarch
+perl-podlators-4.14-460.el9.noarch
+perl-HTTP-Tiny-0.076-462.el9.noarch
+perl-Exporter-5.74-461.el9.noarch
+perl-Carp-1.50-460.el9.noarch
+perl-PathTools-3.78-461.el9.x86_64
+perl-DB_File-1.855-4.el9.x86_64
+perl-GDBM_File-1.18-481.1.el9_6.x86_64
+perl-NDBM_File-1.15-481.1.el9_6.x86_64
+perl-ODBM_File-1.16-481.1.el9_6.x86_64
+perl-Encode-3.08-462.el9.x86_64
+perl-libs-5.32.1-481.1.el9_6.x86_64
+perl-Pod-Perldoc-3.28.01-461.el9.noarch
+perl-doc-5.32.1-481.1.el9_6.noarch
+perl-interpreter-5.32.1-481.1.el9_6.x86_64
+perl-File-Find-1.37-481.1.el9_6.noarch
+perl-File-Copy-2.34-481.1.el9_6.noarch
+perl-ExtUtils-Manifest-1.73-4.el9.noarch
+perl-Time-HiRes-1.9764-462.el9.x86_64
+perl-DynaLoader-1.47-481.1.el9_6.x86_64
+perl-ExtUtils-ParseXS-3.40-460.el9.noarch
+perl-Compress-Raw-Zlib-2.101-5.el9.x86_64
+perl-threads-2.25-460.el9.x86_64
+perl-threads-shared-1.61-460.el9.x86_64
+perl-File-Compare-1.100.600-481.1.el9_6.noarch
+perl-lib-0.65-481.1.el9_6.x86_64
+perl-Digest-SHA-6.02-461.el9.x86_64
+perl-Filter-1.60-4.el9.x86_64
+perl-Perl-OSType-1.010-461.el9.noarch
+perl-Module-Load-0.36-4.el9.noarch
+perl-Unicode-Normalize-1.27-461.el9.x86_64
+perl-Devel-Peek-1.28-481.1.el9_6.x86_64
+perl-Term-ReadLine-1.17-481.1.el9_6.noarch
+perl-Tie-4.6-481.1.el9_6.noarch
+perl-locale-1.09-481.1.el9_6.noarch
+perl-version-0.99.28-4.el9.x86_64
+perl-CPAN-Meta-Requirements-2.140-461.el9.noarch
+perl-Module-Metadata-1.000037-460.el9.noarch
+perl-Module-CoreList-5.20240609-1.el9.noarch
+perl-meta-notation-5.32.1-481.1.el9_6.noarch
+perl-Pod-Html-1.25-481.1.el9_6.noarch
+perl-Dumpvalue-2.27-481.1.el9_6.noarch
+perl-encoding-3.00-462.el9.x86_64
+perl-TermReadKey-2.38-11.el9.x86_64
+perl-Net-Ping-2.74-5.el9.noarch
+perl-ExtUtils-Command-7.60-3.el9.noarch
+perl-Text-Balanced-2.04-4.el9.noarch
+perl-Compress-Raw-Bzip2-2.101-5.el9.x86_64
+perl-IO-Compress-2.102-4.el9.noarch
+perl-IO-Zlib-1.11-4.el9.noarch
+perl-ExtUtils-MM-Utils-7.60-3.el9.noarch
+perl-CPAN-Meta-YAML-0.018-461.el9.noarch
+perl-Params-Util-1.102-5.el9.x86_64
+perl-Devel-PPPort-3.62-4.el9.x86_64
+perl-Tie-RefHash-1.40-4.el9.noarch
+perl-Sub-Install-0.928-28.el9.noarch
+perl-AutoSplit-5.74-481.1.el9_6.noarch
+perl-Benchmark-1.23-481.1.el9_6.noarch
+perl-Test-Harness-3.42-461.el9.noarch
+perl-DirHandle-1.05-481.1.el9_6.noarch
+perl-ExtUtils-Constant-0.25-481.1.el9_6.noarch
+perl-Hash-Util-FieldHash-1.20-481.1.el9_6.x86_64
+perl-Hash-Util-0.23-481.1.el9_6.x86_64
+perl-I18N-LangTags-0.44-481.1.el9_6.noarch
+perl-Locale-Maketext-1.29-461.el9.noarch
+perl-Locale-Maketext-Simple-0.21-481.1.el9_6.noarch
+perl-Params-Check-0.38-461.el9.noarch
+perl-Module-Load-Conditional-0.74-4.el9.noarch
+perl-IPC-Cmd-1.04-461.el9.noarch
+perl-I18N-Langinfo-0.19-481.1.el9_6.x86_64
+perl-Math-Complex-1.59-481.1.el9_6.noarch
+perl-Math-BigInt-1.9998.18-460.el9.noarch
+perl-JSON-PP-4.06-4.el9.noarch
+perl-CPAN-Meta-2.150010-460.el9.noarch
+perl-Math-BigRat-0.2614-460.el9.noarch
+perl-Opcode-1.48-481.1.el9_6.x86_64
+perl-Safe-2.41-481.1.el9_6.noarch
+perl-SelfLoader-1.26-481.1.el9_6.noarch
+perl-Sys-Hostname-1.23-481.1.el9_6.x86_64
+perl-User-pwent-1.03-481.1.el9_6.noarch
+perl-autouse-1.11-481.1.el9_6.noarch
+perl-Devel-SelfStubber-1.06-481.1.el9_6.noarch
+perl-bignum-0.51-460.el9.noarch
+perl-Math-BigInt-FastCalc-0.500.900-460.el9.x86_64
+perl-Encode-Locale-1.05-21.el9.noarch
+perl-File-Fetch-1.00-4.el9.noarch
+perl-fields-2.27-481.1.el9_6.noarch
+perl-Data-OptList-0.110-17.el9.noarch
+perl-DBM_Filter-0.06-481.1.el9_6.noarch
+perl-Filter-Simple-0.96-460.el9.noarch
+perl-open-1.12-481.1.el9_6.noarch
+perl-debugger-1.56-481.1.el9_6.noarch
+perl-sigtrap-1.09-481.1.el9_6.noarch
+perl-Module-CoreList-tools-5.20240609-1.el9.noarch
+perl-experimental-0.022-6.el9.noarch
+perl-Env-1.04-460.el9.noarch
+perl-Unicode-Collate-1.29-4.el9.x86_64
+perl-Unicode-UCD-0.75-481.1.el9_6.noarch
+perl-Archive-Zip-1.68-6.el9.noarch
+perl-Thread-Queue-3.14-460.el9.noarch
+perl-Thread-3.05-481.1.el9_6.noarch
+perl-Thread-Semaphore-2.13-481.1.el9_6.noarch
+perl-Digest-SHA1-2.13-34.el9.x86_64
+perl-Pod-Checker-1.74-4.el9.noarch
+kernel-srpm-macros-1.0-14.el9.noarch
+perl-diagnostics-1.37-481.1.el9_6.noarch
+perl-macros-5.32.1-481.1.el9_6.noarch
+perl-utils-5.32.1-481.1.el9_6.noarch
+perl-MRO-Compat-0.13-15.el9.noarch
+perl-Algorithm-Diff-1.2010-4.el9.noarch
+perl-Text-Diff-1.45-13.el9.noarch
+perl-Module-Signature-0.88-1.el9.noarch
+perl-CPAN-DistnameInfo-0.12-23.el9.noarch
+perl-Text-Template-1.59-5.el9.noarch
+perl-Sys-Syslog-0.36-461.el9.x86_64
+perl-Devel-Size-0.83-10.el9.x86_64
+perl-File-Which-1.23-10.el9.noarch
+perl-File-HomeDir-1.006-4.el9.noarch
+perl-local-lib-2.000024-13.el9.noarch
+perl-Text-Glob-0.11-15.el9.noarch
+perl-Object-HashBase-0.009-7.el9.noarch
+perl-Importer-0.026-4.el9.noarch
+perl-Compress-Raw-Lzma-2.101-3.el9.x86_64
+perl-IO-Compress-Lzma-2.101-4.el9.noarch
+perl-Archive-Tar-2.38-6.el9.noarch
+perl-Package-Generator-1.106-23.el9.noarch
+perl-Sub-Exporter-0.987-27.el9.noarch
+perl-Data-Section-0.200007-14.el9.noarch
+perl-Software-License-0.103014-12.el9.noarch
+perl-Config-Perl-V-0.33-4.el9.noarch
+perl-IPC-System-Simple-1.30-6.el9.noarch
+perl-autodie-2.34-4.el9.noarch
+perl-MIME-Charset-1.012.2-15.el9.noarch
+perl-Term-Size-Perl-0.031-12.el9.x86_64
+perl-Term-Size-Any-0.002-35.el9.noarch
+perl-Compress-Bzip2-2.28-5.el9.x86_64
+perl-PerlIO-via-QuotedPrint-0.09-4.el9.noarch
+perl-IPC-SysV-2.09-4.el9.x86_64
+perl-perlfaq-5.20210520-1.el9.noarch
+perl-Attribute-Handlers-1.01-481.1.el9_6.noarch
+perl-Config-Extensions-0.03-481.1.el9_6.noarch
+perl-English-1.11-481.1.el9_6.noarch
+perl-File-DosGlob-1.12-481.1.el9_6.x86_64
+perl-FileCache-1.10-481.1.el9_6.noarch
+perl-FindBin-1.51-481.1.el9_6.noarch
+perl-I18N-Collate-1.02-481.1.el9_6.noarch
+perl-Memoize-1.03-481.1.el9_6.noarch
+perl-Module-Loaded-0.08-481.1.el9_6.noarch
+perl-NEXT-0.67-481.1.el9_6.noarch
+perl-Net-1.02-481.1.el9_6.noarch
+perl-Pod-Functions-1.13-481.1.el9_6.noarch
+perl-Search-Dict-1.07-481.1.el9_6.noarch
+perl-Term-Complete-1.403-481.1.el9_6.noarch
+perl-Test-1.31-481.1.el9_6.noarch
+perl-Text-Abbrev-1.02-481.1.el9_6.noarch
+perl-Tie-File-1.06-481.1.el9_6.noarch
+perl-Tie-Memoize-1.1-481.1.el9_6.noarch
+perl-Time-1.03-481.1.el9_6.noarch
+perl-Time-Piece-1.3401-481.1.el9_6.x86_64
+perl-blib-1.07-481.1.el9_6.noarch
+perl-deprecate-0.04-481.1.el9_6.noarch
+perl-encoding-warnings-0.13-481.1.el9_6.noarch
+perl-filetest-1.03-481.1.el9_6.noarch
+perl-less-0.03-481.1.el9_6.noarch
+perl-ph-5.32.1-481.1.el9_6.x86_64
+perl-sort-2.04-481.1.el9_6.noarch
+perl-vmsish-1.04-481.1.el9_6.noarch
+info-6.7-15.el9.x86_64
+ed-1.14.2-12.el9.x86_64
+python3-pyparsing-2.4.7-9.el9.noarch
+systemtap-sdt-dtrace-5.4-4.el9.x86_64
+systemtap-sdt-devel-5.4-4.el9.x86_64
+publicsuffix-list-dafsa-20210518-3.el9.noarch
+libpsl-0.21.1-5.el9.x86_64
+qt5-srpm-macros-5.15.9-1.el9.noarch
+perl-srpm-macros-1-41.el9.noarch
+lua-srpm-macros-1-6.el9.noarch
+rust-srpm-macros-17-4.el9.noarch
+ocaml-srpm-macros-6-6.el9.noarch
+ghc-srpm-macros-1.5.0-6.el9.noarch
+openblas-srpm-macros-2-11.el9.noarch
+fonts-srpm-macros-2.0.5-7.el9.1.noarch
+python-srpm-macros-3.9-54.el9.noarch
+go-srpm-macros-3.8.1-1.el9.noarch
+redhat-rpm-config-210-1.el9.noarch
+perl-devel-5.32.1-481.1.el9_6.x86_64
+perl-ExtUtils-Install-2.20-4.el9.noarch
+perl-ExtUtils-MakeMaker-7.60-3.el9.noarch
+perl-ExtUtils-CBuilder-0.280236-5.el9.noarch
+perl-ExtUtils-Embed-1.35-481.1.el9_6.noarch
+perl-ExtUtils-Miniperl-1.09-481.1.el9_6.noarch
+perl-libnetcfg-5.32.1-481.1.el9_6.noarch
+perl-inc-latest-0.500-20.el9.noarch
+perl-Module-Build-0.42.31-9.el9.noarch
+perl-Encode-devel-3.08-462.el9.x86_64
+sombok-2.4.0-16.el9.x86_64
+perl-Unicode-LineBreak-2019.001-11.el9.x86_64
+perl-Term-Table-0.015-8.el9.noarch
+perl-Test-Simple-1.302183-4.el9.noarch
+perl-CPAN-2.29-5.el9_6.noarch
+perl-5.32.1-481.1.el9_6.x86_64
+libcurl-7.76.1-40.el9.x86_64
+patch-2.7.6-16.el9.x86_64
+glibc-langpack-en-2.34-266.el9_8.x86_64
+glibc-gconv-extra-2.34-266.el9_8.x86_64
+diffutils-3.7-12.el9.x86_64
+fribidi-devel-1.0.10-6.el9.2.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-17-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-4-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:b86a4699f36b0ffeee571708cfc4f18ebb4279374b9d9a6351c8725be9885651 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-23T08:11:44.50923024Z <br> <strong>size:</strong> 982.00 MB <br></p>
 <details>
 <summary>
@@ -49880,7 +52259,7 @@ fribidi-devel-1.0.10-6.el9.2.aarch64
 </code></pre>
 </details>
 </div>
-<div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
+<div id="tabset-17-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-5-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:6dcef7966abb453d17281a43e17665eb228364b235ea65a60d9cb9ddc7cfdea7 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-23T08:02:21.407285537Z <br> <strong>size:</strong> 1.03 GB <br></p>
 <details>
 <summary>
@@ -50670,2385 +53049,6 @@ glibc-langpack-en-2.34-266.el9_8.x86_64
 glibc-gconv-extra-2.34-266.el9_8.x86_64
 fribidi-devel-1.0.10-6.el9.2.x86_64
 diffutils-3.7-12.el9.x86_64
-</code></pre>
-</details>
-</div>
-<div id="tabset-17-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-3-tab">
-<p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:73f4b4c4264145e354c50b0def75c3e8a15878111823e32be865b329c72c1c32 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-23T08:02:21.407285537Z <br> <strong>size:</strong> 1.03 GB <br></p>
-<details>
-<summary>
-OS version
-</summary>
-<pre><code>&gt; uname -a
-Linux 000b6001f170 6.17.0-1013-azure #13~24.04.1-Ubuntu SMP Wed Apr 15 16:52:17 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
-
-&gt; cat /etc/os-release
-NAME="Red Hat Enterprise Linux"
-VERSION="9.8 (Plow)"
-ID="rhel"
-ID_LIKE="fedora"
-VERSION_ID="9.8"
-PLATFORM_ID="platform:el9"
-PRETTY_NAME="Red Hat Enterprise Linux 9.8 (Plow)"
-ANSI_COLOR="0;31"
-LOGO="fedora-logo-icon"
-CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
-HOME_URL="https://www.redhat.com/"
-DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
-BUG_REPORT_URL="https://issues.redhat.com/"
-
-REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
-REDHAT_BUGZILLA_PRODUCT_VERSION=9.8
-REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
-REDHAT_SUPPORT_PRODUCT_VERSION="9.8"
-</code></pre>
-</details>
-<details>
-<summary>
-R session information
-</summary>
-<pre><code>&gt; sessionInfo()
-R version 4.6.0 (2026-04-24)
-Platform: x86_64-pc-linux-gnu
-Running under: Red Hat Enterprise Linux 9.8 (Plow)
-
-Matrix products: default
-BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
-
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.6.0
-</code></pre>
-</details>
-<details>
-<summary>
-R capabilities
-</summary>
-<pre><code>&gt; capabilities()
-       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE 
-</code></pre>
-</details>
-<details>
-<summary>
-R external software
-</summary>
-<pre><code>&gt; extSoftVersion()
-                       zlib                       bzlib 
-                   "1.2.11"        "1.0.8, 13-Jul-2019" 
-                         xz                  libdeflate 
-                    "5.2.5"                          "" 
-                       zstd                        PCRE 
-                         ""          "10.40 2022-04-14" 
-                        ICU                         TRE 
-                     "67.1"   "TRE 0.8.0 R_fixes (BSD)" 
-                      iconv                    readline 
-               "glibc 2.34"                       "8.1" 
-                       BLAS 
-"FlexiBLAS OPENBLAS-OPENMP" 
-
-
-&gt; libcurlVersion()
-[1] "7.76.1"
-attr(,"ssl_version")
-[1] "OpenSSL/3.5.5"
-attr(,"libssh_version")
-[1] "libssh/0.10.4/openssl/zlib"
-attr(,"protocols")
- [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
- [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
-[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
-[22] "smtps"   "telnet"  "tftp"   
-
-
-&gt; La_version()
-[1] "3.9.0"
-
-
-&gt; La_library()
-[1] "FlexiBLAS OPENBLAS-OPENMP"
-
-
-&gt; grSoftVersion()
-                   cairo                  cairoFT                    pango 
-                "1.17.4"                       ""                 "1.48.7" 
-                  libpng                     jpeg                  libtiff 
-                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
-
-
-&gt; pcre_config()
-             UTF-8 Unicode properties                JIT              stack 
-              TRUE               TRUE               TRUE              FALSE 
-</code></pre>
-</details>
-<details>
-<summary>
-R localization
-</summary>
-<pre><code>&gt; l10n_info()
-$MBCS
-[1] TRUE
-
-$`UTF-8`
-[1] TRUE
-
-$`Latin-1`
-[1] FALSE
-
-$codeset
-[1] "UTF-8"
-</code></pre>
-</details>
-<details>
-<summary>
-R config
-</summary>
-<pre><code>&gt; R CMD config --all
-CC = gcc
-CFLAGS = -g -O2
-CPICFLAGS = -fpic
-CPPFLAGS = -I/usr/local/include
-CC17 = gcc -std=gnu17
-C17FLAGS = -g -O2
-CC23 =
-C23FLAGS =
-CC90 = gcc -std=gnu90
-C90FLAGS = -g -O2
-CC99 = gcc -std=gnu99
-C99FLAGS = -g -O2
-CXX = g++ -std=gnu++20
-CXXFLAGS = -g -O2
-CXXPICFLAGS = -fpic
-CXX17 = g++
-CXX17STD = -std=gnu++17
-CXX17FLAGS = -g -O2
-CXX17PICFLAGS = -fpic
-CXX20 = g++
-CXX20STD = -std=gnu++20
-CXX20FLAGS = -g -O2
-CXX20PICFLAGS = -fpic
-CXX23 = g++
-CXX23STD = -std=gnu++23
-CXX23FLAGS = -g -O2
-CXX23PICFLAGS = -fpic
-CXX26 =
-CXX26STD =
-CXX26FLAGS =
-CXX26PICFLAGS =
-DYLIB_EXT = .so
-DYLIB_LD = gcc
-DYLIB_LDFLAGS = -shared -fopenmp
-FC = gfortran
-FFLAGS = -g -O2
-FPICFLAGS = -fpic
-FLIBS = -lgfortran -lm -lquadmath
-FCFLAGS = -g -O2
-SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
-OBJC =
-OBJCFLAGS =
-JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
-JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
-JAVAH =
-JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
-JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
-JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
-JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
-LDFLAGS = -L/usr/local/lib
-SHLIB_CFLAGS =
-SHLIB_CXXFLAGS =
-SHLIB_CXXLD = g++ -std=gnu++20
-SHLIB_CXXLDFLAGS = -shared
-SHLIB_CXX17LD = g++ -std=gnu++17
-SHLIB_CXX17LDFLAGS = -shared
-SHLIB_CXX20LD = g++ -std=gnu++20
-SHLIB_CXX20LDFLAGS = -shared
-SHLIB_CXX23LD = g++ -std=gnu++23
-SHLIB_CXX23LDFLAGS = -shared
-SHLIB_CXX26LD =
-SHLIB_CXX26LDFLAGS = -shared
-SHLIB_EXT = .so
-SHLIB_FFLAGS =
-SHLIB_LD = gcc
-SHLIB_LDFLAGS = -shared
-TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
-TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
-BLAS_LIBS = -lflexiblas
-LAPACK_LIBS =
-MAKE = make
-LIBnn = lib
-AR = ar
-NM = /usr/bin/nm -B
-RANLIB = ranlib
-LTO =
-LTO_FC =
-LTO_LD =
-
-## The following variables are defunct
-CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
-</code></pre>
-</details>
-<details>
-<summary>
-Compilers
-</summary>
-<pre><code>&gt; $(CC) --version
-gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(CXX) --version
-g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(FC) --version
-GNU Fortran (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-</details>
-<details>
-<summary>
-OS packages
-</summary>
-<pre><code>redhat-release-9.8-1.0.el9.x86_64
-gpg-pubkey-fd431d51-4ae0493b
-gpg-pubkey-5a6340b3-6229229e
-setup-2.13.7-10.el9.noarch
-filesystem-3.16-5.el9.x86_64
-tzdata-2026a-1.el9.noarch
-basesystem-11-13.el9.noarch
-python3-setuptools-wheel-53.0.0-15.el9.noarch
-pcre2-syntax-10.40-6.el9.noarch
-ncurses-base-6.2-12.20210508.el9.noarch
-ncurses-libs-6.2-12.20210508.el9.x86_64
-bash-5.1.8-9.el9.x86_64
-libgcc-11.5.0-14.el9.x86_64
-glibc-minimal-langpack-2.34-266.el9_8.x86_64
-glibc-common-2.34-266.el9_8.x86_64
-glibc-2.34-266.el9_8.x86_64
-zlib-1.2.11-40.el9.x86_64
-bzip2-libs-1.0.8-11.el9.x86_64
-xz-libs-5.2.5-8.el9_0.x86_64
-libzstd-1.5.5-1.el9.x86_64
-sqlite-libs-3.34.1-10.el9_8.x86_64
-libgpg-error-1.42-5.el9.x86_64
-libxml2-2.9.13-14.el9_7.x86_64
-libattr-2.5.1-3.el9.x86_64
-libacl-2.3.1-4.el9.x86_64
-libcap-2.48-10.el9_8.1.x86_64
-libffi-3.4.2-8.el9.x86_64
-libstdc++-11.5.0-14.el9.x86_64
-popt-1.18-8.el9.x86_64
-crypto-policies-20260224-1.gitea0f072.el9_8.noarch
-json-c-0.14-11.el9.x86_64
-keyutils-libs-1.6.3-1.el9.x86_64
-libcom_err-1.46.5-8.el9.x86_64
-libtasn1-4.16.0-9.el9.x86_64
-libuuid-2.37.4-25.el9.x86_64
-libxcrypt-4.4.18-3.el9.x86_64
-lua-libs-5.4.4-4.el9.x86_64
-readline-8.1-4.el9.x86_64
-p11-kit-0.26.2-1.el9.x86_64
-libassuan-2.5.5-3.el9.x86_64
-elfutils-libelf-0.194-1.el9.x86_64
-file-libs-5.39-17.el9.x86_64
-expat-2.5.0-6.el9.x86_64
-gdbm-libs-1.23-1.el9.x86_64
-gmp-6.2.0-13.el9.x86_64
-libsepol-3.6-3.el9.x86_64
-libsigsegv-2.13-4.el9.x86_64
-libsmartcols-2.37.4-25.el9.x86_64
-libunistring-0.9.10-15.el9.x86_64
-pcre-8.44-4.el9.x86_64
-grep-3.6-5.el9.x86_64
-libidn2-2.3.0-7.el9.x86_64
-mpfr-4.1.0-10.el9.x86_64
-gawk-5.1.0-6.el9.x86_64
-libcomps-0.1.18-1.el9.x86_64
-keyutils-1.6.3-1.el9.x86_64
-attr-2.5.1-3.el9.x86_64
-libgcrypt-1.10.0-11.el9.x86_64
-libksba-1.5.1-7.el9.x86_64
-alternatives-1.24-2.el9.x86_64
-p11-kit-trust-0.26.2-1.el9.x86_64
-libcap-ng-0.8.2-7.el9.x86_64
-audit-libs-3.1.5-8.el9.x86_64
-libgomp-11.5.0-14.el9.x86_64
-libnghttp2-1.43.0-6.el9_8.1.x86_64
-libtool-ltdl-2.4.6-46.el9.x86_64
-libverto-0.3.2-3.el9.x86_64
-libyaml-0.2.5-7.el9.x86_64
-lz4-libs-1.9.3-5.el9.x86_64
-nettle-3.10.1-1.el9.x86_64
-gnutls-3.8.10-3.el9.x86_64
-npth-1.6-8.el9.x86_64
-pcre2-10.40-6.el9.x86_64
-libselinux-3.6-3.el9.x86_64
-coreutils-single-8.32-40.el9.x86_64
-sed-4.8-10.el9.x86_64
-libblkid-2.37.4-25.el9.x86_64
-libmount-2.37.4-25.el9.x86_64
-glib2-2.68.4-19.el9_8.1.x86_64
-json-glib-1.6.6-1.el9.x86_64
-openssl-fips-provider-so-3.0.7-8.el9.x86_64
-openssl-fips-provider-3.0.7-8.el9.x86_64
-findutils-4.8.0-7.el9.x86_64
-ca-certificates-2025.2.80_v9.0.305-91.el9.noarch
-openssl-libs-3.5.5-2.el9_8.x86_64
-krb5-libs-1.21.1-10.el9_8.x86_64
-curl-minimal-7.76.1-40.el9.x86_64
-cyrus-sasl-lib-2.1.27-22.el9.x86_64
-libarchive-3.5.3-9.el9_7.x86_64
-rpm-4.16.1.3-40.el9.x86_64
-rpm-libs-4.16.1.3-40.el9.x86_64
-libmodulemd-2.13.0-2.el9.x86_64
-libsolv-0.7.24-4.el9.x86_64
-libevent-2.1.12-8.el9_4.x86_64
-librhsm-0.0.3-9.el9.x86_64
-python3-pip-wheel-21.3.1-2.el9_8.noarch
-python3-3.9.25-7.el9_8.x86_64
-python3-libs-3.9.25-7.el9_8.x86_64
-python3-libcomps-0.1.18-1.el9.x86_64
-libsemanage-3.6-5.el9_6.x86_64
-shadow-utils-4.9-16.el9.x86_64
-openldap-2.6.8-4.el9.x86_64
-gnupg2-2.3.3-5.el9_7.x86_64
-gpgme-1.15.1-6.el9.x86_64
-librepo-1.19.0-1.el9.x86_64
-libdnf-0.69.0-18.el9.x86_64
-python3-libdnf-0.69.0-18.el9.x86_64
-python3-hawkey-0.69.0-18.el9.x86_64
-python3-gpg-1.15.1-6.el9.x86_64
-tpm2-tss-3.2.3-1.el9.x86_64
-ima-evm-utils-1.6.2-2.el9.x86_64
-rpm-sign-libs-4.16.1.3-40.el9.x86_64
-elfutils-default-yama-scope-0.194-1.el9.noarch
-elfutils-libs-0.194-1.el9.x86_64
-rpm-build-libs-4.16.1.3-40.el9.x86_64
-python3-rpm-4.16.1.3-40.el9.x86_64
-libreport-filesystem-2.15.2-6.el9.noarch
-dnf-data-4.14.0-34.el9_8.noarch
-python3-dnf-4.14.0-34.el9_8.noarch
-dnf-4.14.0-34.el9_8.noarch
-fonts-filesystem-2.0.5-7.el9.1.noarch
-dejavu-sans-fonts-2.37-18.el9.noarch
-langpacks-core-font-en-3.0-16.el9.noarch
-langpacks-core-en-3.0-16.el9.noarch
-langpacks-en-3.0-16.el9.noarch
-yum-4.14.0-34.el9_8.noarch
-libdnf-plugin-subscription-manager-1.29.50-1.el9.x86_64
-crypto-policies-scripts-20260224-1.gitea0f072.el9_8.noarch
-gzip-1.12-1.el9.x86_64
-tar-1.34-11.el9.x86_64
-vim-minimal-8.2.2637-26.el9_8.4.x86_64
-gdb-gdbserver-16.3-3.el9.x86_64
-rootfiles-8.1-35.el9.noarch
-systemd-libs-252-67.el9_8.2.x86_64
-python3-six-1.15.0-9.el9.noarch
-python3-dateutil-2.9.0.post0-1.el9_7.noarch
-dmidecode-3.6-2.el9.x86_64
-python3-iniparse-0.4-45.el9.noarch
-subscription-manager-rhsm-certificates-20220623-1.el9.noarch
-python3-setuptools-53.0.0-15.el9.noarch
-python3-idna-2.10-7.el9_4.1.noarch
-libfdisk-2.37.4-25.el9.x86_64
-cracklib-2.9.6-28.el9.x86_64
-cracklib-dicts-2.9.6-28.el9.x86_64
-python3-inotify-0.9.6-25.el9.noarch
-dbus-libs-1.12.20-8.el9.x86_64
-python3-dbus-1.2.18-2.el9.x86_64
-python3-systemd-234-19.el9.x86_64
-util-linux-core-2.37.4-25.el9.x86_64
-which-2.21-30.el9_6.x86_64
-systemd-rpm-macros-252-67.el9_8.2.noarch
-python3-pysocks-1.7.1-12.el9.noarch
-python3-urllib3-1.26.5-6.el9_7.1.noarch
-python3-librepo-1.19.0-1.el9.x86_64
-python3-decorator-4.4.2-6.el9.noarch
-python3-chardet-4.0.0-5.el9.noarch
-python3-requests-2.25.1-10.el9_6.noarch
-python3-cloud-what-1.29.50-1.el9.x86_64
-python3-subscription-manager-rhsm-1.29.50-1.el9.x86_64
-psmisc-23.4-3.el9.x86_64
-openssl-3.5.5-2.el9_8.x86_64
-libutempter-1.2.1-6.el9.x86_64
-libseccomp-2.5.2-2.el9.x86_64
-libmnl-1.0.4-16.el9_4.x86_64
-libeconf-0.4.1-5.el9.x86_64
-libdb-5.3.28-57.el9_6.x86_64
-pam-1.5.1-28.el9.x86_64
-libpwquality-1.4.4-8.el9.x86_64
-util-linux-2.37.4-25.el9.x86_64
-libuser-0.63-17.el9.x86_64
-passwd-0.80-12.el9.x86_64
-usermode-1.114-7.el9.x86_64
-virt-what-1.27-2.el9.x86_64
-libbpf-1.5.0-3.el9.x86_64
-iproute-6.17.0-2.el9.x86_64
-kmod-libs-28-11.el9.x86_64
-gobject-introspection-1.68.0-11.el9.x86_64
-python3-gobject-base-noarch-3.40.1-6.el9.noarch
-python3-gobject-base-3.40.1-6.el9.x86_64
-acl-2.3.1-4.el9.x86_64
-dbus-1.12.20-8.el9.x86_64
-systemd-pam-252-67.el9_8.2.x86_64
-systemd-252-67.el9_8.2.x86_64
-dbus-common-1.12.20-8.el9.noarch
-dbus-broker-28-7.el9.x86_64
-python3-dnf-plugins-core-4.3.0-26.el9.noarch
-subscription-manager-1.29.50-1.el9.x86_64
-r-rig-0.7.0-1.x86_64
-dnf-plugins-core-4.3.0-26.el9.noarch
-epel-release-9-10.el9.noarch
-libquadmath-11.5.0-14.el9.x86_64
-libgfortran-11.5.0-14.el9.x86_64
-flexiblas-3.0.4-8.el9.x86_64
-libmpc-1.2.1-4.el9.x86_64
-openblas-0.3.29-1.el9.x86_64
-unzip-6.0-60.el9.x86_64
-libpng-1.6.37-15.el9_8.x86_64
-elfutils-debuginfod-client-0.194-1.el9.x86_64
-binutils-gold-2.35.2-72.el9.x86_64
-binutils-2.35.2-72.el9.x86_64
-libICE-1.0.10-8.el9.x86_64
-libSM-1.2.3-10.el9.x86_64
-make-4.3-8.el9.x86_64
-tcl-8.6.10-7.el9.x86_64
-zip-3.0-35.el9.x86_64
-openblas-openmp-0.3.29-1.el9.x86_64
-flexiblas-openblas-openmp-3.0.4-8.el9.x86_64
-flexiblas-netlib-3.0.4-8.el9.x86_64
-openblas-openmp64-0.3.29-1.el9.x86_64
-flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64
-flexiblas-netlib64-3.0.4-8.el9.x86_64
-cpp-11.5.0-14.el9.x86_64
-kernel-headers-5.14.0-687.10.1.el9_8.x86_64
-libstdc++-devel-11.5.0-14.el9.x86_64
-libX11-common-1.8.12-1.el9.noarch
-glibc-headers-2.34-266.el9_8.x86_64
-pcre2-utf32-10.40-6.el9.x86_64
-pcre2-utf16-10.40-6.el9.x86_64
-libicu-67.1-10.el9_6.x86_64
-libbrotli-1.0.9-9.el9_7.x86_64
-libjpeg-turbo-2.0.90-7.el9.x86_64
-libXau-1.0.9-8.el9.x86_64
-libxcb-1.13.1-9.el9.x86_64
-libX11-1.8.12-1.el9.x86_64
-libXrender-0.9.10-16.el9.x86_64
-libXt-1.2.0-6.el9.x86_64
-libXext-1.3.4-8.el9.x86_64
-libXmu-1.1.3-8.el9.x86_64
-xml-common-0.6.3-58.el9.noarch
-libwebp-1.2.0-8.el9_3.x86_64
-jbigkit-libs-2.1-23.el9.x86_64
-libtiff-4.4.0-18.el9_8.x86_64
-pixman-0.40.0-6.el9_3.x86_64
-libdatrie-0.2.13-4.el9.x86_64
-libthai-0.1.28-8.el9.x86_64
-fribidi-1.0.10-6.el9.2.x86_64
-graphite2-1.3.14-9.el9.x86_64
-freetype-2.10.4-10.el9_5.x86_64
-harfbuzz-2.7.4-10.el9.x86_64
-fontconfig-2.14.0-2.el9_1.x86_64
-libXft-2.3.3-8.el9.x86_64
-tk-8.6.10-9.el9.x86_64
-cairo-1.17.4-7.el9.x86_64
-pango-1.48.7-3.el9.x86_64
-libpkgconf-1.7.3-10.el9.x86_64
-pkgconf-1.7.3-10.el9.x86_64
-pkgconf-m4-1.7.3-10.el9.noarch
-pkgconf-pkg-config-1.7.3-10.el9.x86_64
-xz-devel-5.2.5-8.el9_0.x86_64
-glibc-devel-2.34-266.el9_8.x86_64
-libxcrypt-devel-4.4.18-3.el9.x86_64
-gcc-11.5.0-14.el9.x86_64
-gcc-c++-11.5.0-14.el9.x86_64
-libquadmath-devel-11.5.0-14.el9.x86_64
-gcc-gfortran-11.5.0-14.el9.x86_64
-zlib-devel-1.2.11-40.el9.x86_64
-flexiblas-devel-3.0.4-8.el9.x86_64
-pcre2-devel-10.40-6.el9.x86_64
-bzip2-devel-1.0.8-11.el9.x86_64
-libcurl-devel-7.76.1-40.el9.x86_64
-libicu-devel-67.1-10.el9_6.x86_64
-R-4.6.0-1-1.x86_64
-pyproject-srpm-macros-1.18.5-1.el9.noarch
-llvm-filesystem-21.1.8-2.el9.x86_64
-gcc-plugin-annobin-11.5.0-14.el9.x86_64
-efi-srpm-macros-6-4.el9.noarch
-dwz-0.16-1.el9.x86_64
-ncurses-6.2-12.20210508.el9.x86_64
-libssh-config-0.10.4-18.el9.noarch
-libssh-0.10.4-18.el9.x86_64
-libedit-3.1-39.20210216cvs.el9.x86_64
-llvm-libs-21.1.8-2.el9.x86_64
-annobin-12.98-2.el9.x86_64
-file-5.39-17.el9.x86_64
-qt5-srpm-macros-5.15.9-1.el9.noarch
-perl-srpm-macros-1-41.el9.noarch
-lua-srpm-macros-1-6.el9.noarch
-rust-srpm-macros-17-4.el9.noarch
-ocaml-srpm-macros-6-6.el9.noarch
-ghc-srpm-macros-1.5.0-6.el9.noarch
-openblas-srpm-macros-2-11.el9.noarch
-sombok-2.4.0-16.el9.x86_64
-groff-base-1.22.4-10.el9.x86_64
-perl-Digest-1.19-4.el9.noarch
-perl-Digest-MD5-2.58-4.el9.x86_64
-perl-B-1.80-481.1.el9_6.x86_64
-perl-FileHandle-2.03-481.1.el9_6.noarch
-perl-Data-Dumper-2.174-462.el9.x86_64
-perl-libnet-3.13-4.el9.noarch
-perl-AutoLoader-5.74-481.1.el9_6.noarch
-perl-Class-Struct-0.66-481.1.el9_6.noarch
-perl-base-2.27-481.1.el9_6.noarch
-perl-URI-5.09-3.el9.noarch
-perl-Term-ANSIColor-5.01-461.el9.noarch
-perl-Time-Local-1.300-7.el9.noarch
-perl-Socket-2.031-4.el9.x86_64
-perl-Mozilla-CA-20200520-6.el9.noarch
-perl-POSIX-1.94-481.1.el9_6.x86_64
-perl-SelectSaver-1.02-481.1.el9_6.noarch
-perl-if-0.60.800-481.1.el9_6.noarch
-perl-mro-1.23-481.1.el9_6.x86_64
-perl-IO-Socket-IP-0.41-5.el9.noarch
-perl-File-stat-1.09-481.1.el9_6.noarch
-perl-overloading-0.02-481.1.el9_6.noarch
-perl-subs-1.03-481.1.el9_6.noarch
-perl-Text-Tabs+Wrap-2013.0523-460.el9.noarch
-perl-Term-Cap-1.17-460.el9.noarch
-perl-Pod-Escapes-1.07-460.el9.noarch
-perl-File-Path-2.18-4.el9.noarch
-perl-IO-Socket-SSL-2.073-2.el9.noarch
-perl-Net-SSLeay-1.94-3.el9.x86_64
-perl-Pod-Usage-2.01-4.el9.noarch
-perl-parent-0.238-460.el9.noarch
-perl-constant-1.33-461.el9.noarch
-perl-Text-ParseWords-3.30-460.el9.noarch
-perl-MIME-Base64-3.16-4.el9.x86_64
-perl-Scalar-List-Utils-1.56-462.el9.x86_64
-perl-Errno-1.30-481.1.el9_6.x86_64
-perl-Fcntl-1.13-481.1.el9_6.x86_64
-perl-File-Basename-2.85-481.1.el9_6.noarch
-perl-Getopt-Std-1.12-481.1.el9_6.noarch
-perl-Symbol-1.08-481.1.el9_6.noarch
-perl-Storable-3.21-460.el9.x86_64
-perl-IPC-Open3-1.21-481.1.el9_6.noarch
-perl-IO-1.43-481.1.el9_6.x86_64
-perl-overload-1.31-481.1.el9_6.noarch
-perl-Pod-Simple-3.42-4.el9.noarch
-perl-File-Temp-0.231.100-4.el9.noarch
-perl-HTTP-Tiny-0.076-462.el9.noarch
-perl-vars-1.05-481.1.el9_6.noarch
-perl-Getopt-Long-2.52-4.el9.noarch
-perl-podlators-4.14-460.el9.noarch
-perl-Exporter-5.74-461.el9.noarch
-perl-Carp-1.50-460.el9.noarch
-perl-PathTools-3.78-461.el9.x86_64
-perl-DB_File-1.855-4.el9.x86_64
-perl-GDBM_File-1.18-481.1.el9_6.x86_64
-perl-NDBM_File-1.15-481.1.el9_6.x86_64
-perl-ODBM_File-1.16-481.1.el9_6.x86_64
-perl-Encode-3.08-462.el9.x86_64
-perl-libs-5.32.1-481.1.el9_6.x86_64
-perl-Pod-Perldoc-3.28.01-461.el9.noarch
-perl-doc-5.32.1-481.1.el9_6.noarch
-perl-interpreter-5.32.1-481.1.el9_6.x86_64
-perl-File-Find-1.37-481.1.el9_6.noarch
-perl-File-Copy-2.34-481.1.el9_6.noarch
-perl-ExtUtils-Manifest-1.73-4.el9.noarch
-perl-Time-HiRes-1.9764-462.el9.x86_64
-perl-DynaLoader-1.47-481.1.el9_6.x86_64
-perl-ExtUtils-ParseXS-3.40-460.el9.noarch
-perl-Compress-Raw-Zlib-2.101-5.el9.x86_64
-perl-threads-2.25-460.el9.x86_64
-perl-threads-shared-1.61-460.el9.x86_64
-perl-File-Compare-1.100.600-481.1.el9_6.noarch
-perl-lib-0.65-481.1.el9_6.x86_64
-perl-Digest-SHA-6.02-461.el9.x86_64
-perl-Filter-1.60-4.el9.x86_64
-perl-Perl-OSType-1.010-461.el9.noarch
-perl-Module-Load-0.36-4.el9.noarch
-perl-Unicode-Normalize-1.27-461.el9.x86_64
-perl-Devel-Peek-1.28-481.1.el9_6.x86_64
-perl-Term-ReadLine-1.17-481.1.el9_6.noarch
-perl-Tie-4.6-481.1.el9_6.noarch
-perl-locale-1.09-481.1.el9_6.noarch
-perl-version-0.99.28-4.el9.x86_64
-perl-CPAN-Meta-Requirements-2.140-461.el9.noarch
-perl-Module-Metadata-1.000037-460.el9.noarch
-perl-Module-CoreList-5.20240609-1.el9.noarch
-perl-meta-notation-5.32.1-481.1.el9_6.noarch
-perl-Pod-Html-1.25-481.1.el9_6.noarch
-perl-Dumpvalue-2.27-481.1.el9_6.noarch
-perl-encoding-3.00-462.el9.x86_64
-perl-TermReadKey-2.38-11.el9.x86_64
-perl-Net-Ping-2.74-5.el9.noarch
-perl-ExtUtils-Command-7.60-3.el9.noarch
-perl-Text-Balanced-2.04-4.el9.noarch
-perl-Compress-Raw-Bzip2-2.101-5.el9.x86_64
-perl-IO-Compress-2.102-4.el9.noarch
-perl-IO-Zlib-1.11-4.el9.noarch
-perl-ExtUtils-MM-Utils-7.60-3.el9.noarch
-perl-CPAN-Meta-YAML-0.018-461.el9.noarch
-perl-Params-Util-1.102-5.el9.x86_64
-perl-Devel-PPPort-3.62-4.el9.x86_64
-perl-Tie-RefHash-1.40-4.el9.noarch
-perl-Sub-Install-0.928-28.el9.noarch
-perl-AutoSplit-5.74-481.1.el9_6.noarch
-perl-Benchmark-1.23-481.1.el9_6.noarch
-perl-Test-Harness-3.42-461.el9.noarch
-perl-DirHandle-1.05-481.1.el9_6.noarch
-perl-ExtUtils-Constant-0.25-481.1.el9_6.noarch
-perl-Hash-Util-FieldHash-1.20-481.1.el9_6.x86_64
-perl-Hash-Util-0.23-481.1.el9_6.x86_64
-perl-I18N-LangTags-0.44-481.1.el9_6.noarch
-perl-Locale-Maketext-1.29-461.el9.noarch
-perl-Locale-Maketext-Simple-0.21-481.1.el9_6.noarch
-perl-Params-Check-0.38-461.el9.noarch
-perl-Module-Load-Conditional-0.74-4.el9.noarch
-perl-IPC-Cmd-1.04-461.el9.noarch
-perl-I18N-Langinfo-0.19-481.1.el9_6.x86_64
-perl-Math-Complex-1.59-481.1.el9_6.noarch
-perl-Math-BigInt-1.9998.18-460.el9.noarch
-perl-JSON-PP-4.06-4.el9.noarch
-perl-CPAN-Meta-2.150010-460.el9.noarch
-perl-Math-BigRat-0.2614-460.el9.noarch
-perl-Opcode-1.48-481.1.el9_6.x86_64
-perl-Safe-2.41-481.1.el9_6.noarch
-perl-SelfLoader-1.26-481.1.el9_6.noarch
-perl-Sys-Hostname-1.23-481.1.el9_6.x86_64
-perl-User-pwent-1.03-481.1.el9_6.noarch
-perl-autouse-1.11-481.1.el9_6.noarch
-perl-Devel-SelfStubber-1.06-481.1.el9_6.noarch
-perl-bignum-0.51-460.el9.noarch
-perl-Math-BigInt-FastCalc-0.500.900-460.el9.x86_64
-perl-Encode-Locale-1.05-21.el9.noarch
-perl-File-Fetch-1.00-4.el9.noarch
-perl-fields-2.27-481.1.el9_6.noarch
-perl-Data-OptList-0.110-17.el9.noarch
-perl-DBM_Filter-0.06-481.1.el9_6.noarch
-perl-Filter-Simple-0.96-460.el9.noarch
-perl-open-1.12-481.1.el9_6.noarch
-perl-debugger-1.56-481.1.el9_6.noarch
-perl-sigtrap-1.09-481.1.el9_6.noarch
-perl-Module-CoreList-tools-5.20240609-1.el9.noarch
-perl-experimental-0.022-6.el9.noarch
-perl-Env-1.04-460.el9.noarch
-perl-Unicode-Collate-1.29-4.el9.x86_64
-perl-Unicode-UCD-0.75-481.1.el9_6.noarch
-perl-Archive-Zip-1.68-6.el9.noarch
-perl-Thread-Queue-3.14-460.el9.noarch
-perl-Thread-3.05-481.1.el9_6.noarch
-perl-Thread-Semaphore-2.13-481.1.el9_6.noarch
-perl-Digest-SHA1-2.13-34.el9.x86_64
-perl-Pod-Checker-1.74-4.el9.noarch
-kernel-srpm-macros-1.0-14.el9.noarch
-fonts-srpm-macros-2.0.5-7.el9.1.noarch
-python-srpm-macros-3.9-54.el9.noarch
-go-srpm-macros-3.8.1-1.el9.noarch
-redhat-rpm-config-210-1.el9.noarch
-perl-diagnostics-1.37-481.1.el9_6.noarch
-perl-macros-5.32.1-481.1.el9_6.noarch
-perl-utils-5.32.1-481.1.el9_6.noarch
-perl-MRO-Compat-0.13-15.el9.noarch
-perl-Algorithm-Diff-1.2010-4.el9.noarch
-perl-Text-Diff-1.45-13.el9.noarch
-perl-Module-Signature-0.88-1.el9.noarch
-perl-CPAN-DistnameInfo-0.12-23.el9.noarch
-perl-Text-Template-1.59-5.el9.noarch
-perl-Sys-Syslog-0.36-461.el9.x86_64
-perl-Devel-Size-0.83-10.el9.x86_64
-perl-File-Which-1.23-10.el9.noarch
-perl-File-HomeDir-1.006-4.el9.noarch
-perl-local-lib-2.000024-13.el9.noarch
-perl-Text-Glob-0.11-15.el9.noarch
-perl-Object-HashBase-0.009-7.el9.noarch
-perl-Importer-0.026-4.el9.noarch
-perl-Compress-Raw-Lzma-2.101-3.el9.x86_64
-perl-IO-Compress-Lzma-2.101-4.el9.noarch
-perl-Archive-Tar-2.38-6.el9.noarch
-perl-Package-Generator-1.106-23.el9.noarch
-perl-Sub-Exporter-0.987-27.el9.noarch
-perl-Data-Section-0.200007-14.el9.noarch
-perl-Software-License-0.103014-12.el9.noarch
-perl-Config-Perl-V-0.33-4.el9.noarch
-perl-IPC-System-Simple-1.30-6.el9.noarch
-perl-autodie-2.34-4.el9.noarch
-perl-MIME-Charset-1.012.2-15.el9.noarch
-perl-Unicode-LineBreak-2019.001-11.el9.x86_64
-perl-Term-Size-Perl-0.031-12.el9.x86_64
-perl-Term-Size-Any-0.002-35.el9.noarch
-perl-Term-Table-0.015-8.el9.noarch
-perl-Test-Simple-1.302183-4.el9.noarch
-perl-Compress-Bzip2-2.28-5.el9.x86_64
-perl-PerlIO-via-QuotedPrint-0.09-4.el9.noarch
-perl-IPC-SysV-2.09-4.el9.x86_64
-perl-perlfaq-5.20210520-1.el9.noarch
-perl-Attribute-Handlers-1.01-481.1.el9_6.noarch
-perl-Config-Extensions-0.03-481.1.el9_6.noarch
-perl-English-1.11-481.1.el9_6.noarch
-perl-File-DosGlob-1.12-481.1.el9_6.x86_64
-perl-FileCache-1.10-481.1.el9_6.noarch
-perl-FindBin-1.51-481.1.el9_6.noarch
-perl-I18N-Collate-1.02-481.1.el9_6.noarch
-perl-Memoize-1.03-481.1.el9_6.noarch
-perl-Module-Loaded-0.08-481.1.el9_6.noarch
-perl-NEXT-0.67-481.1.el9_6.noarch
-perl-Net-1.02-481.1.el9_6.noarch
-perl-Pod-Functions-1.13-481.1.el9_6.noarch
-perl-Search-Dict-1.07-481.1.el9_6.noarch
-perl-Term-Complete-1.403-481.1.el9_6.noarch
-perl-Test-1.31-481.1.el9_6.noarch
-perl-Text-Abbrev-1.02-481.1.el9_6.noarch
-perl-Tie-File-1.06-481.1.el9_6.noarch
-perl-Tie-Memoize-1.1-481.1.el9_6.noarch
-perl-Time-1.03-481.1.el9_6.noarch
-perl-Time-Piece-1.3401-481.1.el9_6.x86_64
-perl-blib-1.07-481.1.el9_6.noarch
-perl-deprecate-0.04-481.1.el9_6.noarch
-perl-encoding-warnings-0.13-481.1.el9_6.noarch
-perl-filetest-1.03-481.1.el9_6.noarch
-perl-less-0.03-481.1.el9_6.noarch
-perl-ph-5.32.1-481.1.el9_6.x86_64
-perl-sort-2.04-481.1.el9_6.noarch
-perl-vmsish-1.04-481.1.el9_6.noarch
-info-6.7-15.el9.x86_64
-ed-1.14.2-12.el9.x86_64
-python3-pyparsing-2.4.7-9.el9.noarch
-systemtap-sdt-dtrace-5.4-4.el9.x86_64
-systemtap-sdt-devel-5.4-4.el9.x86_64
-perl-ExtUtils-Install-2.20-4.el9.noarch
-perl-devel-5.32.1-481.1.el9_6.x86_64
-perl-ExtUtils-MakeMaker-7.60-3.el9.noarch
-perl-ExtUtils-CBuilder-0.280236-5.el9.noarch
-perl-ExtUtils-Embed-1.35-481.1.el9_6.noarch
-perl-ExtUtils-Miniperl-1.09-481.1.el9_6.noarch
-perl-libnetcfg-5.32.1-481.1.el9_6.noarch
-perl-Encode-devel-3.08-462.el9.x86_64
-perl-inc-latest-0.500-20.el9.noarch
-perl-Module-Build-0.42.31-9.el9.noarch
-perl-CPAN-2.29-5.el9_6.noarch
-perl-5.32.1-481.1.el9_6.x86_64
-publicsuffix-list-dafsa-20210518-3.el9.noarch
-libpsl-0.21.1-5.el9.x86_64
-libcurl-7.76.1-40.el9.x86_64
-patch-2.7.6-16.el9.x86_64
-glibc-langpack-en-2.34-266.el9_8.x86_64
-glibc-gconv-extra-2.34-266.el9_8.x86_64
-fribidi-devel-1.0.10-6.el9.2.x86_64
-diffutils-3.7-12.el9.x86_64
-</code></pre>
-</details>
-</div>
-<div id="tabset-17-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-4-tab">
-<p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:b5d7e72abe9ed720a4848a02cd920b0633d7f14393478d0447b83f5319d0e11a <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-22T08:55:16.941837692Z <br> <strong>size:</strong> 982.01 MB <br></p>
-<details>
-<summary>
-OS version
-</summary>
-<pre><code>&gt; uname -a
-Linux 7967480c5818 6.17.0-1013-azure #13~24.04.1-Ubuntu SMP Wed Apr 15 16:52:17 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
-
-&gt; cat /etc/os-release
-NAME="Red Hat Enterprise Linux"
-VERSION="9.8 (Plow)"
-ID="rhel"
-ID_LIKE="fedora"
-VERSION_ID="9.8"
-PLATFORM_ID="platform:el9"
-PRETTY_NAME="Red Hat Enterprise Linux 9.8 (Plow)"
-ANSI_COLOR="0;31"
-LOGO="fedora-logo-icon"
-CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
-HOME_URL="https://www.redhat.com/"
-DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
-BUG_REPORT_URL="https://issues.redhat.com/"
-
-REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
-REDHAT_BUGZILLA_PRODUCT_VERSION=9.8
-REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
-REDHAT_SUPPORT_PRODUCT_VERSION="9.8"
-</code></pre>
-</details>
-<details>
-<summary>
-R session information
-</summary>
-<pre><code>&gt; sessionInfo()
-R version 4.6.0 (2026-04-24)
-Platform: aarch64-unknown-linux-gnu
-Running under: Red Hat Enterprise Linux 9.8 (Plow)
-
-Matrix products: default
-BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
-
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.6.0
-</code></pre>
-</details>
-<details>
-<summary>
-R capabilities
-</summary>
-<pre><code>&gt; capabilities()
-       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE 
-</code></pre>
-</details>
-<details>
-<summary>
-R external software
-</summary>
-<pre><code>&gt; extSoftVersion()
-                       zlib                       bzlib 
-                   "1.2.11"        "1.0.8, 13-Jul-2019" 
-                         xz                  libdeflate 
-                    "5.2.5"                          "" 
-                       zstd                        PCRE 
-                         ""          "10.40 2022-04-14" 
-                        ICU                         TRE 
-                     "67.1"   "TRE 0.8.0 R_fixes (BSD)" 
-                      iconv                    readline 
-               "glibc 2.34"                       "8.1" 
-                       BLAS 
-"FlexiBLAS OPENBLAS-OPENMP" 
-
-
-&gt; libcurlVersion()
-[1] "7.76.1"
-attr(,"ssl_version")
-[1] "OpenSSL/3.5.5"
-attr(,"libssh_version")
-[1] "libssh/0.10.4/openssl/zlib"
-attr(,"protocols")
- [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
- [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
-[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
-[22] "smtps"   "telnet"  "tftp"   
-
-
-&gt; La_version()
-[1] "3.9.0"
-
-
-&gt; La_library()
-[1] "FlexiBLAS OPENBLAS-OPENMP"
-
-
-&gt; grSoftVersion()
-                   cairo                  cairoFT                    pango 
-                "1.17.4"                       ""                 "1.48.7" 
-                  libpng                     jpeg                  libtiff 
-                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
-
-
-&gt; pcre_config()
-             UTF-8 Unicode properties                JIT              stack 
-              TRUE               TRUE               TRUE              FALSE 
-</code></pre>
-</details>
-<details>
-<summary>
-R localization
-</summary>
-<pre><code>&gt; l10n_info()
-$MBCS
-[1] TRUE
-
-$`UTF-8`
-[1] TRUE
-
-$`Latin-1`
-[1] FALSE
-
-$codeset
-[1] "UTF-8"
-</code></pre>
-</details>
-<details>
-<summary>
-R config
-</summary>
-<pre><code>&gt; R CMD config --all
-CC = gcc
-CFLAGS = -g -O2
-CPICFLAGS = -fPIC
-CPPFLAGS = -I/usr/local/include
-CC17 = gcc -std=gnu17
-C17FLAGS = -g -O2
-CC23 =
-C23FLAGS =
-CC90 = gcc -std=gnu90
-C90FLAGS = -g -O2
-CC99 = gcc -std=gnu99
-C99FLAGS = -g -O2
-CXX = g++ -std=gnu++20
-CXXFLAGS = -g -O2
-CXXPICFLAGS = -fPIC
-CXX17 = g++
-CXX17STD = -std=gnu++17
-CXX17FLAGS = -g -O2
-CXX17PICFLAGS = -fPIC
-CXX20 = g++
-CXX20STD = -std=gnu++20
-CXX20FLAGS = -g -O2
-CXX20PICFLAGS = -fPIC
-CXX23 = g++
-CXX23STD = -std=gnu++23
-CXX23FLAGS = -g -O2
-CXX23PICFLAGS = -fPIC
-CXX26 =
-CXX26STD =
-CXX26FLAGS =
-CXX26PICFLAGS =
-DYLIB_EXT = .so
-DYLIB_LD = gcc
-DYLIB_LDFLAGS = -shared -fopenmp
-FC = gfortran
-FFLAGS = -g -O2
-FPICFLAGS = -fPIC
-FLIBS = -lgfortran -lm
-FCFLAGS = -g -O2
-SAFE_FFLAGS = -g -O2
-OBJC =
-OBJCFLAGS =
-JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
-JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
-JAVAH =
-JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
-JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
-JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
-JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
-LDFLAGS = -L/usr/local/lib
-SHLIB_CFLAGS =
-SHLIB_CXXFLAGS =
-SHLIB_CXXLD = g++ -std=gnu++20
-SHLIB_CXXLDFLAGS = -shared
-SHLIB_CXX17LD = g++ -std=gnu++17
-SHLIB_CXX17LDFLAGS = -shared
-SHLIB_CXX20LD = g++ -std=gnu++20
-SHLIB_CXX20LDFLAGS = -shared
-SHLIB_CXX23LD = g++ -std=gnu++23
-SHLIB_CXX23LDFLAGS = -shared
-SHLIB_CXX26LD =
-SHLIB_CXX26LDFLAGS = -shared
-SHLIB_EXT = .so
-SHLIB_FFLAGS =
-SHLIB_LD = gcc
-SHLIB_LDFLAGS = -shared
-TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
-TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
-BLAS_LIBS = -lflexiblas
-LAPACK_LIBS =
-MAKE = make
-LIBnn = lib
-AR = ar
-NM = /usr/bin/nm -B
-RANLIB = ranlib
-LTO =
-LTO_FC =
-LTO_LD =
-
-## The following variables are defunct
-CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
-</code></pre>
-</details>
-<details>
-<summary>
-Compilers
-</summary>
-<pre><code>&gt; $(CC) --version
-gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(CXX) --version
-g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(FC) --version
-GNU Fortran (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-</details>
-<details>
-<summary>
-OS packages
-</summary>
-<pre><code>redhat-release-9.8-1.0.el9.aarch64
-gpg-pubkey-fd431d51-4ae0493b
-gpg-pubkey-5a6340b3-6229229e
-setup-2.13.7-10.el9.noarch
-filesystem-3.16-5.el9.aarch64
-tzdata-2026a-1.el9.noarch
-basesystem-11-13.el9.noarch
-python3-setuptools-wheel-53.0.0-15.el9.noarch
-pcre2-syntax-10.40-6.el9.noarch
-ncurses-base-6.2-12.20210508.el9.noarch
-ncurses-libs-6.2-12.20210508.el9.aarch64
-bash-5.1.8-9.el9.aarch64
-libgcc-11.5.0-14.el9.aarch64
-glibc-minimal-langpack-2.34-266.el9_8.aarch64
-glibc-common-2.34-266.el9_8.aarch64
-glibc-2.34-266.el9_8.aarch64
-zlib-1.2.11-40.el9.aarch64
-bzip2-libs-1.0.8-11.el9.aarch64
-xz-libs-5.2.5-8.el9_0.aarch64
-libzstd-1.5.5-1.el9.aarch64
-sqlite-libs-3.34.1-10.el9_8.aarch64
-libgpg-error-1.42-5.el9.aarch64
-libxml2-2.9.13-14.el9_7.aarch64
-libattr-2.5.1-3.el9.aarch64
-libacl-2.3.1-4.el9.aarch64
-libcap-2.48-10.el9_8.1.aarch64
-libffi-3.4.2-8.el9.aarch64
-libstdc++-11.5.0-14.el9.aarch64
-popt-1.18-8.el9.aarch64
-crypto-policies-20260224-1.gitea0f072.el9_8.noarch
-json-c-0.14-11.el9.aarch64
-keyutils-libs-1.6.3-1.el9.aarch64
-libcom_err-1.46.5-8.el9.aarch64
-libtasn1-4.16.0-9.el9.aarch64
-libuuid-2.37.4-25.el9.aarch64
-libxcrypt-4.4.18-3.el9.aarch64
-lua-libs-5.4.4-4.el9.aarch64
-readline-8.1-4.el9.aarch64
-p11-kit-0.26.2-1.el9.aarch64
-libassuan-2.5.5-3.el9.aarch64
-elfutils-libelf-0.194-1.el9.aarch64
-file-libs-5.39-17.el9.aarch64
-expat-2.5.0-6.el9.aarch64
-gdbm-libs-1.23-1.el9.aarch64
-gmp-6.2.0-13.el9.aarch64
-libsepol-3.6-3.el9.aarch64
-libsigsegv-2.13-4.el9.aarch64
-libsmartcols-2.37.4-25.el9.aarch64
-libunistring-0.9.10-15.el9.aarch64
-pcre-8.44-4.el9.aarch64
-grep-3.6-5.el9.aarch64
-libidn2-2.3.0-7.el9.aarch64
-mpfr-4.1.0-10.el9.aarch64
-gawk-5.1.0-6.el9.aarch64
-libcomps-0.1.18-1.el9.aarch64
-keyutils-1.6.3-1.el9.aarch64
-attr-2.5.1-3.el9.aarch64
-libgcrypt-1.10.0-11.el9.aarch64
-libksba-1.5.1-7.el9.aarch64
-alternatives-1.24-2.el9.aarch64
-p11-kit-trust-0.26.2-1.el9.aarch64
-libcap-ng-0.8.2-7.el9.aarch64
-audit-libs-3.1.5-8.el9.aarch64
-libgomp-11.5.0-14.el9.aarch64
-libnghttp2-1.43.0-6.el9_8.1.aarch64
-libtool-ltdl-2.4.6-46.el9.aarch64
-libverto-0.3.2-3.el9.aarch64
-libyaml-0.2.5-7.el9.aarch64
-lz4-libs-1.9.3-5.el9.aarch64
-nettle-3.10.1-1.el9.aarch64
-gnutls-3.8.10-3.el9.aarch64
-npth-1.6-8.el9.aarch64
-pcre2-10.40-6.el9.aarch64
-libselinux-3.6-3.el9.aarch64
-coreutils-single-8.32-40.el9.aarch64
-sed-4.8-10.el9.aarch64
-libblkid-2.37.4-25.el9.aarch64
-libmount-2.37.4-25.el9.aarch64
-glib2-2.68.4-19.el9_8.1.aarch64
-json-glib-1.6.6-1.el9.aarch64
-openssl-fips-provider-so-3.0.7-8.el9.aarch64
-openssl-fips-provider-3.0.7-8.el9.aarch64
-findutils-4.8.0-7.el9.aarch64
-ca-certificates-2025.2.80_v9.0.305-91.el9.noarch
-openssl-libs-3.5.5-2.el9_8.aarch64
-krb5-libs-1.21.1-10.el9_8.aarch64
-curl-minimal-7.76.1-40.el9.aarch64
-cyrus-sasl-lib-2.1.27-22.el9.aarch64
-libarchive-3.5.3-9.el9_7.aarch64
-rpm-4.16.1.3-40.el9.aarch64
-rpm-libs-4.16.1.3-40.el9.aarch64
-libmodulemd-2.13.0-2.el9.aarch64
-libsolv-0.7.24-4.el9.aarch64
-libevent-2.1.12-8.el9_4.aarch64
-librhsm-0.0.3-9.el9.aarch64
-python3-pip-wheel-21.3.1-2.el9_8.noarch
-python3-3.9.25-7.el9_8.aarch64
-python3-libs-3.9.25-7.el9_8.aarch64
-python3-libcomps-0.1.18-1.el9.aarch64
-libsemanage-3.6-5.el9_6.aarch64
-shadow-utils-4.9-16.el9.aarch64
-openldap-2.6.8-4.el9.aarch64
-gnupg2-2.3.3-5.el9_7.aarch64
-gpgme-1.15.1-6.el9.aarch64
-librepo-1.19.0-1.el9.aarch64
-libdnf-0.69.0-18.el9.aarch64
-python3-libdnf-0.69.0-18.el9.aarch64
-python3-hawkey-0.69.0-18.el9.aarch64
-python3-gpg-1.15.1-6.el9.aarch64
-tpm2-tss-3.2.3-1.el9.aarch64
-ima-evm-utils-1.6.2-2.el9.aarch64
-rpm-sign-libs-4.16.1.3-40.el9.aarch64
-elfutils-default-yama-scope-0.194-1.el9.noarch
-elfutils-libs-0.194-1.el9.aarch64
-rpm-build-libs-4.16.1.3-40.el9.aarch64
-python3-rpm-4.16.1.3-40.el9.aarch64
-libreport-filesystem-2.15.2-6.el9.noarch
-dnf-data-4.14.0-34.el9_8.noarch
-python3-dnf-4.14.0-34.el9_8.noarch
-dnf-4.14.0-34.el9_8.noarch
-fonts-filesystem-2.0.5-7.el9.1.noarch
-dejavu-sans-fonts-2.37-18.el9.noarch
-langpacks-core-font-en-3.0-16.el9.noarch
-langpacks-core-en-3.0-16.el9.noarch
-langpacks-en-3.0-16.el9.noarch
-yum-4.14.0-34.el9_8.noarch
-libdnf-plugin-subscription-manager-1.29.50-1.el9.aarch64
-crypto-policies-scripts-20260224-1.gitea0f072.el9_8.noarch
-gzip-1.12-1.el9.aarch64
-tar-1.34-11.el9.aarch64
-vim-minimal-8.2.2637-26.el9_8.4.aarch64
-gdb-gdbserver-16.3-3.el9.aarch64
-rootfiles-8.1-35.el9.noarch
-systemd-libs-252-67.el9_8.2.aarch64
-python3-six-1.15.0-9.el9.noarch
-python3-dateutil-2.9.0.post0-1.el9_7.noarch
-dmidecode-3.6-2.el9.aarch64
-python3-iniparse-0.4-45.el9.noarch
-subscription-manager-rhsm-certificates-20220623-1.el9.noarch
-python3-setuptools-53.0.0-15.el9.noarch
-python3-idna-2.10-7.el9_4.1.noarch
-libfdisk-2.37.4-25.el9.aarch64
-cracklib-2.9.6-28.el9.aarch64
-cracklib-dicts-2.9.6-28.el9.aarch64
-python3-inotify-0.9.6-25.el9.noarch
-dbus-libs-1.12.20-8.el9.aarch64
-python3-dbus-1.2.18-2.el9.aarch64
-python3-systemd-234-19.el9.aarch64
-util-linux-core-2.37.4-25.el9.aarch64
-which-2.21-30.el9_6.aarch64
-systemd-rpm-macros-252-67.el9_8.2.noarch
-python3-pysocks-1.7.1-12.el9.noarch
-python3-urllib3-1.26.5-6.el9_7.1.noarch
-python3-librepo-1.19.0-1.el9.aarch64
-python3-decorator-4.4.2-6.el9.noarch
-python3-chardet-4.0.0-5.el9.noarch
-python3-requests-2.25.1-10.el9_6.noarch
-python3-cloud-what-1.29.50-1.el9.aarch64
-python3-subscription-manager-rhsm-1.29.50-1.el9.aarch64
-psmisc-23.4-3.el9.aarch64
-openssl-3.5.5-2.el9_8.aarch64
-libutempter-1.2.1-6.el9.aarch64
-libseccomp-2.5.2-2.el9.aarch64
-libmnl-1.0.4-16.el9_4.aarch64
-libeconf-0.4.1-5.el9.aarch64
-libdb-5.3.28-57.el9_6.aarch64
-pam-1.5.1-28.el9.aarch64
-libpwquality-1.4.4-8.el9.aarch64
-util-linux-2.37.4-25.el9.aarch64
-libuser-0.63-17.el9.aarch64
-passwd-0.80-12.el9.aarch64
-usermode-1.114-7.el9.aarch64
-virt-what-1.27-2.el9.aarch64
-libbpf-1.5.0-3.el9.aarch64
-iproute-6.17.0-2.el9.aarch64
-kmod-libs-28-11.el9.aarch64
-gobject-introspection-1.68.0-11.el9.aarch64
-python3-gobject-base-noarch-3.40.1-6.el9.noarch
-python3-gobject-base-3.40.1-6.el9.aarch64
-acl-2.3.1-4.el9.aarch64
-dbus-1.12.20-8.el9.aarch64
-systemd-pam-252-67.el9_8.2.aarch64
-systemd-252-67.el9_8.2.aarch64
-dbus-common-1.12.20-8.el9.noarch
-dbus-broker-28-7.el9.aarch64
-python3-dnf-plugins-core-4.3.0-26.el9.noarch
-subscription-manager-1.29.50-1.el9.aarch64
-r-rig-0.7.0-1.aarch64
-dnf-plugins-core-4.3.0-26.el9.noarch
-epel-release-9-10.el9.noarch
-libgfortran-11.5.0-14.el9.aarch64
-flexiblas-3.0.4-8.el9.aarch64
-libmpc-1.2.1-4.el9.aarch64
-openblas-0.3.29-1.el9.aarch64
-unzip-6.0-60.el9.aarch64
-libpng-1.6.37-15.el9_8.aarch64
-elfutils-debuginfod-client-0.194-1.el9.aarch64
-binutils-gold-2.35.2-72.el9.aarch64
-binutils-2.35.2-72.el9.aarch64
-libICE-1.0.10-8.el9.aarch64
-libSM-1.2.3-10.el9.aarch64
-make-4.3-8.el9.aarch64
-tcl-8.6.10-7.el9.aarch64
-zip-3.0-35.el9.aarch64
-openblas-openmp-0.3.29-1.el9.aarch64
-flexiblas-openblas-openmp-3.0.4-8.el9.aarch64
-flexiblas-netlib-3.0.4-8.el9.aarch64
-openblas-openmp64-0.3.29-1.el9.aarch64
-flexiblas-openblas-openmp64-3.0.4-8.el9.aarch64
-flexiblas-netlib64-3.0.4-8.el9.aarch64
-cpp-11.5.0-14.el9.aarch64
-libubsan-11.5.0-14.el9.aarch64
-libstdc++-devel-11.5.0-14.el9.aarch64
-libasan-11.5.0-14.el9.aarch64
-libX11-common-1.8.12-1.el9.noarch
-kernel-headers-5.14.0-687.10.1.el9_8.aarch64
-pcre2-utf32-10.40-6.el9.aarch64
-pcre2-utf16-10.40-6.el9.aarch64
-libicu-67.1-10.el9_6.aarch64
-libbrotli-1.0.9-9.el9_7.aarch64
-libatomic-11.5.0-14.el9.aarch64
-libjpeg-turbo-2.0.90-7.el9.aarch64
-libXau-1.0.9-8.el9.aarch64
-libxcb-1.13.1-9.el9.aarch64
-libX11-1.8.12-1.el9.aarch64
-libXrender-0.9.10-16.el9.aarch64
-libXext-1.3.4-8.el9.aarch64
-libXt-1.2.0-6.el9.aarch64
-libXmu-1.1.3-8.el9.aarch64
-xml-common-0.6.3-58.el9.noarch
-libwebp-1.2.0-8.el9_3.aarch64
-libdatrie-0.2.13-4.el9.aarch64
-libthai-0.1.28-8.el9.aarch64
-jbigkit-libs-2.1-23.el9.aarch64
-libtiff-4.4.0-18.el9_8.aarch64
-pixman-0.40.0-6.el9_3.aarch64
-fribidi-1.0.10-6.el9.2.aarch64
-libpkgconf-1.7.3-10.el9.aarch64
-pkgconf-1.7.3-10.el9.aarch64
-pkgconf-m4-1.7.3-10.el9.noarch
-pkgconf-pkg-config-1.7.3-10.el9.aarch64
-zlib-devel-1.2.11-40.el9.aarch64
-glibc-devel-2.34-266.el9_8.aarch64
-libxcrypt-devel-4.4.18-3.el9.aarch64
-gcc-11.5.0-14.el9.aarch64
-gcc-c++-11.5.0-14.el9.aarch64
-gcc-gfortran-11.5.0-14.el9.aarch64
-xz-devel-5.2.5-8.el9_0.aarch64
-flexiblas-devel-3.0.4-8.el9.aarch64
-libicu-devel-67.1-10.el9_6.aarch64
-pcre2-devel-10.40-6.el9.aarch64
-bzip2-devel-1.0.8-11.el9.aarch64
-libcurl-devel-7.76.1-40.el9.aarch64
-graphite2-1.3.14-9.el9.aarch64
-freetype-2.10.4-10.el9_5.aarch64
-harfbuzz-2.7.4-10.el9.aarch64
-fontconfig-2.14.0-2.el9_1.aarch64
-libXft-2.3.3-8.el9.aarch64
-tk-8.6.10-9.el9.aarch64
-cairo-1.17.4-7.el9.aarch64
-pango-1.48.7-3.el9.aarch64
-R-4.6.0-1-1.aarch64
-pyproject-srpm-macros-1.18.5-1.el9.noarch
-llvm-filesystem-21.1.8-2.el9.aarch64
-gcc-plugin-annobin-11.5.0-14.el9.aarch64
-efi-srpm-macros-6-4.el9.noarch
-dwz-0.16-1.el9.aarch64
-ncurses-6.2-12.20210508.el9.aarch64
-libssh-config-0.10.4-18.el9.noarch
-libssh-0.10.4-18.el9.aarch64
-libedit-3.1-39.20210216cvs.el9.aarch64
-llvm-libs-21.1.8-2.el9.aarch64
-annobin-12.98-2.el9.aarch64
-file-5.39-17.el9.aarch64
-qt5-srpm-macros-5.15.9-1.el9.noarch
-openblas-srpm-macros-2-11.el9.noarch
-perl-srpm-macros-1-41.el9.noarch
-sombok-2.4.0-16.el9.aarch64
-rust-srpm-macros-17-4.el9.noarch
-ghc-srpm-macros-1.5.0-6.el9.noarch
-lua-srpm-macros-1-6.el9.noarch
-ocaml-srpm-macros-6-6.el9.noarch
-publicsuffix-list-dafsa-20210518-3.el9.noarch
-libpsl-0.21.1-5.el9.aarch64
-info-6.7-15.el9.aarch64
-ed-1.14.2-12.el9.aarch64
-python3-pyparsing-2.4.7-9.el9.noarch
-systemtap-sdt-dtrace-5.4-4.el9.aarch64
-systemtap-sdt-devel-5.4-4.el9.aarch64
-groff-base-1.22.4-10.el9.aarch64
-perl-Digest-1.19-4.el9.noarch
-perl-Digest-MD5-2.58-4.el9.aarch64
-perl-B-1.80-481.1.el9_6.aarch64
-perl-FileHandle-2.03-481.1.el9_6.noarch
-perl-Data-Dumper-2.174-462.el9.aarch64
-perl-libnet-3.13-4.el9.noarch
-perl-AutoLoader-5.74-481.1.el9_6.noarch
-perl-Class-Struct-0.66-481.1.el9_6.noarch
-perl-base-2.27-481.1.el9_6.noarch
-perl-URI-5.09-3.el9.noarch
-perl-Term-ANSIColor-5.01-461.el9.noarch
-perl-Socket-2.031-4.el9.aarch64
-perl-Time-Local-1.300-7.el9.noarch
-perl-POSIX-1.94-481.1.el9_6.aarch64
-perl-Mozilla-CA-20200520-6.el9.noarch
-perl-SelectSaver-1.02-481.1.el9_6.noarch
-perl-if-0.60.800-481.1.el9_6.noarch
-perl-mro-1.23-481.1.el9_6.aarch64
-perl-IO-Socket-IP-0.41-5.el9.noarch
-perl-File-stat-1.09-481.1.el9_6.noarch
-perl-overloading-0.02-481.1.el9_6.noarch
-perl-subs-1.03-481.1.el9_6.noarch
-perl-Text-Tabs+Wrap-2013.0523-460.el9.noarch
-perl-Term-Cap-1.17-460.el9.noarch
-perl-Pod-Escapes-1.07-460.el9.noarch
-perl-Pod-Usage-2.01-4.el9.noarch
-perl-File-Path-2.18-4.el9.noarch
-perl-IO-Socket-SSL-2.073-2.el9.noarch
-perl-Net-SSLeay-1.94-3.el9.aarch64
-perl-Text-ParseWords-3.30-460.el9.noarch
-perl-parent-0.238-460.el9.noarch
-perl-MIME-Base64-3.16-4.el9.aarch64
-perl-constant-1.33-461.el9.noarch
-perl-Errno-1.30-481.1.el9_6.aarch64
-perl-Fcntl-1.13-481.1.el9_6.aarch64
-perl-File-Basename-2.85-481.1.el9_6.noarch
-perl-Getopt-Std-1.12-481.1.el9_6.noarch
-perl-Scalar-List-Utils-1.56-462.el9.aarch64
-perl-Symbol-1.08-481.1.el9_6.noarch
-perl-Storable-3.21-460.el9.aarch64
-perl-IPC-Open3-1.21-481.1.el9_6.noarch
-perl-IO-1.43-481.1.el9_6.aarch64
-perl-overload-1.31-481.1.el9_6.noarch
-perl-Pod-Simple-3.42-4.el9.noarch
-perl-Getopt-Long-2.52-4.el9.noarch
-perl-podlators-4.14-460.el9.noarch
-perl-File-Temp-0.231.100-4.el9.noarch
-perl-HTTP-Tiny-0.076-462.el9.noarch
-perl-vars-1.05-481.1.el9_6.noarch
-perl-Exporter-5.74-461.el9.noarch
-perl-Carp-1.50-460.el9.noarch
-perl-GDBM_File-1.18-481.1.el9_6.aarch64
-perl-NDBM_File-1.15-481.1.el9_6.aarch64
-perl-ODBM_File-1.16-481.1.el9_6.aarch64
-perl-DB_File-1.855-4.el9.aarch64
-perl-PathTools-3.78-461.el9.aarch64
-perl-Encode-3.08-462.el9.aarch64
-perl-libs-5.32.1-481.1.el9_6.aarch64
-perl-Pod-Perldoc-3.28.01-461.el9.noarch
-perl-doc-5.32.1-481.1.el9_6.noarch
-perl-interpreter-5.32.1-481.1.el9_6.aarch64
-perl-File-Find-1.37-481.1.el9_6.noarch
-perl-File-Copy-2.34-481.1.el9_6.noarch
-perl-ExtUtils-Manifest-1.73-4.el9.noarch
-perl-Time-HiRes-1.9764-462.el9.aarch64
-perl-DynaLoader-1.47-481.1.el9_6.aarch64
-perl-ExtUtils-ParseXS-3.40-460.el9.noarch
-perl-threads-2.25-460.el9.aarch64
-perl-threads-shared-1.61-460.el9.aarch64
-perl-Compress-Raw-Zlib-2.101-5.el9.aarch64
-perl-File-Compare-1.100.600-481.1.el9_6.noarch
-perl-lib-0.65-481.1.el9_6.aarch64
-perl-Digest-SHA-6.02-461.el9.aarch64
-perl-Filter-1.60-4.el9.aarch64
-perl-Perl-OSType-1.010-461.el9.noarch
-perl-Module-Load-0.36-4.el9.noarch
-perl-Unicode-Normalize-1.27-461.el9.aarch64
-perl-Devel-Peek-1.28-481.1.el9_6.aarch64
-perl-Term-ReadLine-1.17-481.1.el9_6.noarch
-perl-Tie-4.6-481.1.el9_6.noarch
-perl-locale-1.09-481.1.el9_6.noarch
-perl-version-0.99.28-4.el9.aarch64
-perl-CPAN-Meta-Requirements-2.140-461.el9.noarch
-perl-Module-Metadata-1.000037-460.el9.noarch
-perl-Module-CoreList-5.20240609-1.el9.noarch
-perl-meta-notation-5.32.1-481.1.el9_6.noarch
-perl-Pod-Html-1.25-481.1.el9_6.noarch
-perl-Dumpvalue-2.27-481.1.el9_6.noarch
-perl-encoding-3.00-462.el9.aarch64
-perl-TermReadKey-2.38-11.el9.aarch64
-perl-Net-Ping-2.74-5.el9.noarch
-perl-ExtUtils-Command-7.60-3.el9.noarch
-perl-Text-Balanced-2.04-4.el9.noarch
-perl-ExtUtils-MM-Utils-7.60-3.el9.noarch
-perl-Compress-Raw-Bzip2-2.101-5.el9.aarch64
-perl-IO-Compress-2.102-4.el9.noarch
-perl-IO-Zlib-1.11-4.el9.noarch
-perl-CPAN-Meta-YAML-0.018-461.el9.noarch
-perl-Tie-RefHash-1.40-4.el9.noarch
-perl-Devel-PPPort-3.62-4.el9.aarch64
-perl-Params-Util-1.102-5.el9.aarch64
-perl-Sub-Install-0.928-28.el9.noarch
-perl-AutoSplit-5.74-481.1.el9_6.noarch
-perl-Benchmark-1.23-481.1.el9_6.noarch
-perl-Test-Harness-3.42-461.el9.noarch
-perl-DirHandle-1.05-481.1.el9_6.noarch
-perl-ExtUtils-Constant-0.25-481.1.el9_6.noarch
-perl-Hash-Util-FieldHash-1.20-481.1.el9_6.aarch64
-perl-Hash-Util-0.23-481.1.el9_6.aarch64
-perl-I18N-LangTags-0.44-481.1.el9_6.noarch
-perl-Locale-Maketext-1.29-461.el9.noarch
-perl-Locale-Maketext-Simple-0.21-481.1.el9_6.noarch
-perl-Params-Check-0.38-461.el9.noarch
-perl-Module-Load-Conditional-0.74-4.el9.noarch
-perl-IPC-Cmd-1.04-461.el9.noarch
-perl-I18N-Langinfo-0.19-481.1.el9_6.aarch64
-perl-Math-Complex-1.59-481.1.el9_6.noarch
-perl-Math-BigInt-1.9998.18-460.el9.noarch
-perl-JSON-PP-4.06-4.el9.noarch
-perl-CPAN-Meta-2.150010-460.el9.noarch
-perl-Math-BigRat-0.2614-460.el9.noarch
-perl-Opcode-1.48-481.1.el9_6.aarch64
-perl-Safe-2.41-481.1.el9_6.noarch
-perl-SelfLoader-1.26-481.1.el9_6.noarch
-perl-Sys-Hostname-1.23-481.1.el9_6.aarch64
-perl-User-pwent-1.03-481.1.el9_6.noarch
-perl-autouse-1.11-481.1.el9_6.noarch
-perl-Devel-SelfStubber-1.06-481.1.el9_6.noarch
-perl-bignum-0.51-460.el9.noarch
-perl-Math-BigInt-FastCalc-0.500.900-460.el9.aarch64
-perl-Encode-Locale-1.05-21.el9.noarch
-perl-File-Fetch-1.00-4.el9.noarch
-perl-fields-2.27-481.1.el9_6.noarch
-perl-Data-OptList-0.110-17.el9.noarch
-perl-DBM_Filter-0.06-481.1.el9_6.noarch
-perl-Filter-Simple-0.96-460.el9.noarch
-perl-open-1.12-481.1.el9_6.noarch
-perl-debugger-1.56-481.1.el9_6.noarch
-perl-sigtrap-1.09-481.1.el9_6.noarch
-perl-Module-CoreList-tools-5.20240609-1.el9.noarch
-perl-experimental-0.022-6.el9.noarch
-perl-Env-1.04-460.el9.noarch
-perl-Unicode-Collate-1.29-4.el9.aarch64
-perl-Unicode-UCD-0.75-481.1.el9_6.noarch
-perl-Archive-Zip-1.68-6.el9.noarch
-perl-Thread-Queue-3.14-460.el9.noarch
-perl-Thread-3.05-481.1.el9_6.noarch
-perl-Thread-Semaphore-2.13-481.1.el9_6.noarch
-perl-Digest-SHA1-2.13-34.el9.aarch64
-perl-Pod-Checker-1.74-4.el9.noarch
-kernel-srpm-macros-1.0-14.el9.noarch
-fonts-srpm-macros-2.0.5-7.el9.1.noarch
-python-srpm-macros-3.9-54.el9.noarch
-go-srpm-macros-3.8.1-1.el9.noarch
-redhat-rpm-config-210-1.el9.noarch
-perl-ExtUtils-Install-2.20-4.el9.noarch
-perl-devel-5.32.1-481.1.el9_6.aarch64
-perl-ExtUtils-MakeMaker-7.60-3.el9.noarch
-perl-ExtUtils-CBuilder-0.280236-5.el9.noarch
-perl-ExtUtils-Embed-1.35-481.1.el9_6.noarch
-perl-ExtUtils-Miniperl-1.09-481.1.el9_6.noarch
-perl-libnetcfg-5.32.1-481.1.el9_6.noarch
-perl-Encode-devel-3.08-462.el9.aarch64
-perl-inc-latest-0.500-20.el9.noarch
-perl-diagnostics-1.37-481.1.el9_6.noarch
-perl-macros-5.32.1-481.1.el9_6.noarch
-perl-utils-5.32.1-481.1.el9_6.noarch
-perl-Algorithm-Diff-1.2010-4.el9.noarch
-perl-Text-Diff-1.45-13.el9.noarch
-perl-Module-Signature-0.88-1.el9.noarch
-perl-IPC-SysV-2.09-4.el9.aarch64
-perl-MRO-Compat-0.13-15.el9.noarch
-perl-CPAN-DistnameInfo-0.12-23.el9.noarch
-perl-Text-Template-1.59-5.el9.noarch
-perl-Compress-Raw-Lzma-2.101-3.el9.aarch64
-perl-IO-Compress-Lzma-2.101-4.el9.noarch
-perl-Archive-Tar-2.38-6.el9.noarch
-perl-Sys-Syslog-0.36-461.el9.aarch64
-perl-Text-Glob-0.11-15.el9.noarch
-perl-File-Which-1.23-10.el9.noarch
-perl-File-HomeDir-1.006-4.el9.noarch
-perl-Term-Size-Perl-0.031-12.el9.aarch64
-perl-Term-Size-Any-0.002-35.el9.noarch
-perl-Importer-0.026-4.el9.noarch
-perl-Package-Generator-1.106-23.el9.noarch
-perl-Sub-Exporter-0.987-27.el9.noarch
-perl-Data-Section-0.200007-14.el9.noarch
-perl-Software-License-0.103014-12.el9.noarch
-perl-Module-Build-0.42.31-9.el9.noarch
-perl-Config-Perl-V-0.33-4.el9.noarch
-perl-IPC-System-Simple-1.30-6.el9.noarch
-perl-autodie-2.34-4.el9.noarch
-perl-local-lib-2.000024-13.el9.noarch
-perl-Compress-Bzip2-2.28-5.el9.aarch64
-perl-Devel-Size-0.83-10.el9.aarch64
-perl-MIME-Charset-1.012.2-15.el9.noarch
-perl-Unicode-LineBreak-2019.001-11.el9.aarch64
-perl-PerlIO-via-QuotedPrint-0.09-4.el9.noarch
-perl-Object-HashBase-0.009-7.el9.noarch
-perl-Term-Table-0.015-8.el9.noarch
-perl-Test-Simple-1.302183-4.el9.noarch
-perl-Attribute-Handlers-1.01-481.1.el9_6.noarch
-perl-Config-Extensions-0.03-481.1.el9_6.noarch
-perl-English-1.11-481.1.el9_6.noarch
-perl-File-DosGlob-1.12-481.1.el9_6.aarch64
-perl-FileCache-1.10-481.1.el9_6.noarch
-perl-FindBin-1.51-481.1.el9_6.noarch
-perl-I18N-Collate-1.02-481.1.el9_6.noarch
-perl-Memoize-1.03-481.1.el9_6.noarch
-perl-Module-Loaded-0.08-481.1.el9_6.noarch
-perl-NEXT-0.67-481.1.el9_6.noarch
-perl-Net-1.02-481.1.el9_6.noarch
-perl-Pod-Functions-1.13-481.1.el9_6.noarch
-perl-Search-Dict-1.07-481.1.el9_6.noarch
-perl-Term-Complete-1.403-481.1.el9_6.noarch
-perl-Test-1.31-481.1.el9_6.noarch
-perl-Text-Abbrev-1.02-481.1.el9_6.noarch
-perl-Tie-File-1.06-481.1.el9_6.noarch
-perl-Tie-Memoize-1.1-481.1.el9_6.noarch
-perl-Time-1.03-481.1.el9_6.noarch
-perl-Time-Piece-1.3401-481.1.el9_6.aarch64
-perl-blib-1.07-481.1.el9_6.noarch
-perl-deprecate-0.04-481.1.el9_6.noarch
-perl-encoding-warnings-0.13-481.1.el9_6.noarch
-perl-filetest-1.03-481.1.el9_6.noarch
-perl-less-0.03-481.1.el9_6.noarch
-perl-perlfaq-5.20210520-1.el9.noarch
-perl-ph-5.32.1-481.1.el9_6.aarch64
-perl-sort-2.04-481.1.el9_6.noarch
-perl-vmsish-1.04-481.1.el9_6.noarch
-perl-CPAN-2.29-5.el9_6.noarch
-perl-5.32.1-481.1.el9_6.aarch64
-patch-2.7.6-16.el9.aarch64
-libcurl-7.76.1-40.el9.aarch64
-glibc-langpack-en-2.34-266.el9_8.aarch64
-glibc-gconv-extra-2.34-266.el9_8.aarch64
-fribidi-devel-1.0.10-6.el9.2.aarch64
-diffutils-3.7-12.el9.aarch64
-</code></pre>
-</details>
-</div>
-<div id="tabset-17-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-5-tab">
-<p><strong>id:</strong> ghcr.io/r-hub/containers/rhel9@sha256:ca321b465793793ecb10c97ce19be928faa852527c6b226a5ac4f36aed7b569a <br> <strong>tag:</strong> ghcr.io/r-hub/containers/rhel9:latest <br> <strong>created:</strong> 2026-05-22T08:45:41.945494878Z <br> <strong>size:</strong> 1.03 GB <br></p>
-<details>
-<summary>
-OS version
-</summary>
-<pre><code>&gt; uname -a
-Linux 9901dec14684 6.17.0-1013-azure #13~24.04.1-Ubuntu SMP Wed Apr 15 16:52:17 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
-
-&gt; cat /etc/os-release
-NAME="Red Hat Enterprise Linux"
-VERSION="9.8 (Plow)"
-ID="rhel"
-ID_LIKE="fedora"
-VERSION_ID="9.8"
-PLATFORM_ID="platform:el9"
-PRETTY_NAME="Red Hat Enterprise Linux 9.8 (Plow)"
-ANSI_COLOR="0;31"
-LOGO="fedora-logo-icon"
-CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
-HOME_URL="https://www.redhat.com/"
-DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
-BUG_REPORT_URL="https://issues.redhat.com/"
-
-REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
-REDHAT_BUGZILLA_PRODUCT_VERSION=9.8
-REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
-REDHAT_SUPPORT_PRODUCT_VERSION="9.8"
-</code></pre>
-</details>
-<details>
-<summary>
-R session information
-</summary>
-<pre><code>&gt; sessionInfo()
-R version 4.6.0 (2026-04-24)
-Platform: x86_64-pc-linux-gnu
-Running under: Red Hat Enterprise Linux 9.8 (Plow)
-
-Matrix products: default
-BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
-
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.6.0
-</code></pre>
-</details>
-<details>
-<summary>
-R capabilities
-</summary>
-<pre><code>&gt; capabilities()
-       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE        TRUE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE 
-</code></pre>
-</details>
-<details>
-<summary>
-R external software
-</summary>
-<pre><code>&gt; extSoftVersion()
-                       zlib                       bzlib 
-                   "1.2.11"        "1.0.8, 13-Jul-2019" 
-                         xz                  libdeflate 
-                    "5.2.5"                          "" 
-                       zstd                        PCRE 
-                         ""          "10.40 2022-04-14" 
-                        ICU                         TRE 
-                     "67.1"   "TRE 0.8.0 R_fixes (BSD)" 
-                      iconv                    readline 
-               "glibc 2.34"                       "8.1" 
-                       BLAS 
-"FlexiBLAS OPENBLAS-OPENMP" 
-
-
-&gt; libcurlVersion()
-[1] "7.76.1"
-attr(,"ssl_version")
-[1] "OpenSSL/3.5.5"
-attr(,"libssh_version")
-[1] "libssh/0.10.4/openssl/zlib"
-attr(,"protocols")
- [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
- [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
-[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
-[22] "smtps"   "telnet"  "tftp"   
-
-
-&gt; La_version()
-[1] "3.9.0"
-
-
-&gt; La_library()
-[1] "FlexiBLAS OPENBLAS-OPENMP"
-
-
-&gt; grSoftVersion()
-                   cairo                  cairoFT                    pango 
-                "1.17.4"                       ""                 "1.48.7" 
-                  libpng                     jpeg                  libtiff 
-                "1.6.37"                    "6.2" "LIBTIFF, Version 4.4.0" 
-
-
-&gt; pcre_config()
-             UTF-8 Unicode properties                JIT              stack 
-              TRUE               TRUE               TRUE              FALSE 
-</code></pre>
-</details>
-<details>
-<summary>
-R localization
-</summary>
-<pre><code>&gt; l10n_info()
-$MBCS
-[1] TRUE
-
-$`UTF-8`
-[1] TRUE
-
-$`Latin-1`
-[1] FALSE
-
-$codeset
-[1] "UTF-8"
-</code></pre>
-</details>
-<details>
-<summary>
-R config
-</summary>
-<pre><code>&gt; R CMD config --all
-CC = gcc
-CFLAGS = -g -O2
-CPICFLAGS = -fpic
-CPPFLAGS = -I/usr/local/include
-CC17 = gcc -std=gnu17
-C17FLAGS = -g -O2
-CC23 =
-C23FLAGS =
-CC90 = gcc -std=gnu90
-C90FLAGS = -g -O2
-CC99 = gcc -std=gnu99
-C99FLAGS = -g -O2
-CXX = g++ -std=gnu++20
-CXXFLAGS = -g -O2
-CXXPICFLAGS = -fpic
-CXX17 = g++
-CXX17STD = -std=gnu++17
-CXX17FLAGS = -g -O2
-CXX17PICFLAGS = -fpic
-CXX20 = g++
-CXX20STD = -std=gnu++20
-CXX20FLAGS = -g -O2
-CXX20PICFLAGS = -fpic
-CXX23 = g++
-CXX23STD = -std=gnu++23
-CXX23FLAGS = -g -O2
-CXX23PICFLAGS = -fpic
-CXX26 =
-CXX26STD =
-CXX26FLAGS =
-CXX26PICFLAGS =
-DYLIB_EXT = .so
-DYLIB_LD = gcc
-DYLIB_LDFLAGS = -shared -fopenmp
-FC = gfortran
-FFLAGS = -g -O2
-FPICFLAGS = -fpic
-FLIBS = -lgfortran -lm -lquadmath
-FCFLAGS = -g -O2
-SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
-OBJC =
-OBJCFLAGS =
-JAVA = /usr/lib/jvm/jre-11-openjdk/bin/java
-JAVAC = /usr/lib/jvm/jre-11-openjdk/bin/javac
-JAVAH =
-JAR = /usr/lib/jvm/jre-11-openjdk/bin/jar
-JAVA_HOME = /usr/lib/jvm/jre-11-openjdk
-JAVA_LIBS = -L/usr/lib/jvm/jre-11-openjdk/lib/server -ljvm
-JAVA_CPPFLAGS = -I/usr/lib/jvm/jre-11-openjdk/include -I/usr/lib/jvm/jre-11-openjdk/include/linux
-LDFLAGS = -L/usr/local/lib
-SHLIB_CFLAGS =
-SHLIB_CXXFLAGS =
-SHLIB_CXXLD = g++ -std=gnu++20
-SHLIB_CXXLDFLAGS = -shared
-SHLIB_CXX17LD = g++ -std=gnu++17
-SHLIB_CXX17LDFLAGS = -shared
-SHLIB_CXX20LD = g++ -std=gnu++20
-SHLIB_CXX20LDFLAGS = -shared
-SHLIB_CXX23LD = g++ -std=gnu++23
-SHLIB_CXX23LDFLAGS = -shared
-SHLIB_CXX26LD =
-SHLIB_CXX26LDFLAGS = -shared
-SHLIB_EXT = .so
-SHLIB_FFLAGS =
-SHLIB_LD = gcc
-SHLIB_LDFLAGS = -shared
-TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
-TCLTK_LIBS = -L/usr/lib64 -ltcl8.6 -L/usr/lib64 -ltk8.6 -lX11
-BLAS_LIBS = -lflexiblas
-LAPACK_LIBS =
-MAKE = make
-LIBnn = lib
-AR = ar
-NM = /usr/bin/nm -B
-RANLIB = ranlib
-LTO =
-LTO_FC =
-LTO_LD =
-
-## The following variables are defunct
-CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
-</code></pre>
-</details>
-<details>
-<summary>
-Compilers
-</summary>
-<pre><code>&gt; $(CC) --version
-gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(CXX) --version
-g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(FC) --version
-GNU Fortran (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)
-Copyright (C) 2021 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-</details>
-<details>
-<summary>
-OS packages
-</summary>
-<pre><code>redhat-release-9.8-1.0.el9.x86_64
-gpg-pubkey-fd431d51-4ae0493b
-gpg-pubkey-5a6340b3-6229229e
-setup-2.13.7-10.el9.noarch
-filesystem-3.16-5.el9.x86_64
-tzdata-2026a-1.el9.noarch
-basesystem-11-13.el9.noarch
-python3-setuptools-wheel-53.0.0-15.el9.noarch
-pcre2-syntax-10.40-6.el9.noarch
-ncurses-base-6.2-12.20210508.el9.noarch
-ncurses-libs-6.2-12.20210508.el9.x86_64
-bash-5.1.8-9.el9.x86_64
-libgcc-11.5.0-14.el9.x86_64
-glibc-minimal-langpack-2.34-266.el9_8.x86_64
-glibc-common-2.34-266.el9_8.x86_64
-glibc-2.34-266.el9_8.x86_64
-zlib-1.2.11-40.el9.x86_64
-bzip2-libs-1.0.8-11.el9.x86_64
-xz-libs-5.2.5-8.el9_0.x86_64
-libzstd-1.5.5-1.el9.x86_64
-sqlite-libs-3.34.1-10.el9_8.x86_64
-libgpg-error-1.42-5.el9.x86_64
-libxml2-2.9.13-14.el9_7.x86_64
-libattr-2.5.1-3.el9.x86_64
-libacl-2.3.1-4.el9.x86_64
-libcap-2.48-10.el9_8.1.x86_64
-libffi-3.4.2-8.el9.x86_64
-libstdc++-11.5.0-14.el9.x86_64
-popt-1.18-8.el9.x86_64
-crypto-policies-20260224-1.gitea0f072.el9_8.noarch
-json-c-0.14-11.el9.x86_64
-keyutils-libs-1.6.3-1.el9.x86_64
-libcom_err-1.46.5-8.el9.x86_64
-libtasn1-4.16.0-9.el9.x86_64
-libuuid-2.37.4-25.el9.x86_64
-libxcrypt-4.4.18-3.el9.x86_64
-lua-libs-5.4.4-4.el9.x86_64
-readline-8.1-4.el9.x86_64
-p11-kit-0.26.2-1.el9.x86_64
-libassuan-2.5.5-3.el9.x86_64
-elfutils-libelf-0.194-1.el9.x86_64
-file-libs-5.39-17.el9.x86_64
-expat-2.5.0-6.el9.x86_64
-gdbm-libs-1.23-1.el9.x86_64
-gmp-6.2.0-13.el9.x86_64
-libsepol-3.6-3.el9.x86_64
-libsigsegv-2.13-4.el9.x86_64
-libsmartcols-2.37.4-25.el9.x86_64
-libunistring-0.9.10-15.el9.x86_64
-pcre-8.44-4.el9.x86_64
-grep-3.6-5.el9.x86_64
-libidn2-2.3.0-7.el9.x86_64
-mpfr-4.1.0-10.el9.x86_64
-gawk-5.1.0-6.el9.x86_64
-libcomps-0.1.18-1.el9.x86_64
-keyutils-1.6.3-1.el9.x86_64
-attr-2.5.1-3.el9.x86_64
-libgcrypt-1.10.0-11.el9.x86_64
-libksba-1.5.1-7.el9.x86_64
-alternatives-1.24-2.el9.x86_64
-p11-kit-trust-0.26.2-1.el9.x86_64
-libcap-ng-0.8.2-7.el9.x86_64
-audit-libs-3.1.5-8.el9.x86_64
-libgomp-11.5.0-14.el9.x86_64
-libnghttp2-1.43.0-6.el9_8.1.x86_64
-libtool-ltdl-2.4.6-46.el9.x86_64
-libverto-0.3.2-3.el9.x86_64
-libyaml-0.2.5-7.el9.x86_64
-lz4-libs-1.9.3-5.el9.x86_64
-nettle-3.10.1-1.el9.x86_64
-gnutls-3.8.10-3.el9.x86_64
-npth-1.6-8.el9.x86_64
-pcre2-10.40-6.el9.x86_64
-libselinux-3.6-3.el9.x86_64
-coreutils-single-8.32-40.el9.x86_64
-sed-4.8-10.el9.x86_64
-libblkid-2.37.4-25.el9.x86_64
-libmount-2.37.4-25.el9.x86_64
-glib2-2.68.4-19.el9_8.1.x86_64
-json-glib-1.6.6-1.el9.x86_64
-openssl-fips-provider-so-3.0.7-8.el9.x86_64
-openssl-fips-provider-3.0.7-8.el9.x86_64
-findutils-4.8.0-7.el9.x86_64
-ca-certificates-2025.2.80_v9.0.305-91.el9.noarch
-openssl-libs-3.5.5-2.el9_8.x86_64
-krb5-libs-1.21.1-10.el9_8.x86_64
-curl-minimal-7.76.1-40.el9.x86_64
-cyrus-sasl-lib-2.1.27-22.el9.x86_64
-libarchive-3.5.3-9.el9_7.x86_64
-rpm-4.16.1.3-40.el9.x86_64
-rpm-libs-4.16.1.3-40.el9.x86_64
-libmodulemd-2.13.0-2.el9.x86_64
-libsolv-0.7.24-4.el9.x86_64
-libevent-2.1.12-8.el9_4.x86_64
-librhsm-0.0.3-9.el9.x86_64
-python3-pip-wheel-21.3.1-2.el9_8.noarch
-python3-3.9.25-7.el9_8.x86_64
-python3-libs-3.9.25-7.el9_8.x86_64
-python3-libcomps-0.1.18-1.el9.x86_64
-libsemanage-3.6-5.el9_6.x86_64
-shadow-utils-4.9-16.el9.x86_64
-openldap-2.6.8-4.el9.x86_64
-gnupg2-2.3.3-5.el9_7.x86_64
-gpgme-1.15.1-6.el9.x86_64
-librepo-1.19.0-1.el9.x86_64
-libdnf-0.69.0-18.el9.x86_64
-python3-libdnf-0.69.0-18.el9.x86_64
-python3-hawkey-0.69.0-18.el9.x86_64
-python3-gpg-1.15.1-6.el9.x86_64
-tpm2-tss-3.2.3-1.el9.x86_64
-ima-evm-utils-1.6.2-2.el9.x86_64
-rpm-sign-libs-4.16.1.3-40.el9.x86_64
-elfutils-default-yama-scope-0.194-1.el9.noarch
-elfutils-libs-0.194-1.el9.x86_64
-rpm-build-libs-4.16.1.3-40.el9.x86_64
-python3-rpm-4.16.1.3-40.el9.x86_64
-libreport-filesystem-2.15.2-6.el9.noarch
-dnf-data-4.14.0-34.el9_8.noarch
-python3-dnf-4.14.0-34.el9_8.noarch
-dnf-4.14.0-34.el9_8.noarch
-fonts-filesystem-2.0.5-7.el9.1.noarch
-dejavu-sans-fonts-2.37-18.el9.noarch
-langpacks-core-font-en-3.0-16.el9.noarch
-langpacks-core-en-3.0-16.el9.noarch
-langpacks-en-3.0-16.el9.noarch
-yum-4.14.0-34.el9_8.noarch
-libdnf-plugin-subscription-manager-1.29.50-1.el9.x86_64
-crypto-policies-scripts-20260224-1.gitea0f072.el9_8.noarch
-gzip-1.12-1.el9.x86_64
-tar-1.34-11.el9.x86_64
-vim-minimal-8.2.2637-26.el9_8.4.x86_64
-gdb-gdbserver-16.3-3.el9.x86_64
-rootfiles-8.1-35.el9.noarch
-systemd-libs-252-67.el9_8.2.x86_64
-python3-six-1.15.0-9.el9.noarch
-python3-dateutil-2.9.0.post0-1.el9_7.noarch
-dmidecode-3.6-2.el9.x86_64
-python3-iniparse-0.4-45.el9.noarch
-subscription-manager-rhsm-certificates-20220623-1.el9.noarch
-python3-setuptools-53.0.0-15.el9.noarch
-python3-idna-2.10-7.el9_4.1.noarch
-libfdisk-2.37.4-25.el9.x86_64
-cracklib-2.9.6-28.el9.x86_64
-cracklib-dicts-2.9.6-28.el9.x86_64
-python3-inotify-0.9.6-25.el9.noarch
-dbus-libs-1.12.20-8.el9.x86_64
-python3-dbus-1.2.18-2.el9.x86_64
-python3-systemd-234-19.el9.x86_64
-util-linux-core-2.37.4-25.el9.x86_64
-which-2.21-30.el9_6.x86_64
-systemd-rpm-macros-252-67.el9_8.2.noarch
-python3-pysocks-1.7.1-12.el9.noarch
-python3-urllib3-1.26.5-6.el9_7.1.noarch
-python3-librepo-1.19.0-1.el9.x86_64
-python3-decorator-4.4.2-6.el9.noarch
-python3-chardet-4.0.0-5.el9.noarch
-python3-requests-2.25.1-10.el9_6.noarch
-python3-cloud-what-1.29.50-1.el9.x86_64
-python3-subscription-manager-rhsm-1.29.50-1.el9.x86_64
-psmisc-23.4-3.el9.x86_64
-openssl-3.5.5-2.el9_8.x86_64
-libutempter-1.2.1-6.el9.x86_64
-libseccomp-2.5.2-2.el9.x86_64
-libmnl-1.0.4-16.el9_4.x86_64
-libeconf-0.4.1-5.el9.x86_64
-libdb-5.3.28-57.el9_6.x86_64
-pam-1.5.1-28.el9.x86_64
-libpwquality-1.4.4-8.el9.x86_64
-util-linux-2.37.4-25.el9.x86_64
-libuser-0.63-17.el9.x86_64
-passwd-0.80-12.el9.x86_64
-usermode-1.114-7.el9.x86_64
-virt-what-1.27-2.el9.x86_64
-libbpf-1.5.0-3.el9.x86_64
-iproute-6.17.0-2.el9.x86_64
-kmod-libs-28-11.el9.x86_64
-gobject-introspection-1.68.0-11.el9.x86_64
-python3-gobject-base-noarch-3.40.1-6.el9.noarch
-python3-gobject-base-3.40.1-6.el9.x86_64
-acl-2.3.1-4.el9.x86_64
-dbus-1.12.20-8.el9.x86_64
-systemd-pam-252-67.el9_8.2.x86_64
-systemd-252-67.el9_8.2.x86_64
-dbus-common-1.12.20-8.el9.noarch
-dbus-broker-28-7.el9.x86_64
-python3-dnf-plugins-core-4.3.0-26.el9.noarch
-subscription-manager-1.29.50-1.el9.x86_64
-r-rig-0.7.0-1.x86_64
-dnf-plugins-core-4.3.0-26.el9.noarch
-epel-release-9-10.el9.noarch
-libquadmath-11.5.0-14.el9.x86_64
-libgfortran-11.5.0-14.el9.x86_64
-flexiblas-3.0.4-8.el9.x86_64
-libmpc-1.2.1-4.el9.x86_64
-openblas-0.3.29-1.el9.x86_64
-unzip-6.0-60.el9.x86_64
-libpng-1.6.37-15.el9_8.x86_64
-elfutils-debuginfod-client-0.194-1.el9.x86_64
-binutils-gold-2.35.2-72.el9.x86_64
-binutils-2.35.2-72.el9.x86_64
-make-4.3-8.el9.x86_64
-tcl-8.6.10-7.el9.x86_64
-libICE-1.0.10-8.el9.x86_64
-libSM-1.2.3-10.el9.x86_64
-zip-3.0-35.el9.x86_64
-openblas-openmp-0.3.29-1.el9.x86_64
-flexiblas-openblas-openmp-3.0.4-8.el9.x86_64
-flexiblas-netlib-3.0.4-8.el9.x86_64
-openblas-openmp64-0.3.29-1.el9.x86_64
-flexiblas-openblas-openmp64-3.0.4-8.el9.x86_64
-flexiblas-netlib64-3.0.4-8.el9.x86_64
-cpp-11.5.0-14.el9.x86_64
-kernel-headers-5.14.0-687.10.1.el9_8.x86_64
-libstdc++-devel-11.5.0-14.el9.x86_64
-libX11-common-1.8.12-1.el9.noarch
-glibc-headers-2.34-266.el9_8.x86_64
-pcre2-utf32-10.40-6.el9.x86_64
-pcre2-utf16-10.40-6.el9.x86_64
-libicu-67.1-10.el9_6.x86_64
-libbrotli-1.0.9-9.el9_7.x86_64
-graphite2-1.3.14-9.el9.x86_64
-freetype-2.10.4-10.el9_5.x86_64
-harfbuzz-2.7.4-10.el9.x86_64
-libpkgconf-1.7.3-10.el9.x86_64
-pkgconf-1.7.3-10.el9.x86_64
-pkgconf-m4-1.7.3-10.el9.noarch
-pkgconf-pkg-config-1.7.3-10.el9.x86_64
-xz-devel-5.2.5-8.el9_0.x86_64
-glibc-devel-2.34-266.el9_8.x86_64
-libxcrypt-devel-4.4.18-3.el9.x86_64
-gcc-11.5.0-14.el9.x86_64
-gcc-c++-11.5.0-14.el9.x86_64
-libquadmath-devel-11.5.0-14.el9.x86_64
-gcc-gfortran-11.5.0-14.el9.x86_64
-zlib-devel-1.2.11-40.el9.x86_64
-flexiblas-devel-3.0.4-8.el9.x86_64
-pcre2-devel-10.40-6.el9.x86_64
-bzip2-devel-1.0.8-11.el9.x86_64
-libcurl-devel-7.76.1-40.el9.x86_64
-libicu-devel-67.1-10.el9_6.x86_64
-libjpeg-turbo-2.0.90-7.el9.x86_64
-libXau-1.0.9-8.el9.x86_64
-libxcb-1.13.1-9.el9.x86_64
-libX11-1.8.12-1.el9.x86_64
-libXrender-0.9.10-16.el9.x86_64
-libXt-1.2.0-6.el9.x86_64
-libXext-1.3.4-8.el9.x86_64
-libXmu-1.1.3-8.el9.x86_64
-xml-common-0.6.3-58.el9.noarch
-fontconfig-2.14.0-2.el9_1.x86_64
-libXft-2.3.3-8.el9.x86_64
-tk-8.6.10-9.el9.x86_64
-libwebp-1.2.0-8.el9_3.x86_64
-jbigkit-libs-2.1-23.el9.x86_64
-libtiff-4.4.0-18.el9_8.x86_64
-pixman-0.40.0-6.el9_3.x86_64
-cairo-1.17.4-7.el9.x86_64
-libdatrie-0.2.13-4.el9.x86_64
-libthai-0.1.28-8.el9.x86_64
-fribidi-1.0.10-6.el9.2.x86_64
-pango-1.48.7-3.el9.x86_64
-R-4.6.0-1-1.x86_64
-pyproject-srpm-macros-1.18.5-1.el9.noarch
-llvm-filesystem-21.1.8-2.el9.x86_64
-gcc-plugin-annobin-11.5.0-14.el9.x86_64
-efi-srpm-macros-6-4.el9.noarch
-dwz-0.16-1.el9.x86_64
-ncurses-6.2-12.20210508.el9.x86_64
-libssh-config-0.10.4-18.el9.noarch
-libssh-0.10.4-18.el9.x86_64
-libedit-3.1-39.20210216cvs.el9.x86_64
-llvm-libs-21.1.8-2.el9.x86_64
-annobin-12.98-2.el9.x86_64
-file-5.39-17.el9.x86_64
-groff-base-1.22.4-10.el9.x86_64
-perl-Digest-1.19-4.el9.noarch
-perl-B-1.80-481.1.el9_6.x86_64
-perl-FileHandle-2.03-481.1.el9_6.noarch
-perl-Digest-MD5-2.58-4.el9.x86_64
-perl-Data-Dumper-2.174-462.el9.x86_64
-perl-libnet-3.13-4.el9.noarch
-perl-AutoLoader-5.74-481.1.el9_6.noarch
-perl-Class-Struct-0.66-481.1.el9_6.noarch
-perl-base-2.27-481.1.el9_6.noarch
-perl-URI-5.09-3.el9.noarch
-perl-Term-ANSIColor-5.01-461.el9.noarch
-perl-Time-Local-1.300-7.el9.noarch
-perl-Socket-2.031-4.el9.x86_64
-perl-Mozilla-CA-20200520-6.el9.noarch
-perl-POSIX-1.94-481.1.el9_6.x86_64
-perl-SelectSaver-1.02-481.1.el9_6.noarch
-perl-if-0.60.800-481.1.el9_6.noarch
-perl-mro-1.23-481.1.el9_6.x86_64
-perl-IO-Socket-IP-0.41-5.el9.noarch
-perl-File-stat-1.09-481.1.el9_6.noarch
-perl-overloading-0.02-481.1.el9_6.noarch
-perl-subs-1.03-481.1.el9_6.noarch
-perl-Text-Tabs+Wrap-2013.0523-460.el9.noarch
-perl-Term-Cap-1.17-460.el9.noarch
-perl-Pod-Escapes-1.07-460.el9.noarch
-perl-File-Path-2.18-4.el9.noarch
-perl-Net-SSLeay-1.94-3.el9.x86_64
-perl-Pod-Usage-2.01-4.el9.noarch
-perl-IO-Socket-SSL-2.073-2.el9.noarch
-perl-parent-0.238-460.el9.noarch
-perl-constant-1.33-461.el9.noarch
-perl-Text-ParseWords-3.30-460.el9.noarch
-perl-MIME-Base64-3.16-4.el9.x86_64
-perl-Scalar-List-Utils-1.56-462.el9.x86_64
-perl-Errno-1.30-481.1.el9_6.x86_64
-perl-Fcntl-1.13-481.1.el9_6.x86_64
-perl-File-Basename-2.85-481.1.el9_6.noarch
-perl-Getopt-Std-1.12-481.1.el9_6.noarch
-perl-Symbol-1.08-481.1.el9_6.noarch
-perl-Storable-3.21-460.el9.x86_64
-perl-IPC-Open3-1.21-481.1.el9_6.noarch
-perl-IO-1.43-481.1.el9_6.x86_64
-perl-overload-1.31-481.1.el9_6.noarch
-perl-Pod-Simple-3.42-4.el9.noarch
-perl-File-Temp-0.231.100-4.el9.noarch
-perl-vars-1.05-481.1.el9_6.noarch
-perl-Getopt-Long-2.52-4.el9.noarch
-perl-podlators-4.14-460.el9.noarch
-perl-HTTP-Tiny-0.076-462.el9.noarch
-perl-Exporter-5.74-461.el9.noarch
-perl-Carp-1.50-460.el9.noarch
-perl-PathTools-3.78-461.el9.x86_64
-perl-DB_File-1.855-4.el9.x86_64
-perl-GDBM_File-1.18-481.1.el9_6.x86_64
-perl-NDBM_File-1.15-481.1.el9_6.x86_64
-perl-ODBM_File-1.16-481.1.el9_6.x86_64
-perl-Encode-3.08-462.el9.x86_64
-perl-libs-5.32.1-481.1.el9_6.x86_64
-perl-Pod-Perldoc-3.28.01-461.el9.noarch
-perl-doc-5.32.1-481.1.el9_6.noarch
-perl-interpreter-5.32.1-481.1.el9_6.x86_64
-perl-File-Find-1.37-481.1.el9_6.noarch
-perl-File-Copy-2.34-481.1.el9_6.noarch
-perl-ExtUtils-Manifest-1.73-4.el9.noarch
-perl-Time-HiRes-1.9764-462.el9.x86_64
-perl-DynaLoader-1.47-481.1.el9_6.x86_64
-perl-ExtUtils-ParseXS-3.40-460.el9.noarch
-perl-Compress-Raw-Zlib-2.101-5.el9.x86_64
-perl-threads-2.25-460.el9.x86_64
-perl-threads-shared-1.61-460.el9.x86_64
-perl-File-Compare-1.100.600-481.1.el9_6.noarch
-perl-lib-0.65-481.1.el9_6.x86_64
-perl-Digest-SHA-6.02-461.el9.x86_64
-perl-Filter-1.60-4.el9.x86_64
-perl-Perl-OSType-1.010-461.el9.noarch
-perl-Module-Load-0.36-4.el9.noarch
-perl-Unicode-Normalize-1.27-461.el9.x86_64
-perl-Devel-Peek-1.28-481.1.el9_6.x86_64
-perl-Term-ReadLine-1.17-481.1.el9_6.noarch
-perl-Tie-4.6-481.1.el9_6.noarch
-perl-locale-1.09-481.1.el9_6.noarch
-perl-version-0.99.28-4.el9.x86_64
-perl-CPAN-Meta-Requirements-2.140-461.el9.noarch
-perl-Module-Metadata-1.000037-460.el9.noarch
-perl-Module-CoreList-5.20240609-1.el9.noarch
-perl-meta-notation-5.32.1-481.1.el9_6.noarch
-perl-Pod-Html-1.25-481.1.el9_6.noarch
-perl-Dumpvalue-2.27-481.1.el9_6.noarch
-perl-encoding-3.00-462.el9.x86_64
-perl-TermReadKey-2.38-11.el9.x86_64
-perl-Net-Ping-2.74-5.el9.noarch
-perl-ExtUtils-Command-7.60-3.el9.noarch
-perl-Text-Balanced-2.04-4.el9.noarch
-perl-Compress-Raw-Bzip2-2.101-5.el9.x86_64
-perl-IO-Compress-2.102-4.el9.noarch
-perl-IO-Zlib-1.11-4.el9.noarch
-perl-ExtUtils-MM-Utils-7.60-3.el9.noarch
-perl-CPAN-Meta-YAML-0.018-461.el9.noarch
-perl-Params-Util-1.102-5.el9.x86_64
-perl-Devel-PPPort-3.62-4.el9.x86_64
-perl-Tie-RefHash-1.40-4.el9.noarch
-perl-Sub-Install-0.928-28.el9.noarch
-perl-AutoSplit-5.74-481.1.el9_6.noarch
-perl-Benchmark-1.23-481.1.el9_6.noarch
-perl-Test-Harness-3.42-461.el9.noarch
-perl-DirHandle-1.05-481.1.el9_6.noarch
-perl-ExtUtils-Constant-0.25-481.1.el9_6.noarch
-perl-Hash-Util-FieldHash-1.20-481.1.el9_6.x86_64
-perl-Hash-Util-0.23-481.1.el9_6.x86_64
-perl-I18N-LangTags-0.44-481.1.el9_6.noarch
-perl-Locale-Maketext-1.29-461.el9.noarch
-perl-Locale-Maketext-Simple-0.21-481.1.el9_6.noarch
-perl-Params-Check-0.38-461.el9.noarch
-perl-Module-Load-Conditional-0.74-4.el9.noarch
-perl-IPC-Cmd-1.04-461.el9.noarch
-perl-I18N-Langinfo-0.19-481.1.el9_6.x86_64
-perl-Math-Complex-1.59-481.1.el9_6.noarch
-perl-Math-BigInt-1.9998.18-460.el9.noarch
-perl-JSON-PP-4.06-4.el9.noarch
-perl-CPAN-Meta-2.150010-460.el9.noarch
-perl-Math-BigRat-0.2614-460.el9.noarch
-perl-Opcode-1.48-481.1.el9_6.x86_64
-perl-Safe-2.41-481.1.el9_6.noarch
-perl-SelfLoader-1.26-481.1.el9_6.noarch
-perl-Sys-Hostname-1.23-481.1.el9_6.x86_64
-perl-User-pwent-1.03-481.1.el9_6.noarch
-perl-autouse-1.11-481.1.el9_6.noarch
-perl-Devel-SelfStubber-1.06-481.1.el9_6.noarch
-perl-bignum-0.51-460.el9.noarch
-perl-Math-BigInt-FastCalc-0.500.900-460.el9.x86_64
-perl-Encode-Locale-1.05-21.el9.noarch
-perl-File-Fetch-1.00-4.el9.noarch
-perl-fields-2.27-481.1.el9_6.noarch
-perl-Data-OptList-0.110-17.el9.noarch
-perl-DBM_Filter-0.06-481.1.el9_6.noarch
-perl-Filter-Simple-0.96-460.el9.noarch
-perl-open-1.12-481.1.el9_6.noarch
-perl-debugger-1.56-481.1.el9_6.noarch
-perl-sigtrap-1.09-481.1.el9_6.noarch
-perl-Module-CoreList-tools-5.20240609-1.el9.noarch
-perl-experimental-0.022-6.el9.noarch
-perl-Env-1.04-460.el9.noarch
-perl-Unicode-Collate-1.29-4.el9.x86_64
-perl-Unicode-UCD-0.75-481.1.el9_6.noarch
-perl-Archive-Zip-1.68-6.el9.noarch
-perl-Thread-Queue-3.14-460.el9.noarch
-perl-Thread-3.05-481.1.el9_6.noarch
-perl-Thread-Semaphore-2.13-481.1.el9_6.noarch
-perl-Digest-SHA1-2.13-34.el9.x86_64
-perl-Pod-Checker-1.74-4.el9.noarch
-kernel-srpm-macros-1.0-14.el9.noarch
-perl-diagnostics-1.37-481.1.el9_6.noarch
-perl-macros-5.32.1-481.1.el9_6.noarch
-perl-utils-5.32.1-481.1.el9_6.noarch
-perl-MRO-Compat-0.13-15.el9.noarch
-perl-Algorithm-Diff-1.2010-4.el9.noarch
-perl-Text-Diff-1.45-13.el9.noarch
-perl-Module-Signature-0.88-1.el9.noarch
-perl-CPAN-DistnameInfo-0.12-23.el9.noarch
-perl-Text-Template-1.59-5.el9.noarch
-perl-Sys-Syslog-0.36-461.el9.x86_64
-perl-Devel-Size-0.83-10.el9.x86_64
-perl-File-Which-1.23-10.el9.noarch
-perl-File-HomeDir-1.006-4.el9.noarch
-perl-local-lib-2.000024-13.el9.noarch
-perl-Text-Glob-0.11-15.el9.noarch
-perl-Object-HashBase-0.009-7.el9.noarch
-perl-Importer-0.026-4.el9.noarch
-perl-Compress-Raw-Lzma-2.101-3.el9.x86_64
-perl-IO-Compress-Lzma-2.101-4.el9.noarch
-perl-Archive-Tar-2.38-6.el9.noarch
-perl-Package-Generator-1.106-23.el9.noarch
-perl-Sub-Exporter-0.987-27.el9.noarch
-perl-Data-Section-0.200007-14.el9.noarch
-perl-Software-License-0.103014-12.el9.noarch
-perl-Config-Perl-V-0.33-4.el9.noarch
-perl-IPC-System-Simple-1.30-6.el9.noarch
-perl-autodie-2.34-4.el9.noarch
-perl-MIME-Charset-1.012.2-15.el9.noarch
-perl-Term-Size-Perl-0.031-12.el9.x86_64
-perl-Term-Size-Any-0.002-35.el9.noarch
-perl-Compress-Bzip2-2.28-5.el9.x86_64
-perl-PerlIO-via-QuotedPrint-0.09-4.el9.noarch
-perl-IPC-SysV-2.09-4.el9.x86_64
-perl-perlfaq-5.20210520-1.el9.noarch
-perl-Attribute-Handlers-1.01-481.1.el9_6.noarch
-perl-Config-Extensions-0.03-481.1.el9_6.noarch
-perl-English-1.11-481.1.el9_6.noarch
-perl-File-DosGlob-1.12-481.1.el9_6.x86_64
-perl-FileCache-1.10-481.1.el9_6.noarch
-perl-FindBin-1.51-481.1.el9_6.noarch
-perl-I18N-Collate-1.02-481.1.el9_6.noarch
-perl-Memoize-1.03-481.1.el9_6.noarch
-perl-Module-Loaded-0.08-481.1.el9_6.noarch
-perl-NEXT-0.67-481.1.el9_6.noarch
-perl-Net-1.02-481.1.el9_6.noarch
-perl-Pod-Functions-1.13-481.1.el9_6.noarch
-perl-Search-Dict-1.07-481.1.el9_6.noarch
-perl-Term-Complete-1.403-481.1.el9_6.noarch
-perl-Test-1.31-481.1.el9_6.noarch
-perl-Text-Abbrev-1.02-481.1.el9_6.noarch
-perl-Tie-File-1.06-481.1.el9_6.noarch
-perl-Tie-Memoize-1.1-481.1.el9_6.noarch
-perl-Time-1.03-481.1.el9_6.noarch
-perl-Time-Piece-1.3401-481.1.el9_6.x86_64
-perl-blib-1.07-481.1.el9_6.noarch
-perl-deprecate-0.04-481.1.el9_6.noarch
-perl-encoding-warnings-0.13-481.1.el9_6.noarch
-perl-filetest-1.03-481.1.el9_6.noarch
-perl-less-0.03-481.1.el9_6.noarch
-perl-ph-5.32.1-481.1.el9_6.x86_64
-perl-sort-2.04-481.1.el9_6.noarch
-perl-vmsish-1.04-481.1.el9_6.noarch
-info-6.7-15.el9.x86_64
-ed-1.14.2-12.el9.x86_64
-python3-pyparsing-2.4.7-9.el9.noarch
-systemtap-sdt-dtrace-5.4-4.el9.x86_64
-systemtap-sdt-devel-5.4-4.el9.x86_64
-publicsuffix-list-dafsa-20210518-3.el9.noarch
-libpsl-0.21.1-5.el9.x86_64
-qt5-srpm-macros-5.15.9-1.el9.noarch
-perl-srpm-macros-1-41.el9.noarch
-lua-srpm-macros-1-6.el9.noarch
-rust-srpm-macros-17-4.el9.noarch
-ocaml-srpm-macros-6-6.el9.noarch
-ghc-srpm-macros-1.5.0-6.el9.noarch
-openblas-srpm-macros-2-11.el9.noarch
-fonts-srpm-macros-2.0.5-7.el9.1.noarch
-python-srpm-macros-3.9-54.el9.noarch
-go-srpm-macros-3.8.1-1.el9.noarch
-redhat-rpm-config-210-1.el9.noarch
-perl-devel-5.32.1-481.1.el9_6.x86_64
-perl-ExtUtils-Install-2.20-4.el9.noarch
-perl-ExtUtils-MakeMaker-7.60-3.el9.noarch
-perl-ExtUtils-CBuilder-0.280236-5.el9.noarch
-perl-ExtUtils-Embed-1.35-481.1.el9_6.noarch
-perl-ExtUtils-Miniperl-1.09-481.1.el9_6.noarch
-perl-libnetcfg-5.32.1-481.1.el9_6.noarch
-perl-inc-latest-0.500-20.el9.noarch
-perl-Module-Build-0.42.31-9.el9.noarch
-perl-Encode-devel-3.08-462.el9.x86_64
-sombok-2.4.0-16.el9.x86_64
-perl-Unicode-LineBreak-2019.001-11.el9.x86_64
-perl-Term-Table-0.015-8.el9.noarch
-perl-Test-Simple-1.302183-4.el9.noarch
-perl-CPAN-2.29-5.el9_6.noarch
-perl-5.32.1-481.1.el9_6.x86_64
-libcurl-7.76.1-40.el9.x86_64
-patch-2.7.6-16.el9.x86_64
-glibc-langpack-en-2.34-266.el9_8.x86_64
-glibc-gconv-extra-2.34-266.el9_8.x86_64
-diffutils-3.7-12.el9.x86_64
-fribidi-devel-1.0.10-6.el9.2.x86_64
 </code></pre>
 </details>
 </div>
@@ -109423,7 +109423,7 @@ ii  zlib1g-dev:amd64              1:1.2.11.dfsg-2ubuntu9.2                amd64 
 </div>
 </section></details>
 <hr>
-<p>Container data last updated: 2026-05-24 08:57:00. Download <a href="manifest.json"><code>manifest.json</code></a></p>
+<p>Container data last updated: 2026-05-24 14:37:50. Download <a href="manifest.json"><code>manifest.json</code></a></p>
 
 
 </section>
