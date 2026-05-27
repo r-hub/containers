@@ -1,4 +1,3 @@
-
 FROM ubuntu:22.04
 ENV R_HUB=true
 
@@ -19,6 +18,17 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y patch && \
+    apt-get clean
+
+# ------------------------------------------------------------------------------------
+# GCC 16 (to match CRAN's compiler)
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test && \
+    apt-get update -y && \
+    apt-get install -y gcc-16 g++-16 && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
@@ -68,6 +78,17 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y git && \
     apt-get clean
+
+# ------------------------------------------------------------------------------------
+# Configure R to use GCC 16
+
+RUN mkdir -p /root/.R && \
+    echo 'CC=gcc-16' > /root/.R/Makevars && \
+    echo 'CXX=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX11=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX14=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX17=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX20=g++-16' >> /root/.R/Makevars
 
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
