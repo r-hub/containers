@@ -11,3 +11,5 @@ Depends:
     purrr
 Suggests:
     rmarkdown
+Remotes:
+    r-lib/gh
