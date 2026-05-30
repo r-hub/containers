@@ -15,6 +15,17 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm r-*.deb && \
     apt-get clean
 
+# ------------------------------------------------------------------------------------
+# GCC 16 (to match CRAN's compiler)
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -y && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test && \
+    apt-get update -y && \
+    apt-get install -y gcc-16 g++-16 && \
+    apt-get clean
+
 # System requirements that pak does not know about
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
@@ -92,6 +103,17 @@ RUN if [ "$(uname -p)" = "x86_64" ]; then \
 
 RUN /opt/R/devel/bin/R -q -e \
     'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+
+# ------------------------------------------------------------------------------------
+# Configure R to use GCC 16
+
+RUN mkdir -p /root/.R && \
+    echo 'CC=gcc-16' > /root/.R/Makevars && \
+    echo 'CXX=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX11=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX14=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX17=g++-16' >> /root/.R/Makevars && \
+    echo 'CXX20=g++-16' >> /root/.R/Makevars
 
 # ------------------------------------------------------------------------------------
 # Use user's package library for the rest
