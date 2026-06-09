@@ -44,8 +44,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean && \
     locale-gen en_GB.UTF-8 en_US.UTF-8 && \
     update-locale
-ENV LC_COLLATE C
-ENV LANG en_GB.UTF-8
+ENV LC_COLLATE=C
+ENV LANG=en_GB.UTF-8
 
 # ------------------------------------------------------------------------------------
 # Install pak, vnu
@@ -76,4 +76,5 @@ RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TR
 # Config for r-hub/actions
 
 ENV RHUB_ACTIONS_DEPS_DEPENDENCIES='"hard"'
-ENV RHUB_ACTIONS_CHECK_SCRIPT=vnu.sh
+ENV RHUB_ACTIONS_CHECK_SCRIPT="vnu.sh"
+ENV RHUB_ACTIONS_INSTALL_LOCAL_PACKAGE="true"
