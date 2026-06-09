@@ -46,6 +46,7 @@ Plus the following containers for additional CRAN checks:
 |noSuggests  | nosuggests | Tests without suggested packages                                 | `r os_name("nosuggests")`         | `r r_ver("nosuggests")` | [Details](containers.html#nosuggests)  |
 |rchk        | rchk       | Checks of native code (C/C++) based on static code analysis      | `r os_name("rchk")`               | `r r_ver("rchk")`       | [Details](containers.html#rchk)        |
 |valgrind    | valgrind   | Tests of memory access errors using valgrind                     | `r os_name("valgrind")`           | `r r_ver("valgrind")`   | [Details](containers.html#valgrind)    |
+|vnu         | vnu        | Tests of HTML and CSS validation using the W3C Nu Validator      | `r os_name("vnu")`                | `r r_ver("vnu")`        | [Details](containers.html#vnu)         |
 
 And these additional containers:
 
