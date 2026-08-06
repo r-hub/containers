@@ -28,6 +28,7 @@ RUN dnf -y upgrade \
     make \
     ncurses-devel \
     pango-devel \
+    patch \
     pcre-devel \
     pcre2-devel \
     readline-devel \
@@ -85,5 +86,6 @@ COPY builder/config.fedora-gcc /config.site
 COPY builder/config.fedora-gcc.aarch64 /config.site.aarch64
 
 COPY builder/package.fedora-gcc16 /package.sh
+COPY patches/R-devel-format-security.patch /patches/R-devel.patch
 COPY build.sh .
 ENTRYPOINT ./build.sh
