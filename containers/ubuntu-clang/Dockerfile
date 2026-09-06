@@ -22,15 +22,22 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 15, gfortran 12
+# clang 22 (to match CRAN's debian-clang), gfortran 12
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y clang-15 libomp-15-dev gfortran-12 libstdc++-12-dev && \
+    apt-get install -y gnupg && \
+    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    > /etc/apt/sources.list.d/llvm.list && \
+    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    >> /etc/apt/sources.list.d/llvm.list && \
+    curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    apt-get update -y && \
+    apt-get install -y clang-22 libomp-22-dev gfortran-12 libstdc++-12-dev && \
     apt-get clean
 
 # We do not replace -lgfortran!
-RUN sed -i 's/gcc/clang-15/g' /opt/R/devel/lib/R/etc/Makeconf && \
-    sed -i 's/g[+][+]/clang++-15/g' /opt/R/devel/lib/R/etc/Makeconf && \
+RUN sed -i 's/gcc/clang-22/g' /opt/R/devel/lib/R/etc/Makeconf && \
+    sed -i 's/g[+][+]/clang++-22/g' /opt/R/devel/lib/R/etc/Makeconf && \
     sed -i 's/\bgfortran/gfortran-12/g' /opt/R/devel/lib/R/etc/Makeconf
 
 # ------------------------------------------------------------------------------------
