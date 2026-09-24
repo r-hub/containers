@@ -150,10 +150,10 @@ RUN app="-fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer "; \
     sed -i -E '/^CC[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
     sed -i -E '/^CXX ?=/ s/$/ '"$app"/ "${makeconf}" && \
     sed -i -E '/^CXX[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
-    sed -i 's/^CFLAGS\b.*$/CFLAGS ='"$cf"/ "${makeconf}" && \
-    sed -i 's/^C\([0-9][0-9]\)FLAGS\b.*$/C\1FLAGS = '"$cf"/ "${makeconf}" && \
-    sed -i 's/^CXXFLAGS\b.*$/CXXFLAGS ='"$cxf"/ "${makeconf}" && \
-    sed -i 's/^CXX\([0-9][0-9]\)FLAGS\b.*$/CXX\1FLAGS ='"$cxf"/ "${makeconf}"&& \
+    sed -i 's/^CFLAGS\b.*$/CFLAGS ='"$cf"' $(LTO)/' "${makeconf}" && \
+    sed -i 's/^C\([0-9][0-9]\)FLAGS\b.*$/C\1FLAGS = '"$cf"' $(LTO)/' "${makeconf}" && \
+    sed -i 's/^CXXFLAGS\b.*$/CXXFLAGS ='"$cxf"' $(LTO)/' "${makeconf}" && \
+    sed -i 's/^CXX\([0-9][0-9]\)FLAGS\b.*$/CXX\1FLAGS ='"$cxf"' $(LTO)/' "${makeconf}"&& \
     sed -i 's/^MAIN_LDFLAGS\b.*$/MAIN_LDFLAGS = '"$mld"/ "${makeconf}" && \
     sed -i 's/^FFLAGS\b.*$/FFLAGS = '"$ff"/ "${makeconf}" && \
     sed -i 's/^LTO\b.*$/LTO = -flto=10/' "${makeconf}" && \
