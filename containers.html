@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -23633,9 +23633,589 @@ ii  zlib1g-dev:amd64              1:1.2.11.dfsg-2ubuntu9.2                amd64 
 <section id="gcc-asan" class="level2">
 <h2 class="anchored" data-anchor-id="gcc-asan"><code>gcc-asan</code></h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href="">cf9d33c</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href="">3206b2e</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false" href="">dfefbae</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-4" role="tab" aria-controls="tabset-9-4" aria-selected="false" href="">811e777</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-5" role="tab" aria-controls="tabset-9-5" aria-selected="false" href="">c2f91e3</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href="">446fd41</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href="">cf9d33c</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false" href="">3206b2e</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-4" role="tab" aria-controls="tabset-9-4" aria-selected="false" href="">dfefbae</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-5" role="tab" aria-controls="tabset-9-5" aria-selected="false" href="">811e777</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<p><strong>id:</strong> ghcr.io/r-hub/containers/gcc-asan@sha256:446fd4122dc127147b5161650560cd8f7f48f74abcd7ef8a6c7518811e4c37b2 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-asan:latest <br> <strong>created:</strong> 2026-09-24T08:28:43.829663907Z <br> <strong>size:</strong> 1.19 GB <br></p>
+<details>
+<summary>
+OS version
+</summary>
+<pre><code>&gt; uname -a
+Linux dbb5f9f6bbe0 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026 x86_64 GNU/Linux
+
+&gt; cat /etc/os-release
+NAME="Fedora Linux"
+VERSION="42 (Container Image)"
+RELEASE_TYPE=stable
+ID=fedora
+VERSION_ID=42
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f42"
+PRETTY_NAME="Fedora Linux 42 (Container Image)"
+ANSI_COLOR="0;38;2;60;110;180"
+LOGO=fedora-logo-icon
+CPE_NAME="cpe:/o:fedoraproject:fedora:42"
+DEFAULT_HOSTNAME="fedora"
+HOME_URL="https://fedoraproject.org/"
+DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f42/"
+SUPPORT_URL="https://ask.fedoraproject.org/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+REDHAT_BUGZILLA_PRODUCT="Fedora"
+REDHAT_BUGZILLA_PRODUCT_VERSION=42
+REDHAT_SUPPORT_PRODUCT="Fedora"
+REDHAT_SUPPORT_PRODUCT_VERSION=42
+SUPPORT_END=2026-05-13
+VARIANT="Container Image"
+VARIANT_ID=container
+</code></pre>
+</details>
+<details>
+<summary>
+R session information
+</summary>
+<pre><code>&gt; sessionInfo()
+R Under development (unstable) (2026-06-21 r90185)
+Platform: x86_64-pc-linux-gnu
+Running under: Fedora Linux 42 (Container Image)
+
+Matrix products: default
+BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.7.0
+</code></pre>
+</details>
+<details>
+<summary>
+R capabilities
+</summary>
+<pre><code>&gt; capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua 
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
+   http/ftp     sockets      libxml        fifo      cledit       iconv 
+       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
+        NLS       Rprof     profmem       cairo         ICU long.double 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+    libcurl 
+       TRUE 
+</code></pre>
+</details>
+<details>
+<summary>
+R external software
+</summary>
+<pre><code>&gt; extSoftVersion()
+                       zlib                       bzlib 
+            "1.3.1.zlib-ng"        "1.0.8, 13-Jul-2019" 
+                         xz                  libdeflate 
+                    "5.8.1"                          "" 
+                       zstd                        PCRE 
+                    "1.5.7"          "10.46 2025-08-27" 
+                        ICU                         TRE 
+                     "76.1"   "TRE 0.8.0 R_fixes (BSD)" 
+                      iconv                    readline 
+               "glibc 2.41"                       "8.2" 
+                       BLAS 
+"FlexiBLAS OPENBLAS-OPENMP" 
+
+
+&gt; libcurlVersion()
+[1] "8.11.1"
+attr(,"ssl_version")
+[1] "OpenSSL/3.2.6"
+attr(,"libssh_version")
+[1] "libssh/0.11.4/openssl/zlib"
+attr(,"protocols")
+ [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
+ [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
+[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
+[22] "smtps"   "telnet"  "tftp"    "ws"      "wss"    
+
+
+&gt; La_version()
+[1] "3.12.0"
+
+
+&gt; La_library()
+[1] "FlexiBLAS OPENBLAS-OPENMP"
+
+
+&gt; grSoftVersion()
+                   cairo                  cairoFT                    pango 
+                "1.18.2"                       ""                 "1.56.4" 
+                  libpng                     jpeg                  libtiff 
+                "1.6.56"                    "6.2" "LIBTIFF, Version 4.7.1" 
+
+
+&gt; pcre_config()
+             UTF-8 Unicode properties                JIT              stack 
+              TRUE               TRUE               TRUE              FALSE 
+</code></pre>
+</details>
+<details>
+<summary>
+R localization
+</summary>
+<pre><code>&gt; l10n_info()
+$MBCS
+[1] TRUE
+
+$`UTF-8`
+[1] TRUE
+
+$`Latin-1`
+[1] FALSE
+
+$codeset
+[1] "UTF-8"
+</code></pre>
+</details>
+<details>
+<summary>
+R config
+</summary>
+<pre><code>&gt; R CMD config --all
+CC = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+CFLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CPICFLAGS = -fpic
+CPPFLAGS = -I/usr/local/include
+CC17 = gcc -std=gnu17 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CC23 = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CC90 = gcc -std=gnu90 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CC99 = gcc -std=gnu99 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CXX = g++ -std=gnu++20 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CXXPICFLAGS = -fpic
+CXX17 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+CXX17STD = -std=gnu++17
+CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CXX17PICFLAGS = -fpic
+CXX20 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+CXX20STD = -std=gnu++20
+CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CXX20PICFLAGS = -fpic
+CXX23 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+CXX23STD = -std=gnu++23
+CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CXX23PICFLAGS = -fpic
+CXX26 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+CXX26STD = -std=gnu++26
+CXX26FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than -flto=10
+CXX26PICFLAGS = -fpic
+DYLIB_EXT = .so
+DYLIB_LD = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+DYLIB_LDFLAGS = -shared -fopenmp
+FC = gfortran
+FFLAGS = -g -O2 -mtune=native
+FPICFLAGS = -fpic
+FLIBS = -lgfortran -lm -lquadmath
+FCFLAGS = -g -O2
+SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
+OBJC =
+OBJCFLAGS = -flto=10
+JAVA = /usr/sbin/java
+JAVAC = /usr/sbin/javac
+JAVAH =
+JAR = /usr/sbin/jar
+JAVA_HOME = /usr/lib/jvm/java-21-openjdk
+JAVA_LIBS = -L/usr/lib/jvm/java-21-openjdk/lib/server -ljvm
+JAVA_CPPFLAGS = -I/usr/lib/jvm/java-21-openjdk/include -I/usr/lib/jvm/java-21-openjdk/include/linux
+LDFLAGS = -L/usr/local/lib
+SHLIB_CFLAGS =
+SHLIB_CXXFLAGS =
+SHLIB_CXXLD = g++ -std=gnu++20 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+SHLIB_CXXLDFLAGS = -shared
+SHLIB_CXX17LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++17
+SHLIB_CXX17LDFLAGS = -shared
+SHLIB_CXX20LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++20
+SHLIB_CXX20LDFLAGS = -shared
+SHLIB_CXX23LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++23
+SHLIB_CXX23LDFLAGS = -shared
+SHLIB_CXX26LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++26
+SHLIB_CXX26LDFLAGS = -shared
+SHLIB_EXT = .so
+SHLIB_FFLAGS =
+SHLIB_LD = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
+SHLIB_LDFLAGS = -shared
+TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
+TCLTK_LIBS = -L/usr/lib64 -ltcl9.0 -L/usr/lib64 -ltcl9tk9.0 -lX11
+BLAS_LIBS = -lflexiblas
+LAPACK_LIBS =
+MAKE = make
+LIBnn = lib
+AR = ar
+NM = /usr/sbin/nm -B
+RANLIB = ranlib
+LTO = -flto=10
+LTO_FC =
+LTO_LD =
+
+## The following variables are defunct
+CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
+</code></pre>
+</details>
+<details>
+<summary>
+Compilers
+</summary>
+<pre><code>&gt; $(CC) --version
+gcc (GCC) 15.2.1 20260123 (Red Hat 15.2.1-7)
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(CXX) --version
+g++ (GCC) 15.2.1 20260123 (Red Hat 15.2.1-7)
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+&gt; $(FC) --version
+GNU Fortran (GCC) 15.2.1 20260123 (Red Hat 15.2.1-7)
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+</details>
+<details>
+<summary>
+OS packages
+</summary>
+<pre><code>libgcc-15.2.1-7.fc42.x86_64
+publicsuffix-list-dafsa-20260116-1.fc42.noarch
+libssh-config-0.11.4-1.fc42.noarch
+fedora-release-identity-container-42-30.noarch
+fedora-gpg-keys-42-1.noarch
+fedora-repos-42-1.noarch
+fedora-release-common-42-30.noarch
+fedora-release-container-42-30.noarch
+setup-2.15.0-13.fc42.noarch
+filesystem-3.18-47.fc42.x86_64
+basesystem-11-22.fc42.noarch
+pcre2-syntax-10.46-1.fc42.noarch
+gnulib-l10n-20241231-1.fc42.noarch
+coreutils-common-9.6-8.fc42.x86_64
+ncurses-base-6.5-5.20250125.fc42.noarch
+bash-5.2.37-1.fc42.x86_64
+ncurses-libs-6.5-5.20250125.fc42.x86_64
+zlib-ng-compat-2.2.5-2.fc42.x86_64
+xz-libs-5.8.1-4.fc42.x86_64
+libstdc++-15.2.1-7.fc42.x86_64
+bzip2-libs-1.0.8-20.fc42.x86_64
+libzstd-1.5.7-1.fc42.x86_64
+gmp-6.3.0-4.fc42.x86_64
+libxcrypt-4.5.2-1.fc42.x86_64
+fmt-11.1.4-1.fc42.x86_64
+libxml2-2.12.10-1.fc42.x86_64
+popt-1.19-8.fc42.x86_64
+json-c-0.18-2.fc42.x86_64
+libeconf-0.7.6-2.fc42.x86_64
+pcre2-10.46-1.fc42.x86_64
+libuuid-2.40.4-10.fc42.x86_64
+gdbm-libs-1.23-9.fc42.x86_64
+libffi-3.4.6-5.fc42.x86_64
+libtasn1-4.20.0-1.fc42.x86_64
+p11-kit-0.26.2-1.fc42.x86_64
+libunistring-1.1-9.fc42.x86_64
+libidn2-2.3.8-1.fc42.x86_64
+crypto-policies-20251125-1.git3839d0e.fc42.noarch
+libblkid-2.40.4-10.fc42.x86_64
+grep-3.11-10.fc42.x86_64
+sqlite-libs-3.47.2-5.fc42.x86_64
+lz4-libs-1.10.0-2.fc42.x86_64
+libattr-2.5.2-5.fc42.x86_64
+libacl-2.3.2-3.fc42.x86_64
+readline-8.2-13.fc42.x86_64
+libsepol-3.8-1.fc42.x86_64
+libselinux-3.8-3.fc42.x86_64
+libmount-2.40.4-10.fc42.x86_64
+sed-4.9-4.fc42.x86_64
+lua-libs-5.4.8-4.fc42.x86_64
+libsmartcols-2.40.4-10.fc42.x86_64
+libcom_err-1.47.2-3.fc42.x86_64
+findutils-4.10.0-5.fc42.x86_64
+gdbm-1.23-9.fc42.x86_64
+libpsl-0.21.5-5.fc42.x86_64
+cyrus-sasl-lib-2.1.28-30.fc42.x86_64
+mpfr-4.2.2-1.fc42.x86_64
+nettle-3.10.1-1.fc42.x86_64
+file-libs-5.46-3.fc42.x86_64
+libgomp-15.2.1-7.fc42.x86_64
+libtool-ltdl-2.5.4-4.fc42.x86_64
+keyutils-libs-1.6.3-5.fc42.x86_64
+libverto-0.3.2-10.fc42.x86_64
+libyaml-0.2.5-16.fc42.x86_64
+libcap-ng-0.9.3-1.fc42.x86_64
+audit-libs-4.1.4-1.fc42.x86_64
+pam-libs-1.7.0-7.fc42.x86_64
+libcap-2.73-3.fc42.x86_64
+systemd-libs-257.13-1.fc42.x86_64
+sdbus-cpp-1.5.0-4.fc42.x86_64
+systemd-standalone-sysusers-257.13-1.fc42.x86_64
+libsemanage-3.8.1-2.fc42.x86_64
+shadow-utils-4.17.4-1.fc42.x86_64
+alternatives-1.33-3.fc42.x86_64
+p11-kit-trust-0.26.2-1.fc42.x86_64
+coreutils-9.6-8.fc42.x86_64
+ca-certificates-2025.2.80_v9.0.304-1.1.fc42.noarch
+libtirpc-1.3.7-1.fc42.x86_64
+zchunk-libs-1.5.1-2.fc42.x86_64
+libnsl2-2.0.1-3.fc42.x86_64
+libssh-0.11.4-1.fc42.x86_64
+gzip-1.13-3.fc42.x86_64
+cracklib-2.9.11-7.fc42.x86_64
+libpwquality-1.4.5-12.fc42.x86_64
+pam-1.7.0-7.fc42.x86_64
+authselect-libs-1.5.1-1.fc42.x86_64
+rpm-sequoia-1.10.1-1.fc42.x86_64
+rpm-libs-4.20.1-1.fc42.x86_64
+libsolv-0.7.36-2.fc42.x86_64
+libarchive-3.8.1-1.fc42.x86_64
+libevent-2.1.12-15.fc42.x86_64
+openldap-2.6.13-1.fc42.x86_64
+gnutls-3.8.11-3.fc42.x86_64
+glib2-2.84.4-1.fc42.x86_64
+libmodulemd-2.15.2-1.fc42.x86_64
+libnghttp2-1.64.0-3.fc42.x86_64
+libbrotli-1.2.0-1.fc42.x86_64
+libcurl-8.11.1-8.fc42.x86_64
+librepo-1.20.0-1.fc42.x86_64
+libdnf5-5.2.18.0-2.fc42.x86_64
+libdnf5-cli-5.2.18.0-2.fc42.x86_64
+dnf5-5.2.18.0-2.fc42.x86_64
+curl-8.11.1-8.fc42.x86_64
+elfutils-default-yama-scope-0.194-1.fc42.noarch
+rpm-build-libs-4.20.1-1.fc42.x86_64
+vim-data-9.2.280-1.fc42.noarch
+vim-minimal-9.2.280-1.fc42.x86_64
+dnf5-plugins-5.2.18.0-2.fc42.x86_64
+rpm-4.20.1-1.fc42.x86_64
+sudo-1.9.17-2.p1.fc42.x86_64
+authselect-1.5.1-1.fc42.x86_64
+util-linux-core-2.40.4-10.fc42.x86_64
+gawk-5.3.1-1.fc42.x86_64
+tar-1.35-5.fc42.x86_64
+zstd-1.5.7-1.fc42.x86_64
+xz-5.8.1-4.fc42.x86_64
+bzip2-1.0.8-20.fc42.x86_64
+tzdata-2025c-1.fc42.noarch
+rootfiles-8.1-38.fc42.noarch
+gpg-pubkey-105ef944-65ca83d1
+r-rig-0.10.0-1.x86_64
+glibc-common-2.41-18.fc42.x86_64
+glibc-minimal-langpack-2.41-18.fc42.x86_64
+glibc-2.41-18.fc42.x86_64
+libgfortran-15.2.1-7.fc42.x86_64
+libmpc-1.3.1-7.fc42.x86_64
+libquadmath-15.2.1-7.fc42.x86_64
+openssl-libs-3.2.6-4.fc42.x86_64
+fonts-filesystem-2.0.5-22.fc42.noarch
+krb5-libs-1.21.3-7.fc42.x86_64
+make-4.4.1-10.fc42.x86_64
+unzip-6.0-66.fc42.x86_64
+libICE-1.1.2-2.fc42.x86_64
+libSM-1.2.5-2.fc42.x86_64
+libpng-1.6.56-1.fc42.x86_64
+elfutils-libelf-0.195-1.fc42.x86_64
+cmake-filesystem-3.31.11-1.fc42.x86_64
+openblas-0.3.29-1.fc42.x86_64
+openblas-openmp-0.3.29-1.fc42.x86_64
+flexiblas-netlib-3.4.5-1.fc42.x86_64
+flexiblas-3.4.5-1.fc42.x86_64
+flexiblas-openblas-openmp-3.4.5-1.fc42.x86_64
+openblas-openmp64-0.3.29-1.fc42.x86_64
+flexiblas-netlib64-3.4.5-1.fc42.x86_64
+flexiblas-openblas-openmp64-3.4.5-1.fc42.x86_64
+elfutils-libs-0.195-1.fc42.x86_64
+elfutils-debuginfod-client-0.195-1.fc42.x86_64
+zip-3.0-43.fc42.x86_64
+libkadm5-1.21.3-7.fc42.x86_64
+abattis-cantarell-vf-fonts-0.301-14.fc42.noarch
+cpp-15.2.1-7.fc42.x86_64
+jbigkit-libs-2.1-31.fc42.x86_64
+liblerc-4.0.0-8.fc42.x86_64
+libwebp-1.5.0-2.fc42.x86_64
+fribidi-1.0.16-2.fc42.x86_64
+libdatrie-0.2.13-11.fc42.x86_64
+libthai-0.1.29-10.fc42.x86_64
+libXau-1.0.12-2.fc42.x86_64
+libxcb-1.17.0-5.fc42.x86_64
+pcre2-utf16-10.46-1.fc42.x86_64
+pcre2-utf32-10.46-1.fc42.x86_64
+which-2.23-2.fc42.x86_64
+libicu-76.1-4.fc42.x86_64
+libtommath-1.3.1~rc1-5.fc42.x86_64
+tcl-9.0.0-7.fc42.x86_64
+libpkgconf-2.3.0-2.fc42.x86_64
+pkgconf-2.3.0-2.fc42.x86_64
+graphite2-1.3.14-18.fc42.x86_64
+harfbuzz-10.4.0-2.fc42.x86_64
+freetype-2.13.3-2.fc42.x86_64
+pixman-0.46.2-1.fc42.x86_64
+libjpeg-turbo-3.1.3-1.fc42.x86_64
+libtiff-4.7.1-1.fc42.x86_64
+brotli-1.2.0-1.fc42.x86_64
+jansson-2.14-2.fc42.x86_64
+binutils-2.44-12.fc42.x86_64
+kernel-headers-6.19.6-100.fc42.x86_64
+publicsuffix-list-20260116-1.fc42.noarch
+libstdc++-devel-15.2.1-7.fc42.x86_64
+pkgconf-m4-2.3.0-2.fc42.noarch
+pkgconf-pkg-config-2.3.0-2.fc42.x86_64
+pcre2-devel-10.46-1.fc42.x86_64
+zlib-ng-compat-devel-2.2.5-2.fc42.x86_64
+xz-devel-5.8.1-4.fc42.x86_64
+bzip2-devel-1.0.8-20.fc42.x86_64
+flexiblas-devel-3.4.5-1.fc42.x86_64
+libicu-devel-76.1-4.fc42.x86_64
+libzstd-devel-1.5.7-1.fc42.x86_64
+brotli-devel-1.2.0-1.fc42.x86_64
+libssh-devel-0.11.4-1.fc42.x86_64
+openssl-devel-3.2.6-4.fc42.x86_64
+libidn2-devel-2.3.8-1.fc42.x86_64
+libnghttp2-devel-1.64.0-3.fc42.x86_64
+libpsl-devel-0.21.5-5.fc42.x86_64
+libsepol-devel-3.8-1.fc42.x86_64
+libselinux-devel-3.8-3.fc42.x86_64
+keyutils-libs-devel-1.6.3-5.fc42.x86_64
+libcom_err-devel-1.47.2-3.fc42.x86_64
+libverto-devel-0.3.2-10.fc42.x86_64
+krb5-devel-1.21.3-7.fc42.x86_64
+libcurl-devel-8.11.1-8.fc42.x86_64
+glibc-devel-2.41-18.fc42.x86_64
+libxcrypt-devel-4.5.2-1.fc42.x86_64
+gcc-15.2.1-7.fc42.x86_64
+gcc-c++-15.2.1-7.fc42.x86_64
+libquadmath-devel-15.2.1-7.fc42.x86_64
+gcc-gfortran-15.2.1-7.fc42.x86_64
+libX11-common-1.8.13-1.fc42.noarch
+libX11-1.8.13-1.fc42.x86_64
+libXrender-0.9.12-2.fc42.x86_64
+libXext-1.3.6-3.fc42.x86_64
+libXt-1.3.1-2.fc42.x86_64
+libXmu-1.2.1-3.fc42.x86_64
+google-noto-fonts-common-20250301-1.fc42.noarch
+google-noto-sans-vf-fonts-20250301-1.fc42.noarch
+default-fonts-core-sans-4.2-4.fc42.noarch
+xml-common-0.6.3-66.fc42.noarch
+fontconfig-2.16.0-2.fc42.x86_64
+libXft-2.3.8-8.fc42.x86_64
+tk-9.0.0-4.fc42.x86_64
+cairo-1.18.2-3.fc42.x86_64
+pango-1.56.4-2.fc42.x86_64
+R-devel-1-1.x86_64
+ed-1.21-2.fc42.x86_64
+patch-2.8-1.fc42.x86_64
+jags-4.3.2-1.x86_64
+glibc-langpack-en-2.41-18.fc42.x86_64
+libubsan-15.2.1-7.fc42.x86_64
+libasan-15.2.1-7.fc42.x86_64
+libfdisk-2.40.4-10.fc42.x86_64
+util-linux-2.40.4-10.fc42.x86_64
+openssh-9.9p1-14.fc42.x86_64
+libedit-3.1-56.20251016cvs.fc42.x86_64
+libcbor-0.11.0-3.fc42.x86_64
+libfido2-1.15.0-3.fc42.x86_64
+openssh-clients-9.9p1-14.fc42.x86_64
+less-685-1.fc42.x86_64
+expat-2.7.3-1.fc42.x86_64
+git-core-2.54.0-1.fc42.x86_64
+git-core-doc-2.54.0-1.fc42.noarch
+ncurses-6.5-5.20250125.fc42.x86_64
+groff-base-1.23.0-8.fc42.x86_64
+perl-Digest-1.20-512.fc42.noarch
+perl-Digest-MD5-2.59-6.fc42.x86_64
+perl-B-1.89-520.fc42.x86_64
+perl-FileHandle-2.05-520.fc42.noarch
+perl-MIME-Base32-1.303-23.fc42.noarch
+perl-Data-Dumper-2.189-513.fc42.x86_64
+perl-libnet-3.15-513.fc42.noarch
+perl-AutoLoader-5.74-520.fc42.noarch
+perl-IO-Socket-IP-0.43-2.fc42.noarch
+perl-URI-5.31-2.fc42.noarch
+perl-Time-Local-1.350-512.fc42.noarch
+perl-Text-Tabs+Wrap-2024.001-512.fc42.noarch
+perl-File-Path-2.18-512.fc42.noarch
+perl-Pod-Escapes-1.07-512.fc42.noarch
+perl-if-0.61.000-520.fc42.noarch
+perl-Net-SSLeay-1.94-8.fc42.x86_64
+perl-locale-1.12-520.fc42.noarch
+perl-IO-Socket-SSL-2.089-2.fc42.noarch
+perl-Term-ANSIColor-5.01-513.fc42.noarch
+perl-Term-Cap-1.18-512.fc42.noarch
+perl-Pod-Simple-3.45-512.fc42.noarch
+perl-POSIX-2.20-520.fc42.x86_64
+perl-IPC-Open3-1.22-520.fc42.noarch
+perl-HTTP-Tiny-0.090-2.fc42.noarch
+perl-Class-Struct-0.68-520.fc42.noarch
+perl-File-Temp-0.231.100-512.fc42.noarch
+perl-Socket-2.038-512.fc42.x86_64
+perl-Symbol-1.09-520.fc42.noarch
+perl-SelectSaver-1.02-520.fc42.noarch
+perl-File-stat-1.14-520.fc42.noarch
+perl-podlators-6.0.2-3.fc42.noarch
+perl-Pod-Perldoc-3.28.01-513.fc42.noarch
+perl-Text-ParseWords-3.31-512.fc42.noarch
+perl-Fcntl-1.18-520.fc42.x86_64
+perl-base-2.27-520.fc42.noarch
+perl-mro-1.29-520.fc42.x86_64
+perl-overloading-0.02-520.fc42.noarch
+perl-IO-1.55-520.fc42.x86_64
+perl-Pod-Usage-2.05-1.fc42.noarch
+perl-constant-1.33-513.fc42.noarch
+perl-parent-0.244-2.fc42.noarch
+perl-MIME-Base64-3.16-512.fc42.x86_64
+perl-Errno-1.38-520.fc42.x86_64
+perl-File-Basename-2.86-520.fc42.noarch
+perl-Scalar-List-Utils-1.70-1.fc42.x86_64
+perl-vars-1.05-520.fc42.noarch
+perl-Getopt-Std-1.14-520.fc42.noarch
+perl-overload-1.37-520.fc42.noarch
+perl-Storable-3.32-512.fc42.x86_64
+perl-Getopt-Long-2.58-3.fc42.noarch
+perl-Carp-1.54-512.fc42.noarch
+perl-Exporter-5.78-512.fc42.noarch
+perl-PathTools-3.91-513.fc42.x86_64
+perl-DynaLoader-1.56-520.fc42.x86_64
+perl-Encode-3.21-512.fc42.x86_64
+perl-libs-5.40.4-520.fc42.x86_64
+perl-interpreter-5.40.4-520.fc42.x86_64
+perl-TermReadKey-2.38-24.fc42.x86_64
+perl-Error-0.17030-1.fc42.noarch
+perl-lib-0.65-520.fc42.x86_64
+perl-Git-2.54.0-1.fc42.noarch
+git-2.54.0-1.fc42.x86_64
+libtidy-5.8.0-10.fc42.x86_64
+qpdf-libs-11.10.1-1.fc42.x86_64
+qpdf-11.10.1-1.fc42.x86_64
+tidy-5.8.0-10.fc42.x86_64
+devscripts-checkbashisms-2.25.33-1.fc42.noarch
+perl-NDBM_File-1.17-520.fc42.x86_64
+</code></pre>
+</details>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/gcc-asan@sha256:cf9d33c39f0ef9a6930bc3b56388fafcbb6bf093fc9bc807c7a7809564c6d3d5 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-asan:latest <br> <strong>created:</strong> 2026-09-23T10:22:09.540183914Z <br> <strong>size:</strong> 1.19 GB <br></p>
 <details>
 <summary>
@@ -24215,7 +24795,7 @@ perl-NDBM_File-1.17-520.fc42.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/gcc-asan@sha256:3206b2ef875334df78b3b2b95f4a7f0a1eddd89be3810d4c2d3b20ad3fe63633 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-asan:latest <br> <strong>created:</strong> 2026-09-22T10:28:18.264869668Z <br> <strong>size:</strong> 1.19 GB <br></p>
 <details>
 <summary>
@@ -24795,7 +25375,7 @@ perl-NDBM_File-1.17-520.fc42.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
+<div id="tabset-9-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-4-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/gcc-asan@sha256:dfefbae1bb6ba2d8d5e7ff822d44bdb648a7249b5538453519015ef83e78511c <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-asan:latest <br> <strong>created:</strong> 2026-09-21T11:12:20.444748752Z <br> <strong>size:</strong> 1.18 GB <br></p>
 <details>
 <summary>
@@ -25375,7 +25955,7 @@ perl-NDBM_File-1.17-520.fc42.x86_64
 </code></pre>
 </details>
 </div>
-<div id="tabset-9-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-4-tab">
+<div id="tabset-9-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-5-tab">
 <p><strong>id:</strong> ghcr.io/r-hub/containers/gcc-asan@sha256:811e777c9b5ab6549ea9752aa1d7d39071ec279475a8d6cbec1f6cfbff8e0195 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-asan:latest <br> <strong>created:</strong> 2026-09-20T10:10:56.474822414Z <br> <strong>size:</strong> 1.18 GB <br></p>
 <details>
 <summary>
@@ -25383,586 +25963,6 @@ OS version
 </summary>
 <pre><code>&gt; uname -a
 Linux 7d0d8619acb5 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026 x86_64 GNU/Linux
-
-&gt; cat /etc/os-release
-NAME="Fedora Linux"
-VERSION="42 (Container Image)"
-RELEASE_TYPE=stable
-ID=fedora
-VERSION_ID=42
-VERSION_CODENAME=""
-PLATFORM_ID="platform:f42"
-PRETTY_NAME="Fedora Linux 42 (Container Image)"
-ANSI_COLOR="0;38;2;60;110;180"
-LOGO=fedora-logo-icon
-CPE_NAME="cpe:/o:fedoraproject:fedora:42"
-DEFAULT_HOSTNAME="fedora"
-HOME_URL="https://fedoraproject.org/"
-DOCUMENTATION_URL="https://docs.fedoraproject.org/en-US/fedora/f42/"
-SUPPORT_URL="https://ask.fedoraproject.org/"
-BUG_REPORT_URL="https://bugzilla.redhat.com/"
-REDHAT_BUGZILLA_PRODUCT="Fedora"
-REDHAT_BUGZILLA_PRODUCT_VERSION=42
-REDHAT_SUPPORT_PRODUCT="Fedora"
-REDHAT_SUPPORT_PRODUCT_VERSION=42
-SUPPORT_END=2026-05-13
-VARIANT="Container Image"
-VARIANT_ID=container
-</code></pre>
-</details>
-<details>
-<summary>
-R session information
-</summary>
-<pre><code>&gt; sessionInfo()
-R Under development (unstable) (2026-06-21 r90185)
-Platform: x86_64-pc-linux-gnu
-Running under: Fedora Linux 42 (Container Image)
-
-Matrix products: default
-BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.12.0
-
-locale:
- [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
- [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
- [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
-
-time zone: Etc/UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-loaded via a namespace (and not attached):
-[1] compiler_4.7.0
-</code></pre>
-</details>
-<details>
-<summary>
-R capabilities
-</summary>
-<pre><code>&gt; capabilities()
-       jpeg         png        tiff       tcltk         X11        aqua 
-       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE 
-   http/ftp     sockets      libxml        fifo      cledit       iconv 
-       TRUE        TRUE       FALSE        TRUE       FALSE        TRUE 
-        NLS       Rprof     profmem       cairo         ICU long.double 
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-    libcurl 
-       TRUE 
-</code></pre>
-</details>
-<details>
-<summary>
-R external software
-</summary>
-<pre><code>&gt; extSoftVersion()
-                       zlib                       bzlib 
-            "1.3.1.zlib-ng"        "1.0.8, 13-Jul-2019" 
-                         xz                  libdeflate 
-                    "5.8.1"                          "" 
-                       zstd                        PCRE 
-                    "1.5.7"          "10.46 2025-08-27" 
-                        ICU                         TRE 
-                     "76.1"   "TRE 0.8.0 R_fixes (BSD)" 
-                      iconv                    readline 
-               "glibc 2.41"                       "8.2" 
-                       BLAS 
-"FlexiBLAS OPENBLAS-OPENMP" 
-
-
-&gt; libcurlVersion()
-[1] "8.11.1"
-attr(,"ssl_version")
-[1] "OpenSSL/3.2.6"
-attr(,"libssh_version")
-[1] "libssh/0.11.4/openssl/zlib"
-attr(,"protocols")
- [1] "dict"    "file"    "ftp"     "ftps"    "gopher"  "gophers" "http"   
- [8] "https"   "imap"    "imaps"   "ldap"    "ldaps"   "mqtt"    "pop3"   
-[15] "pop3s"   "rtsp"    "scp"     "sftp"    "smb"     "smbs"    "smtp"   
-[22] "smtps"   "telnet"  "tftp"    "ws"      "wss"    
-
-
-&gt; La_version()
-[1] "3.12.0"
-
-
-&gt; La_library()
-[1] "FlexiBLAS OPENBLAS-OPENMP"
-
-
-&gt; grSoftVersion()
-                   cairo                  cairoFT                    pango 
-                "1.18.2"                       ""                 "1.56.4" 
-                  libpng                     jpeg                  libtiff 
-                "1.6.56"                    "6.2" "LIBTIFF, Version 4.7.1" 
-
-
-&gt; pcre_config()
-             UTF-8 Unicode properties                JIT              stack 
-              TRUE               TRUE               TRUE              FALSE 
-</code></pre>
-</details>
-<details>
-<summary>
-R localization
-</summary>
-<pre><code>&gt; l10n_info()
-$MBCS
-[1] TRUE
-
-$`UTF-8`
-[1] TRUE
-
-$`Latin-1`
-[1] FALSE
-
-$codeset
-[1] "UTF-8"
-</code></pre>
-</details>
-<details>
-<summary>
-R config
-</summary>
-<pre><code>&gt; R CMD config --all
-CC = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-CFLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CPICFLAGS = -fpic
-CPPFLAGS = -I/usr/local/include
-CC17 = gcc -std=gnu17 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-C17FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CC23 = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-C23FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CC90 = gcc -std=gnu90 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-C90FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CC99 = gcc -std=gnu99 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-C99FLAGS = -g -O2 -Wall -pedantic -mtune=native -fsanitize=address -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CXX = g++ -std=gnu++20 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-CXXFLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CXXPICFLAGS = -fpic
-CXX17 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-CXX17STD = -std=gnu++17
-CXX17FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CXX17PICFLAGS = -fpic
-CXX20 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-CXX20STD = -std=gnu++20
-CXX20FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CXX20PICFLAGS = -fpic
-CXX23 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-CXX23STD = -std=gnu++23
-CXX23FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CXX23PICFLAGS = -fpic
-CXX26 = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-CXX26STD = -std=gnu++26
-CXX26FLAGS = -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-alloc-size-larger-than
-CXX26PICFLAGS = -fpic
-DYLIB_EXT = .so
-DYLIB_LD = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-DYLIB_LDFLAGS = -shared -fopenmp
-FC = gfortran
-FFLAGS = -g -O2 -mtune=native
-FPICFLAGS = -fpic
-FLIBS = -lgfortran -lm -lquadmath
-FCFLAGS = -g -O2
-SAFE_FFLAGS = -g -O2 -msse2 -mfpmath=sse
-OBJC =
-OBJCFLAGS = -flto=10
-JAVA = /usr/sbin/java
-JAVAC = /usr/sbin/javac
-JAVAH =
-JAR = /usr/sbin/jar
-JAVA_HOME = /usr/lib/jvm/java-21-openjdk
-JAVA_LIBS = -L/usr/lib/jvm/java-21-openjdk/lib/server -ljvm
-JAVA_CPPFLAGS = -I/usr/lib/jvm/java-21-openjdk/include -I/usr/lib/jvm/java-21-openjdk/include/linux
-LDFLAGS = -L/usr/local/lib
-SHLIB_CFLAGS =
-SHLIB_CXXFLAGS =
-SHLIB_CXXLD = g++ -std=gnu++20 -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-SHLIB_CXXLDFLAGS = -shared
-SHLIB_CXX17LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++17
-SHLIB_CXX17LDFLAGS = -shared
-SHLIB_CXX20LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++20
-SHLIB_CXX20LDFLAGS = -shared
-SHLIB_CXX23LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++23
-SHLIB_CXX23LDFLAGS = -shared
-SHLIB_CXX26LD = g++ -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer -std=gnu++26
-SHLIB_CXX26LDFLAGS = -shared
-SHLIB_EXT = .so
-SHLIB_FFLAGS =
-SHLIB_LD = gcc -fsanitize=address,undefined,bounds-strict -fno-omit-frame-pointer
-SHLIB_LDFLAGS = -shared
-TCLTK_CPPFLAGS = -I/usr/include -I/usr/include
-TCLTK_LIBS = -L/usr/lib64 -ltcl9.0 -L/usr/lib64 -ltcl9tk9.0 -lX11
-BLAS_LIBS = -lflexiblas
-LAPACK_LIBS =
-MAKE = make
-LIBnn = lib
-AR = ar
-NM = /usr/sbin/nm -B
-RANLIB = ranlib
-LTO = -flto=10
-LTO_FC =
-LTO_LD =
-
-## The following variables are defunct
-CPP CXXCPP CXX11 CXX11STD CXX11FLAGS CXX11PICFLAGS CXX14 CXX14STD CXX14FLAGS CXX14PICFLAGS SHLIB_CXX11LD SHLIB_CXX11LDFLAGS SHLIB_CXX14LD SHLIB_CXX14LDFLAGS
-</code></pre>
-</details>
-<details>
-<summary>
-Compilers
-</summary>
-<pre><code>&gt; $(CC) --version
-gcc (GCC) 15.2.1 20260123 (Red Hat 15.2.1-7)
-Copyright (C) 2025 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(CXX) --version
-g++ (GCC) 15.2.1 20260123 (Red Hat 15.2.1-7)
-Copyright (C) 2025 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-
-&gt; $(FC) --version
-GNU Fortran (GCC) 15.2.1 20260123 (Red Hat 15.2.1-7)
-Copyright (C) 2025 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-</details>
-<details>
-<summary>
-OS packages
-</summary>
-<pre><code>libgcc-15.2.1-7.fc42.x86_64
-publicsuffix-list-dafsa-20260116-1.fc42.noarch
-libssh-config-0.11.4-1.fc42.noarch
-fedora-release-identity-container-42-30.noarch
-fedora-gpg-keys-42-1.noarch
-fedora-repos-42-1.noarch
-fedora-release-common-42-30.noarch
-fedora-release-container-42-30.noarch
-setup-2.15.0-13.fc42.noarch
-filesystem-3.18-47.fc42.x86_64
-basesystem-11-22.fc42.noarch
-pcre2-syntax-10.46-1.fc42.noarch
-gnulib-l10n-20241231-1.fc42.noarch
-coreutils-common-9.6-8.fc42.x86_64
-ncurses-base-6.5-5.20250125.fc42.noarch
-bash-5.2.37-1.fc42.x86_64
-ncurses-libs-6.5-5.20250125.fc42.x86_64
-zlib-ng-compat-2.2.5-2.fc42.x86_64
-xz-libs-5.8.1-4.fc42.x86_64
-libstdc++-15.2.1-7.fc42.x86_64
-bzip2-libs-1.0.8-20.fc42.x86_64
-libzstd-1.5.7-1.fc42.x86_64
-gmp-6.3.0-4.fc42.x86_64
-libxcrypt-4.5.2-1.fc42.x86_64
-fmt-11.1.4-1.fc42.x86_64
-libxml2-2.12.10-1.fc42.x86_64
-popt-1.19-8.fc42.x86_64
-json-c-0.18-2.fc42.x86_64
-libeconf-0.7.6-2.fc42.x86_64
-pcre2-10.46-1.fc42.x86_64
-libuuid-2.40.4-10.fc42.x86_64
-gdbm-libs-1.23-9.fc42.x86_64
-libffi-3.4.6-5.fc42.x86_64
-libtasn1-4.20.0-1.fc42.x86_64
-p11-kit-0.26.2-1.fc42.x86_64
-libunistring-1.1-9.fc42.x86_64
-libidn2-2.3.8-1.fc42.x86_64
-crypto-policies-20251125-1.git3839d0e.fc42.noarch
-libblkid-2.40.4-10.fc42.x86_64
-grep-3.11-10.fc42.x86_64
-sqlite-libs-3.47.2-5.fc42.x86_64
-lz4-libs-1.10.0-2.fc42.x86_64
-libattr-2.5.2-5.fc42.x86_64
-libacl-2.3.2-3.fc42.x86_64
-readline-8.2-13.fc42.x86_64
-libsepol-3.8-1.fc42.x86_64
-libselinux-3.8-3.fc42.x86_64
-libmount-2.40.4-10.fc42.x86_64
-sed-4.9-4.fc42.x86_64
-lua-libs-5.4.8-4.fc42.x86_64
-libsmartcols-2.40.4-10.fc42.x86_64
-libcom_err-1.47.2-3.fc42.x86_64
-findutils-4.10.0-5.fc42.x86_64
-gdbm-1.23-9.fc42.x86_64
-libpsl-0.21.5-5.fc42.x86_64
-cyrus-sasl-lib-2.1.28-30.fc42.x86_64
-mpfr-4.2.2-1.fc42.x86_64
-nettle-3.10.1-1.fc42.x86_64
-file-libs-5.46-3.fc42.x86_64
-libgomp-15.2.1-7.fc42.x86_64
-libtool-ltdl-2.5.4-4.fc42.x86_64
-keyutils-libs-1.6.3-5.fc42.x86_64
-libverto-0.3.2-10.fc42.x86_64
-libyaml-0.2.5-16.fc42.x86_64
-libcap-ng-0.9.3-1.fc42.x86_64
-audit-libs-4.1.4-1.fc42.x86_64
-pam-libs-1.7.0-7.fc42.x86_64
-libcap-2.73-3.fc42.x86_64
-systemd-libs-257.13-1.fc42.x86_64
-sdbus-cpp-1.5.0-4.fc42.x86_64
-systemd-standalone-sysusers-257.13-1.fc42.x86_64
-libsemanage-3.8.1-2.fc42.x86_64
-shadow-utils-4.17.4-1.fc42.x86_64
-alternatives-1.33-3.fc42.x86_64
-p11-kit-trust-0.26.2-1.fc42.x86_64
-coreutils-9.6-8.fc42.x86_64
-ca-certificates-2025.2.80_v9.0.304-1.1.fc42.noarch
-libtirpc-1.3.7-1.fc42.x86_64
-zchunk-libs-1.5.1-2.fc42.x86_64
-libnsl2-2.0.1-3.fc42.x86_64
-libssh-0.11.4-1.fc42.x86_64
-gzip-1.13-3.fc42.x86_64
-cracklib-2.9.11-7.fc42.x86_64
-libpwquality-1.4.5-12.fc42.x86_64
-pam-1.7.0-7.fc42.x86_64
-authselect-libs-1.5.1-1.fc42.x86_64
-rpm-sequoia-1.10.1-1.fc42.x86_64
-rpm-libs-4.20.1-1.fc42.x86_64
-libsolv-0.7.36-2.fc42.x86_64
-libarchive-3.8.1-1.fc42.x86_64
-libevent-2.1.12-15.fc42.x86_64
-openldap-2.6.13-1.fc42.x86_64
-gnutls-3.8.11-3.fc42.x86_64
-glib2-2.84.4-1.fc42.x86_64
-libmodulemd-2.15.2-1.fc42.x86_64
-libnghttp2-1.64.0-3.fc42.x86_64
-libbrotli-1.2.0-1.fc42.x86_64
-libcurl-8.11.1-8.fc42.x86_64
-librepo-1.20.0-1.fc42.x86_64
-libdnf5-5.2.18.0-2.fc42.x86_64
-libdnf5-cli-5.2.18.0-2.fc42.x86_64
-dnf5-5.2.18.0-2.fc42.x86_64
-curl-8.11.1-8.fc42.x86_64
-elfutils-default-yama-scope-0.194-1.fc42.noarch
-rpm-build-libs-4.20.1-1.fc42.x86_64
-vim-data-9.2.280-1.fc42.noarch
-vim-minimal-9.2.280-1.fc42.x86_64
-dnf5-plugins-5.2.18.0-2.fc42.x86_64
-rpm-4.20.1-1.fc42.x86_64
-sudo-1.9.17-2.p1.fc42.x86_64
-authselect-1.5.1-1.fc42.x86_64
-util-linux-core-2.40.4-10.fc42.x86_64
-gawk-5.3.1-1.fc42.x86_64
-tar-1.35-5.fc42.x86_64
-zstd-1.5.7-1.fc42.x86_64
-xz-5.8.1-4.fc42.x86_64
-bzip2-1.0.8-20.fc42.x86_64
-tzdata-2025c-1.fc42.noarch
-rootfiles-8.1-38.fc42.noarch
-gpg-pubkey-105ef944-65ca83d1
-r-rig-0.8.1-1.x86_64
-glibc-common-2.41-18.fc42.x86_64
-glibc-minimal-langpack-2.41-18.fc42.x86_64
-glibc-2.41-18.fc42.x86_64
-libgfortran-15.2.1-7.fc42.x86_64
-libmpc-1.3.1-7.fc42.x86_64
-libquadmath-15.2.1-7.fc42.x86_64
-openssl-libs-3.2.6-4.fc42.x86_64
-fonts-filesystem-2.0.5-22.fc42.noarch
-krb5-libs-1.21.3-7.fc42.x86_64
-make-4.4.1-10.fc42.x86_64
-unzip-6.0-66.fc42.x86_64
-libICE-1.1.2-2.fc42.x86_64
-libSM-1.2.5-2.fc42.x86_64
-libpng-1.6.56-1.fc42.x86_64
-elfutils-libelf-0.195-1.fc42.x86_64
-cmake-filesystem-3.31.11-1.fc42.x86_64
-openblas-0.3.29-1.fc42.x86_64
-openblas-openmp-0.3.29-1.fc42.x86_64
-flexiblas-netlib-3.4.5-1.fc42.x86_64
-flexiblas-3.4.5-1.fc42.x86_64
-flexiblas-openblas-openmp-3.4.5-1.fc42.x86_64
-openblas-openmp64-0.3.29-1.fc42.x86_64
-flexiblas-netlib64-3.4.5-1.fc42.x86_64
-flexiblas-openblas-openmp64-3.4.5-1.fc42.x86_64
-elfutils-libs-0.195-1.fc42.x86_64
-elfutils-debuginfod-client-0.195-1.fc42.x86_64
-zip-3.0-43.fc42.x86_64
-libkadm5-1.21.3-7.fc42.x86_64
-abattis-cantarell-vf-fonts-0.301-14.fc42.noarch
-cpp-15.2.1-7.fc42.x86_64
-jbigkit-libs-2.1-31.fc42.x86_64
-liblerc-4.0.0-8.fc42.x86_64
-libwebp-1.5.0-2.fc42.x86_64
-fribidi-1.0.16-2.fc42.x86_64
-libdatrie-0.2.13-11.fc42.x86_64
-libthai-0.1.29-10.fc42.x86_64
-libXau-1.0.12-2.fc42.x86_64
-libxcb-1.17.0-5.fc42.x86_64
-pcre2-utf16-10.46-1.fc42.x86_64
-pcre2-utf32-10.46-1.fc42.x86_64
-which-2.23-2.fc42.x86_64
-libicu-76.1-4.fc42.x86_64
-libtommath-1.3.1~rc1-5.fc42.x86_64
-tcl-9.0.0-7.fc42.x86_64
-libpkgconf-2.3.0-2.fc42.x86_64
-pkgconf-2.3.0-2.fc42.x86_64
-graphite2-1.3.14-18.fc42.x86_64
-harfbuzz-10.4.0-2.fc42.x86_64
-freetype-2.13.3-2.fc42.x86_64
-pixman-0.46.2-1.fc42.x86_64
-libjpeg-turbo-3.1.3-1.fc42.x86_64
-libtiff-4.7.1-1.fc42.x86_64
-brotli-1.2.0-1.fc42.x86_64
-jansson-2.14-2.fc42.x86_64
-binutils-2.44-12.fc42.x86_64
-kernel-headers-6.19.6-100.fc42.x86_64
-publicsuffix-list-20260116-1.fc42.noarch
-libstdc++-devel-15.2.1-7.fc42.x86_64
-pkgconf-m4-2.3.0-2.fc42.noarch
-pkgconf-pkg-config-2.3.0-2.fc42.x86_64
-pcre2-devel-10.46-1.fc42.x86_64
-zlib-ng-compat-devel-2.2.5-2.fc42.x86_64
-xz-devel-5.8.1-4.fc42.x86_64
-bzip2-devel-1.0.8-20.fc42.x86_64
-flexiblas-devel-3.4.5-1.fc42.x86_64
-libicu-devel-76.1-4.fc42.x86_64
-libzstd-devel-1.5.7-1.fc42.x86_64
-brotli-devel-1.2.0-1.fc42.x86_64
-libssh-devel-0.11.4-1.fc42.x86_64
-openssl-devel-3.2.6-4.fc42.x86_64
-libidn2-devel-2.3.8-1.fc42.x86_64
-libnghttp2-devel-1.64.0-3.fc42.x86_64
-libpsl-devel-0.21.5-5.fc42.x86_64
-libsepol-devel-3.8-1.fc42.x86_64
-libselinux-devel-3.8-3.fc42.x86_64
-keyutils-libs-devel-1.6.3-5.fc42.x86_64
-libcom_err-devel-1.47.2-3.fc42.x86_64
-libverto-devel-0.3.2-10.fc42.x86_64
-krb5-devel-1.21.3-7.fc42.x86_64
-libcurl-devel-8.11.1-8.fc42.x86_64
-glibc-devel-2.41-18.fc42.x86_64
-libxcrypt-devel-4.5.2-1.fc42.x86_64
-gcc-15.2.1-7.fc42.x86_64
-gcc-c++-15.2.1-7.fc42.x86_64
-libquadmath-devel-15.2.1-7.fc42.x86_64
-gcc-gfortran-15.2.1-7.fc42.x86_64
-libX11-common-1.8.13-1.fc42.noarch
-libX11-1.8.13-1.fc42.x86_64
-libXrender-0.9.12-2.fc42.x86_64
-libXext-1.3.6-3.fc42.x86_64
-libXt-1.3.1-2.fc42.x86_64
-libXmu-1.2.1-3.fc42.x86_64
-google-noto-fonts-common-20250301-1.fc42.noarch
-google-noto-sans-vf-fonts-20250301-1.fc42.noarch
-default-fonts-core-sans-4.2-4.fc42.noarch
-xml-common-0.6.3-66.fc42.noarch
-fontconfig-2.16.0-2.fc42.x86_64
-libXft-2.3.8-8.fc42.x86_64
-tk-9.0.0-4.fc42.x86_64
-cairo-1.18.2-3.fc42.x86_64
-pango-1.56.4-2.fc42.x86_64
-R-devel-1-1.x86_64
-ed-1.21-2.fc42.x86_64
-patch-2.8-1.fc42.x86_64
-jags-4.3.2-1.x86_64
-glibc-langpack-en-2.41-18.fc42.x86_64
-libubsan-15.2.1-7.fc42.x86_64
-libasan-15.2.1-7.fc42.x86_64
-libfdisk-2.40.4-10.fc42.x86_64
-util-linux-2.40.4-10.fc42.x86_64
-openssh-9.9p1-14.fc42.x86_64
-libedit-3.1-56.20251016cvs.fc42.x86_64
-libcbor-0.11.0-3.fc42.x86_64
-libfido2-1.15.0-3.fc42.x86_64
-openssh-clients-9.9p1-14.fc42.x86_64
-less-685-1.fc42.x86_64
-expat-2.7.3-1.fc42.x86_64
-git-core-2.54.0-1.fc42.x86_64
-git-core-doc-2.54.0-1.fc42.noarch
-ncurses-6.5-5.20250125.fc42.x86_64
-groff-base-1.23.0-8.fc42.x86_64
-perl-Digest-1.20-512.fc42.noarch
-perl-Digest-MD5-2.59-6.fc42.x86_64
-perl-B-1.89-520.fc42.x86_64
-perl-FileHandle-2.05-520.fc42.noarch
-perl-MIME-Base32-1.303-23.fc42.noarch
-perl-Data-Dumper-2.189-513.fc42.x86_64
-perl-libnet-3.15-513.fc42.noarch
-perl-AutoLoader-5.74-520.fc42.noarch
-perl-IO-Socket-IP-0.43-2.fc42.noarch
-perl-URI-5.31-2.fc42.noarch
-perl-Time-Local-1.350-512.fc42.noarch
-perl-Text-Tabs+Wrap-2024.001-512.fc42.noarch
-perl-File-Path-2.18-512.fc42.noarch
-perl-Pod-Escapes-1.07-512.fc42.noarch
-perl-if-0.61.000-520.fc42.noarch
-perl-Net-SSLeay-1.94-8.fc42.x86_64
-perl-locale-1.12-520.fc42.noarch
-perl-IO-Socket-SSL-2.089-2.fc42.noarch
-perl-Term-ANSIColor-5.01-513.fc42.noarch
-perl-Term-Cap-1.18-512.fc42.noarch
-perl-Pod-Simple-3.45-512.fc42.noarch
-perl-POSIX-2.20-520.fc42.x86_64
-perl-IPC-Open3-1.22-520.fc42.noarch
-perl-HTTP-Tiny-0.090-2.fc42.noarch
-perl-Class-Struct-0.68-520.fc42.noarch
-perl-File-Temp-0.231.100-512.fc42.noarch
-perl-Socket-2.038-512.fc42.x86_64
-perl-Symbol-1.09-520.fc42.noarch
-perl-SelectSaver-1.02-520.fc42.noarch
-perl-File-stat-1.14-520.fc42.noarch
-perl-podlators-6.0.2-3.fc42.noarch
-perl-Pod-Perldoc-3.28.01-513.fc42.noarch
-perl-Text-ParseWords-3.31-512.fc42.noarch
-perl-Fcntl-1.18-520.fc42.x86_64
-perl-base-2.27-520.fc42.noarch
-perl-mro-1.29-520.fc42.x86_64
-perl-overloading-0.02-520.fc42.noarch
-perl-IO-1.55-520.fc42.x86_64
-perl-Pod-Usage-2.05-1.fc42.noarch
-perl-constant-1.33-513.fc42.noarch
-perl-parent-0.244-2.fc42.noarch
-perl-MIME-Base64-3.16-512.fc42.x86_64
-perl-Errno-1.38-520.fc42.x86_64
-perl-File-Basename-2.86-520.fc42.noarch
-perl-Scalar-List-Utils-1.70-1.fc42.x86_64
-perl-vars-1.05-520.fc42.noarch
-perl-Getopt-Std-1.14-520.fc42.noarch
-perl-overload-1.37-520.fc42.noarch
-perl-Storable-3.32-512.fc42.x86_64
-perl-Getopt-Long-2.58-3.fc42.noarch
-perl-Carp-1.54-512.fc42.noarch
-perl-Exporter-5.78-512.fc42.noarch
-perl-PathTools-3.91-513.fc42.x86_64
-perl-DynaLoader-1.56-520.fc42.x86_64
-perl-Encode-3.21-512.fc42.x86_64
-perl-libs-5.40.4-520.fc42.x86_64
-perl-interpreter-5.40.4-520.fc42.x86_64
-perl-TermReadKey-2.38-24.fc42.x86_64
-perl-Error-0.17030-1.fc42.noarch
-perl-lib-0.65-520.fc42.x86_64
-perl-Git-2.54.0-1.fc42.noarch
-git-2.54.0-1.fc42.x86_64
-libtidy-5.8.0-10.fc42.x86_64
-qpdf-libs-11.10.1-1.fc42.x86_64
-qpdf-11.10.1-1.fc42.x86_64
-tidy-5.8.0-10.fc42.x86_64
-devscripts-checkbashisms-2.25.33-1.fc42.noarch
-perl-NDBM_File-1.17-520.fc42.x86_64
-</code></pre>
-</details>
-</div>
-<div id="tabset-9-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-5-tab">
-<p><strong>id:</strong> ghcr.io/r-hub/containers/gcc-asan@sha256:c2f91e310bf4aaa9b3507745b05200fee7777bdab9b1d9eaf8538762d71cb558 <br> <strong>tag:</strong> ghcr.io/r-hub/containers/gcc-asan:latest <br> <strong>created:</strong> 2026-09-19T09:49:13.163255772Z <br> <strong>size:</strong> 1.18 GB <br></p>
-<details>
-<summary>
-OS version
-</summary>
-<pre><code>&gt; uname -a
-Linux bcbe1fcab4ba 6.17.0-1022-azure #22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026 x86_64 GNU/Linux
 
 &gt; cat /etc/os-release
 NAME="Fedora Linux"
@@ -119391,7 +119391,7 @@ ii  zlib1g-dev:amd64              1:1.3.dfsg-3.1ubuntu2.1           amd64       
 </div>
 </section></details>
 <hr>
-<p>Container data last updated: 2026-09-23 11:10:54. Download <a href="manifest.json"><code>manifest.json</code></a></p>
+<p>Container data last updated: 2026-09-24 08:32:27. Download <a href="manifest.json"><code>manifest.json</code></a></p>
 
 
 </section>
