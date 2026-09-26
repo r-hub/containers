@@ -63,6 +63,7 @@ ENV CONFIGURE_OPTIONS="\
     --with-blas=no \
     --with-lapack=no \
     --enable-R-static-lib \
+    --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
     --with-x"
