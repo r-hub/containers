@@ -121,6 +121,14 @@ Corresponding issue: <https://github.com/r-hub/containers/issues/1>
 We had to use Fedora for this one, ATLAS on Ubuntu does not reproduce
 the CRAN issues.
 
+## `blis`
+
+Corresponding issue: <https://github.com/r-hub/containers/issues/117>
+
+Like CRAN's BLIS check, this container uses Fedora 44, serial BLIS 2.0 from Fedora, and Fedora's LAPACK 3.12.0.
+It installs the R-devel build of the `gcc16` container, and replaces its shared BLAS (`libRblas.so`) with a symlink to BLIS.
+BLIS does not contain LAPACK, and our R build has its own, so `libRlapack.so` becomes a symlink to the system LAPACK.
+
 ## `clang-16`
 
 Corresponding issue: <https://github.com/r-hub/containers/issues/6>
