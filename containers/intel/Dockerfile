@@ -1,6 +1,6 @@
 
 FROM fedora:38
-ENV R_HUB=true
+COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
 # onAPI, MKL

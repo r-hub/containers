@@ -22,14 +22,14 @@ do_check () {
         cat ${exfile}
         echo ----------------------------------------------------------
     fi
-    testfiles=$(ls tests | grep ".Rout.fail$")
-    for f in $testfiles; do
-        if grep -q ${pattern} tests/$f; then
+    for f in tests/*.Rout tests/*.Rout.fail; do
+        [ -f "$f" ] || continue
+        if grep -q ${pattern} "$f"; then
             fail=true
             echo ----------------------------------------------------------
-            echo tests/${f}
+            echo "$f"
             echo ----------------------------------------------------------
-            cat tests/${f}
+            cat "$f"
             echo ----------------------------------------------------------
         fi
     done

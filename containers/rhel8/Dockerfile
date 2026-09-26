@@ -1,5 +1,5 @@
 FROM redhat/ubi8:latest
-ENV R_HUB=true
+COPY --from=common common.Renviron /root/.Renviron
 
 ARG R_VERSION=release
 

@@ -1,17 +1,21 @@
 
-FROM ubuntu:24.04
+FROM debian:trixie
 COPY --from=common common.Renviron /root/.Renviron
 
+# ------------------------------------------------------------------------------------
+# Install pre-built R and requirements
+# rig also sets up the CRAN mirror, we don't install pak, because rig
+# installs it into the user lib, and we want it in the system lib.
+# R-devel builds are not published on P3M/RSPM, so --without-rspm is needed.
+
 RUN export DEBIAN_FRONTEND=noninteractive && \
+    ARCH="$(arch)"; \
+    if [ "$ARCH" = "aarch64" ]; then ARM64="-arm64"; else ARM64=""; fi; \
     apt-get update -y && \
-    apt-get install -y curl jq && \
-    R_VERSION=$(curl -sL https://api.r-hub.io/rversions/r-release | jq -r .version) && \
-    cd /tmp && \
-    . /etc/os-release && \
-    curl -LO "https://cdn.posit.co/r/${ID}-$(echo $VERSION_ID | tr -d .)/pkgs/r-${R_VERSION}_1_amd64.deb" && \
-    apt install -y ./r-*.deb && \
-    rm r-*.deb && \
-    ln -s /opt/R/* /opt/R/release && \
+    apt-get install -y curl && \
+    curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux${ARM64}-latest.tar.gz | tar xz -C /usr/local && \
+    rig add devel --without-pak --without-rspm && \
+    rm -rf /tmp/rig && \
     apt-get clean
 
 # System requirements that pak does not know about
@@ -21,67 +25,37 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# TinyTeX, only available for x86_64
-
-RUN export DEBIAN_FRONTEND=noninteractive && \
-    if [ "$(uname -m)" = "x86_64" ]; then \
-      apt-get update -y && \
-      apt-get install -y wget perl xz-utils && \
-      apt-get clean && \
-      cd /root && \
-      wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \
-      ~/.TinyTeX/bin/*/tlmgr update --self || true && \
-      ~/.TinyTeX/bin/*/tlmgr install makeindex; \
-    fi
-
-# we can't really query the arch here (FIXME!), but this should be ok
-ENV PATH="/root/.TinyTeX/bin/x86_64-linux:/root/.TinyTeX/bin/aarch64-linux:${PATH}"
-
-# ------------------------------------------------------------------------------------
 # Put R on PATH
 # AUto-install system requirements
 
-ENV PATH="/opt/R/release/bin:${PATH}"
+ENV PATH="/opt/R/devel/bin:${PATH}"
 ENV PKG_SYSREQS=true
 ENV R_PKG_SYSREQS2=true
 
 # ------------------------------------------------------------------------------------
-# Set CRAN repo, use P3M on x86_64
-
-RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
-    >> /opt/R/release/lib/R/library/base/R/Rprofile
-RUN if [ "$(uname -p)" = "x86_64" ]; then \
-        echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/noble/latest", getOption("repos")))' \
-            >> /opt/R/release/lib/R/library/base/R/Rprofile; \
-        curl -s https://api.r-hub.io/rversions/r-release | \
-            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
-        . /etc/os-release; \
-        echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' ('${ID}-${VERSION_ID}' R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
-            >> /opt/R/release/lib/R/library/base/R/Rprofile; \
-    fi
-
-# ------------------------------------------------------------------------------------
 # Install pak
 
-RUN /opt/R/release/bin/R -q -e \
-    'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "stable", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+RUN /opt/R/devel/bin/R -q -e \
+    'install.packages("pak", lib = .Library, repos = sprintf("https://r-lib.github.io/p/pak/%s/%s/%s/%s", "devel", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
 
 # ------------------------------------------------------------------------------------
-# Use user's package library for the rest
-
-RUN /opt/R/release/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
-
-# ------------------------------------------------------------------------------------
-# Locale
+# Locale, matches CRAN's debian-clang flavor
+# https://cran.r-project.org/web/checks/check_flavors.html
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y locales && \
     apt-get clean && \
-    locale-gen en_GB.UTF-8 en_US.UTF-8 && \
+    locale-gen C.UTF-8 && \
     update-locale
+ENV LC_ALL C.UTF-8
 ENV LC_COLLATE C
-ENV LANG en_GB.UTF-8
+ENV LANG C.UTF-8
+
+# ------------------------------------------------------------------------------------
+# Use user's package library for the rest
+
+RUN /opt/R/devel/bin/R -q -e 'dir.create(Sys.getenv("R_LIBS_USER"), showWarnings = FALSE, recursive = TRUE)'
 
 # ------------------------------------------------------------------------------------
 # Copy check script
@@ -93,7 +67,7 @@ COPY r-check /usr/local/bin
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y pkg-config perl tidy qpdf git && \
+    apt-get install -y pkg-config perl qpdf git tidy && \
     apt-get clean
 
 RUN curl -o /usr/local/bin/checkbashisms \
@@ -101,8 +75,26 @@ RUN curl -o /usr/local/bin/checkbashisms \
     chmod +x /usr/local/bin/checkbashisms
 
 # ------------------------------------------------------------------------------------
-# Very minimal test
-RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'
+# clang 23, flang 23
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && apt-get install -y gpg && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl https://apt.llvm.org/llvm-snapshot.gpg.key | \
+      gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg
+
+RUN echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/trixie/ llvm-toolchain-trixie-23 main" | \
+  tee -a /etc/apt/sources.list.d/llvm.list
+
+RUN apt-get update -y && \
+    apt-get install -y clang-23 libc++abi-23-dev libc++-23-dev libomp-23-dev flang-23 && \
+    apt-get clean
+
+RUN mkdir -p /root/.R
+COPY Makevars /root/.R
+# we need to set this, because GHA changes $HOME:
+# https://github.com/actions/runner/issues/863
+ENV R_MAKEVARS_USER=/root/.R/Makevars
 
 # ------------------------------------------------------------------------------------
 # Check config
@@ -204,3 +196,7 @@ ENV _R_CHECK_VIGNETTE_TIMING_CPU_TO_ELAPSED_THRESHOLD_=2.5
 
 ## FIXME: remove eventually ...
 ## _R_CLASS_MATRIX_ARRAY_=${_R_CLASS_MATRIX_ARRAY_-true}
+
+# ------------------------------------------------------------------------------------
+# Very minimal test
+RUN R -e 'for (p in getOption("defaultPackages")) { library(p, character.only=TRUE) }'

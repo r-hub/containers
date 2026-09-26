@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi7/ubi
-ENV R_HUB=true
+COPY --from=common common.Renviron /root/.Renviron
 
 ARG R_VERSION=release
 

@@ -127,6 +127,8 @@ jobs:
           REDHAT_ACTIVATION_KEY_RHEL9=REDHAT_ACTIVATION_KEY_RHEL9
         provenance: false
         context: containers/${{ matrix.config.container }}
+        build-contexts: |
+          common=./common
         load: true
         tags: |
           rhub/test:test
@@ -158,6 +160,8 @@ jobs:
           REDHAT_ACTIVATION_KEY_RHEL9=REDHAT_ACTIVATION_KEY_RHEL9
         provenance: false
         context: containers/${{ matrix.config.container }}
+        build-contexts: |
+          common=./common
         push: true
         outputs:
         tags: |
