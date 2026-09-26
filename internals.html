@@ -204,6 +204,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="containers">Containers</h2>
 <p>The containers are built from <code>Dockerfile</code>s at <a href="https://github.com/r-hub/containers/tree/main/containers" class="uri">https://github.com/r-hub/containers/tree/main/containers</a>, daily on GHA: <a href="https://github.com/r-hub/containers/actions/workflows/containers.yml" class="uri">https://github.com/r-hub/containers/actions/workflows/containers.yml</a>.</p>
 <p>The containers are pushed to <a href="https://hub.docker.com/u/rhub">Docker Hub</a> and also to the <a href="https://github.com/orgs/r-hub/packages?repo_name=containers">GitHub container registry</a>.</p>
+<p>Env vars that should be set in every container live in <code>common/common.Renviron</code>, copied into <code>/root/.Renviron</code> during the build. This uses a BuildKit <a href="https://docs.docker.com/build/building/context/#additional-build-contexts">additional build context</a> named <code>common</code>, wired up in the CI workflow via the <code>build-contexts:</code> input of <code>docker/build-push-action</code>. If you build a single container locally, pass the same extra context by hand, e.g.:</p>
+<pre><code>docker buildx build --build-context common=./common -t test containers/donttest</code></pre>
 </section>
 <section id="r-check-script" class="level2">
 <h2 class="anchored" data-anchor-id="r-check-script"><code>r-check</code> script</h2>
