@@ -71,17 +71,23 @@ COPY r-check /usr/local/bin
 RUN dnf -y install pkg-config devscripts-checkbashisms qpdf git tidy
 
 # ------------------------------------------------------------------------------------
-# BLIS
-# Replace the shared BLAS with serial BLIS, R keeps using its own LAPACK, see
-# https://cran.r-project.org/doc/manuals/r-devel/R-admin.html#Shared-BLAS
-# The LAPACK in R >= 4.5.0 needs dgemmtr, which BLIS has from version 2.0,
-# i.e. from Fedora 43.
+# BLIS, as in CRAN's checks with alternative BLAS/LAPACK implementations:
+#
+# > Serial BLIS using the Fedora shared libraries. (Currently version 2.0-5)
+# > libRblas.so was replaced by a symlink to /usr/lib64/libblis.so.4
+# > It reports using the system LAPACK 3.12.0.
+#
+# BLIS does not contain LAPACK. CRAN's R uses the system LAPACK,
+# our R build has its own, so we replace that with the system LAPACK, too.
 
-RUN dnf install -y blis && \
-    ln -sf /usr/lib64/libblis.so.4 /opt/R/devel-gcc16/lib/R/lib/libRblas.so
+RUN dnf install -y blis lapack && \
+    ln -sf /usr/lib64/libblis.so.4 /opt/R/devel-gcc16/lib/R/lib/libRblas.so && \
+    mv /opt/R/devel-gcc16/lib/R/lib/libRlapack.so /opt/R/devel-gcc16/lib/R/lib/libRlapack.so.keep && \
+    ln -s /usr/lib64/liblapack.so.3 /opt/R/devel-gcc16/lib/R/lib/libRlapack.so
 
 RUN R -q -e 'extSoftVersion()["BLAS"]'
 RUN R -q -e 'La_library()'
+RUN R -q -e 'La_version()'
 
 # ------------------------------------------------------------------------------------
 # Check config

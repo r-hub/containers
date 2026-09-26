@@ -113,9 +113,9 @@ the CRAN issues.
 
 Corresponding issue: <https://github.com/r-hub/containers/issues/117>
 
-The LAPACK in R 4.5.0 and later needs `dgemmtr`, which BLIS has from version 2.0 on.
-Fedora ships BLIS 2.0 from Fedora 43, so this container uses Fedora 44 and the R-devel build of the `gcc16` container.
-Its shared BLAS (`libRblas.so`) is a symlink to serial BLIS, and R keeps using its own LAPACK.
+Like CRAN's BLIS check, this container uses Fedora 44, serial BLIS 2.0 from Fedora, and Fedora's LAPACK 3.12.0.
+It installs the R-devel build of the `gcc16` container, and replaces its shared BLAS (`libRblas.so`) with a symlink to BLIS.
+BLIS does not contain LAPACK, and our R build has its own, so `libRlapack.so` becomes a symlink to the system LAPACK.
 
 ## `clang-16`
 
