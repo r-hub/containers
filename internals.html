@@ -150,6 +150,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#notes-for-individual-containers" id="toc-notes-for-individual-containers" class="nav-link" data-scroll-target="#notes-for-individual-containers">Notes for individual containers</a>
   <ul class="collapse">
   <li><a href="#atlas" id="toc-atlas" class="nav-link" data-scroll-target="#atlas"><code>atlas</code></a></li>
+  <li><a href="#blis" id="toc-blis" class="nav-link" data-scroll-target="#blis"><code>blis</code></a></li>
   <li><a href="#clang-16" id="toc-clang-16" class="nav-link" data-scroll-target="#clang-16"><code>clang-16</code></a></li>
   <li><a href="#gcc13" id="toc-gcc13" class="nav-link" data-scroll-target="#gcc13"><code>gcc13</code></a></li>
   </ul></li>
@@ -240,6 +241,11 @@ R CMD check $CHECK_ARGS $pkg</code></pre>
 <h2 class="anchored" data-anchor-id="atlas"><code>atlas</code></h2>
 <p>Corresponding issue: <a href="https://github.com/r-hub/containers/issues/1" class="uri">https://github.com/r-hub/containers/issues/1</a></p>
 <p>We had to use Fedora for this one, ATLAS on Ubuntu does not reproduce the CRAN issues.</p>
+</section>
+<section id="blis" class="level2">
+<h2 class="anchored" data-anchor-id="blis"><code>blis</code></h2>
+<p>Corresponding issue: <a href="https://github.com/r-hub/containers/issues/117" class="uri">https://github.com/r-hub/containers/issues/117</a></p>
+<p>Like CRAN’s BLIS check, this container uses Fedora 44, serial BLIS 2.0 from Fedora, and Fedora’s LAPACK 3.12.0. It installs the R-devel build of the <code>gcc16</code> container, and replaces its shared BLAS (<code>libRblas.so</code>) with a symlink to BLIS. BLIS does not contain LAPACK, and our R build has its own, so <code>libRlapack.so</code> becomes a symlink to the system LAPACK.</p>
 </section>
 <section id="clang-16" class="level2">
 <h2 class="anchored" data-anchor-id="clang-16"><code>clang-16</code></h2>
