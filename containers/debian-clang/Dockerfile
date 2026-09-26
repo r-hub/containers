@@ -1,6 +1,6 @@
 
 FROM debian:trixie
-ENV R_HUB=true
+COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
 # Install pre-built R and requirements

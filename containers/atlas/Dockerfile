@@ -1,6 +1,6 @@
 
 FROM fedora:42
-ENV R_HUB=true
+COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
 # Install rig and R

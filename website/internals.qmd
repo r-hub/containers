@@ -43,6 +43,18 @@ The containers are pushed to [Docker Hub](https://hub.docker.com/u/rhub)
 and also to the [GitHub container
 registry](https://github.com/orgs/r-hub/packages?repo_name=containers).
 
+Env vars that should be set in every container live in
+`common/common.Renviron`, copied into `/root/.Renviron` during the build.
+This uses a BuildKit [additional build
+context](https://docs.docker.com/build/building/context/#additional-build-contexts)
+named `common`, wired up in the CI workflow via the `build-contexts:` input
+of `docker/build-push-action`. If you build a single container locally, pass
+the same extra context by hand, e.g.:
+
+```
+docker buildx build --build-context common=./common -t test containers/donttest
+```
+
 ## `r-check` script
 
 This is currently very simple. For each `.tar.gz` file (`$pkg`) in the

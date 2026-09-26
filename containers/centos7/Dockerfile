@@ -1,6 +1,6 @@
 
 FROM centos:7
-ENV R_HUB=true
+COPY --from=common common.Renviron /root/.Renviron
 
 WORKDIR /root
 
