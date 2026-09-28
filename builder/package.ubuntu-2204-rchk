@@ -21,6 +21,10 @@ fi
     /opt/R/devel-rchk/python//bin/extract-bc lib/R/lib/libR.so
     /usr/lib/llvm-14/bin/llvm-link -o R.bc \
         lib/R/bin/exec/R.bc lib/R/lib/libR.so.bc
+    # remove stray bitcode files left next to the R binaries: R's own
+    # multiarch detection scans these dirs and treats a stray file as
+    # a bogus sub-architecture, breaking package installs
+    rm -f lib/R/bin/exec/R.bc lib/R/lib/libR.so.bc
 )
 
 # Reset compilers in system config, so packages are normally installed
