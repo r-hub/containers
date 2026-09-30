@@ -1,5 +1,6 @@
 
 FROM ubuntu:24.04
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------

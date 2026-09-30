@@ -1,5 +1,6 @@
 
 FROM ubuntu:26.04
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
@@ -92,7 +93,7 @@ RUN curl -o /usr/local/bin/checkbashisms \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && apt-get install -y gpg && \
     install -m 0755 -d /etc/apt/keyrings && \
-    curl https://apt.llvm.org/llvm-snapshot.gpg.key | \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
       gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg
 
 RUN echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main" | \

@@ -1,4 +1,5 @@
 FROM ubuntu:jammy
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
 ENV OS_IDENTIFIER ubuntu-2204
 
