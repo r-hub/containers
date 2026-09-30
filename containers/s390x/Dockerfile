@@ -1,5 +1,6 @@
 
 FROM --platform=linux/s390x ubuntu:24.04
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
 RUN export DEBIAN_FRONTEND=noninteractive && \

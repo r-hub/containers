@@ -1,5 +1,6 @@
 
 FROM ubuntu:22.04
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
 WORKDIR /root
 

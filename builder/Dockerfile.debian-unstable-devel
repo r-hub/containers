@@ -1,4 +1,5 @@
 FROM debian:unstable
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
 ENV OS_IDENTIFIER debian-unstable
 

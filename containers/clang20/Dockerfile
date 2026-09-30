@@ -1,5 +1,6 @@
 
 FROM ubuntu:22.04
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
@@ -96,7 +97,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
          > /etc/apt/sources.list.d/llvm.list && \
     echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-20 main" \
          >> /etc/apt/sources.list.d/llvm.list && \
-    curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
     apt-get install -y clang-20 libc++abi-20-dev libc++-20-dev libomp-20-dev flang-20 && \
     apt-get clean
