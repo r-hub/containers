@@ -1,5 +1,5 @@
 
-FROM fedora:42 AS setup
+FROM fedora:44 AS setup
 COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ RUN dnf -y upgrade && \
 
 # Extra system packages that pak does not know about
 RUN dnf install -y gawk patch && \
-    dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
+    dnf install -y https://rpms.r-pkg.org/fedora-44/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH

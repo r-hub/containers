@@ -1,7 +1,7 @@
 
-FROM fedora:42
+FROM fedora:44
 
-ENV OS_IDENTIFIER fedora-42
+ENV OS_IDENTIFIER fedora-44
 
 RUN dnf -y upgrade \
     && dnf -y install dnf-plugins-core \
@@ -13,7 +13,7 @@ RUN dnf -y upgrade \
     gcc \
     g++ \
     gfortran \
-    java-21-openjdk-devel \
+    java-25-openjdk-devel \
     libICE-devel \
     libSM-devel \
     libX11-devel \
@@ -77,7 +77,7 @@ ENV R_RD4PDF="times,hyper"
 # major version symlink to avoid this.
 # https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Java-support
 # https://solutions.posit.co/envs-pkgs/using-rjava/
-ENV JAVA_HOME=/usr/lib/jvm/jre-11-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/jre-25-openjdk
 
 # R 3.x requires PCRE2 for Pango support on RHEL 9
 ENV INCLUDE_PCRE2_IN_R_3 yes

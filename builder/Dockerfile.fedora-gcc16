@@ -76,7 +76,7 @@ ENV R_RD4PDF="times,hyper"
 # major version symlink to avoid this.
 # https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Java-support
 # https://solutions.posit.co/envs-pkgs/using-rjava/
-ENV JAVA_HOME=/usr/lib/jvm/jre-21-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/jre-25-openjdk
 
 # R 3.x requires PCRE2 for Pango support on RHEL 9
 ENV INCLUDE_PCRE2_IN_R_3 yes

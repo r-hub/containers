@@ -1,5 +1,5 @@
 
-FROM fedora:42
+FROM fedora:44
 COPY --from=common common.Renviron /root/.Renviron
 
 # ------------------------------------------------------------------------------------
@@ -12,7 +12,7 @@ RUN yum install -y https://github.com/r-lib/rig/releases/download/latest/r-rig-l
 
 # Extra system packages that pak does not know about
 RUN dnf install -y flexiblas gawk patch && \
-    dnf install -y https://rpms.r-pkg.org/fedora-42/jags-4.3.2-1.$(arch).rpm
+    dnf install -y https://rpms.r-pkg.org/fedora-44/jags-4.3.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
