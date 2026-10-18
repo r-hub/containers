@@ -80,19 +80,6 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
-  fedora-gcc:
-    command: ./build.sh
-    environment:
-      - R_VERSION=devel
-      - R_TYPE=-gcc
-      - LOCAL_STORE=/tmp/output
-    build:
-      context: .
-      dockerfile: builder/Dockerfile.fedora-gcc
-    image: rhub/fedora-gcc:latest
-    volumes:
-      - ./integration/tmp:/tmp/output
-
   fedora-gcc16:
     platform: linux/amd64
     command: ./build.sh
