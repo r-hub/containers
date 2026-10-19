@@ -22,7 +22,7 @@ EOF
 export R_MAKEVARS_USER="$MAKEVARS"
 export WLLVM=/opt/R/devel-rchk/python/bin
 export RCHK=/opt/R/devel-rchk/rchk
-export LLVM=/usr/lib/llvm-14
+export LLVM=/usr/lib/llvm-21
 export WLLVM_BC_STORE=/opt/R/devel-rchk/bcstore
 export LLVM_COMPILER=clang
 
@@ -72,6 +72,12 @@ _R_INSTALL_LIBS_ONLY_FORCE_DEPENDS_IMPORTS_=FALSE R CMD INSTALL \
     # R bitcode file
     RBC=./R.bc
 
+    # use the pre-computed cache for R.bc, set RCHK_NO_CACHE to opt out
+    CACHE_ARGS=""
+    if [ -z "$RCHK_NO_CACHE" ] && [ -r ./R.bc.cache ]; then
+        CACHE_ARGS="--cache ./R.bc.cache"
+    fi
+
     # extract package bitcode if needed
 
     find $PKGDIR -name "*.so" | while read SOF ; do
@@ -87,7 +93,7 @@ _R_INSTALL_LIBS_ONLY_FORCE_DEPENDS_IMPORTS_=FALSE R CMD INSTALL \
 	    FOUT=`echo $F | sed -e 's/\.bc$/.'$T'/g'`
 	    if [ ! -r $FOUT ] || [ $F -nt $FOUT ] || [ $RBC -nt $FOUT ] ; then
 		echo Running $T
-		$RCHK/src/$T $RBC $F >$FOUT 2>&1
+		$RCHK/src/$T $CACHE_ARGS $RBC $F >$FOUT 2>&1
 		echo "==== rchk $T ========================================="
 		cat $FOUT
 		echo "------------------------------------------------------"
