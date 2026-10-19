@@ -1,5 +1,5 @@
 
-FROM ubuntu:22.04
+FROM ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
@@ -23,22 +23,22 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 22 (to match CRAN's debian-clang), gfortran 12
+# clang 23 (to match CRAN's debian-clang), gfortran 12
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    apt-get install -y gpg && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
+      gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main" \
     > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
-    >> /etc/apt/sources.list.d/llvm.list && \
-    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-22 libomp-22-dev gfortran-12 libstdc++-12-dev && \
+    apt-get install -y clang-23 libomp-23-dev gfortran-12 libstdc++-12-dev && \
     apt-get clean
 
 # We do not replace -lgfortran!
-RUN sed -i 's/gcc/clang-22/g' /opt/R/devel/lib/R/etc/Makeconf && \
-    sed -i 's/g[+][+]/clang++-22/g' /opt/R/devel/lib/R/etc/Makeconf && \
+RUN sed -i 's/gcc/clang-23/g' /opt/R/devel/lib/R/etc/Makeconf && \
+    sed -i 's/g[+][+]/clang++-23/g' /opt/R/devel/lib/R/etc/Makeconf && \
     sed -i 's/\bgfortran/gfortran-12/g' /opt/R/devel/lib/R/etc/Makeconf
 
 # ------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ RUN sed -i 's/gcc/clang-22/g' /opt/R/devel/lib/R/etc/Makeconf && \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     if [ "$(uname -m)" = "x86_64" ]; then \
       apt-get update -y && \
-      apt-get install -y wget perl && \
+      apt-get install -y wget perl xz-utils && \
       apt-get clean && \
       cd /root && \
       wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \

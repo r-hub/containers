@@ -12,19 +12,19 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
-  ubuntu-2204:
+  ubuntu-2604:
     command: ./build.sh
     environment:
       - R_VERSION=devel
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: builder/Dockerfile.ubuntu-2204
-    image: rhub/ubuntu-2204:latest
+      dockerfile: builder/Dockerfile.ubuntu-2604
+    image: rhub/ubuntu-2604:latest
     volumes:
       - ./integration/tmp:/tmp/output
 
-  ubuntu-2204-clang:
+  ubuntu-2604-clang:
     command: ./build.sh
     environment:
       - R_VERSION=devel
@@ -32,8 +32,8 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: builder/Dockerfile.ubuntu-2204-clang
-    image: rhub/ubuntu-2204-clang:latest
+      dockerfile: builder/Dockerfile.ubuntu-2604-clang
+    image: rhub/ubuntu-2604-clang:latest
     volumes:
       - ./integration/tmp:/tmp/output
 
@@ -53,7 +53,7 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
-  ubuntu-2204-nold:
+  ubuntu-2604-nold:
     command: ./build.sh
     environment:
       - R_VERSION=devel
@@ -62,12 +62,12 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: builder/Dockerfile.ubuntu-2204-nold
-    image: rhub/ubuntu-2204-nold:latest
+      dockerfile: builder/Dockerfile.ubuntu-2604-nold
+    image: rhub/ubuntu-2604-nold:latest
     volumes:
       - ./integration/tmp:/tmp/output
 
-  ubuntu-2204-asan:
+  ubuntu-2604-asan:
     command: ./build.sh
     environment:
       - R_VERSION=devel
@@ -75,8 +75,8 @@ services:
       - LOCAL_STORE=/tmp/output
     build:
       context: .
-      dockerfile: builder/Dockerfile.ubuntu-2204-asan
-    image: rhub/ubuntu-2204-asan:latest
+      dockerfile: builder/Dockerfile.ubuntu-2604-asan
+    image: rhub/ubuntu-2604-asan:latest
     volumes:
       - ./integration/tmp:/tmp/output
 
@@ -117,8 +117,6 @@ services:
     build:
       context: .
       dockerfile: builder/Dockerfile.valgrind
-      platforms:
-        - linux/amd64
     image: rhub/valgrind:latest
     volumes:
       - ./integration/tmp:/tmp/output

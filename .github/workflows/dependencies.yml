@@ -16,11 +16,11 @@ on:
           - all
       variants:
         description: |
-          Comma-separated list of variants, e.g. "clang21,clang22", or "all".
+          Comma-separated list of variants, e.g. "clang23,fedora44", or "all".
           Each variant uses dependencies/<dependency>/Dockerfile-<variant>.
           With "all", every Dockerfile-* of the dependency is built.
         required: true
-        default: 'clang22'
+        default: 'clang23'
         type: string
       arch:
         description: Architecture to build for, or "all".

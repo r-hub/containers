@@ -1,5 +1,5 @@
 
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
@@ -23,11 +23,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# gcc 16, gfortran 16 from ubuntu-toolchain-r/test PPA
+# gcc 16, gfortran 16
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update -y && \
-    apt-get install -y software-properties-common && \
-    add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update -y && \
     apt-get install -y gcc-16 g++-16 gfortran-16 && \
     apt-get clean
@@ -55,7 +52,7 @@ ENV LANG C.UTF-8
 RUN export DEBIAN_FRONTEND=noninteractive && \
     if [ "$(uname -m)" = "x86_64" ]; then \
       apt-get update -y && \
-      apt-get install -y wget perl && \
+      apt-get install -y wget perl xz-utils && \
       apt-get clean && \
       cd /root && \
       wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh -s - --admin --no-path && \

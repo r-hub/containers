@@ -67,30 +67,6 @@ jobs:
     name: ${{ matrix.config.container }}
 
     steps:
-    # needed for bigger Docker images, if there isn't enough space, then
-    # they build, but are not exported to Docker
-    - name: "Clean up"
-      run: |
-        sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup \
-          /usr/local/share/boost \
-          $AGENT_TOOLSDIRECTORY $CONDA $VCPKG_INSTALLATION_ROOT \
-          $JAVA_HOME_8_X64 $JAVA_HOME_11_X64 $JAVA_HOME_17_X64 $JAVA_HOME_21_X64 \
-          $CHROMEWEBDRIVER $EDGEWEBDRIVER $GECKOWEBDRIVER $SELENIUM_JAR_PATH \
-          $ANDROID_HOME
-        sudo apt-get remove -y '^aspnetcore-.*' || echo "::warning::The command [sudo apt-get remove -y '^aspnetcore-.*'] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y '^dotnet-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^dotnet-.*' --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y '^llvm-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^llvm-.*' --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y 'php.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y 'php.*' --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y '^mongodb-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^mongodb-.*' --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y '^mysql-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^mysql-.*' --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y azure-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --fix-missing || echo "::warning::The command [sudo apt-get remove -y azure-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y google-cloud-sdk --fix-missing || echo "::debug::The command [sudo apt-get remove -y google-cloud-sdk --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get remove -y google-cloud-cli --fix-missing || echo "::debug::The command [sudo apt-get remove -y google-cloud-cli --fix-missing] failed to complete successfully. Proceeding..."
-        sudo apt-get autoremove -y || echo "::warning::The command [sudo apt-get autoremove -y] failed to complete successfully. Proceeding..."
-        sudo apt-get clean || echo "::warning::The command [sudo apt-get clean] failed to complete successfully. Proceeding..."
-        df -h /
-        docker buildx du
-
     - uses: actions/checkout@v6
 
     - name: Login to GitHub Container Registry
@@ -109,7 +85,7 @@ jobs:
     - name: Install Qemu
       uses: docker/setup-qemu-action@v4
       with:
-        image: tonistiigi/binfmt:qemu-v8.1.5
+        image: tonistiigi/binfmt:qemu-v10.2.3
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v4
@@ -193,7 +169,7 @@ jobs:
     - name: Install Qemu
       uses: docker/setup-qemu-action@v4
       with:
-        image: tonistiigi/binfmt:qemu-v8.1.5
+        image: tonistiigi/binfmt:qemu-v10.2.3
 
     - name: Install quarto
       uses: quarto-dev/quarto-actions/setup@v2

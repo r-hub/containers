@@ -1,5 +1,5 @@
 
-FROM --platform=linux/s390x ubuntu:24.04
+FROM --platform=linux/s390x ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
@@ -9,7 +9,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # Use R-hub repo
-RUN echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-24.04-s390x/4.3', getOption('repos')))" \
+RUN echo "options(repos = c(RHUB = 'https://raw.githubusercontent.com/r-hub/repos/main/ubuntu-26.04-s390x/4.5', getOption('repos')))" \
       >> /usr/lib/R/library/base/R/Rprofile
 
 # System requirements that pak does not know about
