@@ -27,7 +27,7 @@ RUN apt-get update && \
     apt-get build-dep -y r-base
 
 # -------------------------------------------------------------------------
-# clang-22
+# clang-23
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
@@ -35,10 +35,10 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     install -m 0755 -d /etc/apt/keyrings && \
     curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
       gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-22 main" \
+    echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main" \
     > /etc/apt/sources.list.d/llvm.list && \
     apt-get update -y && \
-    apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev flang-22 && \
+    apt-get install -y clang-23 libc++abi-23-dev libc++-23-dev libomp-23-dev flang-23 && \
     apt-get clean
 
 # -------------------------------------------------------------------------
