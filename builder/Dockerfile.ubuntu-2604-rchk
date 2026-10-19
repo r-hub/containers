@@ -1,9 +1,9 @@
 ## Emacs, make this -*- mode: sh; -*-
 
-FROM ubuntu:jammy
+FROM ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
-ENV OS_IDENTIFIER ubuntu-2204
+ENV OS_IDENTIFIER ubuntu-2604
 
 # -------------------------------------------------------------------------
 # Dependencies
@@ -12,14 +12,14 @@ ENV OS_IDENTIFIER ubuntu-2204
 RUN chmod 0777 /opt
 
 RUN set -x \
-  && sed -i "s|# deb-src|deb-src|g" /etc/apt/sources.list \
+  && sed -i "s|Types: deb|Types: deb deb-src|g" /etc/apt/sources.list.d/ubuntu.sources \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install -y curl libcurl4-openssl-dev libicu-dev \
-             libopenblas-base libpcre2-dev wget python3-pip \
+             libopenblas0-pthread libpcre2-dev wget python3-pip \
   && apt-get build-dep -y r-base \
-  && apt-get install -y git make clang llvm-dev '^clang++$' llvm \
-             libllvm14 libc++-dev libc++abi-dev file \
+  && apt-get install -y git make g++ clang-21 llvm-21-dev llvm-21 \
+             libc++-21-dev libc++abi-21-dev clang llvm file \
   && mkdir -p /opt/R/devel-rchk/python \
   && pip3 install --target /opt/R/devel-rchk/python wllvm \
   && for prog in $(ls /opt/R/devel-rchk/python/bin); do \
@@ -35,18 +35,18 @@ ENV WLLVM_BC_STORE=/opt/R/devel-rchk/bcstore
 
 ENV WLLVM=/opt/R/devel-rchk/python/bin
 ENV RCHK=/opt/R/devel-rchk/rchk
-ENV LLVM=/usr/lib/llvm-14
+ENV LLVM=/usr/lib/llvm-21
 
 RUN set -x \
     && cd /opt/R/devel-rchk \
-    && git clone -b fix/altrep-lists-llvm14 --depth 1 https://github.com/gaborcsardi/rchk.git \
+    && git clone -b main --depth 1 https://github.com/gaborcsardi/rchk.git \
     && rm -rf rchk/.git \
     && cd rchk/src \
-    && make \
+    && make -j$(nproc) LLVM=$LLVM CXX=g++ \
     && cd .. \
     && mkdir -p bin \
-    && cp src/*check bin \
-    && rm -rf doc examples image src \
+    && cp src/*check src/cachegen bin \
+    && rm -rf doc examples image src tests \
     && mv bin src \
     && strip -x src/*
 
@@ -80,10 +80,9 @@ ENV LD="clang++ -stdlib=libc++"
 # Override the default pager used by R
 ENV PAGER /usr/bin/pager
 
-# R 3.x requires PCRE2 for Pango support on Ubuntu 22
-ENV INCLUDE_PCRE2_IN_R_3 yes
+# Note: Ubuntu 26 does not have PCRE1 (libpcre3), so R 3.x is not supported
 
 COPY builder/rchk.sh /opt/R/devel-rchk/bin/rchk.sh
-COPY builder/package.ubuntu-2204-rchk /package.sh
+COPY builder/package.ubuntu-2604-rchk /package.sh
 COPY build.sh .
 ENTRYPOINT ./build.sh

@@ -37,7 +37,7 @@ services:
     volumes:
       - ./integration/tmp:/tmp/output
 
-  ubuntu-2204-rchk:
+  ubuntu-2604-rchk:
     command: ./build.sh
     environment:
       - R_VERSION=devel
@@ -48,8 +48,8 @@ services:
     #      - R_TARBALL_URL=https://github.com/r-hub/containers/releases/download/latest/R-devel_2023-03-15_r83984-0.tar.gz
     build:
       context: .
-      dockerfile: builder/Dockerfile.ubuntu-2204-rchk
-    image: rhub/ubuntu-2204-rchk:latest
+      dockerfile: builder/Dockerfile.ubuntu-2604-rchk
+    image: rhub/ubuntu-2604-rchk:latest
     volumes:
       - ./integration/tmp:/tmp/output
 
