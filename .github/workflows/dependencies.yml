@@ -1,0 +1,129 @@
+name: Build dependencies
+
+on:
+  workflow_dispatch:
+    inputs:
+      dependency:
+        description: |
+          Dependency to build, a directory in dependencies/, or "all".
+        required: true
+        type: choice
+        options:
+          - jags
+          - poppler
+          - imagemagick
+          - protobuf
+          - all
+      variants:
+        description: |
+          Comma-separated list of variants, e.g. "clang21,clang22", or "all".
+          Each variant uses dependencies/<dependency>/Dockerfile-<variant>.
+          With "all", every Dockerfile-* of the dependency is built.
+        required: true
+        default: 'clang22'
+        type: string
+      arch:
+        description: Architecture to build for, or "all".
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - amd64
+          - arm64
+          - all
+
+jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.setup-matrix.outputs.matrix }}
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Set up matrix of builds
+      id: setup-matrix
+      env:
+        DEPENDENCY: ${{ github.event.inputs.dependency }}
+        VARIANTS: ${{ github.event.inputs.variants }}
+        ARCH: ${{ github.event.inputs.arch }}
+      run: |
+        if [ "$DEPENDENCY" = "all" ]; then
+          deps="jags poppler imagemagick protobuf"
+        else
+          deps="$DEPENDENCY"
+        fi
+        if [ "$ARCH" = "all" ]; then
+          archs="amd64 arm64"
+        else
+          archs="$ARCH"
+        fi
+
+        builds=""
+        for dep in $deps; do
+          if [ "$VARIANTS" = "all" ]; then
+            variants=$(cd "dependencies/$dep" && ls Dockerfile-* | sed 's/^Dockerfile-//')
+          else
+            variants=$(echo "$VARIANTS" | tr ',' ' ')
+          fi
+          for variant in $variants; do
+            if [ ! -f "dependencies/$dep/Dockerfile-$variant" ]; then
+              # Only an error if the user asked for this exact combination
+              if [ "$DEPENDENCY" != "all" ]; then
+                echo "::error::dependencies/$dep/Dockerfile-$variant does not exist"
+                exit 1
+              fi
+              echo "::notice::Skipping $dep-$variant, no dependencies/$dep/Dockerfile-$variant"
+              continue
+            fi
+            for arch in $archs; do
+              if [ "$arch" = "arm64" ]; then
+                runner=ubuntu-24.04-arm
+              else
+                runner=ubuntu-latest
+              fi
+              builds="$builds$dep $variant $arch $runner"$'\n'
+            done
+          done
+        done
+
+        if [ -z "$builds" ]; then
+          echo "::error::Nothing to build"
+          exit 1
+        fi
+
+        matrix=$(printf '%s' "$builds" | jq -cRn '[inputs | split(" ") |
+          { dependency: .[0], variant: .[1], arch: .[2], runner: .[3] }]')
+        echo "$matrix" | jq .
+        echo "matrix=$matrix" >> $GITHUB_OUTPUT
+
+  build:
+    needs: setup-matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    name: ${{ matrix.dependency }}-${{ matrix.variant }} ${{ matrix.arch }}
+    env:
+      DEPENDENCY: ${{ matrix.dependency }}
+      VARIANT: ${{ matrix.variant }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build image
+        run: |
+          cd "dependencies/${DEPENDENCY}"
+          docker build -f "Dockerfile-${VARIANT}" -t "dep-${DEPENDENCY}-${VARIANT}" .
+
+      - name: Copy package
+        run: |
+          mkdir -p output
+          docker run --rm -v "$PWD/output:/output" "dep-${DEPENDENCY}-${VARIANT}" /root/build.sh
+          ls -l output
+
+      - name: Upload package
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.dependency }}-${{ matrix.variant }}-${{ matrix.arch }}
+          path: output/*
+          if-no-files-found: error
