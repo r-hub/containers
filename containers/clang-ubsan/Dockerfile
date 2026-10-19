@@ -1,5 +1,5 @@
 
-FROM ubuntu:22.04
+FROM ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 COPY --from=common common.Renviron /root/.Renviron
 
@@ -23,29 +23,30 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
-# clang 22
+# clang 23
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    apt-get install -y gpg && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
+      gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main" \
     > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
-    >> /etc/apt/sources.list.d/llvm.list && \
-    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
-    apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev flang-22 && \
+    apt-get install -y clang-23 libc++abi-23-dev libc++-23-dev libomp-23-dev flang-23 && \
     apt-get clean
 
 # ------------------------------------------------------------------------------------
 # system dependencies
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    echo "deb https://repos-ppa.r-pkg.org jammy main" \
+    echo "deb [signed-by=/etc/apt/keyrings/rhub.gpg] https://repos-ppa.r-pkg.org resolute main" \
     > /etc/apt/sources.list.d/rhub.list && \
-    curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | apt-key add - && \
+    curl -L https://raw.githubusercontent.com/r-hub/repos-ppa/main/rhub.gpg.key | \
+        gpg --dearmor -o /etc/apt/keyrings/rhub.gpg && \
     apt-get update -y && \
-    apt-get install -y protobuf-clang22 jags-clang22 imagemagick-clang22 poppler-clang22
+    apt-get install -y protobuf-clang23 jags-clang23 imagemagick-clang23 poppler-clang23
 
 # ------------------------------------------------------------------------------------
 # Useful system packages, some are needed for R CMD check
@@ -69,7 +70,7 @@ RUN app="-fsanitize=undefined -fno-sanitize=function -fno-omit-frame-pointer" \
     sed -i -E '/^CC[0-9][0-9] ?=/ s/$/ '"$app"/ "${makeconf}" && \
     sed -i -E '/^CXX ?=/ s/$/ '"$appxx"/ "${makeconf}" && \
     sed -i -E '/^CXX[0-9][0-9] ?=/ s/$/ '"$appxx"/ "${makeconf}" && \
-    sed -i '/^SAN_LIBS[ ]*=/i UBSAN_DIR = /usr/lib/llvm-22/lib/clang/22/lib/linux' "${makeconf}" && \
+    sed -i '/^SAN_LIBS[ ]*=/i UBSAN_DIR = /usr/lib/llvm-23/lib/clang/23/lib/linux' "${makeconf}" && \
     sed -i 's|^SAN_LIBS[ ]*=.*$|SAN_LIBS = -L$(UBSAN_DIR) -Wl,-rpath,$(UBSAN_DIR) -lclang_rt.ubsan_standalone-x86_64|' "${makeconf}"
 
 # ------------------------------------------------------------------------------------
