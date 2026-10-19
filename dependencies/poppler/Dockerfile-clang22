@@ -1,5 +1,5 @@
 
-FROM ubuntu:22.04
+FROM ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
 WORKDIR /root
@@ -12,19 +12,21 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm poppler-*.xz
 
 # ------------------------------------------------------------------------------------
-# clang 22, gfortran-12
+# clang 22
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update -y && \
-    apt-get install -y gnupg curl && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
-         > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
-         >> /etc/apt/sources.list.d/llvm.list && \
-    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-    apt-get update -y && \
-    apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev libunwind-22-dev && \
-    apt-get install -y pkg-config make gfortran
+    apt-get update && apt-get install -y gpg && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
+      gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg
+
+RUN echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-22 main" | \
+  tee -a /etc/apt/sources.list.d/llvm.list
+
+RUN apt-get update -y && \
+    apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev flang-22 && \
+    apt-get install -y pkg-config make gfortran && \
+    apt-get clean
 
 RUN ln -s /usr/bin/clang-22 /usr/bin/clang && \
     ln -s /usr/bin/clang++-22 /usr/bin/clang++
@@ -32,7 +34,7 @@ RUN ln -s /usr/bin/clang-22 /usr/bin/clang && \
 # dependencies
 RUN apt-get install -y cmake libnss3-dev \
     libtiff-dev liblcms2-dev libopenjp2-7-dev \
-    libboost1.74-all-dev libfreetype-dev libfontconfig-dev \
+    libboost1.90-all-dev libfreetype-dev libfontconfig-dev \
     libcurl4-openssl-dev qtbase5-dev
 
 RUN cd poppler-* && \
@@ -44,7 +46,7 @@ RUN cd poppler-* && \
     make
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y checkinstall && \
+    apt-get install -y checkinstall llvm-libunwind1 && \
     cd poppler-* && \
     mkdir -p /usr/share/doc/poppler-clang22/ && \
     cp COPYING NEWS ChangeLog README.md /usr/share/doc/poppler-clang22/ && \
@@ -54,6 +56,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     echo /usr/share/doc/poppler-clang22/README.md >> /tmp/xlist && \
     cd build && \
     checkinstall -y -D --pkgname poppler-clang22 \
+    --fstrans=no \
     --pkgversion $(basename `pwd` | sed 's/^[^-]*-//') \
     --maintainer "csardi.gabor@gmail.com" \
     --include /tmp/xlist \

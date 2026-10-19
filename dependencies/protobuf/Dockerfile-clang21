@@ -1,5 +1,5 @@
 
-FROM ubuntu:22.04
+FROM ubuntu:26.04
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
 WORKDIR /root
@@ -15,16 +15,18 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 # clang 21
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update -y && \
-    apt-get install -y gnupg curl && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-21 main" \
-         > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-21 main" \
-         >> /etc/apt/sources.list.d/llvm.list && \
-    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-    apt-get update -y && \
-    apt-get install -y clang-21 libc++abi-21-dev libc++-21-dev libomp-21-dev libunwind-21-dev && \
-    apt-get install -y pkg-config make
+    apt-get update && apt-get install -y gpg && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
+      gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg
+
+RUN echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-21 main" | \
+  tee -a /etc/apt/sources.list.d/llvm.list
+
+RUN apt-get update -y && \
+    apt-get install -y clang-21 libc++abi-21-dev libc++-21-dev libomp-21-dev flang-21 && \
+    apt-get install -y pkg-config make && \
+    apt-get clean
 
 RUN ln -s /usr/bin/clang-21 /usr/bin/clang && \
     ln -s /usr/bin/clang++-21 /usr/bin/clang++
@@ -36,13 +38,15 @@ RUN cd protobuf-* && \
     make
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y checkinstall && \
+    apt-get install -y checkinstall llvm-libunwind1 && \
     cd protobuf-* && \
     mkdir -p /usr/share/doc/protobuf-clang21/ && \
     cp LICENSE README.md /usr/share/doc/protobuf-clang21/ && \
     echo /usr/share/doc/protobuf-clang21/LICENSE > /tmp/xlist && \
     echo /usr/share/doc/protobuf-clang21/README.md >> /tmp/xlist && \
     checkinstall -y -D --pkgname protobuf-clang21 \
+    --pkgversion $(basename `pwd` | sed 's/^[^-]*-//') \
+    --fstrans=no \
     --maintainer "csardi.gabor@gmail.com" \
     --include /tmp/xlist \
     --requires 'libc++1,libc++abi1,llvm-libunwind1,libc6,libgcc-s1' \
