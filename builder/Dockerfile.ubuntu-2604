@@ -1,13 +1,13 @@
-FROM ubuntu:jammy
+FROM ubuntu:resolute
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
-ENV OS_IDENTIFIER ubuntu-2204
+ENV OS_IDENTIFIER ubuntu-2604
 
 RUN set -x \
-  && sed -i "s|# deb-src|deb-src|g" /etc/apt/sources.list \
+  && sed -i "s|Types: deb|Types: deb deb-src|g" /etc/apt/sources.list.d/ubuntu.sources \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
-  && apt-get install -y curl libcurl4-openssl-dev libicu-dev libopenblas-base libpcre2-dev wget python3-pip \
+  && apt-get install -y curl libcurl4-openssl-dev libicu-dev libopenblas0-pthread libpcre2-dev wget python3-pip \
   && apt-get build-dep -y r-base
 
 RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(dpkg --print-architecture).deb" && \
@@ -19,9 +19,8 @@ RUN chmod 0777 /opt
 # Override the default pager used by R
 ENV PAGER /usr/bin/pager
 
-# R 3.x requires PCRE2 for Pango support on Ubuntu 22
-ENV INCLUDE_PCRE2_IN_R_3 yes
+# Note: Ubuntu 26 does not have PCRE1 (libpcre3), so R 3.x is not supported
 
-COPY builder/package.ubuntu-2204 /package.sh
+COPY builder/package.ubuntu-2604 /package.sh
 COPY build.sh .
 ENTRYPOINT ./build.sh

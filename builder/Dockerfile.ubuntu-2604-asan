@@ -1,18 +1,18 @@
-FROM ubuntu:jammy
+FROM ubuntu:resolute
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
 
-ENV OS_IDENTIFIER ubuntu-2204
+ENV OS_IDENTIFIER ubuntu-2604
 
 # -------------------------------------------------------------------------
 # Packages needed for compiling R
 
-RUN sed -i "s|# deb-src|deb-src|g" /etc/apt/sources.list
+RUN sed -i "s|Types: deb|Types: deb deb-src|g" /etc/apt/sources.list.d/ubuntu.sources
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y curl libcurl4-openssl-dev libicu-dev \
-    libopenblas-base libpcre2-dev wget python3-pip
+    libopenblas0-pthread libpcre2-dev wget python3-pip
 
 # Locales are needed because of a tex-common configuration bug
 
@@ -31,12 +31,12 @@ RUN apt-get update && \
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
-    apt-get install -y gnupg && \
-    echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
+    apt-get install -y gpg && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | \
+      gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/resolute/ llvm-toolchain-resolute-22 main" \
     > /etc/apt/sources.list.d/llvm.list && \
-    echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-22 main" \
-    >> /etc/apt/sources.list.d/llvm.list && \
-    curl -fsSL --retry 5 --retry-all-errors https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
     apt-get update -y && \
     apt-get install -y clang-22 libc++abi-22-dev libc++-22-dev libomp-22-dev flang-22 && \
     apt-get clean
@@ -53,10 +53,9 @@ RUN chmod 0777 /opt
 # Override the default pager used by R
 ENV PAGER /usr/bin/pager
 
-# R 3.x requires PCRE2 for Pango support on Ubuntu 22
-ENV INCLUDE_PCRE2_IN_R_3 yes
+# Note: Ubuntu 26 does not have PCRE1 (libpcre3), so R 3.x is not supported
 
-COPY builder/config.ubuntu-2204-asan /config.site
-COPY builder/package.ubuntu-2204-asan /package.sh
+COPY builder/config.ubuntu-2604-asan /config.site
+COPY builder/package.ubuntu-2604-asan /package.sh
 COPY build.sh .
 ENTRYPOINT ./build.sh
