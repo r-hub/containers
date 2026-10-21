@@ -5,7 +5,7 @@ COPY --from=common common.Renviron /root/.Renviron
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
-    apt-get install -y r-base && \
+    apt-get install -y r-base r-base-dev && \
     apt-get clean
 
 # Use R-hub repo
