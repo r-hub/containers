@@ -6,10 +6,10 @@ COPY --from=common common.Renviron /root/.Renviron
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl jq && \
-    R_VERSION=$(curl -sL https://api.r-hub.io/rversions/r-release | jq -r .version) && \
     cd /tmp && \
     . /etc/os-release && \
-    curl -LO "https://cdn.posit.co/r/${ID}-$(echo $VERSION_ID | tr -d .)/pkgs/r-${R_VERSION}_1_amd64.deb" && \
+    R_URL=$(curl -fsSL "https://api.r-hub.io/rversions/resolve/release/linux-${ID}-${VERSION_ID}/$(uname -m)" | jq -r .url) && \
+    curl -fLO "${R_URL}" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     ln -s /opt/R/* /opt/R/release && \
@@ -54,9 +54,9 @@ RUN echo 'options(repos =c(CRAN = "https://cran.rstudio.com"))' \
 RUN if [ "$(uname -p)" = "x86_64" ]; then \
         echo 'options(repos = c(RSPM="https://packagemanager.posit.co/cran/__linux__/resolute/latest", getOption("repos")))' \
             >> /opt/R/release/lib/R/library/base/R/Rprofile; \
-        curl -s https://api.r-hub.io/rversions/r-release | \
-            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
         . /etc/os-release; \
+        curl -s "https://api.r-hub.io/rversions/resolve/release/linux-${ID}-${VERSION_ID}/$(uname -m)" | \
+            sed 's/^.*version":"\([0-9.][0-9.]*\)".*$/\1/' >/tmp/rver; \
         echo 'options(HTTPUserAgent = sprintf("R/'$(cat /tmp/rver)' ('${ID}-${VERSION_ID}' R ('$(cat /tmp/rver)' %s)", paste(R.version$platform, R.version$arch, R.version$os)))' \
             >> /opt/R/release/lib/R/library/base/R/Rprofile; \
     fi

@@ -9,10 +9,10 @@ COPY --from=common common.Renviron /root/.Renviron
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y curl jq && \
-    R_VERSION=$(curl -sL https://api.r-hub.io/rversions/r-release | jq -r .version) && \
     cd /tmp && \
     . /etc/os-release && \
-    curl -LO "https://cdn.posit.co/r/${ID}-$(echo $VERSION_ID | tr -d .)/pkgs/r-${R_VERSION}_1_$(dpkg --print-architecture).deb" && \
+    R_URL=$(curl -fsSL "https://api.r-hub.io/rversions/resolve/release/linux-${ID}-${VERSION_ID}/$(uname -m)" | jq -r .url) && \
+    curl -fLO "${R_URL}" && \
     apt install -y ./r-*.deb && \
     rm r-*.deb && \
     ln -s /opt/R/* /opt/R/release && \
