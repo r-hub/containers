@@ -3,7 +3,7 @@ FROM fedora:44
 WORKDIR /root
 
 RUN curl -L -o jags.tar.gz \
-        https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Source/JAGS-4.3.2.tar.gz/download && \
+        https://master.dl.sourceforge.net/project/mcmc-jags/JAGS/5.x/Source/JAGS-5.0.2.tar.gz && \
     tar xzf jags.tar.gz && \
     rm jags.tar.gz
 
@@ -16,9 +16,7 @@ RUN cd JAGS-* && \
 
 RUN if [ "$(arch)" == "aarch64" ]; then echo arm64; else echo amd64; fi > /tmp/arch
 
-RUN curl -LO "https://github.com/goreleaser/nfpm/releases/download/v2.18.1/nfpm_$(cat /tmp/arch).rpm" && \
-    dnf install -y "nfpm_$(cat /tmp/arch).rpm" && \
-    rm "nfpm_$(cat /tmp/arch).rpm"
+RUN dnf install -y "https://github.com/goreleaser/nfpm/releases/download/v2.49.0/nfpm-2.49.0-1.$(arch).rpm"
 
 COPY package.fedora-44 /root/package.sh
 

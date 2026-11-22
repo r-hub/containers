@@ -14,7 +14,7 @@ RUN dnf -y upgrade && \
 
 # Extra system packages that pak does not know about
 RUN dnf install -y flexiblas gawk patch && \
-    dnf install -y https://rpms.r-pkg.org/fedora-44/jags-4.3.2-1.$(arch).rpm
+    dnf install -y https://rpms.r-pkg.org/fedora-44/jags-5.0.2-1.$(arch).rpm
 
 # ------------------------------------------------------------------------------------
 # Put R on PATH
